@@ -1,0 +1,32 @@
+<div>
+  <ul class="tabs flex flex-row items-center justify-start gap-4 mb-[11px] pl-[15px] md:mb-[17px] md:pl-0">
+    {{#each array}}
+      <li class="relative text-xs inline-block px-[3px] cursor-pointer md:text-[16px] text-[#c6cad1] font-[600]"
+          data-key="{{@key}}" onclick="Util.activeTab('{{탭키}}')">
+        <input type="radio" class="peer cursor-pointer z-10 absolute top-[0] left-[0] w-full h-full opacity-0"
+          name="d8fe5ffa-5727-401a-9c70-795990291263"
+          {{#if 활성화}}checked="checked"{{/if}}
+        />
+        <div class="peer-checked:text-black">{{버튼명}}</div>
+      </li>
+    {{/each}}
+  </ul>
+
+  <div class="relative">
+    {{#each array}}
+      <div onclick="Layer.open('리뷰상세보기');" data-tab-key="{{탭키}}" class="{{#if 활성화}}ACTIVE{{/if}} [&.ACTIVE]:grid gap-[8px] grid-cols-2 md:grid-cols-4 px-[15px] md:px-0">
+        {{#times 6}}
+          <div data-key="{{index}}" class="cursor-pointer relative" style="grid-row:span {{MATH '(x%2===1)?1:(x%6===0)?1:2' number}};">
+            <img class="w-full h-full object-cover aspect-square" src="https://gifpng.com/{{INT 500 1000}}x{{INT 500 1000}}/?font-size=20" alt=""/>
+          </div>
+        {{/times}}
+      </div>
+    {{/each}}
+  </div>
+
+  <div class="mt-10 text-center">
+    <button class="w-[141px] h-11 text-center border border-[#eff1f4] text-black text-xs leading-[44px] inline-block">
+      전체보기
+    </button>
+  </div>
+</div>

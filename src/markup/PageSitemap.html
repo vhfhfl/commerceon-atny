@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="icon" href="data:,">
+  <title>PageSitemap.html</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/util.js"></script>
+  <link href="../css/sitemap.css" rel="stylesheet">
+  <script src="../menu_data.js"></script>
+  <script src="../libs/handlebars.js"></script>
+  <script src="../libs/handlebars_helper.js"></script>
+</head>
+<body>
+<script>
+  Util.setMarkupPageTitle('Sitemap');
+</script>
+<div class="PageSitemap">
+  <script>
+    // convertPage(MENU_DATA);
+    
+    function convertPage(data_list) {
+      data_list.forEach((obj, idx) => {
+        const PAGE = obj.PAGE;
+        
+        // PAGE 가 공백이면 노드 삭제
+        if (!PAGE) delete obj.PAGE;
+        
+        // PAGE 가 http 를 포함하고 있지 않으면 Layout 판단해서 넣어주자
+        if (PAGE && PAGE.indexOf('http') == -1) {
+          const toPascalCase = str => (str.match(/[a-zA-Z0-9]+/g) || []).map(w => `${w.charAt(0).toUpperCase()}${w.slice(1)}`).join('');
+          let LAYOUT = obj.LAYOUT;
+          if (LAYOUT) {
+            LAYOUT = toPascalCase(LAYOUT);
+            // http://127.0.0.1:3000/layouts/LayoutBasic.html?path=PageMain
+            const path = `/layouts/Layout${LAYOUT}.html?path=${PAGE}`;
+            obj.PAGE = path;
+          }
+        }
+        
+        if (obj.child) {
+          convertPage(obj.child);
+        }
+      });
+    }
+  
+  </script>
+  <div>
+    <ul class="SITEMAP-UI">
+      <script type="text/x-handlebars-template">
+        {{#each array}}
+          <li data-key="{{@key}}">
+            {{#if this.PAGE}}
+              <a class="label" href="../{{this.PAGE}}" target="_blank">{{this.뎁스1}}</a>
+            {{else}}
+              <div class="label">{{this.뎁스1}}</div>
+            {{/if}}
+            <ul>
+              {{#each this.child}}
+                <li data-key="{{@key}}">
+                  {{#if this.PAGE}}
+                    <a class="label" href="../{{this.PAGE}}" target="_blank">{{this.뎁스2}}</a>
+                  {{else}}
+                    <div class="label">{{this.뎁스2}}</div>
+                  {{/if}}
+                  <ul>
+                    {{#each this.child}}
+                      <li>
+                        {{#if this.PAGE}}
+                          <a class="label" href="../{{this.PAGE}}" target="_blank">{{this.뎁스3}}</a>
+                        {{else}}
+                          <div class="label">{{this.뎁스3}}</div>
+                        {{/if}}
+                      </li>
+                    {{/each}}
+                  </ul>
+                </li>
+              {{/each}}
+            </ul>
+          </li>
+        {{/each}}
+      </script>
+      <script>
+        Handlebars.write({
+          array : MENU_DATA,
+        });
+      </script>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

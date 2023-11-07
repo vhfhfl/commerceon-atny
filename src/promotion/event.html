@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+      <script src="../js/util.js"></script>
+      <script>Util.include('../common/head_2.html');</script>
+    </head>
+<body>
+    <div id="wrap">
+        <!-- header -->
+		<script>Util.include('../common/header.html');</script>
+		<!-- header -->
+        <!-- 모바일용 레이어 -->
+        <div class="fixed top-0 left-0 right-0 bottom-0 -z-10" id="mobile-layer">
+            <div class="fixed left-0 top-0 right-0 bottom-0 bg-black/70 hidden"></div>
+            <div class="absolute left-0 right-0 z-[1000] transition-all duration-500 bottom-[48px] top-[100%]" id="mobile-menu-content">
+                <button type="button" class="h-[31px] rounded-t-[30px] bg-white absolute top-0 left-0 right-0 w-full text-[0] after:content-[''] after:w-[57px] after:h-[3px] after:bg-[#212121] after:rounded-[10px] after:absolute after:top-[9px] after:left-1/2 after:-translate-x-1/2" id="mobile-layer-close">닫기</button>
+                <div class="py-[14px] pr-[65px] pl-6 absolute left-0 top-[31px] right-0 bg-white border-b border-[#e7e5ea]">
+                    <form name="topSearchForm" action="/goods/search">
+                        <div class="relative h-[31px] rounded-[100px] bg-[#fafafb] border border-[#f7f7f9] box-border pr-[47px]">
+                            <input type="text" name="search_text" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="h-[29px] bg-transparent px-[10px] box-border w-full border-0 text-[13px]">
+                            <button class="h-[29px] absolute right-0 top-0 w-[47px] bg-[url('../assets/icon/ico-search.svg')] bg-center bg-no-repeat z-10 text-[0]" type="submit">검색</button>
+                        </div>
+                    </form>
+                    <a href="/mypage" class="absolute bg-[url('../assets/icon/ico-myp.svg')] bg-center bg-no-repeat text-[0] right-[21px] top-[17px] z-10 w-6 h-6">마이페이지</a>
+                </div>
+                <div>
+                    <div class="bg-[#fafafb] overflow-y-auto absolute left-0 top-[91px] bottom-0 right-0">
+                        <div>
+                            <div class="bg-white border-b border-[#e7e5ea]">
+                                <div class="pt-[15px] px-6">
+                                    <ul>
+                                        <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#ff774b] block px-[2px] pb-[3px] border-b-[3px] border-[#ff774b]">WOMEN</a></li>
+                                        <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">MEN</a></li>
+                                        <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">JUNIOR</a></li>
+                                        <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">LIFE</a></li>
+                                    </ul>
+                                </div>
+                                <div class="py-[10px] px-6 block">
+                                    <ul class="menu_list">
+                                        <li><a href="/goods/catalog?code=00020001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                        <li><a href="/goods/catalog?code=00020002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                        <li><a href="/goods/catalog?code=00020003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                        <li><a href="/goods/catalog?code=00020004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                        <li><a href="/goods/catalog?code=00020005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                    </ul>
+                                </div>
+                                <div class="hidden">
+                                    <ul class="menu_list">
+                                        <li><a href="/goods/catalog?code=00010001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                        <li><a href="/goods/catalog?code=00010002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                        <li><a href="/goods/catalog?code=00010003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                        <li><a href="/goods/catalog?code=00010004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                        <li><a href="/goods/catalog?code=00010005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                    </ul>
+                                </div>
+                                <div class="hidden">
+                                    <ul class="menu_list">
+                                        <li><a href="/goods/catalog?code=00030001" class="text-[13px] text-[#212121] block py-[13px]">여아</a></li>
+                                        <li><a href="/goods/catalog?code=00030002" class="text-[13px] text-[#212121] block py-[13px]">남아</a></li>
+                                    </ul>
+                                </div>
+                                <div class="hidden">
+                                    <ul class="menu_list">
+                                        <li><a href="/goods/catalog?code=00040001" class="text-[13px] text-[#212121] block py-[13px]">디지털</a></li>
+                                        <li><a href="/goods/catalog?code=00040002" class="text-[13px] text-[#212121] block py-[13px]">홈</a></li>
+                                        <li><a href="/goods/catalog?code=00040003" class="text-[13px] text-[#212121] block py-[13px]">뷰티</a></li>
+                                        <li><a href="/goods/catalog?code=00040004" class="text-[13px] text-[#212121] block py-[13px]">여행</a></li>
+                                        <li><a href="/goods/catalog?code=00040005" class="text-[13px] text-[#212121] block py-[13px]">반려동물</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                                <div class="py-[10px] px-6">
+                                    <ul>
+                                        <li>
+                                            <a href="/goods/best_designers" class="text-[13px] text-[#212121] block py-[13px]">디자이너</a>
+                                        </li>
+                                        <li>
+                                            <a href="/goods/nft" class="text-[13px] text-[#212121] block py-[13px]">정품감정서</a>
+                                        </li>
+                                        <li>
+                                            <a href="/goods/oneday_delivery" class="text-[13px] text-[#212121] block py-[13px]">하루배송</a>
+                                        </li>
+                                        <li>
+                                            <a href="/goods/free_return" class="text-[13px] text-[#212121] block py-[13px]">무료반품</a>
+                                        </li>
+                                        <li>
+                                            <a href="/board/?id=magazine" class="text-[13px] text-[#212121] block py-[13px]">매거진</a>
+                                        </li>
+                                        <li>
+                                            <a href="/promotion/event" class="text-[13px] text-[#212121] block py-[13px]">이벤트</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                                <div class="py-[17px]">
+                                    <div class="text-[#c6cad1] text-[11px] mb-[6px] px-6">최근 본 상품</div>
+                                    <!-- 내용이 없을 때 -->
+                                    <div class="text-center py-5 w-full text-[11px]">최근 본 상품이 없습니다.</div>
+                                    <!-- //내용이 없을 때 -->
+                                    <div class="swiper pl-6">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><a href="/goods/view?no=1541402"><img src="//img.atny.com/data/goods/ATNY/10/1672510/MzQzNDYw_list1.JPG" alt="여성 타임리스 브라운 미니 숄더/크로스백"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white shadow-[inset_0_-8px_10px_rgba(0,0,0,0.03)]">
+                                <ul class="py-[17px] text-center">
+                                    <li class="inline-block relative"><a href="/mypage" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">마이페이지</a></li>
+                                    <li class="inline-block relative"><a href="/board/?id=faq" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">FAQ</a></li>
+                                    <li class="inline-block relative"><a href="/mypage/myqna_write" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px]">1:1문의</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //모바일용 레이어 -->
+        <!-- 검색 레이어 -->
+        <div class="hidden fixed z-[1000] left-0 top-0 right-0 bottom-0 bg-white overflow-auto" id="search-layer">
+            <div class="w-full max-w-[1240px] mx-auto lg:px-5">
+                <a href="javascript:;" class="w-10 h-[38px] absolute left-[10px] top-[7px] bg-[url('../assets/icon/ico-back.svg')] bg-center bg-no-repeat text-[0] lg:w-[53px] lg:h-[53px] lg:top-[33px] lg:left-auto lg:right-[33px] lg:bg-[url('../assets/icon/ico-close.png')]" id="search-layer-close">뒤로</a>
+                <div class="pt-[9px] pr-4 pl-[50px] mb-[22px] lg:px-0 lg:pt-[180px] lg:mb-14">
+                    <div class="pr-[38px] lg:h-[65px] relative lg:pr-[49px]">
+                        <form name="topSearchForm" id="topSearchForm" action="/goods/search">
+                            <input type="text" name="search_text" id="searchVer3InputBox" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="w-full h-[38px] px-[17px] bg-[#f7f7f9] leading-[38px] lg:h-[65px] lg:leading-[65px] lg:border-0 lg:text-base lg:px-[60px] rounded-[200px]">
+                        </form>
+                        <button type="button" class="w-[38px] h-[38px] absolute z-10 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat text-[0] right-[38px] top-0 lg:top-[13px] lg:right-[69px] lg:bg-[length:12px_12px] lg:bg-[url('../assets/icon/ico-close.png')]">닫기</button>
+                        <button type="button" class="w-[38px] h-[38px] bg-[length:17px_17px] lg:bg-auto lg:w-[49px] lg:h-[65px] absolute top-0 right-0 z-10 text-[0] bg-[url('../assets/icon/ico-srch.png')] bg-center bg-no-repeat" onclick="$('#topSearchForm').submit();">검색</button>
+                    </div>
+                    <!-- 자동완성 -->
+                    <div class="hidden relative py-[10px] mb-5">
+                        <div class="px-[13px] lg:px-[26px]">
+                            <ul id="autoCompleteList">
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('하바이아나스');">하바이아<span class="text-[#ff774b]">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('피오리아나');">피오리아<span class="text-[#ff774b]">나</span><span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('피나이더');">피<span class="text-[#ff774b]">나</span>이더<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('피나모레');">피<span class="text-[#ff774b]">나</span>모레<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('프리티 발레리나스');">프리티 발레리<span class="text-[#ff774b]">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('포르나세티');">포르<span class="text-[#ff774b]">나</span>세티<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('파비아나필리피');">파비아<span class="text-[#ff774b]">나</span>필리피<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('파비아나페리');">파비아<span class="text-[#ff774b]">나</span>페리<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('콜리나 스트라다');">콜리<span class="text-[#ff774b]">나</span> 스트라다<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('컬러스 오브 켈리포이나');">컬러스 오브 켈리포이<span class="text-[#ff774b]">나</span><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //자동완성 -->
+                </div>
+                                    
+                <div>
+                    <!-- 최근 검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative xl:min-h-[640px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:text-2xl lg:px-0">최근 검색어</div>
+                        <div class="px-6 lg:p-0">
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=골든구스 스니커즈" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">골든구스 스니커즈</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515206">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=미우미우 마테라쎄" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">미우미우 마테라쎄</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="523655">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=토트백" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">토트백</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="593942">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=버버리" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">버버리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="467725">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=오트리" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">오트리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="519748">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=구찌 케이스" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">구찌 케이스</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="488299">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=미우미우" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">미우미우</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="557471">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=구찌" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">구찌</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="487328">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=생로랑" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">생로랑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515144">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=구찌 지갑" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">구찌 지갑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="609453">검색어삭제</button></span>
+                        </div>
+                    </div>
+                    <!-- 추천 검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative pt-[22px] lg:pt[0] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h-[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0">추천 검색어</div>
+                        <div class="px-6 pb-5 lg:px-[30px]">
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/promotion/event_view?event=828" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">미우미우 미니백 득템 찬스!</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/promotion/enjoy_atny" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">✨애트니 200% 즐기기✨</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/promotion/event_view?event=837" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">MD가 추천하는 가을 아이템 #트렌치코트</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/promotion/event_view?event=836" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">여유로운 휴양지 바이브, 카사블랑카</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/promotion/event_view?event=762" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">브라운 아이템 모음zip</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/board/?id=magazine" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">❣️애트니 매거진❣️</a></span>
+                        </div>
+                    </div>
+                    <!-- 인기 검색어 -->
+                    <div class="box-border relative lg:float-left lg:w-1/3">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0 relative pt-[22px] lg:pt[0]">인기검색어<span class="float-right text-[9px] text-[#807e7e] font-normal lg:text-[13px] lg:mt-[7px]]">2022.10.13 업데이트</span></div>
+                        <div class="px-6 lg:pr-0 pb-[30px] lg:pl-[30px]">
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">1</span><a href="/goods/search?osearchtext=미우미우" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">미우미우</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">2</span><a href="/goods/search?osearchtext=프라다"class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">프라다</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">3</span><a href="/goods/search?osearchtext=발렌시아가" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">발렌시아가</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-15 lg:text-[17px] text-[#1dc9ff] pl-4 bg-[url('../assets/icon/ico-ranking-down.png')] bg-[left_center] bg-no-repeat">DOWN</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">4</span><a href="/goods/search?osearchtext=구찌" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">구찌</a>
+                                <span class="absolute right-0 top-0 text-xs text-center h-[1px] w-10 bg-[url('../assets/icon/ico-same.png')] bg-center bg-no-repeat"></span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">5</span><a href="/goods/search?osearchtext=버버리" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">버버리</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b]">NEW</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">6</span><a href="/goods/search?osearchtext=메종키츠네" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">메종키츠네</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">7</span><a href="/goods/search?osearchtext=톰브라운" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">톰브라운</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">8</span><a href="/goods/search?osearchtext=셀린느" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">셀린느</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">9</span><a href="/goods/search?osearchtext=펜디" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">펜디</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">10</span><a href="/goods/search?osearchtext=보테가베네타" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">보테가베네타</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //검색 레이어 -->        
+        <div id="layout_wrap">
+            <div id="layout_content" class="min-h-[80vh] lg:min-h-0 lg:pb-[10px]">
+                <div class="mx-auto max-w-[1240px] lg:pt-[70px]" id="event-tab">
+                    <ul class="border-b border-[#ebebeb] text-center flex lg:justify-center">
+                        <li class="w-1/2 relative after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-[-1px] after:border-b-2 after:border-black font-['EverettM'] text-xs h-[42px] leading-10 font-black lg:inline-block lg:w-auto lg:mr-[70px] lg:text-[16px] cursor-pointer">이벤트</li>
+                        <li class="w-1/2 relative font-['EverettM'] text-xs h-[42px] leading-10 font-black text-[#a3a3a3] lg:inline-block lg:w-auto lg:text-[16px] cursor-pointer">종료된 이벤트</li>
+                    </ul>
+                </div>
+                <!-- 이벤트 -->
+                <div class="max-w-[1440px] mt-[17px] mx-auto px-[15px] ld:px-0" id="event-content">
+                    <ul class="flex flex-wrap ml-[-8px] lg:ml-[-26px]">
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="../promotion/event_view?event=878">                                
+                                <span class="block relative">
+                                    <img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_878.jpg" title="" alt="">
+                                    <span class="absolute right-0 top-0 w-[43px] z-20"><img src="../assets/icon/event_icon01.png" alt="마감임박" title=""></span>
+                                </span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">10월 2차 럭키드로우</sp>
+                            </a>
+                        </li>
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="../promotion/event_view?event=837">
+                                <span class="block relative"><img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_837.jpg" title="" alt=""></span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">이 아이템 AUTUMN? #트렌치코트</span>
+                            </a>
+                        </li>
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="../promotion/event_view?event=879">
+                                <span class="block relative"><img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_879.jpg" title="" alt=""></span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">이 아이템 AUTUMN? #스카프&amp;머플러</span>
+                            </a>
+                        </li>
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="../promotion/event_view?event=934">
+                                <span class="block relative"><img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_934.jpg" title="" alt=""></span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">이 아이템 AUTUMN? #퍼 핸드백</span>
+                            </a>
+                        </li>
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="https://atny.com/goods/brand?code=0572">
+                                <span class="block relative"><img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_951.jpg" title="" alt=""></span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">호기로운 호기심의 결과물, 마틴 로즈</span>
+                            </a>
+                        </li>
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="../promotion/event_view?event=878">
+                                <span class="block relative"><img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_878.jpg" title="" alt=""></span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">10월 2차 럭키드로우</span>
+                            </a>
+                        </li>
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="../promotion/event_view?event=837">
+                                <span class="block relative"><img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_837.jpg" title="" alt=""></span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">이 아이템 AUTUMN? #트렌치코트</span>
+                            </a>
+                        </li>
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="../promotion/event_view?event=879">
+                                <span class="block relative"><img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_879.jpg" title="" alt=""></span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">이 아이템 AUTUMN? #스카프&amp;머플러</span>
+                            </a>
+                        </li>                      
+                    </ul>
+                    <div class="mt-[30px] mb-[50px] text-center">
+                        <a class="border-none min-w-[25px] h-[25px] cursor-pointer leading-[25px] mx-[5px] inline-block rounded-full align-top bg-[url('../assets/icon/btn_pagePrev.gif')] bg-center bg-no-repeat text-[0]">이전</a>
+                        <a class="border-none min-w-[25px] h-[25px] cursor-pointer leading-[25px] mx-[5px] inline-block rounded-full align-top text-center bg-black text-white">1</a>
+                        <a class="border-none min-w-[25px] h-[25px] cursor-pointer leading-[25px] mx-[5px] inline-block rounded-full align-top text-center text-black">2</a>
+                        <a class="border-none min-w-[25px] h-[25px] cursor-pointer leading-[25px] mx-[5px] inline-block rounded-full align-top bg-[url('../assets/icon/btn_pageNext.gif')] bg-center bg-no-repeat text-[0]">다음</a>
+                    </div>
+                </div>                
+                <!-- //이벤트 -->
+                <!-- 종료된 이벤트 -->
+                <div class="max-w-[1440px] mt-[17px] mx-auto px-[15px] ld:px-0 hidden" id="finishedEvent-content">
+                    <ul class="flex flex-wrap -ml-2 lg:ml-[-26px]">
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="../promotion/event_view?event=878">
+                                <span class="block relative">
+                                    <img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_878.jpg" title="" alt="">
+                                    <span class="absolute right-0 top-0 w-[43px] z-20"><img src="../assets/icon/event_icon02.png" alt="종료" title=""></span>
+                                </span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">10월 2차 럭키드로우</span>
+                            </a>
+                        </li>
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="../promotion/event_view?event=837">
+                                <span class="block relative">
+                                    <img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_837.jpg" title="" alt="">
+                                    <span class="absolute right-0 top-0 w-[43px] z-20"><img src="../assets/icon/event_icon02.png" alt="종료" title=""></span>
+                                </span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">이 아이템 AUTUMN? #트렌치코트</span>
+                            </a>
+                        </li>
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="../promotion/event_view?event=879">
+                                <span class="block relative">
+                                    <img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_879.jpg" title="" alt="">
+                                    <span class="absolute right-0 top-0 w-[43px] z-20"><img src="../assets/icon/event_icon02.png" alt="종료" title=""></span>
+                                </span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">이 아이템 AUTUMN? #스카프&amp;머플러</span>
+                            </a>
+                        </li>
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="../promotion/event_view?event=934">
+                                <span class="block relative">
+                                    <img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_934.jpg" title="" alt="">
+                                    <span class="absolute right-0 top-0 w-[43px] z-20"><img src="../assets/icon/event_icon02.png" alt="종료" title=""></span>
+                                </span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">이 아이템 AUTUMN? #퍼 핸드백</span>
+                            </a>
+                        </li>
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="https://atny.com/goods/brand?code=0572">
+                                <span class="block relative">
+                                    <img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_951.jpg" title="" alt="">
+                                    <span class="absolute right-0 top-0 w-[43px] z-20"><img src="../assets/icon/event_icon02.png" alt="종료" title=""></span>
+                                </span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">호기로운 호기심의 결과물, 마틴 로즈</span>
+                            </a>
+                        </li>
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="../promotion/event_view?event=878">
+                                <span class="block relative">
+                                    <img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_878.jpg" title="" alt="">
+                                    <span class="absolute right-0 top-0 w-[43px] z-20"><img src="../assets/icon/event_icon02.png" alt="종료" title=""></span>
+                                </span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">10월 2차 럭키드로우</span>
+                            </a>
+                        </li>
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="../promotion/event_view?event=837">
+                                <span class="block relative">
+                                    <img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_837.jpg" title="" alt="">
+                                    <span class="absolute right-0 top-0 w-[43px] z-20"><img src="../assets/icon/event_icon02.png" alt="종료" title=""></span>
+                                </span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">이 아이템 AUTUMN? #트렌치코트</span>
+                            </a>
+                        </li>
+                        <li class="pt-[15px] pl-2 w-1/2 box-border lg:w-1/4 lg:pt-[26px] lg:pl-[26px]">
+                            <a href="../promotion/event_view?event=879">
+                                <span class="block relative">
+                                    <img class="w-full" src="http://www.atny.com/data/event/m_event_view_banner_879.jpg" title="" alt="">
+                                    <span class="absolute right-0 top-0 w-[43px] z-20"><img src="../assets/icon/event_icon02.png" alt="종료" title=""></span>
+                                </span>
+                                <span class="block text-[#333] mt-[10px] text-center px-[10px] text-[12px] font-bold max-h-[36px] overflow-hidden text-ellipsis leading-[18px] lg:max-h-[46px] lg:leading-[23px]">이 아이템 AUTUMN? #스카프&amp;머플러</span>
+                            </a>
+                        </li>                      
+                    </ul>
+                    <div class="mt-[30px] mb-[50px] text-center">
+                        <a class="border-none min-w-[25px] h-[25px] cursor-pointer leading-[25px] mx-[5px] inline-block rounded-full align-top bg-[url('../assets/icon/btn_pagePrev.gif')] bg-center bg-no-repeat text-[0]">이전</a>
+                        <a class="border-none min-w-[25px] h-[25px] cursor-pointer leading-[25px] mx-[5px] inline-block rounded-full align-top text-center bg-black text-white">1</a>
+                        <a class="border-none min-w-[25px] h-[25px] cursor-pointer leading-[25px] mx-[5px] inline-block rounded-full align-top text-center text-black">2</a>
+                        <a class="border-none min-w-[25px] h-[25px] cursor-pointer leading-[25px] mx-[5px] inline-block rounded-full align-top bg-[url('../assets/icon/btn_pageNext.gif')] bg-center bg-no-repeat text-[0]">다음</a>
+                    </div>
+                </div>                
+                <!-- //종료된 이벤트 -->
+            </div>
+        </div>
+        <!-- mobile floating menu -->
+        <div class="xl:hidden fixed left-0 right-0 bottom-0 z-[99] bg-white p-0">
+			<ul class="px-[35px] flex">
+				<li class="w-[15%]" id="mobile-menu"><a href="javascript:;" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu1.svg')] bg-[center_4px] bg-no-repeat">메뉴</span></a></li>
+				<li class="w-[15%]"><a href="/goods/oneday_delivery" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu2.svg')] bg-[center_4px] bg-no-repeat">하루배송</span></a></li>
+				<li class="w-[40%]"><a href="/" class="block relative h-full"><span class="text-[0] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/logo.svg')] bg-[center_14px] bg-no-repeat bg-[length:76px_18px]">홈</span></a></li>
+				<li class="w-[15%]"><a href="/mypage/wish" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu3.svg')] bg-[center_4px] bg-no-repeat">위시리스트</span></a></li>
+				<li class="w-[15%]"><a href="/mypage" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu4.svg')] bg-[center_4px] bg-no-repeat">마이페이지</span></a></li>
+			</ul>
+		</div>
+        <!-- //mobile floating menu -->
+
+        <!-- footer -->
+		<footer><script>Util.include('../common/footer.html')</script></footer>
+		<!-- //footer -->
+    </div>
+
+    <script src="../js/include.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        // 모바일 메뉴 레이어 열기
+        $('#mobile-menu').on('click',function(){
+            $('#mobile-layer').addClass('!z-[50]');
+            $('#mobile-layer > div:first-child').addClass('!block');
+            $('#mobile-menu-content').addClass('!top-[42px]');
+            var mobile_swiper = new Swiper('#mobile-layer .swiper',{
+                slidesPerView:'4.5',
+                spaceBetween: 8
+            })
+        })
+        // 모바일 메뉴 레이어 닫기
+        $('#mobile-layer-close').on('click',function(){
+            $('#mobile-layer').removeClass('!z-[50]');
+            $('#mobile-layer > div:first-child').removeClass('!block');
+            $('#mobile-menu-content').removeClass('!top-[42px]');
+        })
+        
+        function search_layer(){
+            $('#search-layer').addClass('!block');
+        }
+
+        //검색 레이어 닫기
+        $('#search-layer-close').on('click',function(){
+            $('#search-layer').removeClass('!block');
+        })
+
+        /*gnb*/
+        $(window).on("load resize", function() {
+            if ($(window).width() > 768) {
+                if ($('.main').length > 0) {
+                    $('.header_cont').hover(
+                        function() {
+                            $(this).addClass('on');
+                        },
+                        function() {
+                            $(this).removeClass('on');
+                        }
+                    );
+                }
+                $('.header .gnb_wrap .dep1').hover(
+                    function() {
+                        $(this).find('.dep2').css('display', 'block');
+                        $('.header .gnb_wrap .dep1_ul.on').addClass('tmpon');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('on');
+                    },
+                    function() {
+                        $(this).find('.dep2').css('display', 'none');
+                        $('.header .gnb_wrap .dep1_ul.tmpon').addClass('on');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('tmpon');
+                    }
+                );
+            }
+        });
+
+        /*footer*/
+        
+
+        /* 검색 레이어 관련 */
+        function srch_layer(){
+            $('#search-layer').addClass('!block');
+        }
+
+        $('.search_full_layer .button_back2').on('click', function () {
+            $('.search_full_layer').removeClass('on');
+        });
+
+        $('.mobile-category-wrap input[type="text"]').on('click', function () {
+            $('.search_full_layer').addClass('on');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+
+        $('.header_top .ico_srch, .m_btm_menu .resp_top_search').on('click',function(){
+            $('.search_full_layer').addClass('on');
+        });
+        $('.search_full_layer .btn_close').on('click',function(){
+            $('.search_full_layer').removeClass('on');
+        });
+
+        $('.mobile-category-wrap .button-search').on('click', function () {
+            $('.search_full_layer').addClass('on');
+            if ($('.mobile-category-wrap input[type="text"]').attr('value')) {
+                $('.search_full_layer input[name="search_text"]').attr('value', $('.mobile-category-wrap input[type="text"]').attr('value'));
+            }
+        })
+
+        $('.header .rig_menu .btn-srch').on('click', function () {
+            $('.search_full_layer').addClass('on');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+        
+        /*이벤트/종료된 이벤트*/
+        $('#event-tab li').on('click',function(){
+            let idx = $(this).index();
+            $('#event-tab li').removeClass(["after:content-['']", "after:absolute", "after:left-0", "after:right-0", "after:bottom-[-1px]", "after:border-b-2", "after:border-black"])
+            $(this).addClass(["after:content-['']", "after:absolute", "after:left-0", "after:right-0", "after:bottom-[-1px]", "after:border-b-2", "after:border-black"])
+            if(idx==0){
+                $('#event-content').removeClass('hidden').addClass('block')
+                $('#finishedEvent-content').removeClass('block').addClass('hidden')
+            }else{
+                console.log('1')
+                $('#finishedEvent-content').removeClass('hidden').addClass('block')
+                $('#event-content').removeClass('block').addClass('hidden')
+            }
+        })
+
+       
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <script src="../js/util.js"></script>
+  <script>Util.include('../common/head_2.html');</script>
+</head>
+<body>
+<div id="wrap">
+  <!-- header -->
+  <script>Util.include('../common/header_list.html');</script>
+  <!-- header -->
+  <div id="layout_wrap">
+    <!-- 리스트 -->
+    <!-- 키워드 검색시 상품 없을 경우 -->
+    <div id="no-result">
+      <div class="hidden md:block md:order-[-2] md:text-center md:text-[#121212] md:text-[22px] md:py-[105px] md:leading-none md:border-b md:border-[#e7e5ea] md:font-bold">
+        <strong class="font-bold text-[#121212]">‘slsldk'</strong> 검색결과
+      </div>
+      <div class="w-full text-center text-[#121212] pt-[160px] pb-[400px]">검색결과가 없습니다.</div>
+    </div>
+    <!-- //키워드 검색시 상품 없을 경우 -->
+    <!-- //리스트 -->
+  </div>
+  
+  <!-- footer -->
+  <footer>
+    <script>Util.include('../common/footer.html')</script>
+  </footer>
+  <!-- //footer -->
+</div>
+
+<script src="../js/include.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+  // 모바일 메뉴 레이어 열기
+  $('#mobile-menu').on('click', function () {
+    $('#dmm').removeClass('hidden');
+    $('#mobile-menu-content').addClass('!top-[42px]');
+    var mobile_swiper = new Swiper('#mobile-menu-content .swiper', {
+      slidesPerView : '4.5',
+      spaceBetween : 8
+    })
+  })
+  // 모바일 메뉴 레이어 닫기
+  $('#mobile-layer-close').on('click', function () {
+    $('#dmm').addClass('hidden');
+    $('#mobile-menu-content').removeClass('!top-[42px]');
+  })
+  
+  function search_layer() {
+    $('#search-layer').addClass('!block');
+  }
+  
+  //검색 레이어 닫기
+  $('#search-layer-close').on('click', function () {
+    $('#search-layer').removeClass('!block');
+  })
+  
+  /*gnb*/
+  $(window).on("load resize", function () {
+    if ($(window).width() > 768) {
+      if ($('.main').length > 0) {
+        $('.header_cont').hover(
+          function () {
+            $(this).addClass('on');
+          },
+          function () {
+            $(this).removeClass('on');
+          }
+        );
+      }
+      $('.header .gnb_wrap .dep1').hover(
+        function () {
+          $(this).find('.dep2').css('display', 'block');
+          $('.header .gnb_wrap .dep1_ul.on').addClass('tmpon');
+          $('.header .gnb_wrap .dep1_ul').removeClass('on');
+        },
+        function () {
+          $(this).find('.dep2').css('display', 'none');
+          $('.header .gnb_wrap .dep1_ul.tmpon').addClass('on');
+          $('.header .gnb_wrap .dep1_ul').removeClass('tmpon');
+        }
+      );
+    }
+  });
+  
+  /* 검색 레이어 관련 */
+  function srch_layer() {
+    $('#search-layer').addClass('!block');
+  }
+  
+  $('.search_full_layer .button_back2').on('click', function () {
+    $('.search_full_layer').removeClass('on');
+  });
+  
+  $('.mobile-category-wrap input[type="text"]').on('click', function () {
+    $('.search_full_layer').addClass('on');
+    $('.search_full_layer input[name=search_text]').focus();
+    var len = $('.search_full_layer input[name=search_text]').val().length;
+    $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+  });
+  
+  $('.header_top .ico_srch, .m_btm_menu .resp_top_search').on('click', function () {
+    $('.search_full_layer').addClass('on');
+  });
+  $('.search_full_layer .btn_close').on('click', function () {
+    $('.search_full_layer').removeClass('on');
+  });
+  
+  $('.mobile-category-wrap .button-search').on('click', function () {
+    $('.search_full_layer').addClass('on');
+    if ($('.mobile-category-wrap input[type="text"]').attr('value')) {
+      $('.search_full_layer input[name="search_text"]').attr('value', $('.mobile-category-wrap input[type="text"]').attr('value'));
+    }
+  })
+  
+  $('.header .rig_menu .btn-srch').on('click', function () {
+    $('.search_full_layer').addClass('on');
+    $('.search_full_layer input[name=search_text]').focus();
+    var len = $('.search_full_layer input[name=search_text]').val().length;
+    $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+  });
+  
+  // 모바일 카테고리
+  function layer_open() {
+    $('#mobile-category-layer').removeClass('hidden');
+  }
+  
+  function layer_close() {
+    $('#mobile-category-layer').addClass('hidden');
+  }
+  
+  /* 리스트 스트립트 시작 */
+  // 찜하기
+  $(".btn-like").on("click", function () {
+    $btn = $(this).addClass("scale-110");
+    setTimeout(function () {
+      $btn.removeClass('scale-110')
+    }, 500)
+    
+    $(this).toggleClass('off')
+    $(this).toggleClass('on')
+    
+    if ($(this).hasClass('off')) {
+      setTimeout(function () {
+        $btn.css('background-image', "url('../assets/icon/ico-heart.svg')")
+      }, 100)
+    } else {
+      setTimeout(function () {
+        $btn.css('background-image', "url('../assets/icon/ico-heart-on.svg')")
+      }, 500)
+    }
+  })
+  
+  // pc에서 상품 마우스호버
+  if ($(window).width() > 768) {
+    $(".goods_list_wrap li .imgBox").bind("mouseover", function () {
+      if ($(this).find('.goods_image').length > 1) {
+        $(this).find('.goods_image').eq(0).hide();
+        $(this).find('.goods_image').eq(1).show();
+      }
+    }).bind("mouseout", function () {
+      if ($(this).find('.goods_image').length > 1) {
+        $(this).find('.goods_image').eq(0).show();
+        $(this).find('.goods_image').eq(1).hide();
+      }
+    });
+  }
+  
+  // 모바일 filter
+  $('#btn-filter,#btn-filter2').on('click', function () {
+    $('#layer-filter').removeClass('hidden');
+  })
+  
+  // 피시 filter scroll fix
+  if ($('#layer-filter').length > 0) {
+    if ($(window).width() > 1024) {
+      const top_offset = $('#list-sort').height() + $('#banner-box').height() + $('#no-result').innerHeight() - 142;
+      
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 1109) { //값이 이상해서 정수값을 넣었습니다.
+          // 클래스가 많아지니까 안먹히는 현상으로 여러줄로 선언했습니다.
+          $('#layer-filter').removeClass('md:static').removeClass('left-0').removeClass('top-0').removeClass('bottom-0');
+          $('#layer-filter').addClass('!fixed').addClass('!top-[146px]').addClass('!left-1/2');
+          $('#layer-filter').addClass('!bottom-[235px]').addClass('!pt-0');
+          $('#layer-filter').addClass('ml-[-720px]');
+          $('#filter-item').addClass('!fixed').addClass('!top-[145px]').addClass('left-1/2');
+          $('#filter-item').addClass('ml-[-415px]');
+          $('#item-list').removeClass('md:pl-[85px]').addClass('md:pl-[305px]')
+        } else {
+          $('#layer-filter').addClass('md:static').addClass('left-0').addClass('top-0').addClass('bottom-0');
+          $('#layer-filter').removeClass('!fixed').removeClass('!top-[146px]').removeClass('!left-1/2');
+          $('#layer-filter').removeClass('!bottom-[235px]').removeClass('!pt-0');
+          $('#layer-filter').removeClass('ml-[-720px]');
+          $('#filter-item').removeClass('!fixed').removeClass('!top-[146px]').removeClass('left-1/2').removeClass('ml-[-415px]');
+          $('#item-list').removeClass('md:pl-[305px]').addClass('md:pl-[85px]')
+          
+        }
+      });
+      
+    } else {
+      const list_top2 = $('#list-content-wrap').offset().top - $('#header').height();
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > list_top2) {
+          $('#list-content-wrap').addClass('fixed');
+        } else {
+          $('#list-content-wrap').removeClass('fixed');
+        }
+      });
+    }
+  }
+  
+  // 모바일 필터 아이템 픽스
+  if ($('#mobile-filter-item').length > 0) {
+    if ($(window).width() < 1024) {
+      const filter_top_offset = $('#banner-box').innerHeight() + $('#no-result').innerHeight();
+      $(window).scroll(function () {
+        console.log($(this).scrollTop() + ',' + filter_top_offset)
+        if ($(this).scrollTop() > filter_top_offset) {
+          $('#mobile-filter-item').addClass('fixed').addClass('left-0').addClass('top-[56px]').addClass('right-0').addClass('z-[100]');
+        } else {
+          $('#mobile-filter-item').removeClass('fixed').removeClass('left-0').removeClass('top-[56px]').removeClass('right-0').removeClass('z-[100]');
+        }
+      });
+    }
+  }
+  
+  /* filter title click */
+  $('.category-title').on('click', function () {
+    
+    $(this).toggleClass('on')
+    if ($(window).width() > 1024) {
+      if ($(this).hasClass('on')) {
+        $(this).next('.cetegory-content').slideUp();
+      } else {
+        $(this).next('.cetegory-content').slideDown();
+      }
+    } else {
+      $('.cetegory-content').removeClass('z-[100]');
+      $(this).next('.cetegory-content').addClass('z-[100]');
+    }
+  })
+  
+  $('#btn-filter-close').on('click', function () {
+    $('#layer-filter').addClass('hidden');
+  })
+  
+</script>
+
+</body>
+</html>

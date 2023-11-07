@@ -1,0 +1,96 @@
+<section id="planning_banner" class="SEC-1 overflow-hidden">
+  <div class="INSIDE px-[15px] relative overflow-hidden md:w-[1294px] md:px-0">
+    <!-- left -->
+    <div class="relative md:w-[557px] md:h-[730px] md:float-left md:z-10 md:pr-[21px]">
+      <a href="javascript:;">
+        <img src="../images/img-6.jpg" alt="banner" class="w-full">
+        <span class="absolute right-[31px] top-[14px] text-[11px] text-black leading-[18px]">@__ryeong</span>
+      </a>
+    </div>
+    <!-- //left -->
+    <!-- right -->
+    <div class="overflow-visible relative z-0 md:w-[735px] md:h-[730px] md:float-left md:border-b md:border-[#eff1f4] md:overflow-hidden">
+      <div class="absolute h-[79px] right-0 left-[9px] top-[-88px] z-[99] overflow-hidden md:relative md:pb-[68px] md:h-auto md:left-0 md:top-0">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            
+            {{#times 8}}
+              <div class="swiper-slide" data-key="{{index}}">
+                <img src="../images/img-7-{{number}}.jpg" alt="banner" class="max-h-[186px] relative overflow-hidden">
+              </div>
+            {{/times}}
+
+          </div>
+          <span class="swiper-notification"></span>
+        </div>
+        <div class="swiper-button-next hidden md:block w-[37px] h-[59px] absolute right-0 top-auto bottom-0 cursor-pointer left-auto z-50 bg-[url('../assets/icon/btn-slide-right.png')] bg-center bg-no-repeat after:hidden"></div>
+        <div class="swiper-button-prev hidden md:block w-[37px] h-[59px] absolute left-0 top-auto bottom-0 cursor-pointer z-50 bg-[url('../assets/icon/btn-slide-left.png')] bg-center bg-no-repeat after:hidden"></div>
+      </div>
+      <div class="pt-[15px] md:pt-[40px]">
+        <div class="md:mb-[15px]">
+          <div class="text-[13px] leading-tight text-[#121212] font-bold md:text-[26px]">애트니 크루 #진령</div>
+          <div class="text-[11px] leading-[18px] mt-[7px] text-[#121212] break-keep pr-[5px] md:text-[16px] md:leading-[25px]">러블리함이 풍기는 프렌치 스타일 활용법!</div>
+        </div>
+        <div class="overflow-hidden md:space-x-[15px]">
+          
+          {{#times 3}}
+            <div class="py-[14px] flex flex-nowrap border-b border-[#e7e5ea] md:p-0 md:inline-block md:float-left md:border-0 md:w-[235px]" data-key="{{index}}">
+              <div class="w-[87px] h-[83px] bg-[#fafafb] relative overflow-hidden md:h-[227px] md:w-full">
+                <a href="javascript:;" class="absolute top-0 left-0 right-0 bottom-0 z-10">
+                  <img src="../images/img-8-{{number}}.jpg" class="absolute max-w-[95%] max-h-[95%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="">
+                </a>
+              </div>
+              <div class="pt-[2px] pl-6 grow relative md:pt-[6px] md:pl-0">
+                <div class="text-[11px] mt-[14px] text-[#121212] font-['EverettM'] md:text-xs md:mt-0">
+                  BY FAR {{number}}
+                </div>
+                <div class="text-[11px] mt-1 text-[#121212] md:text-xs">
+                  여성 베이비 크러쉬 숄더/크로스백
+                </div>
+                <div class="mt-1 md:mt-0">
+                  <span class="text-xs font-medium text-[#121212] md:text-[14px] md:font-normal">
+                    1,163,000
+                  </span>
+                  <span class="text-xs font-semibold text-[#daac53]">
+                    6%
+                  </span>
+                </div>
+                <button type="button" class="absolute z-10 w-[19px] top-[2px] right-[26px] pt-5 leading-none md:right-[3px] md:top-[9px] md:pt-6">
+                  <span class="absolute right-0 top-0 z-30 bg-[url('../assets/icon/ico-heart.svg')] bg-center bg-no-repeat w-[19px] h-[19px] text-[0] btn-like off ease-in-out duration-500 transform"></span>
+                  <span class="text-[#c6cad1] text-[10px] leading-none md:text-xs">
+                    3
+                  </span>
+                </button>
+              </div>
+            </div>
+          {{/times}}
+
+        </div>
+      </div>
+    </div>
+    <!-- //right -->
+  </div>
+
+  <script>
+    {
+      new Swiper('#planning_banner .swiper', {
+        slidesPerView : 4.5,
+        spaceBetween : 4,
+        loopedSlides : 5,
+        loop : true,
+        watchSlidesProgress : true,
+        navigation : {
+          nextEl : '#planning_banner .swiper-button-next',
+          prevEl : '#planning_banner .swiper-button-prev',
+        },
+        clickable : true,
+        breakpoints : {
+          769 : {
+            slidesPerView : 5,
+            spaceBetween : 8,
+          }
+        }
+      });
+    }
+  </script>
+</section>

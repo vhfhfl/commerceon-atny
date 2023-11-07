@@ -1,0 +1,29 @@
+<div id="top_common_ban">
+  <div class="swiper-container h-[30px] overflow-hidden">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide h-[30px] text-center text-xs leading-[30px] relative text-white bg-black">
+        <a href="">Slide 1</a>
+        <button type="button" class="bg-[url('../assets/icon/ico_close_w.svg')] w-[14px] h-[14px] overflow-hidden indent-[-9999px] absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-cover">닫기</button>
+      </div>
+      <div class="swiper-slide h-[30px] text-center text-xs leading-[30px] relative text-black bg-[#00ccffff]">
+        <a href="">Slide 2</a>
+        <button type="button" class="bg-[url('../assets/icon/ico_close_w.svg')] w-[14px] h-[14px] overflow-hidden indent-[-9999px] absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-cover">닫기</button>
+      </div>
+      <div class="swiper-slide h-[30px] text-center text-xs leading-[30px] relative text-white bg-[#ff2500ff]">
+        <a href="">Slide 3</a>
+        <button type="button" class="bg-[url('../assets/icon/ico_close_w.svg')] w-[14px] h-[14px] overflow-hidden indent-[-9999px] absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-cover">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var swiper = new Swiper('#top_common_ban > .swiper-container', {
+    direction: 'vertical',
+    slidesPerView: 1,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+    },
+  });
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+      <script src="../js/util.js"></script>
+      <script>Util.include('../common/head_2.html');</script>
+    </head>
+<body>
+    <div id="wrap">   
+        <!-- contents -->
+        <div id="layout_wrap">
+            <div id="layout_content" class="min-h-[80vh] lg:min-h-0 lg:pb-[100px]">
+                <!-- 파일 첨부 -->
+                <div class="relative h-10 bg-black">
+                    <h1 class="h-10 leading-10 text-[14px] text-white px-[10px]">파일 첨부</h1>
+                    <a href="javascript:void(0);" onclick="closeWindow();" title="닫기" class="absolute top-0 right-0 w-10 h-10 bg-[url('../assets/icon/ico_close_w.svg')] bg-no-repeat bg-center text-[0] bg-[length:18px_18px]">X</a>
+                </div>
+                <div>
+                    <ul class="pt-[10px] px-[10px] pb-[60px]">
+                        <li class="my-[6px] leading-5 text-[15px] text-[#555]">- 여러 개의 파일을 한꺼번에 등록 가능합니다. (멀티업로드)</li>
+                        <li class="my-[6px] leading-5 text-[15px] text-[#555]">- 최대 20MB 까지 가능</li>
+                        <li class="my-[6px] leading-5 text-[15px] text-[#555]">- 이미지 용량에 따라 사진 업로드 시간이 다소 걸릴 수 있습니다.</li>
+                        <li class="my-[6px] leading-5 text-[15px] text-[#555] pt-[10px] text-['verdana']">                            
+                            <div class="pt-[10px]">                                
+                                <input type="file" id="uploader" name="file_info[]" style="color:transparent;" accept="image/*" multiple="">					
+                                <div class="pt-[10px]">
+                                    <img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/314.png" alt="" title="" class="inline">
+                                    <span class="text-[#357bc3] text-[15px] font-black pl-1">672133.jpg</span>
+                                </div>
+                                <div class="pt-[10px]">
+                                    <img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/314.png" alt="" title="" class="inline">
+                                    <span class="text-[#357bc3] text-[15px] font-black pl-1">672133.jpg</span>
+                                </div>
+                            </div>
+                        </li>                   
+                    </ul>
+                    <div class="fixed bottom-0 left-0 right-0 text-center py-[10px]">
+                        <button type="button" id="saveGoodsImg" class="bg-[#357bc3] border border-[#357bc3] text-white rounded-sm h-10 text-[16px] w-[100px]">저장</button>
+                    </div>
+                    <!-- 로딩중에 뜨는 이미지 입니다. -->
+                    <div>
+                        <img src="../assets/icon/img_atny_loading.gif" title="" alt="로딩중">                        
+                    </div>
+                    <!-- //로딩중에 뜨는 이미지 입니다. -->
+                </div>
+                <!-- //파일 첨부 -->
+            </div>
+        </div>
+        <!-- //contents -->
+    </div>
+    <script src="../js/include.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script><!--flowbite-->
+    
+
+</body>
+</html>

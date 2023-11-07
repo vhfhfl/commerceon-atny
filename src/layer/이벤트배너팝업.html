@@ -1,0 +1,77 @@
+<div class="layer" data-layer-id="이벤트배너팝업">
+  <div class="BG TYPE-2" onclick="Layer.close(this)"></div>
+  <div class="SHELL top-[100px] left-[50px] w-[600px] h-1/2 bg-white">
+      
+      <!--  START :: TYPE(1) // -->
+      <div class="w-full h-full overflow-auto p-[10px]">
+        <span>TEST</span>
+        <img src="../assets/icon/0d04ec1f8da2dee66fc26f2285eb669b1106401.jpg" alt="">
+      </div>
+      <!-- // END :: TYPE(1) -->
+
+      <!-- START :: TYPE(2) - swiper // -->
+      <div id="event-slide-wrap" class="hidden w-full h-full overflow-auto">
+        <div class="swiper">
+          <div class="swiper-wrapper min-h-[70px]">
+            <script type="text/x-handlebars-template">
+             {{#times 10}}
+               <div class="swiper-slide">
+                <a href="http://www.google.com" target="_blank">
+                  <img src="https://gifpng.com/720x590/685CCD/FFEAB8/?text=img_{{number}}"/>
+                </a>
+               </div>
+             {{/times}}
+            </script>
+            <script>
+              Handlebars.write();
+          </script>
+          </div>
+          <div class="swiper-button-next block w-[210px] bg-[url('../assets/icon/btn-visual-next.svg')] bg-[right_center] bg-no-repeat h-[69px] left-auto !right-[8%] mt-[-34px] pr-[58px] cursor-pointer after:hidden"></div>
+          <div class="swiper-button-prev block w-[210px] bg-[url('../assets/icon/btn-visual-prev.svg')] bg-[left_center] bg-no-repeat h-[69px] left-[8%] mt-[-34px] pl-[58px] cursor-pointer after:hidden"></div>
+        </div>
+      </div>
+      <!-- // END :: TYPE(2) - swiper -->
+
+      <!-- START :: footer // -->
+      <div class="overflow-hidden text-[#ddd] text-xs sm:text-[13px] bg-[#666] clear-both">
+        <div class="float-left py-2 px-3">
+          <label class="cursor-pointer">
+            <input type="checkbox" class="invisible w-[1px] h-[1px] overflow-hidden m-0 text-[0] absolute top-0 left-0"/>
+            오늘 하루 이 창을 열지 않음.
+          </label>
+        </div>
+        <div class="btn-close float-right py-2 px-3 cursor-pointer">
+          <a href="javascript:;" class="text-[#ddd]" onclick="Layer.close(this)">닫기</a>
+        </div>
+      </div>
+      <!-- // END :: footer -->
+  </div>
+</div>
+
+<script>
+  document.addEventListener('readystatechange', () => {
+    if (document.readyState === 'interactive') {
+      let swiper = new Swiper("#event-slide-wrap .swiper", {
+        slidesPerView : 1,
+        centeredSlides : true,
+        loop : true,
+        loopedSlides : 2,
+        watchSlidesProgress : true,
+        slideToClickedSlide : false,
+        resistance : true,
+        autoplay : {
+          delay : 2500,
+          disableOnInteraction : false,
+        },
+        navigation : {
+          nextEl : "#event-slide-wrap .swiper-button-next",
+          prevEl : "#event-slide-wrap .swiper-button-prev",
+        },
+        pagination : {
+          el : "#event-slide-wrap .paging",
+          type : "fraction",
+        }
+      });
+    }
+  });
+</script>

@@ -1,0 +1,59 @@
+<div class="RECOMM-WRAP">
+  <div class="px-[15px] md:px-[63px] md:mx-[-63px] md:mb-0 relative">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {{#times 10}}
+          <div class="swiper-slide" data-key="{{index}}">
+            <div class="bg-[#fafafb] relative overflow-hidden h-[115px] md:h-[305px]">
+              <a href="javascript:;" class="absolute left-0 top-0 right-0 bottom-0 z-10">
+                <img src="../images/img-5-{{number}}.jpg" class="absolute max-w-[90%] max-h-[90%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="">
+              </a>
+            </div>
+            <div class="pt-[11px]">
+              <div class="text-[11px] text-[#121212] leading-tight font-['EverettM'] md:text-[14px]">
+                AUTRY {{number}}
+              </div>
+              <div class="text-[11px] mt-[3px] overflow-hidden whitespace-nowrap text-ellipsis text-[#121212] md:text-[14px] md:mt-0">
+                여성 메달리스트 화이트 그린 트레이너 스니커즈
+              </div>
+              <div class="mt-[3px] leading-none">
+                <span class="align-top text-[#121212] text-xs md:text-[16px]">
+                  332,800
+                </span>
+                <span class="align-top text-[#daac53] text-xs md:text-[16px]">
+                  1%
+                </span>
+              </div>
+            </div>
+          </div>
+        {{/times}}
+      </div>
+    </div>
+    <div class="swiper-button-next hidden md:block w-[37px] h-[59px] absolute right-0 mt-[-35px] cursor-pointer left-auto z-50 bg-[url('../assets/icon/btn-slide-right.png')] bg-center bg-no-repeat after:hidden"></div>
+    <div class="swiper-button-prev hidden md:block w-[37px] h-[59px] absolute left-0 mt-[-35px] cursor-pointer z-50 bg-[url('../assets/icon/btn-slide-left.png')] bg-center bg-no-repeat after:hidden"></div>
+  </div>
+
+  <script>
+    {
+      const target = '[data-cpntid="{{cpntid}}"]';
+      const swiper = new Swiper(`${target} .swiper`, {
+        slidesPerView : 2.6,
+        spaceBetween : 7,
+        loop : false,
+        watchSlidesProgress : true,
+        navigation : {
+          nextEl : `${target} .swiper-button-next`,
+          prevEl : `${target} .swiper-button-prev`,
+        },
+        breakpoints : {
+          769 : {
+            slidesPerView : 6,
+            spaceBetween : 13,
+            loopedSlides : 6,
+            loop : false,
+          }
+        }
+      });
+    }
+  </script>
+</div>

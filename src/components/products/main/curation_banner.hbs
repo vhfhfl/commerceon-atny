@@ -1,0 +1,41 @@
+<section id="curation_banner">
+  <div class="mb-[15px] sm:my-[5px]">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+
+        {{#times 10}}
+          <div class="swiper-slide" data-key="{{index}}">
+            <a href="" class="block w-full">
+              <div class="w-[calc(100%-19px)] md:w-[calc(100%-16px)] overflow-hidden absolute left-[9px] bottom-[9px] z-10 md:left-2 md:bottom-2">
+                <div class="max-h-[53px] lg:max-h-[85px] overflow-hidden p-1 text-white text-[13px] leading-4 lg:text-[15px] lg:leading-5 break-keep bg-[rgba(0,0,0,0.4)]">
+                  지금 입기 딱 좋은<br>여성 아우터
+                </div>
+              </div>
+              <img style="aspect-ratio:400/303;" src="../images/img-1-{{number}}.jpg" alt="banner">
+            </a>
+          </div>
+        {{/times}}
+
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    {
+      /* 큐레이션 */
+      new Swiper('#curation_banner .swiper', {
+        slidesPerView : 2.8,
+        spaceBetween : 5,
+        loop : true,
+        loopedSlides : 2,
+        watchSlidesProgress : true,
+        breakpoints : {
+          769 : {
+            slidesPerView : 8.1,
+            spaceBetween : 6,
+          }
+        }
+      });
+    }
+  </script>
+</section>

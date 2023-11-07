@@ -1,0 +1,39 @@
+body{ min-width:0; }
+/**/
+.SITEMAP-UI{ display:grid; gap:10px; }
+.SITEMAP-UI{ grid-template-columns:repeat(1, minmax(0, 1fr)); }
+.SITEMAP-UI > li{ background-color:white; padding:10px; border-radius:5px; box-shadow:0px 0px 10px #999999; }
+.SITEMAP-UI > li > *:not(ul){ font-weight:600; font-size:20px; }
+.SITEMAP-UI ul{ margin-top:10px; }
+.SITEMAP-UI > li > ul > li{ }
+.SITEMAP-UI > li > ul > li > ul{ }
+.SITEMAP-UI > li ul{ margin-left:20px; }
+.SITEMAP-UI > li > ul > li > .label{ position:relative; }
+.SITEMAP-UI > li > ul > li > .label:before{ background-color:#333333; width:4px; height:2px; top:50%; transform:translateY(-50%); left:-4px; display:inline-block; content:""; position:absolute; z-index:3; background-position:center; background-repeat:no-repeat; }
+.SITEMAP-UI > li > ul > li > ul > li > .label{ position:relative; }
+.SITEMAP-UI > li > ul > li > ul > li > .label:before{ background-color:#999999; width:4px; height:2px; top:50%; transform:translateY(-50%); left:-4px; display:inline-block; content:""; position:absolute; z-index:3; background-position:center; background-repeat:no-repeat; }
+.SITEMAP-UI li > .label{ padding-left:10px; padding-right:10px; height:30px; display:flex; align-items:center; }
+.SITEMAP-UI li > a[href]{ text-decoration:none; color:dodgerblue; position:relative; border-radius:5px; }
+.SITEMAP-UI li > a[href]:hover{ background-color:rgba(30,144,255,.8); color:white; }
+body{
+  background:linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size:400% 400%;
+  animation:gradient 15s ease infinite;
+  height:100vh;
+  background-attachment:fixed;
+}
+
+/* 768px 이상 화면*/
+@media screen and (min-width:768px){
+  .SITEMAP-UI{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+}
+
+/* 1024px 이상 화면*/
+@media screen and (min-width:1024px){
+  .SITEMAP-UI{ grid-template-columns:repeat(3, minmax(0, 1fr)); }
+}
+
+/* 1280px 이상 화면*/
+@media screen and (min-width:1280px){
+  .SITEMAP-UI{ grid-template-columns:repeat(4, minmax(0, 1fr)); }
+}

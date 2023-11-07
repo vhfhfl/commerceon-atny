@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+      <script src="../js/util.js"></script>
+      <script>Util.include('../common/head_2.html');</script>
+    </head>
+<body>
+    <div id="wrap">
+        <!-- header -->
+		<script>Util.include('../common/header.html');</script>
+		<!-- //header -->
+
+        <!-- 모바일용 레이어 -->
+        <div class="fixed left-0 top-0 right-0 bottom-0 bg-black/70 z-[1000] hidden" id="dmm"></div>
+        <div class="fixed left-0 right-0 z-[1001] transition-all duration-500 bottom-[48px] top-[100%]" id="mobile-menu-content">
+            <button type="button" class="h-[31px] rounded-t-[30px] bg-white absolute top-0 left-0 right-0 w-full text-[0] after:content-[''] after:w-[57px] after:h-[3px] after:bg-[#212121] after:rounded-[10px] after:absolute after:top-[9px] after:left-1/2 after:-translate-x-1/2" id="mobile-layer-close">닫기</button>
+            <div class="py-[14px] pr-[65px] pl-6 absolute left-0 top-[31px] right-0 bg-white border-b border-[#e7e5ea]">
+                <form name="topSearchForm" action="/goods/search">
+                    <div class="relative h-[31px] rounded-[100px] bg-[#fafafb] border border-[#f7f7f9] box-border pr-[47px]">
+                        <input type="text" name="search_text" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="h-[29px] bg-transparent px-[10px] box-border w-full border-0 text-[13px]">
+                        <button class="h-[29px] absolute right-0 top-0 w-[47px] bg-[url('../assets/icon/ico-search.svg')] bg-center bg-no-repeat z-10 text-[0]" type="submit">검색</button>
+                    </div>
+                </form>
+                <a href="/mypage" class="absolute bg-[url('../assets/icon/ico-myp.svg')] bg-center bg-no-repeat text-[0] right-[21px] top-[17px] z-10 w-6 h-6">마이페이지</a>
+            </div>
+            <div>
+                <div class="bg-[#fafafb] overflow-y-auto absolute left-0 top-[91px] bottom-0 right-0">
+                    <div>
+                        <div class="bg-white border-b border-[#e7e5ea]">
+                            <div class="pt-[15px] px-6">
+                                <ul>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#ff774b] block px-[2px] pb-[3px] border-b-[3px] border-[#ff774b]">WOMEN</a></li>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">MEN</a></li>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">JUNIOR</a></li>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">LIFE</a></li>
+                                </ul>
+                            </div>
+                            <div class="py-[10px] px-6 block">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00020001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                    <li><a href="/goods/catalog?code=00020002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                    <li><a href="/goods/catalog?code=00020003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                    <li><a href="/goods/catalog?code=00020004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                    <li><a href="/goods/catalog?code=00020005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                </ul>
+                            </div>
+                            <div class="hidden">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00010001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                    <li><a href="/goods/catalog?code=00010002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                    <li><a href="/goods/catalog?code=00010003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                    <li><a href="/goods/catalog?code=00010004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                    <li><a href="/goods/catalog?code=00010005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                </ul>
+                            </div>
+                            <div class="hidden">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00030001" class="text-[13px] text-[#212121] block py-[13px]">여아</a></li>
+                                    <li><a href="/goods/catalog?code=00030002" class="text-[13px] text-[#212121] block py-[13px]">남아</a></li>
+                                </ul>
+                            </div>
+                            <div class="hidden">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00040001" class="text-[13px] text-[#212121] block py-[13px]">디지털</a></li>
+                                    <li><a href="/goods/catalog?code=00040002" class="text-[13px] text-[#212121] block py-[13px]">홈</a></li>
+                                    <li><a href="/goods/catalog?code=00040003" class="text-[13px] text-[#212121] block py-[13px]">뷰티</a></li>
+                                    <li><a href="/goods/catalog?code=00040004" class="text-[13px] text-[#212121] block py-[13px]">여행</a></li>
+                                    <li><a href="/goods/catalog?code=00040005" class="text-[13px] text-[#212121] block py-[13px]">반려동물</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                            <div class="py-[10px] px-6">
+                                <ul>
+                                    <li>
+                                        <a href="/goods/best_designers" class="text-[13px] text-[#212121] block py-[13px]">디자이너</a>
+                                    </li>
+                                    <li>
+                                        <a href="/goods/nft" class="text-[13px] text-[#212121] block py-[13px]">정품감정서</a>
+                                    </li>
+                                    <li>
+                                        <a href="/goods/oneday_delivery" class="text-[13px] text-[#212121] block py-[13px]">하루배송</a>
+                                    </li>
+                                    <li>
+                                        <a href="/goods/free_return" class="text-[13px] text-[#212121] block py-[13px]">무료반품</a>
+                                    </li>
+                                    <li>
+                                        <a href="/board/?id=magazine" class="text-[13px] text-[#212121] block py-[13px]">매거진</a>
+                                    </li>
+                                    <li>
+                                        <a href="/promotion/event" class="text-[13px] text-[#212121] block py-[13px]">이벤트</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                            <div class="py-[17px]">
+                                <div class="text-[#c6cad1] text-[11px] mb-[6px] px-6">최근 본 상품</div>
+                                <!-- 내용이 없을 때 -->
+                                <div class="text-center py-5 w-full text-[11px]">최근 본 상품이 없습니다.</div>
+                                <!-- //내용이 없을 때 -->
+                                <div class="swiper pl-6">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide"><a href="/goods/view?no=1541402"><img src="//img.atny.com/data/goods/ATNY/10/1672510/MzQzNDYw_list1.JPG" alt="여성 타임리스 브라운 미니 숄더/크로스백"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow-[inset_0_-8px_10px_rgba(0,0,0,0.03)]">
+                            <ul class="py-[17px] text-center">
+                                <li class="inline-block relative"><a href="/mypage" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">마이페이지</a></li>
+                                <li class="inline-block relative"><a href="/board/?id=faq" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">FAQ</a></li>
+                                <li class="inline-block relative"><a href="/mypage/myqna_write" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px]">1:1문의</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //모바일용 레이어 -->
+
+        <!-- layer - 검색 -->
+        <div class="hidden fixed z-[1000] left-0 top-0 right-0 bottom-0 bg-white overflow-auto" id="search-layer">
+            <div class="w-full max-w-[1240px] mx-auto lg:px-5">
+                <a href="javascript:void(0)" class="w-10 h-[38px] absolute left-[10px] top-[7px] bg-[url('../assets/icon/ico-back.svg')] bg-center bg-no-repeat text-[0] lg:w-[53px] lg:h-[53px] lg:top-[33px] lg:left-auto lg:right-[33px] lg:bg-[url('../assets/icon/ico-close.png')] text-[#444] no-underline border-none outline-none" id="search-layer-close">뒤로</a>
+                <div class="pt-[9px] pr-4 pl-[50px] mb-[22px] lg:px-0 lg:pt-[180px] lg:mb-14">
+                    <div class="pr-[38px] lg:h-[65px] relative lg:pr-[49px]">
+                        <form name="topSearchForm" id="topSearchForm" action="/goods/search">
+                            <input type="text" name="search_text" id="searchVer3InputBox" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="w-full h-[38px] px-[17px] bg-[#f7f7f9] leading-[38px] lg:h-[65px] lg:leading-[65px] lg:border-0 lg:text-base lg:px-[60px] rounded-[200px] outline-none" />
+                        </form>
+                        <button type="button" class="w-[38px] h-[38px] absolute z-10 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat text-[0] right-[38px] top-0 lg:top-[13px] lg:right-[69px] lg:bg-[length:12px_12px] lg:bg-[url('../assets/icon/ico-close.png')]">닫기</button>
+                        <button type="button" class="w-[38px] h-[38px] bg-[length:17px_17px] lg:bg-auto lg:w-[49px] lg:h-[65px] absolute top-0 right-0 z-10 text-[0] bg-[url('../assets/icon/ico-srch.png')] bg-center bg-no-repeat" onclick="$('#topSearchForm').submit();">검색</button>
+                    </div>
+                    <!-- 자동완성 -->
+                    <div class="hidden relative py-[10px] mb-5">
+                        <div class="px-[13px] lg:px-[26px]">
+                            <ul id="autoCompleteList">
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('하바이아나스');">하바이아<span class="text-[#ff774b] ">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('피오리아나');">피오리아<span class="text-[#ff774b]">나</span><span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('피나이더');">피<span class="text-[#ff774b]">나</span>이더<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('피나모레');">피<span class="text-[#ff774b]">나</span>모레<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('프리티 발레리나스');">프리티 발레리<span class="text-[#ff774b]">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('포르나세티');">포르<span class="text-[#ff774b]">나</span>세티<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('파비아나필리피');">파비아<span class="text-[#ff774b]">나</span>필리피<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('파비아나페리');">파비아<span class="text-[#ff774b]">나</span>페리<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('콜리나 스트라다');">콜리<span class="text-[#ff774b]">나</span> 스트라다<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('컬러스 오브 켈리포이나');">컬러스 오브 켈리포이<span class="text-[#ff774b]">나</span><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //자동완성 -->
+                </div>
+                <div>
+                    <!-- 최근검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative xl:min-h-[640px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:text-2xl lg:px-0">최근 검색어</div>
+                        <div class="px-6 lg:p-0">
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=골든구스 스니커즈" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">골든구스 스니커즈</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515206">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=미우미우 마테라쎄" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">미우미우 마테라쎄</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="523655">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=토트백" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">토트백</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="593942">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=버버리" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">버버리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="467725">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=오트리" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">오트리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="519748">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=구찌 케이스" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">구찌 케이스</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="488299">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=미우미우" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">미우미우</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="557471">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=구찌" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">구찌</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="487328">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=생로랑" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">생로랑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515144">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=구찌 지갑" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">구찌 지갑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="609453">검색어삭제</button></span>
+                        </div>
+                    </div>
+                    <!-- 추천검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative pt-[22px] lg:pt[0] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h-[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0">추천 검색어</div>
+                        <div class="px-6 pb-5 lg:px-[30px]">
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">미우미우 미니백 득템 찬스!</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/enjoy_atny.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">✨애트니 200% 즐기기✨</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">MD가 추천하는 가을 아이템 #트렌치코트</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">여유로운 휴양지 바이브, 카사블랑카</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">브라운 아이템 모음zip</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../board/magazine.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">❣️애트니 매거진❣️</a></span>
+                        </div>
+                    </div>
+                    <!-- 인기검색어 -->
+                    <div class="box-border relative lg:float-left lg:w-1/3">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0 relative pt-[22px] lg:pt[0]">인기검색어<span class="float-right text-[9px] text-[#807e7e] font-normal lg:text-[13px] lg:mt-[7px]]">2022.10.13 업데이트</span></div>
+                        <div class="px-6 lg:pr-0 pb-[30px] lg:pl-[30px]">
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">1</span><a href="../goods/search?osearchtext=미우미우" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">미우미우</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">2</span><a href="../goods/search?osearchtext=프라다"class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">프라다</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">3</span><a href="../goods/search?osearchtext=발렌시아가" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">발렌시아가</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-15 lg:text-[17px] text-[#1dc9ff] pl-4 bg-[url('../assets/icon/ico-ranking-down.png')] bg-[left_center] bg-no-repeat">DOWN</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">4</span><a href="../goods/search?osearchtext=구찌" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">구찌</a>
+                                <span class="absolute right-0 top-0 text-xs text-center h-[1px] w-10 bg-[url('../assets/icon/ico-same.png')] bg-center bg-no-repeat"></span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">5</span><a href="../goods/search?osearchtext=버버리" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">버버리</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b]">NEW</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">6</span><a href="../goods/search?osearchtext=메종키츠네" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">메종키츠네</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">7</span><a href="../goods/search?osearchtext=톰브라운" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">톰브라운</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">8</span><a href="../goods/search?osearchtext=셀린느" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">셀린느</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">9</span><a href="../goods/search?osearchtext=펜디" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">펜디</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">10</span><a href="../goods/search?osearchtext=보테가베네타" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">보테가베네타</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //layer - 검색 -->
+
+        <!-- contents -->
+        <div id="layout_wrap">
+            <div id="layout_content" class="min-h-[80vh] lg:min-h-0 lg:pb-[100px] leading-[1.2] text-[13px] text-[#666] font-normal font-['Pretendard']">
+                <!-- article -->
+                <div class="max-w-[1440px] mt-0 lg:mt-10 mx-auto mb-0 py-0 lg:py-[15px] px-[15px] lg:p-0 box-border">
+                    <ul class="max-w-[1440px] my-0 mx-auto py-[10px] px-0 text-sm list-none after:content-[''] after:block after:clear-both">
+                        <li class="float-left pt-3 leading-[18px]">
+                            <span class="inline-block pr-1 align-top text-[#333]">주문번호 :</span>
+                            <span class="inline-block"><strong class="text-[#007cd2] font-bold">2022112213342517544</strong></span>
+                        </li>
+                    </ul>
+                    <div class="table table-fixed w-full max-w-[1440px] my-0 mx-auto text-[13px] border-collapse border-t-2 border-t-black">
+                        <ul class="table-row">
+                            <li class="table-cell py-[15px] px-[5px] align-middle break-all text-black text-center font-normal bg-[#f6f6f6] border-b border-b-[#e5e5e5] box-border">상품</li>
+                            <li class="hidden sm:table-cell w-[70px] py-[15px] px-[5px] align-middle break-all text-black text-center  font-normal bg-[#f6f6f6] border-b border-b-[#e5e5e5] box-border">주문수량</li>
+                            <li class="hidden sm:table-cell w-[70px] py-[15px] px-[5px] align-middle break-all text-black text-center font-normal bg-[#f6f6f6] border-b border-b-[#e5e5e5] box-border">발송수량</li>
+                            <li class="hidden sm:table-cell w-[80px] py-[15px] px-[5px] align-middle break-all text-black text-center font-normal bg-[#f6f6f6] border-b border-b-[#e5e5e5] box-border">상품후기</li>
+                            <li class="table-cell w-[180px] py-[15px] px-[5px] align-middle break-all text-black text-center font-normal bg-[#f6f6f6] border-b border-b-[#e5e5e5] box-border">발송정보</li>            
+                        </ul>
+                        <ul class="table-row m-0 p-0 list-none">
+                            <li class="table-cell w-[180px] py-[15px] px-[5px] align-middle break-all text-[#333] text-left font-medium border-b border-b-[#e5e5e5] box-border">
+                                <ul class="table table-fixed w-full m-0 p-0 list-none">
+                                    <li class="table-cell w-[60px] pr-[9px] align-top">
+                                        <img class="border border-[#ddd] max-w-full align-middle outline-none" src="../assets/icon/m_apple.svg" alt="" />
+                                    </li>
+                                    <li class="table-cell align-middle font-medium">
+                                        <div class="text-[#333] text-sm md:text-[13px] font-medium">남성 버뮤다 페이즐리 패턴 캐주얼 쇼츠</div>
+                                        <div class="pt-[2px]">
+                                            <span class="inline-block align-top mt-1 mr-1 text-sm md:text-[13px]"><span class="inline-block h-5 mr-1 py-0 px-1 text-[#999] text-sm md:text-[13px] leading-5 font-normal border border-[#ddd] box-border">Color / Size</span>BEIGE / S</span>
+                                        </div>
+                                        <p class="block sm:hidden mt-[10px]"><span class="inline text-[#999]">주문 : </span> 1 / <span class="inline text-[#999]">발송 : </span> 1</p>
+                                        <button class="btn-review_popup_form block sm:hidden w-[70px] h-6 align-middle mt-[10px] text-black text-[13px] leading-[22px] text-center font-normal bg-white border border-[#ddd] box-border cursor-pointer">상품리뷰</button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="hidden sm:table-cell py-[15px] px-[5px] align-middle break-all text-[#999] text-center font-medium border-b border-b-[#e5e5e5] box-border"><span class="inline md:hidden">주문 : </span> 1</li>
+                            <li class="hidden sm:table-cell py-[15px] px-[5px] align-middle break-all text-[#999] text-center font-medium border-b border-b-[#e5e5e5] box-border"><span class="inline md:hidden">발송 : </span> 1</li>
+                            <li class="hidden sm:table-cell py-[15px] px-[5px] align-middle break-all text-[#333] text-center border-b border-b-[#e5e5e5] box-border">
+                                <button class="btn-review_popup_form w-[70px] h-6 align-middle text-black text-[13px] leading-[22px] text-center font-normal bg-white border border-[#ddd] box-border cursor-pointer">상품리뷰</button>
+                            </li>
+                            <li class="table-cell py-[15px] px-[5px] align-middle break-all text-[#333] text-left font-normal border-b border-b-[#e5e5e5] box-border">
+                                <div class="">
+                                    <div class="text-[#999]">[출고완료]</div>
+                                    <div class="text-[#007cd2]">2022-11-22 발송</div>
+                                    <div class="text-[#999]">DHL코리아 6893582791</div>
+                                    <div class="mt-[2px]">
+                                        <button type="button" class="h-7 py-0 px-[9px] align-middle text-white text-center text-xs leading-7 bg-black border border-black box-border cursor-pointer">배송조회</button>
+                                        <button type="button" class="btn-export_buy_confirm_msg h-7 ml-2 py-0 px-[9px] align-middle text-white text-center text-xs leading-7 bg-black border border-black box-border cursor-pointer">구매확정</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-[15px] sm:mt-5 text-center">
+                        <a href="../mypage/order_catalog.html" class="inline-block w-full sm:w-[120px] min-w-[100px] h-[50px] sm:h-7 mt-[15px] mr-0 mb-10 ml-0 p-0 align-middle text-white text-center text-base sm:text-[13px] leading-[53px] sm:leading-7 bg-black border-none box-border cursor-pointer" onclick="location.href='order_catalog.html'">주문/배송 내역</a>
+                    </div>
+                </div>
+                <!-- //article -->
+
+                <!-- layer - 구매확정및마일리지지급 -->
+                <div class="layer-bg hidden bg-[rgba(0,0,0,0.5)] fixed top-0 right-0 left-0 bottom-0 z-[10005]"></div>
+                <div class="layer-export_buy_confirm_msg layer hidden w-auto md:w-[700px] md:-translate-x-1/2 md:-translate-y-1/2 m-0 p-[15px] text-left bg-white box-border fixed top-0 sm:top-[10px] md:top-1/2 right-0 sm:right-[10px] bottom-0 sm:bottom-[10px] md:bottom-auto left-0 sm:left-[10px] md:left-1/2 z-[10020]">
+                    <h4 class="block pt-[15px] pb-[20px] px-0 text-left text-black text-base font-medium bg-white border-t border-t-white border-b-2 border-b-black relative">구매 확정 및 마일리지 지급</h4>
+                    <div class="min-h-[220px] max-h-[703px] overflow-y-auto mb-[100px]">
+                        <div class="pt-[10px]">
+                            <div class="py-[10px]">
+                                구매 확정 및 마일리지/포인트 지급을 받으시기 전에 반드시 아래 사항을 확인하여 주세요.<br>
+                                확인 버튼 클릭 시 구매 확정 및 마일리지/포인트가 지급됩니다.<br>
+                            </div>
+                            <ul class="m-0 p-[10px] leading-5 bg-[#f8f8f8] border border-[#ccc] list-none">
+                                <li class="pl-[10px] relative before:content-['·'] before:inline-block before:absolute before:top-0 before:left-0">주문 상품을 수령하셨고, 고객 변심 및 착오에 의한 교환 또는 환불의 의사가 없으실 경우 확인해주세요. 확인 후 즉시 마일리지/포인트가 지급됩니다.</li>
+                                <li class="pl-[10px] relative before:content-['·'] before:inline-block before:absolute before:top-0 before:left-0">동일 주문건의 상품 중 일부만 교환 또는 반품을 원하실 경우 주문 번호 클릭 후 세부 주문 내역에서  개별 상품에 대한 구매 확정을 해주셔야 합니다.</li>
+                                <li class="pl-[10px] relative before:content-['·'] before:inline-block before:absolute before:top-0 before:left-0">구매 확정으로 마일리지/포인트가 지급된 이후 또는 제품 착용 시 교환 또는 환불이 불가합니다.</li>
+                                <li class="pl-[10px] relative before:content-['·'] before:inline-block before:absolute before:top-0 before:left-0">구매 확정을 하시지 않으시더라도 출고 완료 후 7일 후에는 자동으로 구매 확정 및 마일리지/포인트가 지급됩니다.</li>
+                            </ul>
+                            <ul class="m-0 p-0 pt-[15px] text-center list-none">
+                                <li>구매를 확정하기 위해 상품 수령을 확인해주세요.</li>
+                                <li class="pt-[5px] text-[#333]">
+                                    상품을 수령하셨습니까? &nbsp;
+                                    <label class="cursor-pointer"><input type="radio" class="invisible absolute w-[1px] h-[1px] overflow-hidden m-[-1px] p-0 border-none" name="" value="y" /> 예</label> &nbsp; &nbsp;
+                                    <label class="cursor-pointer"><input type="radio" class="invisible absolute w-[1px] h-[1px] overflow-hidden m-[-1px] p-0 border-none" name="" value="n" checked="" /> 아니오</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="h-[80px] sm:h-[58px] pt-[15px] px-[10px] bg-white border-t border-t-[#ddd] absolute right-0 bottom-0 left-0 z-[500]">
+                        <ul class="table table-fixed w-full m-0 p-0 list-none">
+                            <li class="table-cell px-[5px] align-middle"><button type="button" class="h-[50px] sm:h-7 w-full min-w-[100px] mr-2 py-0 px-[14px] align-middle text-white text-base sm:text-[13px] leading-[48px] sm:leading-[26px] bg-black border border-black rounded-none outline-none box-border cursor-pointer">구매확정</button></li>
+                            <li class="table-cell px-[5px] align-middle"><button type="button" class="btn-pop_close h-[50px] sm:h-7 w-full min-w-[100px] py-0 px-[14px] align-middle text-[#333] text-base sm:text-[13px] leading-[48px] sm:leading-[26px] bg-white border border-[#333] outline-none rounded-none box-border cursor-pointer">취소</button></li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" class="btn-pop_close inline-block w-4 h-4 text-[0px] bg-transparent bg-[url(../assets/icon/ico-close.png)] bg-center bg-no-repeat bg-[length:auto_100%] absolute top-[25px] right-[15px]"></a>
+                </div>
+                <!-- //layer - 구매확정및마일리지지급 -->
+
+                <!-- layer - 리뷰작성하러가기 -->
+                <div class="layer-review_popup_form layer hidden">
+                    <div class="w-[calc(600/640*100vw)] sm:w-[500px] overflow-hidden text-xs bg-white border border-[#eee] shadow-[0_12px_20px_0_rgb(0,0,0,0.4)] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[9999]">
+                        <form enctype="multipart/form-data" novalidate="novalidate" accept-charset="UTF-8" data-remote="true" data-review-message-default="기본 지급 - 15자 이상 작성시 500(P)&#13;&#10;&#13;&#10;추가 지급&#13;&#10;- 100자 이상 작성시 1,000(P)&#13;&#10;- 사진 첨부시 1,000(P)&#13;&#10;- 동영상 첨부시 3,000(P)&#13;&#10;- 관리자 BEST 후기 선정시 추가 (포인트) 지급" data-confirm-review-message="구매하지 않은 상품입니다. 리뷰를 작성하시겠습니까?">
+                            <!-- header -->
+                            <div class="layer-review_popup_form_header h-[83px] p-[15px] border-b border-b-[#e5e5e5] box-border">
+                                <img class="w-[52px] h-[52px] absolute" src="//assets3.cre.ma/p/atny-com/products/00/00/65/50/43/image/extra_small_e6ce2fa44d49bdd5.jpg" alt="" />
+                                <div class="ml-[62px] mr-[38px]">
+                                    <div class="overflow-hidden text-[#333] text-[13px] left-4 font-bold tracking-[-0.1px] whitespace-nowrap text-ellipsis">비젼오브슈퍼 남성 버뮤다 페이즐리 패턴 캐주얼 쇼츠 VS00030SBE_BEIGE</div>
+                                    <a href="javascript:;" class="btn-pop_close inline-block w-4 h-4 text-[0px] bg-transparent bg-[url(../assets/icon/ico-close.png)] bg-center bg-no-repeat bg-[length:auto_100%] no-underline cursor-pointer absolute top-[15px] right-[15px]" data-in-progress-confirm="아직 끝나지 않은 요청이 있습니다. 지금 닫으면 요청이 중단됩니다. 정말로 닫으시겠습니까?"></a>
+                                </div>
+                            </div>
+                            <!-- //header -->
+                            <!-- body -->
+                            <div class="max-h-[500px] p-6 overflow-y-auto box-border">
+                                <div class="text-center">
+                                    <div class="pb-2 text-[#333] text-base sm:text-lg leading-6 text-center tracking-[-0.2px] "><b>이서은 회원님</b>, 구매 상품은 어떠셨나요?<br />리뷰를 작성하고 적립금 받으세요!</div>
+                                    <div class="inline-block w-full mt-[10px] mx-auto p-[5px] text-xs leading-[18px] bg-[#eee] rounded relative after:content-[''] after:inline-block after:w-0 after:h-0 after:border-r-4 after:border-r-transparent after:border-b-[6px] after:border-b-[#eee] after:border-l-4 after:border-l-transparent after:absolute after:top-[-6px] after:left-1/2 after:-translate-x-1/2">리뷰를 작성해주시면 최대 <strong class="text-[#333]">5,000</strong>원의 포인트를 지급해드려요!</div>
+                                    <a href="javascript:;" class="btn-pop_close inline-block w-4 h-4 text-[0px] bg-transparent bg-[url(../assets/icon/ico-close.png)] bg-center bg-no-repeat bg-[length:auto_100%] no-underline cursor-pointer absolute top-[15px] right-[15px]" data-in-progress-confirm="아직 끝나지 않은 요청이 있습니다. 지금 닫으면 요청이 중단됩니다. 정말로 닫으시겠습니까?"></a>
+                                </div>
+                                <div class="mt-6">
+                                    <div class="review_notice h-[35px] overflow-hidden pt-[7px] pr-[25px] pb-[13px] pl-[10px] text-[#333] text-xs leading-[22px] border border-[#ddd] cursor-pointer relative">
+                                        애트니 리뷰 안내사항
+                                        <div class="review_notice_arrow w-3 h-[6px] align-middle bg-[url(../assets/icon/ico_sprites.png)] bg-no-repeat bg-[length:82px_1621px] bg-[-35px_-263px] absolute top-[14px] right-2"></div>
+                                        <div class="mt-2 pt-[10px] leading-4 border-t border-t-[#eee]">- 리뷰는 당사 마케팅 자료로 활용될 수 있습니다.</div>
+                                    </div>
+                                </div>
+                                <div class="mt-5">
+                                    <div class="text-[#333] text-[13px] leading-4 font-bold">이름</div>
+                                    <div class="mt-[9px] text-[0px]">
+                                        <input type="text" class="w-full min-h-[36px] py-0 px-[10px] text-[#999] text-[13px] leading-9 text-left border border-[#d4d4d4] rounded-none outline-none box-border" name="" value="" autocomplete="off" placeholder="작성자 이름을 입력해주세요." data-message="작성자 이름을 입력해주세요." />
+                                    </div>
+                                </div>
+                                <div class="mt-5">
+                                    <div class="text-[#333] text-[13px] leading-4 font-bold">리뷰 작성란</div>
+                                    <div class="mt-[9px] text-[0px] relative">
+                                        <div class="min-h-[68px] overflow-y-auto border border-[#ddd] ">
+                                            <textarea class="w-full h-[160px] py-[9px] px-[10px] overflow-hidden text-[#999] text-[13px] leading-[18px] border-none outline-none box-border resize-none" maxlength="2000" rows="3" cols="48" data-up-counter="true" data-min-height="68" data-minimum-message-length="10" data-minimum-message-length-warning="자음, 모음, 띄어쓰기, 반복 문구를 제외한 글자수를 10자 이상 작성하셔야만 적립금이 지급됩니다. 그래도 제출하시겠습니까?" data-minimum-message-length-error="자음, 모음, 띄어쓰기, 반복 문구를 제외한 글자수를 10자 이상 작성하셔야만 리뷰 등록이 가능합니다." name="" placeholder="기본 지급&#13;&#10; - 15자 이상 작성시 500(P)&#13;&#10;&#13;&#10;추가 지급&#13;&#10;- 100자 이상 작성시 1,000(P)&#13;&#10;- 사진 첨부시 1,000(P)&#13;&#10;- 동영상 첨부시 3,000(P)&#13;&#10;- 관리자 BEST 후기 선정시 추가 (포인트) 지급"></textarea>
+                                        </div>
+                                        <div class="text-[#999] text-[10px] absolute top-[101%] right-0">(<span class="text-[#ff774b]">45</span>/1000)</div>
+                                    </div>
+                                </div>
+                                <div class="mt-5">
+                                    <div class="text-[#333] text-[13px] leading-4 font-bold">포토/동영상 첨부</div>            
+                                    <div class="mt-[9px] text-[0px]">
+                                        <div class="mt-2 text-[11px] leading-[15px] text-[#999]">상품과 상관없는 사진 및 동영상을 첨부한 리뷰는 통보없이 삭제될 수 있습니다.</div>
+                                        <div class="grid grid-cols-7 gap-[5px] w-full mt-[10px]">
+                                            <div class="relative">
+                                                <div class="btn-review_popup_form_append w-full h-full overflow-hidden bg-white border border-[#ddd] cursor-pointer relative">
+                                                    <img class="w-full h-auto" src="" alt="" />
+                                                    <!-- 추가 버튼 -->
+                                                    <div class="text-[#727272] text-[11px] text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                                        <span class="inline-block w-[18px] h-[15px] align-middle text-[0] rotate-45 bg-[url(../assets/icon/ico_sprites.png)] bg-no-repeat bg-[length:82px_1621px] bg-[-34px_-1538px]">추가</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="relative">
+                                                <div class="btn-review_popup_form_append w-full h-full overflow-hidden bg-white border border-[#ddd] cursor-pointer relative">
+                                                    <img class="w-full h-full text-[rgba(0,0,0,0)] bg-cover bg-center" src="../assets/icon/m_kakao.svg" alt="" />
+                                                    <!-- 삭제 버튼 -->
+                                                    <div class="w-full h-full text-white text-[13px] leading-4 text-center font-bold opacity-50 cursor-pointer absolute top-0 left-0 z-[1]">
+                                                        <span class="inline-block w-[14px] h-[15px] align-middle text-[0] bg-black bg-[url(../assets/icon/ico_sprites.png)] bg-no-repeat bg-[length:82px_1621px] bg-[-34px_-1538px] absolute right-0">취소</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-5">
+                                    <div class="text-[#333] text-[13px] leading-4 font-bold">별점</div>
+                                    <div class="mt-[9px] text-[0px]">
+                                        <div class="min-h-[36px] leading-9 box-border shadow-[0_0_0_1px_#ddd_inset] relative">
+                                            <div class="inline-block w-full m-0 py-0 px-[10px] align-middle box-border relative">
+                                                <a href="javascript:;" class="btn-review_popup_form_section_select_wrap block h-[26px] p-0 overflow-hidden whitespace-nowrap text-[#444] leading-[26px] border-none no-underline bg-none rounded-none shadow-none relative" tabindex="-1">
+                                                    <span class="block overflow-hidden mr-[26px] whitespace-nowrap text-ellipsis text-[#999] text-[13px]">
+                                                        <div class="relative">
+                                                            <span class="inline-block w-[80px] mr-[10px] text-[#999] text-[13px]">아주 좋아요</span>
+                                                            <span class="inline-block w-3 h-3 text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                        </div>
+                                                    </span>
+                                                    <abbr class="hidden w-3 h-3 text-[1px] no-underline bg-no-repeat bg-[length:60px_40px] sm:bg-none border-none outline-none cursor-pointer absolute top-2 right-6"></abbr>
+                                                    <span class="hidden" role="presentation"><b class="block w-full h-full bg-no-repeat bg-[length:60px_40px] sm:bg-none" role="presentation"></b></span>
+                                                    <span class="w-3 h-[6px] align-middle bg-[url(../assets/icon/ico_sprites.png)] bg-no-repeat bg-[length:82px_1621px] bg-[-35px_-263px] absolute top-[9px] right-0"></span>
+                                                </a>
+                                                <label for="s2id_autogen3" class="hidden !w-[1px] !h-[1px] !m-0 !p-0 !overflow-hidden !border-none !outline-none !absolute !top-0 !left-0"></label>
+                                                <input class="hidden !w-[1px] !h-[1px] !m-0 !p-0 !overflow-hidden !border-none !outline-none !absolute !top-0 !left-0" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-3" id="s2id_autogen3" />
+                                                <!-- layer - 리뷰작성하러가기 > 만족도 -->
+                                                <div class="review_popup_form_section_select_wrap hidden w-full mt-[-1px] text-black bg-white border border-[#ddd] shadow-none rounded-none box-border absolute top-[31px] left-0 z-10">
+                                                    <div class="hidden !w-[1px] !h-[1px] min-h-[26px] !m-0 !p-0 !overflow-hidden whitespace-nowrap !border-none !outline-none !absolute !top-0 !left-0 z-[10000]">
+                                                        <label for="s2id_autogen3_search" class="hidden !w-[1px] !h-[1px] !m-0 !p-0 !overflow-hidden !border-none !outline-none !absolute !top-0 !left-0"></label>
+                                                        <input type="text" class="w-full !h-auto min-h-[26px] m-0 py-1 pr-5 pl-[5px] font-['sans-serif'] text-[1em] !bg-[length:60px_40px] !bg-no-repeat !bg-[100%_-21px] border border-[#aaa] outline-none shadow-none" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-3" id="s2id_autogen3_search" />
+                                                    </div>
+                                                    <ul class="max-h-[200px] my-1 mr-1 pl-1 relative" role="listbox" id="select2-results-3">
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <div class="relative">
+                                                                    <span class="inline-block w-[80px] mr-[10px] text-[#999] text-[13px]">아주 좋아요</span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <div class="relative">
+                                                                    <span class="inline-block w-[80px] mr-[10px] text-[#999] text-[13px]">맘에 들어요</span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <div class="relative">
+                                                                    <span class="inline-block w-[80px] mr-[10px] text-[#999] text-[13px]">보통이에요</span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <div class="relative">
+                                                                    <span class="inline-block w-[80px] mr-[10px] text-[#999] text-[13px]">그냥 그래요</span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <div class="m-0 cursor-pointer select-none">
+                                                                    <span class="inline-block w-[80px] mr-[10px] text-[#999] text-[13px]">별로에요</span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                                    <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- //layer - 리뷰작성하러가기 > 만족도 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-5">
+                                    <div class="text-[#333] text-[13px] leading-4 font-bold">평상시 상의사이즈</div>
+                                    <div class="mt-[9px] text-[0px]">
+                                        <div class="-mt-2 -ml-2">
+                                            <span class="inline-block pt-2 pl-2">
+                                                <input type="radio" name="top_size" id="top_size0" value="0" checked="checked" class="peer hidden">
+                                                <label for="top_size0" class="block min-h-[28px] py-0 px-[10px] text-[#999] text-[13px] leading-7 text-center border border-[#d4d4d4] box-border cursor-pointer peer-checked:text-white peer-checked:bg-[#5e5e5e]">XS 이하</label>
+                                            </span>
+                                            <span class="inline-block pt-2 pl-2">
+                                                <input type="radio" name="top_size" id="top_size1" value="1" class="peer hidden">
+                                                <label for="top_size1" class="block min-h-[28px] py-0 px-[10px] text-[#999] text-[13px] leading-7 text-center border border-[#d4d4d4] box-border cursor-pointer peer-checked:text-white peer-checked:bg-[#5e5e5e]">XS</label>
+                                            </span>
+                                            <span class="inline-block pt-2 pl-2">
+                                                <input type="radio" name="top_size" id="top_size2" value="2" class="peer hidden">
+                                                <label for="top_size2" class="block min-h-[28px] py-0 px-[10px] text-[#999] text-[13px] leading-7 text-center border border-[#d4d4d4] box-border cursor-pointer peer-checked:text-white peer-checked:bg-[#5e5e5e]">S</label>
+                                            </span>
+                                            <span class="inline-block pt-2 pl-2">
+                                                <input type="radio" name="top_size" id="top_size3" value="3" class="peer hidden">
+                                                <label for="top_size3" class="block min-h-[28px] py-0 px-[10px] text-[#999] text-[13px] leading-7 text-center border border-[#d4d4d4] box-border cursor-pointer peer-checked:text-white peer-checked:bg-[#5e5e5e]">M</label>
+                                            </span>
+                                            <span class="inline-block pt-2 pl-2">
+                                                <input type="radio" name="top_size" id="top_size4" value="4" class="peer hidden">
+                                                <label for="top_size4" class="block min-h-[28px] py-0 px-[10px] text-[#999] text-[13px] leading-7 text-center border border-[#d4d4d4] box-border cursor-pointer peer-checked:text-white peer-checked:bg-[#5e5e5e]">L</label>
+                                            </span>
+                                            <span class="inline-block pt-2 pl-2">
+                                                <input type="radio" name="top_size" id="top_size5" value="5" class="peer hidden">
+                                                <label for="top_size5" class="block min-h-[28px] py-0 px-[10px] text-[#999] text-[13px] leading-7 text-center border border-[#d4d4d4] box-border cursor-pointer peer-checked:text-white peer-checked:bg-[#5e5e5e]">XL</label>
+                                            </span>
+                                            <span class="inline-block pt-2 pl-2">
+                                                <input type="radio" name="top_size" id="top_size6" value="6" class="peer hidden">
+                                                <label for="top_size6" class="block min-h-[28px] py-0 px-[10px] text-[#999] text-[13px] leading-7 text-center border border-[#d4d4d4] box-border cursor-pointer peer-checked:text-white peer-checked:bg-[#5e5e5e]">XXL</label>
+                                            </span>
+                                            <span class="inline-block pt-2 pl-2">
+                                                <input type="radio" name="top_size" id="top_size7" value="7" class="peer hidden">
+                                                <label for="top_size7" class="block min-h-[28px] py-0 px-[10px] text-[#999] text-[13px] leading-7 text-center border border-[#d4d4d4] box-border cursor-pointer peer-checked:text-white peer-checked:bg-[#5e5e5e]">XXL 이상</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-5">
+                                    <div class="text-[#333] text-[13px] leading-4 font-bold">평상시 하의 사이즈</div>
+                                    <div class="mt-[9px] text-[0px]">
+                                        <div class="min-h-[36px] leading-9 box-border shadow-[0_0_0_1px_#ddd_inset] relative">
+                                            <div class="inline-block w-full m-0 py-0 px-[10px] align-middle box-border relative">
+                                                <a href="javascript:;" class="block h-[26px] p-0 overflow-hidden whitespace-nowrap text-[#444] leading-[26px] border-none no-underline bg-none rounded-none shadow-none relative" tabindex="-1">
+                                                    <span class="btn-review_popup_form_section_select_wrap2 block overflow-hidden mr-[26px] whitespace-nowrap text-ellipsis text-[#999] text-[13px]" id="select2-chosen-2">선택하세요.</span>
+                                                    <abbr class="hidden w-3 h-3 text-[1px] no-underline bg-no-repeat bg-[length:60px_40px] sm:bg-none border-none outline-none cursor-pointer absolute top-2 right-6"></abbr>
+                                                    <span class="hidden" role="presentation"><b class="block w-full h-full bg-no-repeat bg-[length:60px_40px] sm:bg-none" role="presentation"></b></span>
+                                                    <span class="w-3 h-[6px] align-middle bg-[url(../assets/icon/ico_sprites.png)] bg-no-repeat bg-[length:82px_1621px] bg-[-35px_-263px] absolute top-[9px] right-0"></span>
+                                                </a>
+                                                <!-- layer - 리뷰작성하러가기 > 평소사이즈-하의선택 -->
+                                                <div class="review_popup_form_section_select_wrap2 hidden w-full mt-[-1px] text-black bg-white border border-[#ddd] shadow-none rounded-none box-border absolute top-[31px] left-0 z-10">
+                                                    <div class="hidden !w-[1px] !h-[1px] min-h-[26px] !m-0 !p-0 !overflow-hidden whitespace-nowrap !border-none !outline-none !absolute !top-0 !left-0 z-[10000]">
+                                                        <label for="s2id_autogen3_search" class="hidden !w-[1px] !h-[1px] !m-0 !p-0 !overflow-hidden !border-none !outline-none !absolute !top-0 !left-0"></label>
+                                                        <input type="text" class="w-full !h-auto min-h-[26px] m-0 py-1 pr-5 pl-[5px] font-['sans-serif'] text-[1em] !bg-[length:60px_40px] !bg-no-repeat !bg-[100%_-21px] border border-[#aaa] outline-none shadow-none" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-3" id="s2id_autogen3_search" />
+                                                    </div>
+                                                    <ul class="max-h-[200px] overflow-x-hidden overflow-y-auto my-1 mr-1 pl-1 relative" role="listbox" id="select2-results-3">
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">선택하세요.</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">23</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">24</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">25</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">26</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">27</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">28</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">29</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">30</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">31</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">32</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">33</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">34</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">35</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">36</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">37</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">38</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- //layer - 리뷰작성하러가기 > 평소사이즈-하의선택 -->
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="mt-5">
+                                    <div class="text-[#333] text-[13px] leading-4 font-bold">평상시 신발 사이즈</div>
+                                    <div class="mt-[9px] text-[0px]">
+                                        <div class="min-h-[36px] leading-9 box-border shadow-[0_0_0_1px_#ddd_inset] relative">
+                                            <div class="inline-block w-full m-0 py-0 px-[10px] align-middle box-border relative">
+                                                <a href="javascript:;" class="block h-[26px] p-0 overflow-hidden whitespace-nowrap text-[#444] leading-[26px] border-none no-underline bg-none rounded-none shadow-none relative" tabindex="-1">
+                                                    <span class="btn-review_popup_form_section_select_wrap3 block overflow-hidden mr-[26px] whitespace-nowrap text-ellipsis text-[#999] text-[13px]" id="select2-chosen-2">선택하세요.</span>
+                                                    <abbr class="hidden w-3 h-3 text-[1px] no-underline bg-no-repeat bg-[length:60px_40px] sm:bg-none border-none outline-none cursor-pointer absolute top-2 right-6"></abbr>
+                                                    <span class="hidden" role="presentation"><b class="block w-full h-full bg-no-repeat bg-[length:60px_40px] sm:bg-none" role="presentation"></b></span>
+                                                    <span class="w-3 h-[6px] align-middle bg-[url(../assets/icon/ico_sprites.png)] bg-no-repeat bg-[length:82px_1621px] bg-[-35px_-263px] absolute top-[9px] right-0"></span>
+                                                </a>
+                                                <!-- layer - 리뷰작성하러가기 > 평소사이즈-신발선택 -->
+                                                <div class="review_popup_form_section_select_wrap3 hidden w-full mt-[-1px] text-black bg-white border border-[#ddd] shadow-none rounded-none box-border absolute top-[31px] left-0 z-10">
+                                                    <div class="hidden !w-[1px] !h-[1px] min-h-[26px] !m-0 !p-0 !overflow-hidden whitespace-nowrap !border-none !outline-none !absolute !top-0 !left-0 z-[10000]">
+                                                        <label for="s2id_autogen3_search" class="hidden !w-[1px] !h-[1px] !m-0 !p-0 !overflow-hidden !border-none !outline-none !absolute !top-0 !left-0"></label>
+                                                        <input type="text" class="w-full !h-auto min-h-[26px] m-0 py-1 pr-5 pl-[5px] font-['sans-serif'] text-[1em] !bg-[length:60px_40px] !bg-no-repeat !bg-[100%_-21px] border border-[#aaa] outline-none shadow-none" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-3" id="s2id_autogen3_search" />
+                                                    </div>
+                                                    <ul class="max-h-[200px] overflow-x-hidden overflow-y-auto my-1 mr-1 pl-1 relative" role="listbox" id="select2-results-3">
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">선택하세요.</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">220</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">225</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">230</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">235</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">240</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">245</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                    <span class="block text-[#999] text-[13px]">250</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">255</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">260</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">265</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">270</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">275</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">280</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">285</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">290</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">295</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item list-none pt-[3px] px-[7px] leading-5 hover:text-white hover:bg-[#ddd]" role="presentation">
+                                                            <div class="m-0 cursor-pointer select-none" role="option">
+                                                                <span class="block text-[#999] text-[13px]">300</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- //layer - 리뷰작성하러가기 > 평소사이즈-신발선택 -->
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="mt-5">
+                                    <div class="text-[#333] text-[13px] leading-4 font-bold">사이즈 평가</div>
+                                    <div class="mt-[9px] text-[0px]">
+                                        <div class="-mt-2 -ml-2">
+                                            <span class="inline-block pt-2 pl-2">
+                                                <input type="radio" name="shoes_evaluate" id="shoes_evaluate0" value="0" checked="checked" class="peer hidden">
+                                                <label for="shoes_evaluate0" class="block min-h-[28px] py-0 px-[10px] text-[#999] text-[13px] leading-7 text-center border border-[#d4d4d4] box-border cursor-pointer peer-checked:text-white peer-checked:bg-[#5e5e5e]">많이 작아요</label>
+                                            </span>
+                                            <span class="inline-block pt-2 pl-2">
+                                                <input type="radio" name="shoes_evaluate" id="shoes_evaluate1" value="1" class="peer hidden">
+                                                <label for="shoes_evaluate1" class="block min-h-[28px] py-0 px-[10px] text-[#999] text-[13px] leading-7 text-center border border-[#d4d4d4] box-border cursor-pointer peer-checked:text-white peer-checked:bg-[#5e5e5e]">조금 작아요</label>
+                                            </span>
+                                            <span class="inline-block pt-2 pl-2">
+                                                <input type="radio" name="shoes_evaluate" id="shoes_evaluate2" value="2" class="peer hidden">
+                                                <label for="shoes_evaluate2" class="block min-h-[28px] py-0 px-[10px] text-[#999] text-[13px] leading-7 text-center border border-[#d4d4d4] box-border cursor-pointer peer-checked:text-white peer-checked:bg-[#5e5e5e]">정 사이즈에요</label>
+                                            </span>
+                                            <span class="inline-block pt-2 pl-2">
+                                                <input type="radio" name="shoes_evaluate" id="shoes_evaluate3" value="3" class="peer hidden">
+                                                <label for="shoes_evaluate3" class="block min-h-[28px] py-0 px-[10px] text-[#999] text-[13px] leading-7 text-center border border-[#d4d4d4] box-border cursor-pointer peer-checked:text-white peer-checked:bg-[#5e5e5e]">조금 커요</label>
+                                            </span>
+                                            <span class="inline-block pt-2 pl-2">
+                                                <input type="radio" name="shoes_evaluate" id="shoes_evaluate4" value="4" class="peer hidden">
+                                                <label for="shoes_evaluate4" class="block min-h-[28px] py-0 px-[10px] text-[#999] text-[13px] leading-7 text-center border border-[#d4d4d4] box-border cursor-pointer peer-checked:text-white peer-checked:bg-[#5e5e5e]">많이 커요</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-5 border-b border-b-[#eee]"></div>
+                                <div class="mt-5 text-[#333] text-[13px] leading-4 font-bold">다른 리뷰 작성하기</div>
+                                <div class="mt-[10px]" data-confirm-moving-form-message="다른 상품 입력폼으로 이동하시겠습니까? 입력사항이 저장되지 않았습니다.">
+                                    <div class="m-0 mb-1 last:mb-0 p-[10px] border border-[#eee] cursor-pointer relative">
+                                        <img class="w-[52px] h-[52px] absolute cursor-pointer" src="//assets3.cre.ma/p/atny-com/products/00/00/39/45/26/image/extra_small_17580c8e99c77d8b.jpg" alt="" />
+                                        <div class="inline-block w-4 h-4 align-middle bg-[url(../assets/icon/ico_sprites.png)] bg-no-repeat bg-[length:82px_1621px] bg-[-34px_-71px] absolute top-1/2 right-3 -translate-y-1/2"></div>
+                                        <div class="ml-[62px] mr-[38px]">
+                                            <div class="mb-[3px] text-black text-[11px] leading-[15px]">지금 리뷰를 남기신다면<br /><strong class="text-[#333]">+5,000</strong>원 적립</div>
+                                            <div class="overflow-hidden text-[#333] text-[13px] leading-4 font-bold tracking-[-0.1px] whitespace-nowrap text-ellipsis">메종 키츠네 트리컬러 폭스 키링 AU06500AM1002 M001 SILVER</div>
+                                            <div class="mt-[6px] text-[#999] text-[11px] leading-[15px]">2022.11.11에 구매하신 상품입니다.</div>
+                                        </div>
+                                    </div>
+                                    <div class="m-0 mb-1 last:mb-0 p-[10px] border border-[#eee] cursor-pointer relative">
+                                        <img class="w-[52px] h-[52px] absolute cursor-pointer" src="//assets3.cre.ma/p/atny-com/products/00/01/51/82/19/image/extra_small_0dd0aec4d2fd685f.jpg" alt="" />
+                                        <div class="inline-block w-4 h-4 align-middle bg-[url(../assets/icon/ico_sprites.png)] bg-no-repeat bg-[length:82px_1621px] bg-[-34px_-71px] absolute top-1/2 right-3 -translate-y-1/2"></div>
+                                        <div class="ml-[62px] mr-[38px]">
+                                            <div class="mb-[3px] text-black text-[11px] leading-[15px]">지금 리뷰를 남기신다면<br /><strong class="text-[#333]">+5,000</strong>원 적립</div>
+                                            <div class="overflow-hidden text-[#333] text-[13px] leading-4 font-bold tracking-[-0.1px] whitespace-nowrap text-ellipsis">타미힐피거 남성 토미 힐피거 모자 AM0AM10390 BDS</div>
+                                            <div class="mt-[6px] text-[#999] text-[11px] leading-[15px]">2022.10.31에 구매하신 상품입니다.</div>
+                                        </div>
+                                    </div>
+                                    <div class="m-0 mb-1 last:mb-0 p-[10px] border border-[#eee] cursor-pointer relative">
+                                        <img class="w-[52px] h-[52px] absolute cursor-pointer" src="//assets3.cre.ma/p/atny-com/products/00/00/37/12/35/image/extra_small_54a7b0f24017c8be.jpg" alt="" />
+                                        <div class="inline-block w-4 h-4 align-middle bg-[url(../assets/icon/ico_sprites.png)] bg-no-repeat bg-[length:82px_1621px] bg-[-34px_-71px] absolute top-1/2 right-3 -translate-y-1/2"></div>
+                                        <div class="ml-[62px] mr-[38px]">                      
+                                            <div class="mb-[3px] text-black text-[11px] leading-[15px]">지금 리뷰를 남기신다면<br /><strong class="text-[#333]">+5,000</strong>원 적립</div>                      
+                                            <div class="overflow-hidden text-[#333] text-[13px] leading-4 font-bold tracking-[-0.1px] whitespace-nowrap text-ellipsis">아페쎄 로고 키링 PXAWV H63108 LZZ BLACK</div>
+                                            <div class="mt-[6px] text-[#999] text-[11px] leading-[15px]">2022.10.20에 구매하신 상품입니다.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //body -->
+                            <!-- footer -->
+                            <div class="p-[15px] bg-white border-t border-t-[#eee]">
+                                <button type="button" name="commit" class="w-full h-10 text-white text-sm leading-10 text-center font-bold bg-[#ff774b]" data-original-title="후기 작성하고 (포인트) 받기">후기 작성하고 (포인트) 받기</button>
+                            </div>
+                            <!-- //footer -->
+                        </form>
+                    </div>
+                    <div class="w-[178px] h-[18px] m-auto p-[14px] text-white text-xs text-center bg-black opacity-0 rounded pointer-events-none absolute top-0 right-0 bottom-0 left-0 z-[1] before:content-[''] before:inline-block before:h-full before:align-middle">리뷰 작성이 완료되었습니다.</div>          
+                </div>
+                <!-- //layer - 리뷰작성하러가기 -->
+                
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <!-- mobile floating menu -->
+        <div class="xl:hidden fixed left-0 right-0 bottom-0 z-[1001] bg-white p-0">
+			<ul class="px-[35px] flex">
+				<li class="w-[15%]" id="mobile-menu"><a href="javascript:;" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu1.svg')] bg-[center_4px] bg-no-repeat">메뉴</span></a></li>
+				<li class="w-[15%]"><a href="/goods/oneday_delivery" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu2.svg')] bg-[center_4px] bg-no-repeat">하루배송</span></a></li>
+				<li class="w-[40%]"><a href="/" class="block relative h-full"><span class="text-[0] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/logo.svg')] bg-[center_14px] bg-no-repeat bg-[length:76px_18px]">홈</span></a></li>
+				<li class="w-[15%]"><a href="/mypage/wish" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu3.svg')] bg-[center_4px] bg-no-repeat">위시리스트</span></a></li>
+				<li class="w-[15%]"><a href="/mypage" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu4.svg')] bg-[center_4px] bg-no-repeat">마이페이지</span></a></li>
+			</ul>
+		</div>
+        <!-- //mobile floating menu -->
+        
+        <!-- footer -->
+		<footer><script>Util.include('../common/footer.html')</script></footer>
+		<!-- //footer -->
+    </div>
+
+    <script src="../js/include.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script><!--flowbite-->
+    <script>
+        // 모바일 메뉴 레이어 열기
+        $('#mobile-menu').on('click',function(){
+            $('#dmm').removeClass('hidden');
+            $('#mobile-menu-content').addClass('!top-[42px]');
+            var mobile_swiper = new Swiper('#mobile-menu-content .swiper',{
+                slidesPerView:'4.5',
+                spaceBetween: 8
+            })
+        });
+        // 모바일 메뉴 레이어 닫기
+        $('#mobile-layer-close').on('click',function(){
+            $('#dmm').addClass('hidden');
+            $('#mobile-menu-content').removeClass('!top-[42px]');
+        });
+        
+        // layer - 검색 > 열기
+        function search_layer(){
+            $('#search-layer').addClass('!block');
+        };
+        // layer - 검색 > 닫기
+        $('#search-layer-close').on('click',function(){
+            $('#search-layer').removeClass('!block');
+        });
+        /* layer - 검색 관련 */
+        function srch_layer(){
+            $('#search-layer').addClass('!block');
+        }
+        $('.search_full_layer .button_back2').on('click', function () {
+            $('.search_full_layer').removeClass('block');
+        });
+        $('.mobile-category-wrap input[type="text"]').on('click', function () {
+            $('.search_full_layer').addClass('block');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+        $('.header_top .ico_srch, .m_btm_menu .resp_top_search').on('click',function(){
+            $('.search_full_layer').addClass('block');
+        });
+        $('.search_full_layer .btn_close').on('click',function(){
+            $('.search_full_layer').removeClass('block');
+        });
+        $('.mobile-category-wrap .button-search').on('click', function () {
+            $('.search_full_layer').addClass('block');
+            if ($('.mobile-category-wrap input[type="text"]').attr('value')) {
+                $('.search_full_layer input[name="search_text"]').attr('value', $('.mobile-category-wrap input[type="text"]').attr('value'));
+            }
+        });
+        $('.header .rig_menu .btn-srch').on('click', function () {
+            $('.search_full_layer').addClass('block');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+        /* gnb */
+        $(window).on("load resize", function() {
+            if ($(window).width() > 768) {
+                if ($('.main').length > 0) {
+                    $('.header_cont').hover(
+                        function() {
+                            $(this).addClass('block');
+                        },
+                        function() {
+                            $(this).removeClass('block');
+                        }
+                    );
+                }
+                $('.header .gnb_wrap .dep1').hover(
+                    function() {
+                        $(this).find('.dep2').css('display', 'block');
+                        $('.header .gnb_wrap .dep1_ul.on').addClass('tmpon');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('block');
+                    },
+                    function() {
+                        $(this).find('.dep2').css('display', 'none');
+                        $('.header .gnb_wrap .dep1_ul.tmpon').addClass('block');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('tmpon');
+                    }
+                );
+            }
+        });
+        /* footer */
+        
+
+        // layer - 구매확정및마일리지지급 > 열기
+        $('.btn-export_buy_confirm_msg').on('click',function(){
+            $('.layer-export_buy_confirm_msg, .layer-bg').addClass('!block');
+            $('body').addClass('overflow-hidden');
+        });
+        // layer - 리뷰작성하러가기 > 열기
+        $('.btn-review_popup_form').on('click',function(){
+            $('.layer-review_popup_form').addClass('!block');
+            $('body').addClass('overflow-hidden');
+        });
+        // layer - 리뷰작성하러가기 > 애트니리뷰안내사항 > 열기
+        $('.review_notice').on('click',function(){
+            $('.review_notice').toggleClass('!h-auto !overflow-auto');
+            $('.review_form').toggleClass('!block');
+        }); 
+        // layer - 리뷰작성하러가기 > 애트니리뷰안내사항 > 화살표
+        $('.review_notice').on('click',function(){
+            $('.review_notice_arrow').toggleClass('-scale-100');
+        });
+        // layer - 리뷰작성하러가기 > 만족도
+        $('.btn-review_popup_form_section_select_wrap').on('click',function(){
+            $('.review_popup_form_section_select_wrap').toggleClass('!block');
+        });
+        // layer - 리뷰작성하러가기 > 평소사이즈-하의선택
+        $('.btn-review_popup_form_section_select_wrap2').on('click',function(){
+            $('.review_popup_form_section_select_wrap2').toggleClass('!block');
+        });
+        // layer - 리뷰작성하러가기 > 평소사이즈-신발선택
+        $('.btn-review_popup_form_section_select_wrap3').on('click',function(){
+            $('.review_popup_form_section_select_wrap3').toggleClass('!block');
+        });
+        // layer - 닫기
+        $('.btn-pop_close').on('click',function(){
+            $('.layer, .layer-bg').removeClass('!block');
+            $('.layer .review_comment').removeClass('!block');
+            $('.layer .btn-review_comment svg').removeClass('rotate-180');
+            $('body').removeClass('overflow-hidden');
+        });
+    </script>
+
+</body>
+</html>

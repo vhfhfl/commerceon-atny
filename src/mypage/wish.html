@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+      <script src="../js/util.js"></script>
+      <script>Util.include('../common/head_2.html');</script>
+    </head>
+<body>
+    <div id="wrap">
+        <!-- header -->
+		<script>Util.include('../common/header.html');</script>
+		<!-- //header -->
+
+        <!-- 모바일용 레이어 -->
+        <div class="fixed left-0 top-0 right-0 bottom-0 bg-black/70 z-[1000] hidden" id="dmm"></div>
+        <div class="fixed left-0 right-0 z-[1001] transition-all duration-500 bottom-[48px] top-[100%]" id="mobile-menu-content">
+            <button type="button" class="h-[31px] rounded-t-[30px] bg-white absolute top-0 left-0 right-0 w-full text-[0] after:content-[''] after:w-[57px] after:h-[3px] after:bg-[#212121] after:rounded-[10px] after:absolute after:top-[9px] after:left-1/2 after:-translate-x-1/2" id="mobile-layer-close">닫기</button>
+            <div class="py-[14px] pr-[65px] pl-6 absolute left-0 top-[31px] right-0 bg-white border-b border-[#e7e5ea]">
+                <form name="topSearchForm" action="/goods/search">
+                    <div class="relative h-[31px] rounded-[100px] bg-[#fafafb] border border-[#f7f7f9] box-border pr-[47px]">
+                        <input type="text" name="search_text" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="h-[29px] bg-transparent px-[10px] box-border w-full border-0 text-[13px]">
+                        <button class="h-[29px] absolute right-0 top-0 w-[47px] bg-[url('../assets/icon/ico-search.svg')] bg-center bg-no-repeat z-10 text-[0]" type="submit">검색</button>
+                    </div>
+                </form>
+                <a href="/mypage" class="absolute bg-[url('../assets/icon/ico-myp.svg')] bg-center bg-no-repeat text-[0] right-[21px] top-[17px] z-10 w-6 h-6">마이페이지</a>
+            </div>
+            <div>
+                <div class="bg-[#fafafb] overflow-y-auto absolute left-0 top-[91px] bottom-0 right-0">
+                    <div>
+                        <div class="bg-white border-b border-[#e7e5ea]">
+                            <div class="pt-[15px] px-6">
+                                <ul>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#ff774b] block px-[2px] pb-[3px] border-b-[3px] border-[#ff774b]">WOMEN</a></li>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">MEN</a></li>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">JUNIOR</a></li>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">LIFE</a></li>
+                                </ul>
+                            </div>
+                            <div class="py-[10px] px-6 block">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00020001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                    <li><a href="/goods/catalog?code=00020002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                    <li><a href="/goods/catalog?code=00020003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                    <li><a href="/goods/catalog?code=00020004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                    <li><a href="/goods/catalog?code=00020005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                </ul>
+                            </div>
+                            <div class="hidden">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00010001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                    <li><a href="/goods/catalog?code=00010002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                    <li><a href="/goods/catalog?code=00010003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                    <li><a href="/goods/catalog?code=00010004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                    <li><a href="/goods/catalog?code=00010005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                </ul>
+                            </div>
+                            <div class="hidden">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00030001" class="text-[13px] text-[#212121] block py-[13px]">여아</a></li>
+                                    <li><a href="/goods/catalog?code=00030002" class="text-[13px] text-[#212121] block py-[13px]">남아</a></li>
+                                </ul>
+                            </div>
+                            <div class="hidden">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00040001" class="text-[13px] text-[#212121] block py-[13px]">디지털</a></li>
+                                    <li><a href="/goods/catalog?code=00040002" class="text-[13px] text-[#212121] block py-[13px]">홈</a></li>
+                                    <li><a href="/goods/catalog?code=00040003" class="text-[13px] text-[#212121] block py-[13px]">뷰티</a></li>
+                                    <li><a href="/goods/catalog?code=00040004" class="text-[13px] text-[#212121] block py-[13px]">여행</a></li>
+                                    <li><a href="/goods/catalog?code=00040005" class="text-[13px] text-[#212121] block py-[13px]">반려동물</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                            <div class="py-[10px] px-6">
+                                <ul>
+                                    <li>
+                                        <a href="/goods/best_designers" class="text-[13px] text-[#212121] block py-[13px]">디자이너</a>
+                                    </li>
+                                    <li>
+                                        <a href="/goods/nft" class="text-[13px] text-[#212121] block py-[13px]">정품감정서</a>
+                                    </li>
+                                    <li>
+                                        <a href="/goods/oneday_delivery" class="text-[13px] text-[#212121] block py-[13px]">하루배송</a>
+                                    </li>
+                                    <li>
+                                        <a href="/goods/free_return" class="text-[13px] text-[#212121] block py-[13px]">무료반품</a>
+                                    </li>
+                                    <li>
+                                        <a href="/board/?id=magazine" class="text-[13px] text-[#212121] block py-[13px]">매거진</a>
+                                    </li>
+                                    <li>
+                                        <a href="/promotion/event" class="text-[13px] text-[#212121] block py-[13px]">이벤트</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                            <div class="py-[17px]">
+                                <div class="text-[#c6cad1] text-[11px] mb-[6px] px-6">최근 본 상품</div>
+                                <!-- 내용이 없을 때 -->
+                                <div class="text-center py-5 w-full text-[11px]">최근 본 상품이 없습니다.</div>
+                                <!-- //내용이 없을 때 -->
+                                <div class="swiper pl-6">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide"><a href="/goods/view?no=1541402"><img src="//img.atny.com/data/goods/ATNY/10/1672510/MzQzNDYw_list1.JPG" alt="여성 타임리스 브라운 미니 숄더/크로스백"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow-[inset_0_-8px_10px_rgba(0,0,0,0.03)]">
+                            <ul class="py-[17px] text-center">
+                                <li class="inline-block relative"><a href="/mypage" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">마이페이지</a></li>
+                                <li class="inline-block relative"><a href="/board/?id=faq" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">FAQ</a></li>
+                                <li class="inline-block relative"><a href="/mypage/myqna_write" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px]">1:1문의</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //모바일용 레이어 -->
+
+        <!-- layer - 검색 -->
+        <div class="hidden fixed z-[1000] left-0 top-0 right-0 bottom-0 bg-white overflow-auto" id="search-layer">
+            <div class="w-full max-w-[1240px] mx-auto lg:px-5">
+                <a href="javascript:;" class="w-10 h-[38px] absolute left-[10px] top-[7px] bg-[url('../assets/icon/ico-back.svg')] bg-center bg-no-repeat text-[0] lg:w-[53px] lg:h-[53px] lg:top-[33px] lg:left-auto lg:right-[33px] lg:bg-[url('../assets/icon/ico-close.png')] text-[#444] no-underline border-none outline-none" id="search-layer-close">뒤로</a>
+                <div class="pt-[9px] pr-4 pl-[50px] mb-[22px] lg:px-0 lg:pt-[180px] lg:mb-14">
+                    <div class="pr-[38px] lg:h-[65px] relative lg:pr-[49px]">
+                        <form name="topSearchForm" id="topSearchForm" action="/goods/search">
+                            <input type="text" name="search_text" id="searchVer3InputBox" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="w-full h-[38px] px-[17px] bg-[#f7f7f9] leading-[38px] lg:h-[65px] lg:leading-[65px] lg:border-0 lg:text-base lg:px-[60px] rounded-[200px] outline-none" />
+                        </form>
+                        <button type="button" class="w-[38px] h-[38px] absolute z-10 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat text-[0] right-[38px] top-0 lg:top-[13px] lg:right-[69px] lg:bg-[length:12px_12px] lg:bg-[url('../assets/icon/ico-close.png')]">닫기</button>
+                        <button type="button" class="w-[38px] h-[38px] bg-[length:17px_17px] lg:bg-auto lg:w-[49px] lg:h-[65px] absolute top-0 right-0 z-10 text-[0] bg-[url('../assets/icon/ico-srch.png')] bg-center bg-no-repeat" onclick="$('#topSearchForm').submit();">검색</button>
+                    </div>
+                    <!-- 자동완성 -->
+                    <div class="hidden relative py-[10px] mb-5">
+                        <div class="px-[13px] lg:px-[26px]">
+                            <ul id="autoCompleteList">
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:;" onclick="setAutoComplete('하바이아나스');">하바이아<span class="text-[#ff774b] ">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:;" onclick="setAutoComplete('피오리아나');">피오리아<span class="text-[#ff774b]">나</span><span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:;" onclick="setAutoComplete('피나이더');">피<span class="text-[#ff774b]">나</span>이더<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:;" onclick="setAutoComplete('피나모레');">피<span class="text-[#ff774b]">나</span>모레<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:;" onclick="setAutoComplete('프리티 발레리나스');">프리티 발레리<span class="text-[#ff774b]">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:;" onclick="setAutoComplete('포르나세티');">포르<span class="text-[#ff774b]">나</span>세티<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:;" onclick="setAutoComplete('파비아나필리피');">파비아<span class="text-[#ff774b]">나</span>필리피<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:;" onclick="setAutoComplete('파비아나페리');">파비아<span class="text-[#ff774b]">나</span>페리<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:;" onclick="setAutoComplete('콜리나 스트라다');">콜리<span class="text-[#ff774b]">나</span> 스트라다<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:;" onclick="setAutoComplete('컬러스 오브 켈리포이나');">컬러스 오브 켈리포이<span class="text-[#ff774b]">나</span><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //자동완성 -->
+                </div>
+                <div>
+                    <!-- 최근검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative xl:min-h-[640px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:text-2xl lg:px-0">최근 검색어</div>
+                        <div class="px-6 lg:p-0">
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=골든구스 스니커즈" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">골든구스 스니커즈</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515206">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=미우미우 마테라쎄" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">미우미우 마테라쎄</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="523655">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=토트백" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">토트백</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="593942">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=버버리" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">버버리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="467725">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=오트리" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">오트리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="519748">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=구찌 케이스" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">구찌 케이스</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="488299">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=미우미우" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">미우미우</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="557471">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=구찌" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">구찌</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="487328">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=생로랑" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">생로랑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515144">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=구찌 지갑" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">구찌 지갑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="609453">검색어삭제</button></span>
+                        </div>
+                    </div>
+                    <!-- 추천검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative pt-[22px] lg:pt[0] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h-[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0">추천 검색어</div>
+                        <div class="px-6 pb-5 lg:px-[30px]">
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">미우미우 미니백 득템 찬스!</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/enjoy_atny.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">✨애트니 200% 즐기기✨</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">MD가 추천하는 가을 아이템 #트렌치코트</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">여유로운 휴양지 바이브, 카사블랑카</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">브라운 아이템 모음zip</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../board/magazine.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">❣️애트니 매거진❣️</a></span>
+                        </div>
+                    </div>
+                    <!-- 인기검색어 -->
+                    <div class="box-border relative lg:float-left lg:w-1/3">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0 relative pt-[22px] lg:pt[0]">인기검색어<span class="float-right text-[9px] text-[#807e7e] font-normal lg:text-[13px] lg:mt-[7px]]">2022.10.13 업데이트</span></div>
+                        <div class="px-6 lg:pr-0 pb-[30px] lg:pl-[30px]">
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">1</span><a href="../goods/search?osearchtext=미우미우" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">미우미우</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">2</span><a href="../goods/search?osearchtext=프라다"class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">프라다</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">3</span><a href="../goods/search?osearchtext=발렌시아가" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">발렌시아가</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-15 lg:text-[17px] text-[#1dc9ff] pl-4 bg-[url('../assets/icon/ico-ranking-down.png')] bg-[left_center] bg-no-repeat">DOWN</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">4</span><a href="../goods/search?osearchtext=구찌" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">구찌</a>
+                                <span class="absolute right-0 top-0 text-xs text-center h-[1px] w-10 bg-[url('../assets/icon/ico-same.png')] bg-center bg-no-repeat"></span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">5</span><a href="../goods/search?osearchtext=버버리" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">버버리</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b]">NEW</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">6</span><a href="../goods/search?osearchtext=메종키츠네" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">메종키츠네</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">7</span><a href="../goods/search?osearchtext=톰브라운" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">톰브라운</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">8</span><a href="../goods/search?osearchtext=셀린느" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">셀린느</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">9</span><a href="../goods/search?osearchtext=펜디" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">펜디</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">10</span><a href="../goods/search?osearchtext=보테가베네타" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">보테가베네타</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //layer - 검색 -->
+
+        <!-- contents -->
+        <div id="layout_wrap">
+            <div id="layout_content" class="min-h-[80vh] lg:min-h-0 pb-[50px] lg:pb-[100px] leading-[1.2] text-[13px] text-[#666] font-normal font-['Pretendard']">
+                <div class="p-0 align-top relative">
+                    <!-- 마이메뉴 -->
+                    <div class="subpage_lnb hidden w-[274px] lg:w-[297px] ml-[424px] pt-[18px] lg:pt-[25px] px-[26px] lg:px-[38px] pb-[42px] lg:pb-[56px] align-top bg-white border border-[#f7f7f9] box-border absolute top-[68px] lg:top-[120px] right-6 lg:right-auto left-auto lg:left-1/2 z-[600]">
+                        <div class="border-b border-b-[#e4e6ea]">
+                            <p class="mb-7"><span class="block text-black text-sm">MY ATNY</span> <span class="block text-black text-xs">마이 애트니</span></p>
+                            <button type="button" class="myMenuClose w-3 h-3 -indent-[9999px] absolute top-[40px] right-[60px]">닫기</button>
+                            <div id="accordion-open" data-accordion="open">
+                                <h2 id="accordion-open-heading-1" class="accordion-open-heading bg-none border-t border-t-[#e4e6ea] border-b-0">
+                                    <button type="button" class="flex items-center justify-between w-full mt-0 border-b-0 rounded-sm relative !bg-transparent" data-accordion-target="#accordion-open-body-1" aria-expanded="false" aria-controls="accordion-open-body-1">
+                                        <a href="javascrip:void(0)" class="block h-8 leading-8 p-0 text-black font-medium text-xs after:content-[''] after:w-[6px] after:h-[6px] after:border-r after:border-r-[#212121] after:border-b after:border-b-[#212121] after:absolute after:top-[10px] after:right-[3px] after:rotate-45 after:transition-all no-underline border-none outline-none">나의 쇼핑</a>
+                                    </button>
+                                </h2>
+                                <div id="accordion-open-body-1" class="hidden" aria-labelledby="accordion-open-heading-1">
+                                    <ul class="border-t border-t-[#e4e6ea] py-5 px-0 transition ease-in-out">
+                                        <li class="mt-[3px]"><a href="../mypage/order_catalog.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] transition-all ease-in-out">주문/배송내역</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/return_catalog.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">반품/교환내역</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/refund_catalog.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">취소/환불내역</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/wish.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">위시리스트</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/mydesigner.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">마이디자이너</a></li>
+                                        <li class="mt-[3px]"><a href="../goods/recently.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">최근 본 상품</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/delivery_address.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">배송지 관리</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/taxinvoice.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">세금계산서</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/personal.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">개인결제</a></li>
+                                    </ul>
+                                </div>
+                                <h2 id="accordion-open-heading-2" class="accordion-open-heading bg-none border-t border-t-[#e4e6ea] border-b-0">
+                                    <button type="button" class="flex items-center justify-between w-full mt-0 border-b-0 rounded-sm relative !bg-transparent" data-accordion-target="#accordion-open-body-2" aria-expanded="false" aria-controls="accordion-open-body-2">
+                                        <a href="javascrip:void(0)" class="block h-8 leading-8 p-0 text-black font-medium text-xs after:content-[''] after:w-[6px] after:h-[6px] after:border-r after:border-r-[#212121] after:border-b after:border-b-[#212121] after:absolute after:top-[10px] after:right-[3px] after:rotate-45 after:transition-all no-underline border-none outline-none">나의 혜택</a>
+                                    </button>
+                                </h2>
+                                <div id="accordion-open-body-2" class="hidden" aria-labelledby="accordion-open-heading-2">
+                                    <ul class="border-t border-t-[#e4e6ea] py-5 px-0">
+                                        <li class="mt-[3px]"><a href="../mypage/emoney.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">포인트내역</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/coupon.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">쿠폰내역</a></li>
+                                    </ul>
+                                </div>
+                                <h2 id="accordion-open-heading-3" class="accordion-open-heading bg-none border-t border-t-[#e4e6ea] border-b-0">
+                                    <button type="button" class="flex items-center justify-between w-full mt-0 border-b-0 rounded-sm relative !bg-transparent" data-accordion-target="#accordion-open-body-3" aria-expanded="false" aria-controls="accordion-open-body-3">
+                                        <a href="javascrip:void(0)" class="block h-8 leading-8 p-0 text-black font-medium text-xs after:content-[''] after:w-[6px] after:h-[6px] after:border-r after:border-r-[#212121] after:border-b after:border-b-[#212121] after:absolute after:top-[10px] after:right-[3px] after:rotate-45 after:transition-all no-underline border-none outline-none">나의 활동</a>
+                                    </button>
+                                </h2>
+                                <div id="accordion-open-body-3" class="hidden" aria-labelledby="accordion-open-heading-3">
+                                    <ul class="border-t border-t-[#e4e6ea] py-5 px-0">
+                                        <li class="mt-[3px]"><a href="../mypage/myqna_catalog.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">1:1문의 내역</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/mygdqna_catalog.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">상품 Q&amp;A 내역</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/mygdreview_catalog.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">상품 리뷰</a></li>
+                                    </ul>
+                                </div>
+                                <h2 id="accordion-open-heading-4" class="accordion-open-heading bg-none border-t border-t-[#e4e6ea] border-b-0">
+                                    <button type="button" class="flex items-center justify-between w-full mt-0 border-b-0 rounded-sm relative !bg-transparent" data-accordion-target="#accordion-open-body-4" aria-expanded="false" aria-controls="accordion-open-body-4">
+                                        <a href="javascrip:void(0)" class="block h-8 leading-8 p-0 text-black font-medium text-xs after:content-[''] after:w-[6px] after:h-[6px] after:border-r after:border-r-[#212121] after:border-b after:border-b-[#212121] after:absolute after:top-[10px] after:right-[3px] after:rotate-45 after:transition-all no-underline border-none outline-none">나의 정보</a>
+                                    </button>
+                                </h2>
+                                <div id="accordion-open-body-4" class="hidden" aria-labelledby="accordion-open-heading-4">
+                                    <ul class="border-t border-t-[#e4e6ea] py-5 px-0">
+                                        <li class="mt-[3px]"><a href="../mypage/myinfo.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">회원정보 수정</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/withdrawal.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">회원 탈퇴</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //마이메뉴 -->
+                    <!-- 회원정보 -->
+                    <a class="hidden absolute top-0 left-[-10px] z-20 pr-[20px] pl-[10px] h-[40px] leading-[41px] text-white bg-[#9C9C9C] no-underline border-none outline-none" href="javascript:;">MENU</a>
+                    <div class="bg-[#212121] overflow-hidden">
+                        <div class="w-full lg:w-[1440px] my-0 mx-auto">
+                            <div class="border-b border-b-[#605F5F] relative mx-6 lg:m-0 pt-[74px] lg:pt-[150px] pb-[9px] lg:pb-[10px]">
+                                <p class="lg:pr-0">
+                                    <span class="text-white font-medium text-xl lg:text-[32px]">이서은</span>
+                                    <span class="text-white text-[11px] lg:text-lg"> 고객님</span>
+                                    <a href="../login_process/logout.html" class="float-right w-[53px] lg:w-[64px] h-6 lg:h-[28px] leading-6 lg:leading-7 ml-2 p-0 text-black text-center text-[11px] bg-white border border-white no-underline">로그아웃</a>
+                                    <a href="../mypage/myinfo.html" class="float-right w-[53px] lg:w-[64px] h-6 lg:h-[28px] leading-6 lg:leading-7 ml-2 p-0 text-white text-center text-[10px] lg:text-[11px] bg-[#202122] relative top-0 right-0 border border-[#fff] no-underline">정보수정</a>
+                                </p>
+                                <button type="button" class="myMenu w-[116px] lg:w-[140px] h-10 lg:h-[53px] leading-10 lg:leading-[53px] p-0 pl-[10px] lg:pl-[15px] lg:pr-[58px] text-white text-[11px] lg:text-sm text-left border border-[#3f3b3b] lg:border-[#807e7e] absolute top-[14px] lg:top-[45px] right-0 z-10">MY ATNY<em class="w-[16px] h-[1px] bg-white absolute top-[19px] lg:top-[25px] right-[12px] z-10 transition-all before:content-[''] before:w-4 before:h-[1px] before:bg-white before:absolute before:top-[-5px] before:left-0 before:transition-all after:content-[''] after:w-4 after:h-[1px] after:bg-white after:absolute after:top-[5px] after:left-0 after:transition-all"></em></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-0 px-6 lg:p-0 bg-[#212121]">
+                        <div class="w-full lg:w-[1440px] my-0 mx-auto pb-[9px] lg:pt-[18px] lg:pb-[30px]">
+                            <div class="mt-0 bg-transparent p-0 overflow-hidden">
+                                <div class="float-none lg:float-left w-full lg:w-[40%] h-[134px] lg:h-[177px] pt-[46px] lg:pt-[62px] box-border relative">
+                                    <div class="text-[#807e7e] font-medium text-[11px] lg:text-[14px] absolute top-[10px] lg:top-[8px] left-0">회원등급</div>
+                                    <div class="float-left w-[65px] lg:w-auto"><img class="max-w-full align-middle border-none outline-none" src="//img.atny.com/data/skin/responsive_ver3/images/img-member.svg" title="" alt="MEMBER"></div>
+                                    <p class="float-none lg:float-left w-[calc(100%-65px)] lg:w-auto overflow-hidden sm:leading-[18px] lg:leading-[30px] m-0 pt-[14px] lg:pt-[24px] pl-[10px] lg:pl-[20px] text-[30px] text-black text-left box-border">
+                                        <span class="block float-left w-full mb-[5px] text-white text-xl lg:text-2xl">GOLD</span>
+                                        <span class="block float-left leading-[1] text-white text-[10px] lg:text-xs">등급유지기간 : 2022.01.01 ~ 2022.12.31</span>
+                                    </p>
+                                    <a href="../mypage/gradebenefit.html" class="w-[59px] lg:w-[100px] h-[25px] lg:h-[40px] leading-[25px] lg:leading-[40px] text-white text-center text-[9px] lg:text-xs font-medium border border-white rounded-[100px] absolute top-3 lg:top-[90px] right-0 lg:right-[34px] z-10 no-underline">등급혜택</a>
+                                </div>
+                                <ul class="float-none lg:float-left w-full lg:w-[60%] h-auto lg:h-[177px] mt-0 pt-[6px] lg:pt-0 border-t border-t-[#3f3b3b] lg:border-t-0">
+                                    <li class="block float-left !w-[25%] min-h-auto lg:h-full p-0 box-border relative lg:before:content-[''] lg:before:w-[1px] lg:before:h-full lg:before:absolute lg:before:top-0 lg:before:left-0 lg:before:bg-[#605f5f]"><a href="../mypage/coupon.html" class="block w-full lg:h-full p-0 pl-0 lg:pl-[10px] text-black text-[16px] no-underline border-none outline-none"><span class="block mb-[10px] lg:mb-[66px] p-0 lg:pt-[8px] lg:pl-[27px] text-[#807e7e] text-[11px] lg:text-sm relative top-0">보유쿠폰</span> <span class="ml-0 p-0 lg:pl-[27px] text-white text-[15px] lg:text-[32px] font-medium relative top-0">2<em class="text-white text-[15px] lg:text-[32px] font-medium not-italic relative">장</em></span></a></li>
+                                    <li class="block float-left !w-[25%] min-h-auto lg:h-full p-0 box-border relative before:content-[''] before:w-[1px] before:h-full before:absolute before:top-0 before:left-0 before:bg-[#3f3b3b] lg:before:bg-[#605f5f]"><a href="../mypage/emoney.html" class="block w-full h-[60px] lg:h-full pl-[10px] text-black text-[16px] text-left no-underline border-none outline-none"><span class="block mb-[10px] lg:mb-[66px] lg:pt-[8px] lg:pl-[27px] text-[#807e7e] text-[11px] lg:text-sm relative top-0">보유포인트</span><span class="ml-0 p-0 lg:pl-[27px] text-white text-[15px] lg:text-[32px] font-medium relative top-0">21,135<em class="text-white text-[15px] lg:text-[32px] font-medium not-italic relative">P</em><em class="block mt-[1px] pl-0 lg:pl-[27px] text-white text-[9px] lg:text-xs not-italic">적립율 1.0%</em></span></a></li>
+                                    <li class="block float-left !w-[25%] min-h-auto lg:h-full p-0 box-border relative before:content-[''] before:w-[1px] before:h-full before:absolute before:top-0 before:left-0 before:bg-[#3f3b3b] lg:before:bg-[#605f5f]"><a href="../order/cart.html" class="block w-full h-[60px] lg:h-full pl-[10px] text-black text-[16px] text-left no-underline border-none outline-none"><span class="block mb-[10px] lg:mb-[66px] lg:pt-[8px] lg:pl-[27px] text-[#807e7e] text-[11px] lg:text-sm relative top-0">장바구니</span> <span class="ml-0 p-0 lg:pl-[27px] text-white text-[15px] lg:text-[32px] font-medium relative top-0">0<em class="text-white text-[15px] lg:text-[32px] font-medium not-italic relative">건</em></span></a></li>
+                                    <li class="block float-left !w-[25%] min-h-auto lg:h-full p-0 box-border relative before:content-[''] before:w-[1px] before:h-full before:absolute before:top-0 before:left-0 before:bg-[#3f3b3b] lg:before:bg-[#605f5f]"><a href="../mypage/mygdreview_catalog.html" class="block w-full h-[60px] lg:h-full pl-[10px] text-black text-[16px] text-left no-underline border-none outline-none"><span class="block mb-[10px] lg:mb-[66px] lg:pt-[8px] lg:pl-[27px] text-[#807e7e] text-[11px] lg:text-sm relative top-0">내가 작성한 리뷰</span> <span class="ml-0 p-0 lg:pl-[27px] text-white text-[15px] lg:text-[32px] font-medium relative top-0">0<em class="text-white text-[15px] lg:text-[32px] font-medium not-italic relative">건</em></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //회원정보 -->
+
+                    <!-- article -->
+                    <div class="hidden sm:block max-w-[1440px] mt-10 mx-auto mb-0 py-[15px] px-[15px] lg:p-0 text-black text-left text-2xl font-medium relative">
+                        <p>위시리스트</p>
+                    </div>
+                    <div class="max-w-[1440px] my-0 mx-auto px-[15px] lg:px-0 box-border">
+                        <!-- 탭메뉴 -->
+                        <ul class="clear-both overflow-hidden mt-[15px]">
+                            <li class="block float-left w-1/3 text-white bg-black border border-[#e5e5e5] border-y border-y-black box-border"><button type="button" class="w-full h-10 sm:h-[65px] align-middle leading-3 py-[15px] px-0 text-xs sm:text-sm text-white bg-black border-none rounded-none appearance-none cursor-pointer">위시리스트 (6)</button></li>
+                            <li class="float-left w-1/3 ml-[-1px] text-black border border-[#e5e5e5] box-border"><button type="button" class="w-full h-10 sm:h-[65px] align-middle leading-3 py-[15px] px-0 text-xs sm:text-sm border-none rounded-none appearance-none cursor-pointer" onclick="location.href='mydesigner.html'">마이디자이너 (5)</button></li>
+                            <li class="float-left w-1/3 ml-[-1px] text-black border border-[#e5e5e5] box-border"><button type="button" class="w-full h-10 sm:h-[65px] align-middle leading-3 py-[15px] px-0 text-xs sm:text-sm border-none rounded-none appearance-none cursor-pointer" onclick="location.href='recently.html'">최근 본 상품 (6)</button></li>
+                        </ul>
+                        <!-- //탭메뉴 -->
+                        <!-- 리스트 항목 -->
+                        <div class="block overflow-hidden clear-both">
+                            <p class="pt-5 sm:pt-[30px] px-0 pb-[10px] sm:pb-[5px] text-black text-right">* 최근 1년간의 위시리스트에 담은 상품 내역이 제공됩니다.</p>
+                            <dl class="m-0 p-0 list-none">
+                                <dt class="p-[15px] bg-[#f6f6f6]">
+                                    <p class="overflow-hidden leading-[25px]">
+                                        <span class="inline-block">
+                                            <input type="checkbox" id="ckall" class="peer hidden invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" name="" value="" />
+                                            <label for="ckall" class="inline-block pl-5 text-[#666] text-[13px] sm:text-sm bg-[url(../assets/icon/ico-search-filter-check.png)] bg-[length:15px_15px] peer-checked:bg-[url(../assets/icon/ico-search-filter-check-on.png)] bg-no-repeat bg-[left_center] cursor-pointer">전체선택</label>
+                                        </span>
+                                        <button type="button" id="select_del" class="float-right w-[80px] h-[25px] align-middle text-[#666] bg-transparent border border-[#666] rounded-none appearance-none cursor-pointer">선택삭제</button>
+                                    </p>
+                                </dt>
+                                <dd class="pt-[30px] sm:px-[15px]">
+                                    <ul class="goods_list_wrap flex flex-wrap gap-[35px_0px] justify-between lg:justify-start overflow-hidden m-0 p-0 list-none">
+                                        <!-- 1 -->
+                                        <li class="w-[calc(50%-8px)] lg:w-1/5 md:mb-[47px] relative lg:pl-[15px]">
+                                            <div class="overflow-hidden mb-2">
+                                                <span class="inline-block">
+                                                    <input type="checkbox" name="wish_seq[]" value="29540" id="29540" class="peer hidden invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" />
+                                                    <label for="29540" class="inline-block pl-5 text-[#666] text-sm bg-[url(../assets/icon/ico-search-filter-check.png)] bg-[length:15px_15px] peer-checked:bg-[url(../assets/icon/ico-search-filter-check-on.png)] bg-no-repeat bg-[left_center] cursor-pointer -indent-96">선택</label>
+                                                </span>
+                                            </div>
+                                            <div class="relative">
+                                                <!--상품이미지 :: START-->
+                                                <div class="imgBox w-full">
+                                                    <div class="goods_image h-[220px] lg:h-[282px] mb-2 sm:mb-4 relative">
+                                                        <a href="javascript:;" class="block overflow-hidden absolute top-0 right-0 bottom-0 left-0 z-10">
+                                                            <img class="w-auto max-w-[90%] max-h-[90%] align-middle border-none outline-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="//img.atny.com/data/goods/ATNY/92/1781192/353684_002_1_list1.jpg" onerror="this.src='../assets/icon/ico-noimage.gif'" alt="반려동물 용품">
+                                                        </a>
+                                                    </div>
+                                                    <div class="hidden goods_image h-[220px] lg:h-[282px] mb-2 sm:mb-4 relative">
+                                                        <a href="javascript:;" class="block overflow-hidden absolute top-0 right-0 bottom-0 left-0 z-10">
+                                                            <img class="w-auto max-w-[90%] max-h-[90%] align-middle border-none outline-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="//img.atny.com/data/goods/ATNY/92/1781192/353684_002_2_list1.jpg" onerror="this.src='../assets/icon/ico-noimage.gif'" alt="반려동물 용품">
+                                                            <div class="hidden lg:flex flex-col w-[90%] h-[90%] items-center justify-center text-white bg-[rgba(0,0,0,0.3)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] pointer-events-none">
+                                                                <div class="text-[10px] font-bold font-['EverettM']">IN STOCK</div>
+                                                                <div class="text-[10px] font-bold font-['EverettM']">Black / 30 (3)</div>
+                                                                <div class="text-[10px] font-bold font-['EverettM']">Black / 35 (2)</div>
+                                                                <div class="text-[10px] font-bold font-['EverettM']">Black / 40 (3)</div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <!--//상품이미지 :: END-->
+                                                <div class="pt-[10px]">
+                                                    <p class="text-[#121212] text-sm font-['EverettM']">MOSCHINO</p>
+                                                    <div class="min-h-[33px] mt-[1px]">
+                                                        <span class="text-[#121212] text-sm">반려동물 용품</span>
+                                                    </div>
+                                                    <div class="mt-[2px] font-['EverettM'] whitespace-nowrap">
+                                                        <span class="text-[#121212] text-base font-medium whitespace-nowrap">167,301</span>
+                                                        <span class="pl-1 text-[#c6cad1] text-[11px] line-through whitespace-nowrap">192,300</span>
+                                                        <span class="ml-1 text-[#daac53] text-base font-semibold whitespace-nowrap">13%</span>
+                                                    </div>
+                                                    <div class="flex flex-wrap justify-start gap-[2px] mt-1 md:mt-[7px]">
+                                                        <span class="inline-block align-top h-[22px] leading-[22px] border border-[#ff774b] mt-[2px] px-[7px] text-[10px] text-white mr-[2px] bg-[#ff774b]">익스프레스</span>
+                                                        <span class="inline-block align-top h-[22px] leading-[22px] border border-[#ff774b] mt-[2px] px-[7px] text-[10px] text-white mr-[2px] bg-[#ff774b]">하루배송</span>
+                                                        <span class="inline-block align-top h-[22px] leading-[22px] border border-[#e7e5ea] mt-[2px] px-[7px] text-[10px] text-[#3f3b3b] mr-[2px] bg-[#f7f7f9]">감정서</span>
+                                                        <span class="inline-block align-top h-[22px] leading-[22px] border border-[#e7e5ea] mt-[2px] px-[7px] text-[10px] text-[#807e7e] mr-[2px]">무료반품</span>					
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-5">
+                                                <button type="button" class="btn-cart float-left w-[48%] h-[30px] text-white text-[13px] bg-[#999] border border-[#999] rounded-none" name="cart" id="wishcart_29300">장바구니 담기</button>
+                                                <button type="button" class="float-right w-[48%] h-[30px] text-black text-[13px] bg-white border border-black rounded-none" value="29300">삭제</button>
+                                            </div>
+                                        </li>
+                                        <!-- 2 -->
+                                        <li class="w-[calc(50%-8px)] lg:w-1/5 mb-[47px] lg:pl-[15px] relative">
+                                            <div class="overflow-hidden mb-2">
+                                                <span class="inline-block">
+                                                    <input type="checkbox" name="wish_seq[]" value="29300" id="29300" class="peer hidden invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" />
+                                                    <label for="29300" class="inline-block pl-5 text-[#666] text-sm bg-[url(../assets/icon/ico-search-filter-check.png)] bg-[length:15px_15px] peer-checked:bg-[url(../assets/icon/ico-search-filter-check-on.png)] bg-no-repeat bg-[left_center] cursor-pointer -indent-96">선택</label>
+                                                </span>
+                                            </div>
+                                            <div class="relative">
+                                                <!--상품이미지 :: START-->
+                                                <div class="imgBox w-full">
+                                                    <div class="goods_image h-[220px] lg:h-[282px] mb-2 sm:mb-4 relative">
+                                                        <a href="javascript:;" class="block overflow-hidden absolute top-0 right-0 bottom-0 left-0 z-10">
+                                                            <img class="w-auto max-w-[90%] max-h-[90%] align-middle border-none outline-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="//img.atny.com/data/goods/ATNY/28/416728/06013417a1081_list1.jpg" onerror="this.src='../assets/icon/ico-noimage.gif'" alt="반려동물 꾸뛰르 펫 의류">
+                                                        </a>
+                                                    </div>
+                                                    <div class="hidden goods_image h-[220px] lg:h-[282px] mb-2 sm:mb-4 relative">
+                                                        <a href="javascript:;" class="block overflow-hidden absolute top-0 right-0 bottom-0 left-0 z-10">
+                                                            <img class="w-auto max-w-[90%] max-h-[90%] align-middle border-none outline-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="//img.atny.com/data/goods/ATNY/28/416728/06013417a1081_1_m1_list1.jpg" onerror="this.src='../assets/icon/ico-noimage.gif'" alt="반려동물 꾸뛰르 펫 의류">
+                                                            <div class="hidden lg:flex flex-col w-[90%] h-[90%] items-center justify-center text-white bg-[rgba(0,0,0,0.3)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] pointer-events-none">
+                                                                <div class="text-[10px] font-bold font-['EverettM']">IN STOCK</div>
+                                                                <div class="text-[10px] font-bold font-['EverettM']">Fantasiabeige / 30 (1)</div>
+                                                                <div class="text-[10px] font-bold font-['EverettM']">Fantasiabeige / 35 (1)</div>
+                                                                <div class="text-[10px] font-bold font-['EverettM']">Fantasiabeige / 40 (1)</div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <!--//상품이미지 :: END-->
+                                                <div class="pt-[10px]">
+                                                    <p class="text-[#121212] text-sm font-['EverettM']">MOSCHINO</p>
+                                                    <div class="min-h-[33px] mt-[1px]">
+                                                        <span class="text-[#121212] text-sm">반려동물 꾸뛰르 펫 의류</span>
+                                                    </div>
+                                                    <div class="mt-[2px] font-['EverettM'] whitespace-nowrap">
+                                                        <span class="text-[#121212] text-base font-medium whitespace-nowrap">311,634</span>
+                                                        <span class="pl-1 text-[#c6cad1] text-[11px] line-through whitespace-nowrap">579,360</span>
+                                                        <span class="ml-1 text-[#daac53] text-base font-semibold whitespace-nowrap">46%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-5">
+                                                <button type="button" class="btn-cart float-left w-[48%] h-[30px] text-white text-[13px] bg-[#999] border border-[#999] rounded-none" name="cart" id="wishcart_29300">장바구니 담기</button>
+                                                <button type="button" class="float-right w-[48%] h-[30px] text-black text-[13px] bg-white border border-black rounded-none" value="29300">삭제</button>
+                                            </div>
+                                        </li>
+                                        <!-- 3 -->
+                                        <li class="w-[calc(50%-8px)] lg:w-1/5 md:mb-[47px] pl-5 lg:pl-[15px] relative">
+                                            <div class="overflow-hidden mb-2">
+                                                <span class="inline-block">
+                                                    <input type="checkbox" name="wish_seq[]" value="29298" id="29298" class="peer hidden invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" />
+                                                    <label for="29298" class="inline-block pl-5 text-[#666] text-sm bg-[url(../assets/icon/ico-search-filter-check.png)] bg-[length:15px_15px] peer-checked:bg-[url(../assets/icon/ico-search-filter-check-on.png)] bg-no-repeat bg-[left_center] cursor-pointer -indent-96">선택</label>
+                                                </span>
+                                            </div>
+                                            <div class="relative">
+                                                <!--상품이미지 :: START-->
+                                                <div class="imgBox w-full">
+                                                    <div class="goods_image h-[220px] lg:h-[282px] mb-2 sm:mb-4 relative">
+                                                        <a href="javascript:;" class="block overflow-hidden absolute top-0 right-0 bottom-0 left-0 z-10">
+                                                            <img class="w-auto max-w-[90%] max-h-[90%] align-middle border-none outline-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="//img.atny.com/data/goods/ATNY/99/1993499/71dfa7d864c8d0651932e2184ecb2a05_list1.jpg" onerror="this.src='../assets/icon/ico-noimage.gif'" alt="여성 아르코 토트/탑핸들백">
+                                                        </a>
+                                                    </div>
+                                                    <div class="hidden goods_image h-[220px] lg:h-[282px] mb-2 sm:mb-4 relative">
+                                                        <a href="javascript:;" class="block overflow-hidden absolute top-0 right-0 bottom-0 left-0 z-10">
+                                                            <img class="w-auto max-w-[90%] max-h-[90%] align-middle border-none outline-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="//img.atny.com/data/goods/ATNY/99/1993499/bf0d9192bc914fb3900b3ca9fb2fa1b3_list1.jpg" onerror="this.src='../assets/icon/ico-noimage.gif'" alt="여성 아르코 토트/탑핸들백">
+                                                            <div class="hidden lg:flex flex-col w-[90%] h-[90%] items-center justify-center text-white bg-[rgba(0,0,0,0.3)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] pointer-events-none">
+                                                                <div class="text-[10px] font-bold font-['EverettM']">IN STOCK</div>
+                                                                <div class="text-[10px] font-bold font-['EverettM']">Sand / US one size (1)</div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <!--//상품이미지 :: END-->
+                                                <div class="pt-[10px]">
+                                                    <p class="text-[#121212] text-sm font-['EverettM']">BOTTEGA VENETA</p>
+                                                    <div class="min-h-[33px] mt-[1px]">
+                                                        <span class="text-[#121212] text-sm">여성 아르코 토트/탑핸들백</span>
+                                                    </div>
+                                                    <div class="mt-[2px] font-['EverettM'] whitespace-nowrap">
+                                                        <span class="text-[#121212] text-base font-medium whitespace-nowrap">4,278,399</span>
+                                                        <span class="pl-1 text-[#c6cad1] text-[11px] line-through whitespace-nowrap">4,917,700</span>
+                                                        <span class="ml-1 text-[#daac53] text-base font-semibold whitespace-nowrap">13%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-5">
+                                                <button type="button" class="btn-cart float-left w-[48%] h-[30px] text-white text-[13px] bg-[#999] border border-[#999] rounded-none" name="cart" id="wishcart_29298">장바구니 담기</button>
+                                                <button type="button" class="float-right w-[48%] h-[30px] text-black text-[13px] bg-white border border-black rounded-none" value="29298">삭제</button>
+                                            </div>
+                                        </li>
+                                        <!-- 4 -->
+                                        <li class="w-[calc(50%-8px)] lg:w-1/5 mb-[47px] lg:pl-[15px] relative">
+                                            <div class="overflow-hidden mb-2">
+                                                <span class="inline-block">
+                                                    <input type="checkbox" name="wish_seq[]" value="29297" id="29297" class="peer hidden invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" />
+                                                    <label for="29297" class="inline-block pl-5 text-[#666] text-sm bg-[url(../assets/icon/ico-search-filter-check.png)] bg-[length:15px_15px] peer-checked:bg-[url(../assets/icon/ico-search-filter-check-on.png)] bg-no-repeat bg-[left_center] cursor-pointer -indent-96">선택</label>
+                                                </span>
+                                            </div>
+                                            <div class="relative">
+                                                <!--상품이미지 :: START-->
+                                                <div class="imgBox w-full">
+                                                    <div class="goods_image h-[220px] lg:h-[282px] mb-2 sm:mb-4 relative">
+                                                        <a href="javascript:;" class="block overflow-hidden absolute top-0 right-0 bottom-0 left-0 z-10">
+                                                            <img class="w-auto max-w-[90%] max-h-[90%] align-middle border-none outline-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="//img.atny.com/data/goods/ATNY/67/1994767/60f45141d82161cf7b6a75aee293e03f_list1.jpg" onerror="this.src='../assets/icon/ico-noimage.gif'" alt="여성 앤더슨 미니 체인 토트/탑핸들백">
+                                                        </a>
+                                                    </div>
+                                                    <div class="hidden goods_image h-[220px] lg:h-[282px] mb-2 sm:mb-4 relative">
+                                                        <a href="javascript:;" class="block overflow-hidden absolute top-0 right-0 bottom-0 left-0 z-10">
+                                                            <img class="w-auto max-w-[90%] max-h-[90%] align-middle border-none outline-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="//img.atny.com/data/goods/ATNY/67/1994767/1aa7fe64e62b993d59317b21c3e15f50_list1.jpg" onerror="this.src='../assets/icon/ico-noimage.gif'" alt="여성 앤더슨 미니 체인 토트/탑핸들백">
+                                                            <div class="hidden lg:flex flex-col w-[90%] h-[90%] items-center justify-center text-white bg-[rgba(0,0,0,0.3)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] pointer-events-none">
+                                                                <div class="text-[10px] font-bold font-['EverettM']">IN STOCK</div>
+                                                                <div class="text-[10px] font-bold font-['EverettM']">AZZURRO / US one size (1)</div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <!--//상품이미지 :: END-->
+                                                <div class="pt-[10px]">
+                                                    <div class="">
+                                                        <span class="text-[#121212] text-sm font-['EverettM']">JW ANDERSON</span>
+                                                    </div>
+                                                    <div class="min-h-[33px] mt-[1px]">
+                                                        <span class="text-[#121212] text-sm">여성 앤더슨 미니 체인 토트/탑핸들백</span>
+                                                    </div>
+                                                    <div class="mt-[2px] font-['EverettM'] whitespace-nowrap">
+                                                        <span class="text-[#121212] text-base font-medium whitespace-nowrap">790,134</span>
+                                                        <span class="pl-1 text-[#c6cad1] text-[11px] line-through whitespace-nowrap">908,200</span>
+                                                        <span class="ml-1 text-[#daac53] text-base font-semibold whitespace-nowrap">13%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-5">
+                                                <button type="button" class="btn-cart float-left w-[48%] h-[30px] text-white text-[13px] bg-[#999] border border-[#999] rounded-none" name="cart" id="wishcart_29297">장바구니 담기</button>
+                                                <button type="button" class="float-right w-[48%] h-[30px] text-black text-[13px] bg-white border border-black rounded-none" value="29297">삭제</button>
+                                            </div>
+                                        </li>
+                                        <!-- 5 -->
+                                        <li class="w-[calc(50%-8px)] lg:w-1/5 mb-[47px] lg:pl-[15px] relative">
+                                            <div class="overflow-hidden mb-2">
+                                                <span class="inline-block">
+                                                    <input type="checkbox" name="wish_seq[]" value="29296" id="29296" class="peer hidden invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" />
+                                                    <label for="29296" class="inline-block pl-5 text-[#666] text-sm bg-[url(../assets/icon/ico-search-filter-check.png)] bg-[length:15px_15px] peer-checked:bg-[url(../assets/icon/ico-search-filter-check-on.png)] bg-no-repeat bg-[left_center] cursor-pointer -indent-96">선택</label>
+                                                </span>
+                                            </div>
+                                            <div class="relative">
+                                                <!--상품이미지 :: START-->
+                                                <div class="imgBox w-full">
+                                                    <div class="goods_image h-[220px] lg:h-[282px] mb-2 sm:mb-4 relative">
+                                                        <a href="javascript:;" class="block overflow-hidden absolute top-0 right-0 bottom-0 left-0 z-10">
+                                                            <img class="w-auto max-w-[90%] max-h-[90%] align-middle border-none outline-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="//img.atny.com/data/goods/ATNY/43/1999343/9beba2311545ad7b2a26ac7a26fd1e75_list1.jpg" onerror="this.src='../assets/icon/ico-noimage.gif'" alt="여성 파이퍼 스웨이드 토트/탑핸들백">
+                                                        </a>
+                                                    </div>
+                                                    <div class="hidden goods_image h-[220px] lg:h-[282px] mb-2 sm:mb-4 relative">
+                                                        <a href="javascript:;" class="block overflow-hidden absolute top-0 right-0 bottom-0 left-0 z-10">
+                                                            <img class="w-auto max-w-[90%] max-h-[90%] align-middle border-none outline-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="" onerror="this.src='../assets/icon/ico-noimage.gif'" alt="여성 파이퍼 스웨이드 토트/탑핸들백">
+                                                            <div class="hidden lg:flex flex-col w-[90%] h-[90%] items-center justify-center text-white bg-[rgba(0,0,0,0.3)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] pointer-events-none">
+                                                                <div class="text-[10px] font-bold font-['EverettM']">IN STOCK</div>
+                                                                <div class="text-[10px] font-bold font-['EverettM']">black / US one size (3)</div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <!--//상품이미지 :: END-->
+                                                <div class="pt-[10px]">
+                                                    <p class="text-[#121212] text-sm font-['EverettM']">MICHAEL MICHAEL KORS</p>
+                                                    <div class="min-h-[33px] mt-[1px]">
+                                                        <span class="text-[#121212] text-sm">여성 파이퍼 스웨이드 토트/탑핸들백</span>
+                                                    </div>
+                                                    <div class="mt-[2px] font-['EverettM'] whitespace-nowrap">
+                                                        <span class="text-[#121212] text-base font-medium whitespace-nowrap">588,294</span>
+                                                        <span class="pl-1 text-[#c6cad1] text-[11px] line-through whitespace-nowrap">676,200</span>
+                                                        <span class="ml-1 text-[#daac53] text-base font-semibold whitespace-nowrap">13%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-5">
+                                                <button type="button" class="btn-cart float-left w-[48%] h-[30px] text-white text-[13px] bg-[#999] border border-[#999] rounded-none" name="cart" id="wishcart_29296">장바구니 담기</button>
+                                                <button type="button" class="float-right w-[48%] h-[30px] text-black text-[13px] bg-white border border-black rounded-none" value="29296">삭제</button>
+                                            </div>
+                                        </li>
+                                        <!-- 6 -->
+                                        <li class="w-[calc(50%-8px)] lg:w-1/5 mb-[47px] lg:pl-[15px] relative">
+                                            <div class="overflow-hidden mb-2">
+                                                <span class="inline-block">
+                                                    <input type="checkbox" name="wish_seq[]" value="29295" id="29295" class="peer hidden invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" />
+                                                    <label for="29295" class="inline-block pl-5 text-[#666] text-sm bg-[url(../assets/icon/ico-search-filter-check.png)] bg-[length:15px_15px] peer-checked:bg-[url(../assets/icon/ico-search-filter-check-on.png)] bg-no-repeat bg-[left_center] cursor-pointer -indent-96">선택</label>
+                                                </span>
+                                            </div>
+                                            <div class="relative">
+                                                <!--상품이미지 :: START-->
+                                                <div class="imgBox w-full">
+                                                    <div class="goods_image h-[220px] lg:h-[282px] mb-2 sm:mb-4 relative">
+                                                        <a href="javascript:;" class="block overflow-hidden absolute top-0 right-0 bottom-0 left-0 z-10">
+                                                            <img class="w-auto max-w-[90%] max-h-[90%] align-middle border-none outline-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="//img.atny.com/data/goods/ATNY/20/2000020/005_d0cf7934-00f5-42a0-b94c-ee56ee549b14_list1.JPG" onerror="this.src='../assets/icon/ico-noimage.gif'" alt="여성 토트/탑핸들백">
+                                                        </a>
+                                                    </div>
+                                                    <div class="hidden goods_image h-[220px] lg:h-[282px] mb-2 sm:mb-4 relative">
+                                                        <a href="javascript:;" class="block overflow-hidden absolute top-0 right-0 bottom-0 left-0 z-10">
+                                                            <img class="w-auto max-w-[90%] max-h-[90%] align-middle border-none outline-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="//img.atny.com/data/goods/ATNY/20/2000020/005_b0d5539f-face-4932-83fc-414d6d1b1e2c_list1.JPG" onerror="this.src='../assets/icon/ico-noimage.gif'" alt="여성 토트/탑핸들백">
+                                                            <div class="hidden lg:flex flex-col w-[90%] h-[90%] items-center justify-center text-white bg-[rgba(0,0,0,0.3)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] pointer-events-none">
+                                                                <div class="text-[10px] font-bold font-['EverettM']">IN STOCK</div>
+                                                                <div class="text-[10px] font-bold font-['EverettM']">블랙/화이트 / UNIQUE (4)</div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <!--//상품이미지 :: END-->
+                                                <div class="pt-[10px]">
+                                                    <p class="text-[#121212] text-sm font-['EverettM']">OFF WHITE</p>
+                                                    <div class="min-h-[33px] mt-[1px]">
+                                                        <span class="text-[#121212] text-sm">여성 토트/탑핸들백</span>
+                                                    </div>
+                                                    <div class="mt-[2px] font-['EverettM'] whitespace-nowrap">
+                                                        <span class="text-[#121212] text-base font-medium whitespace-nowrap">2,290,884</span>
+                                                        <span class="pl-1 text-[#c6cad1] text-[11px] line-through whitespace-nowrap">2,633,200</span>
+                                                        <span class="ml-1 text-[#daac53] text-base font-semibold whitespace-nowrap">13%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-5">
+                                                <button type="button" class="btn-cart float-left w-[48%] h-[30px] text-white text-[13px] bg-[#999] border border-[#999] rounded-none" name="cart" id="wishcart_29295">장바구니 담기</button>
+                                                <button type="button" class="float-right w-[48%] h-[30px] text-black text-[13px] bg-white border border-black rounded-none" value="29295">삭제</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                        <!-- //리스트 항목 -->
+                        <!-- paging -->
+                        <div class="mt-[30px] mb-[50px] mx-0 font-['TTNorms'] text-center">
+                            <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border text-white font-medium bg-black border-black rounded-[100%] cursor-default relative">1</a>
+                            <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">2</a>
+                            <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">3</a>
+                            <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">4</a>
+                            <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">5</a>
+                            <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]"><span class="inline-block w-[15px] h-[15px] mt-1 bg-[url(../assets/icon/btn_pageNext.gif)] bg-center bg-no-repeat"></span></a>
+                        </div>
+                        <!-- //paging -->
+                        <!-- 목록 없을 경우 -->
+                        <div class="hidden max-w-[1440px] h-[200px] lg:mt-10 mb-0 p-0 pt-10 text-[#333] text-center text-[15px] font-normal bg-[url(../assets/icon/ico-nodata.png)] bg-center bg-[length:68px] bg-no-repeat border border-[#ddd] rounded">위시리스트에 담긴 상품이 없습니다.</div>
+                        <!-- //목록 없을 경우 -->
+                    </div>
+                    <!-- //article -->
+
+                    <!-- //layer - 컬러 및 사이즈 선택 -->
+                    <div class="hidden layer-prod_option bg-[rgba(0,0,0,0.7)] fixed top-0 right-0 left-0 bottom-0 z-[9999]">
+                        <div class="w-full sm:w-[480px] min-h-[350px] pb-[130px] sm:p-[15px] sm:pb-[80px] bg-white rounded-t-[30px] sm:rounded-none fixed sm:top-1/2 right-0 sm:right-auto bottom-0 sm:bottom-auto left-0 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-[99999] sm:z-[9999] shadow-[0_0_10px_0_rgb(0,0,0,0.05)]">
+                            <div class="min-h-[250px]">
+                                <table class="w-full m-0 border-none border-spacing-0 border-collapse break-all" cellpadding="0" cellspacing="0">
+                                    <colgroup>
+                                        <col>
+                                        <col class="w-[15px]">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2" class="min-h-[20px] text-left text-[#666] break-words">
+                                                <div class="h-[35px] p-0 sm:pb-[10px] text-black sm:text-inherit border-none sm:border-b-2 sm:border-black relative">
+                                                    <h4 class="hidden sm:block pt-[7px] text-left text-black text-base leading-4 font-medium">Color / Size 선택</h4>
+                                                    <a href="javascript:;" class="btn-close block sm:inline-block w-full sm:w-4 h-[33px] sm:h-4 overflow-hidden sm:overflow-auto text-[#444] text-[0] indent-[-9999px] sm:indent-0 bg-none sm:bg-[url('../assets/icon/popup_close.png')] bg-[length:auto_100%] bg-no-repeat bg-center border-none rounded-t-3xl sm:rounded-none outline-none relative sm:absolute top-1 right-0 after:content-[''] after:w-[30px] after:h-[3px] after:ml-[-15px] after:bg-[#bbb] after:rounded-md after:absolute after:top-[15px] after:left-1/2 after:transform-none sm:after:hidden">닫기</a>
+                                                </div>
+                                                <span class="optionTitle hidden">Color / Size</span>
+                                                <select class="hidden w-full max-w-full h-[35px] pl-[5px] align-top text-[13px] border border-[#ccc] rounded-sm" name="viewOptions[]" id="0" opttype="" sb="44519260">
+                                                    <option class="text-[13px]" value="" selected="selected">Color / Size 선택</option>
+                                                    <option class="text-[13px]" value="Fantasiabeige / 30" price="358200.00" consumer_price="579715.00" opt1="Fantasiabeige / 30" opt2="" opt3="" opt4="" opt5="" infomation="" seq="0" data-stock="1">Fantasiabeige / 30</option>
+                                                    <option class="text-[13px]" value="Fantasiabeige / 35" price="358200.00" consumer_price="579715.00" opt1="Fantasiabeige / 35" opt2="" opt3="" opt4="" opt5="" infomation="" seq="1" data-stock="1">Fantasiabeige / 35</option>
+                                                    <option class="text-[13px]" value="Fantasiabeige / 40" price="358200.00" consumer_price="579715.00" opt1="Fantasiabeige / 40" opt2="" opt3="" opt4="" opt5="" infomation="" seq="2" data-stock="1" selected="selected">Fantasiabeige / 40</option>
+                                                </select>
+                                                <div class="w-auto sm:w-full h-[44px] leading-[44px] mt-[10px] sm:mt-[15px] mx-[15px] sm:mx-0 text-black text-[13px] font-normal bg-[url('../assets/icon/ico-select-tri.svg')] bg-[length:9px_5px] bg-no-repeat bg-[97%_center] border border-[#e7e5ea] outline-none box-border relative" tabindex="0">
+                                                    <a href="javascript:;" class="hidden w-[35px] h-[35px] text-[#444] bg-[url('../assets/icon/search_ico_sort.png')] bg-[length:8px_5px] bg-no-repeat bg-[right_10px_center] no-underline border-none outline-none absolute top-0 right-0"></a>
+                                                    <a href="javascript:;" class="btn-sbToggle block w-full h-[44px] px-[15px] overflow-hidden text-black text-[13px] leading-[44px] font-normal indent-0 no-underline outline-none box-border top-0 left-0">Color / Size 선택</a>
+                                                    <ul class="sbOptions hidden w-full sm:w-[448px] max-h-[257px] overflow-y-auto m-0 p-0 mb-[25px] bg-white border border-[#e7e5ea] absolute !top-[42px] left-[-1px] z-[999] list-none">
+                                                        <li class="border-b border-[#e7e5ea] hover:bg-[#f7f7f7]"><a href="javascript:;" class="block px-[15px] text-[#666] no-underline border-none outline-none" rel="">Color / Size 선택</a></li>
+                                                        <li class="border-b border-[#e7e5ea] hover:bg-[#f7f7f7]"><a href="#Fantasiabeige / 30" class="block px-[15px] text-[#666] no-underline border-none outline-none" rel="Fantasiabeige / 30">Fantasiabeige / 30<span class="float-right text-[#bbb] text-xs leading-[45px]">실시간 재고 1개</span></a></li>
+                                                        <li class="border-b border-[#e7e5ea] hover:bg-[#f7f7f7]"><a href="#Fantasiabeige / 35" class="block px-[15px] text-[#666] no-underline border-none outline-none" rel="Fantasiabeige / 35">Fantasiabeige / 35<span class="float-right text-[#bbb] text-xs leading-[45px]">실시간 재고 1개</span></a></li>
+                                                        <li class="hover:bg-[#f7f7f7]"><a href="#Fantasiabeige / 40" class="block px-[15px] text-[#666] no-underline border-none outline-none" rel="Fantasiabeige / 40">Fantasiabeige / 40<span class="float-right text-[#bbb] text-xs leading-[45px]">실시간 재고 1개</span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="block px-[15px] sm:px-0 relative">
+                                    <table class="table-fixed w-full bg-white border-none border-collapse border-spacing-0 break-all" cellpadding="0" cellspacing="0">
+                                        <tfoot>
+                                            <tr>
+                                                <td class="h-auto pt-[15px] text-black leading-6 break-words">총 예상 결제 금액
+                                                    <span class="float-right text-black text-xs leading-[1]">
+                                                        <span class="float-none inline-block align-baseline mr-[2px] text-black text-2xl leading-[1.0em] tracking-[-1px] font-bold font-['EverettM'] relative top-0">358,200 원</span>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody class="block w-full min-h-[120px] max-h-[400px] overflow-y-auto relative">
+                                            <!-- 1 -->
+                                            <tr opt_group="0" class="block relative">
+                                                <td class="block w-full py-[10px] overflow-hidden text-[#666] text-[13px] leading-5 break-words">
+                                                    <div class="pt-[15px] text-black text-[13px] leading-[13px]">
+                                                        Color / Size : Fantasiabeige / 40
+                                                        <input type="hidden" name="option[0][0]" class="selected_options" opt_group="0" opt_seq="0" value="Fantasiabeige / 40" />
+                                                        <input type="hidden" name="optionTitle[0][0]" class="selected_options_title" opt_group="0" opt_seq="0" value="Color / Size" />
+                                                        <button type="button" class="w-6 h-6 pl-[10px] text-[0] bg-[url(../assets/icon/ico-item-delete.svg)] bg-center bg-no-repeat absolute top-0 right-0 z-[2]">상품 삭제</button>
+                                                    </div>
+                                                    <div class="block w-full pt-[15px]">
+                                                        <input type="text" class="w-[72px] h-[35px] m-0 px-[10px] align-middle text-black text-[13px] leading-[35px] text-center border border-[#666] rounded-none outline-none appearance-none box-border" name="optionEa[0]" value="1" />
+                                                        <button type="button" class="w-[35px] h-[35px] overflow-hidden ml-[5px] align-middle text-[#555] text-center indent-[-100px] bg-[url(../assets/icon/btn_minus.jpg)] bg-center bg-no-repeat border-none rounded-none outline-none appearance-none box-border">-</button>
+                                                        <button type="button" class="w-[35px] h-[35px] overflow-hidden ml-[5px] align-middle text-[#555] text-center indent-[-100px] bg-[url(../assets/icon/btn_plus.jpg)] bg-center bg-no-repeat border-none rounded-none outline-none appearance-none box-border">+</button>
+                                                    </div>
+                                                    <div class="hidden overflow-hidden px-[10px] leading-[56px] border-b border-black">
+                                                        <span class="float-left text-black text-[13px] font-['TTNorms']">총 수량 1개</span>
+                                                        <span class="hidden">579715</span>
+                                                        <span class="hidden">358200</span>
+                                                        <strong class="hidden float-right text-sm leading-[19px]">358,200원</strong>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <!-- 2 -->
+                                            <tr opt_group="0" class="block relative">
+                                                <td class="block w-full py-[10px] overflow-hidden text-[#666] text-[13px] leading-5 break-words">
+                                                    <div class="pt-[15px] text-black text-[13px] leading-[13px]">
+                                                        Color / Size : Fantasiabeige / 40
+                                                        <input type="hidden" name="option[0][0]" class="selected_options" opt_group="0" opt_seq="0" value="Fantasiabeige / 40" />
+                                                        <input type="hidden" name="optionTitle[0][0]" class="selected_options_title" opt_group="0" opt_seq="0" value="Color / Size" />
+                                                        <button type="button" class="w-6 h-6 pl-[10px] text-[0] bg-[url(../assets/icon/ico-item-delete.svg)] bg-center bg-no-repeat absolute top-0 right-0 z-[2]">상품 삭제</button>
+                                                    </div>
+                                                    <div class="block w-full pt-[15px]">
+                                                        <input type="text" class="w-[72px] h-[35px] m-0 px-[10px] align-middle text-black text-[13px] leading-[35px] text-center border border-[#666] rounded-none outline-none appearance-none box-border" name="optionEa[0]" value="1" />
+                                                        <button type="button" class="w-[35px] h-[35px] overflow-hidden ml-[5px] align-middle text-[#555] text-center indent-[-100px] bg-[url(../assets/icon/btn_minus.jpg)] bg-center bg-no-repeat border-none rounded-none outline-none appearance-none box-border">-</button>
+                                                        <button type="button" class="w-[35px] h-[35px] overflow-hidden ml-[5px] align-middle text-[#555] text-center indent-[-100px] bg-[url(../assets/icon/btn_plus.jpg)] bg-center bg-no-repeat border-none rounded-none outline-none appearance-none box-border">+</button>
+                                                    </div>
+                                                    <div class="hidden overflow-hidden px-[10px] leading-[56px] border-b border-black">
+                                                        <span class="float-left text-black text-[13px] font-['TTNorms']">총 수량 1개</span>
+                                                        <span class="hidden">579715</span>
+                                                        <span class="hidden">358200</span>
+                                                        <strong class="hidden float-right text-sm leading-[19px]">358,200원</strong>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <!-- 3 -->
+                                            <tr opt_group="0" class="block relative">
+                                                <td class="block w-full py-[10px] overflow-hidden text-[#666] text-[13px] leading-5 break-words">
+                                                    <div class="pt-[15px] text-black text-[13px] leading-[13px]">
+                                                        Color / Size : Fantasiabeige / 40
+                                                        <input type="hidden" name="option[0][0]" class="selected_options" opt_group="0" opt_seq="0" value="Fantasiabeige / 40" />
+                                                        <input type="hidden" name="optionTitle[0][0]" class="selected_options_title" opt_group="0" opt_seq="0" value="Color / Size" />
+                                                        <button type="button" class="w-6 h-6 pl-[10px] text-[0] bg-[url(../assets/icon/ico-item-delete.svg)] bg-center bg-no-repeat absolute top-0 right-0 z-[2]">상품 삭제</button>
+                                                    </div>
+                                                    <div class="block w-full pt-[15px]">
+                                                        <input type="text" class="w-[72px] h-[35px] m-0 px-[10px] align-middle text-black text-[13px] leading-[35px] text-center border border-[#666] rounded-none outline-none appearance-none box-border" name="optionEa[0]" value="1" />
+                                                        <button type="button" class="w-[35px] h-[35px] overflow-hidden ml-[5px] align-middle text-[#555] text-center indent-[-100px] bg-[url(../assets/icon/btn_minus.jpg)] bg-center bg-no-repeat border-none rounded-none outline-none appearance-none box-border">-</button>
+                                                        <button type="button" class="w-[35px] h-[35px] overflow-hidden ml-[5px] align-middle text-[#555] text-center indent-[-100px] bg-[url(../assets/icon/btn_plus.jpg)] bg-center bg-no-repeat border-none rounded-none outline-none appearance-none box-border">+</button>
+                                                    </div>
+                                                    <div class="hidden overflow-hidden px-[10px] leading-[56px] border-b border-black">
+                                                        <span class="float-left text-black text-[13px] font-['TTNorms']">총 수량 1개</span>
+                                                        <span class="hidden">579715</span>
+                                                        <span class="hidden">358200</span>
+                                                        <strong class="hidden float-right text-sm leading-[19px]">358,200원</strong>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <!-- 4 -->
+                                            <tr opt_group="0" class="block relative">
+                                                <td class="block w-full py-[10px] overflow-hidden text-[#666] text-[13px] leading-5 break-words">
+                                                    <div class="pt-[15px] text-black text-[13px] leading-[13px]">
+                                                        Color / Size : Fantasiabeige / 40
+                                                        <input type="hidden" name="option[0][0]" class="selected_options" opt_group="0" opt_seq="0" value="Fantasiabeige / 40" />
+                                                        <input type="hidden" name="optionTitle[0][0]" class="selected_options_title" opt_group="0" opt_seq="0" value="Color / Size" />
+                                                        <button type="button" class="w-6 h-6 pl-[10px] text-[0] bg-[url(../assets/icon/ico-item-delete.svg)] bg-center bg-no-repeat absolute top-0 right-0 z-[2]">상품 삭제</button>
+                                                    </div>
+                                                    <div class="block w-full pt-[15px]">
+                                                        <input type="text" class="w-[72px] h-[35px] m-0 px-[10px] align-middle text-black text-[13px] leading-[35px] text-center border border-[#666] rounded-none outline-none appearance-none box-border" name="optionEa[0]" value="1" />
+                                                        <button type="button" class="w-[35px] h-[35px] overflow-hidden ml-[5px] align-middle text-[#555] text-center indent-[-100px] bg-[url(../assets/icon/btn_minus.jpg)] bg-center bg-no-repeat border-none rounded-none outline-none appearance-none box-border">-</button>
+                                                        <button type="button" class="w-[35px] h-[35px] overflow-hidden ml-[5px] align-middle text-[#555] text-center indent-[-100px] bg-[url(../assets/icon/btn_plus.jpg)] bg-center bg-no-repeat border-none rounded-none outline-none appearance-none box-border">+</button>
+                                                    </div>
+                                                    <div class="hidden overflow-hidden px-[10px] leading-[56px] border-b border-black">
+                                                        <span class="float-left text-black text-[13px] font-['TTNorms']">총 수량 1개</span>
+                                                        <span class="hidden">579715</span>
+                                                        <span class="hidden">358200</span>
+                                                        <strong class="hidden float-right text-sm leading-[19px]">358,200원</strong>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <!-- 5 -->
+                                            <tr opt_group="0" class="block relative">
+                                                <td class="block w-full py-[10px] overflow-hidden text-[#666] text-[13px] leading-5 break-words">
+                                                    <div class="pt-[15px] text-black text-[13px] leading-[13px]">
+                                                        Color / Size : Fantasiabeige / 40
+                                                        <input type="hidden" name="option[0][0]" class="selected_options" opt_group="0" opt_seq="0" value="Fantasiabeige / 40" />
+                                                        <input type="hidden" name="optionTitle[0][0]" class="selected_options_title" opt_group="0" opt_seq="0" value="Color / Size" />
+                                                        <button type="button" class="w-6 h-6 pl-[10px] text-[0] bg-[url(../assets/icon/ico-item-delete.svg)] bg-center bg-no-repeat absolute top-0 right-0 z-[2]">상품 삭제</button>
+                                                    </div>
+                                                    <div class="block w-full pt-[15px]">
+                                                        <input type="text" class="w-[72px] h-[35px] m-0 px-[10px] align-middle text-black text-[13px] leading-[35px] text-center border border-[#666] rounded-none outline-none appearance-none box-border" name="optionEa[0]" value="1" />
+                                                        <button type="button" class="w-[35px] h-[35px] overflow-hidden ml-[5px] align-middle text-[#555] text-center indent-[-100px] bg-[url(../assets/icon/btn_minus.jpg)] bg-center bg-no-repeat border-none rounded-none outline-none appearance-none box-border">-</button>
+                                                        <button type="button" class="w-[35px] h-[35px] overflow-hidden ml-[5px] align-middle text-[#555] text-center indent-[-100px] bg-[url(../assets/icon/btn_plus.jpg)] bg-center bg-no-repeat border-none rounded-none outline-none appearance-none box-border">+</button>
+                                                    </div>
+                                                    <div class="hidden overflow-hidden px-[10px] leading-[56px] border-b border-black">
+                                                        <span class="float-left text-black text-[13px] font-['TTNorms']">총 수량 1개</span>
+                                                        <span class="hidden">579715</span>
+                                                        <span class="hidden">358200</span>
+                                                        <strong class="hidden float-right text-sm leading-[19px]">358,200원</strong>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <!-- 6 -->
+                                            <tr opt_group="0" class="block relative">
+                                                <td class="block w-full py-[10px] overflow-hidden text-[#666] text-[13px] leading-5 break-words">
+                                                    <div class="pt-[15px] text-black text-[13px] leading-[13px]">
+                                                        Color / Size : Fantasiabeige / 40
+                                                        <input type="hidden" name="option[0][0]" class="selected_options" opt_group="0" opt_seq="0" value="Fantasiabeige / 40" />
+                                                        <input type="hidden" name="optionTitle[0][0]" class="selected_options_title" opt_group="0" opt_seq="0" value="Color / Size" />
+                                                        <button type="button" class="w-6 h-6 pl-[10px] text-[0] bg-[url(../assets/icon/ico-item-delete.svg)] bg-center bg-no-repeat absolute top-0 right-0 z-[2]">상품 삭제</button>
+                                                    </div>
+                                                    <div class="block w-full pt-[15px]">
+                                                        <input type="text" class="w-[72px] h-[35px] m-0 px-[10px] align-middle text-black text-[13px] leading-[35px] text-center border border-[#666] rounded-none outline-none appearance-none box-border" name="optionEa[0]" value="1" />
+                                                        <button type="button" class="w-[35px] h-[35px] overflow-hidden ml-[5px] align-middle text-[#555] text-center indent-[-100px] bg-[url(../assets/icon/btn_minus.jpg)] bg-center bg-no-repeat border-none rounded-none outline-none appearance-none box-border">-</button>
+                                                        <button type="button" class="w-[35px] h-[35px] overflow-hidden ml-[5px] align-middle text-[#555] text-center indent-[-100px] bg-[url(../assets/icon/btn_plus.jpg)] bg-center bg-no-repeat border-none rounded-none outline-none appearance-none box-border">+</button>
+                                                    </div>
+                                                    <div class="hidden overflow-hidden px-[10px] leading-[56px] border-b border-black">
+                                                        <span class="float-left text-black text-[13px] font-['TTNorms']">총 수량 1개</span>
+                                                        <span class="hidden">579715</span>
+                                                        <span class="hidden">358200</span>
+                                                        <strong class="hidden float-right text-sm leading-[19px]">358,200원</strong>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="h-[65px] flex flex-nowrap justify-between p-[10px] border-t border-[#ddd] absolute left-0 bottom-[50px] sm:bottom-0 right-0 z-10">
+                                <button type="button" class="w-[49%] h-[45px] align-middle text-black text-[13px] md:text-xs bg-white border border-black rounded-none appearance-none cursor-pointer" id="addCart">장바구니</button>
+                                <button type="button" class="w-[49%] h-[45px] align-middle text-white text-[13px] md:text-xs bg-black border border-black rounded-none appearance-none cursor-pointer" id="buy">주문하기</button>
+                            </div>
+                            <!-- 판매중지 -->
+                            <div class="hidden h-[65px] p-[10px] border-t border-[#ddd] absolute left-0 bottom-[50px] sm:bottom-0 right-0 z-10">
+                                <button type="button" class="w-full h-[45px] text-[#ec0e0e] text-[13px] md:text-xs bg-[#f6f6f6] border border-[#e7e5ea]">판매중지</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //layer - 컬러 및 사이즈 선택 -->
+                </div>
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <!-- mobile floating menu -->
+        <div class="xl:hidden fixed left-0 right-0 bottom-0 z-[1001] bg-white p-0">
+			<ul class="px-[35px] flex">
+				<li class="w-[15%]" id="mobile-menu"><a href="javascript:;" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu1.svg')] bg-[center_4px] bg-no-repeat">메뉴</span></a></li>
+				<li class="w-[15%]"><a href="/goods/oneday_delivery" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu2.svg')] bg-[center_4px] bg-no-repeat">하루배송</span></a></li>
+				<li class="w-[40%]"><a href="/" class="block relative h-full"><span class="text-[0] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/logo.svg')] bg-[center_14px] bg-no-repeat bg-[length:76px_18px]">홈</span></a></li>
+				<li class="w-[15%]"><a href="/mypage/wish" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu3.svg')] bg-[center_4px] bg-no-repeat">위시리스트</span></a></li>
+				<li class="w-[15%]"><a href="/mypage" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu4.svg')] bg-[center_4px] bg-no-repeat">마이페이지</span></a></li>
+			</ul>
+		</div>
+        <!-- //mobile floating menu -->
+        
+        <!-- footer -->
+		<footer><script>Util.include('../common/footer.html')</script></footer>
+		<!-- //footer -->
+    </div>
+
+    <script src="../js/include.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script><!--flowbite-->
+    <script>
+        // 모바일 메뉴 레이어 열기
+        $('#mobile-menu').on('click',function(){
+            $('#dmm').removeClass('hidden');
+            $('#mobile-menu-content').addClass('!top-[42px]');
+            var mobile_swiper = new Swiper('#mobile-menu-content .swiper',{
+                slidesPerView:'4.5',
+                spaceBetween: 8
+            })
+        });
+        // 모바일 메뉴 레이어 닫기
+        $('#mobile-layer-close').on('click',function(){
+            $('#dmm').addClass('hidden');
+            $('#mobile-menu-content').removeClass('!top-[42px]');
+        });
+        
+        // layer - 검색 > 열기
+        function search_layer(){
+            $('#search-layer').addClass('!block');
+        };
+        // layer - 검색 > 닫기
+        $('#search-layer-close').on('click',function(){
+            $('#search-layer').removeClass('!block');
+        });
+        /* layer - 검색 관련 */
+        function srch_layer(){
+            $('#search-layer').addClass('!block');
+        }
+        $('.search_full_layer .button_back2').on('click', function () {
+            $('.search_full_layer').removeClass('block');
+        });
+        $('.mobile-category-wrap input[type="text"]').on('click', function () {
+            $('.search_full_layer').addClass('block');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+        $('.header_top .ico_srch, .m_btm_menu .resp_top_search').on('click',function(){
+            $('.search_full_layer').addClass('block');
+        });
+        $('.search_full_layer .btn_close').on('click',function(){
+            $('.search_full_layer').removeClass('block');
+        });
+        $('.mobile-category-wrap .button-search').on('click', function () {
+            $('.search_full_layer').addClass('block');
+            if ($('.mobile-category-wrap input[type="text"]').attr('value')) {
+                $('.search_full_layer input[name="search_text"]').attr('value', $('.mobile-category-wrap input[type="text"]').attr('value'));
+            }
+        });
+        $('.header .rig_menu .btn-srch').on('click', function () {
+            $('.search_full_layer').addClass('block');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+
+        /* gnb */
+        $(window).on("load resize", function() {
+            if ($(window).width() > 768) {
+                if ($('.main').length > 0) {
+                    $('.header_cont').hover(
+                        function() {
+                            $(this).addClass('block');
+                        },
+                        function() {
+                            $(this).removeClass('block');
+                        }
+                    );
+                }
+                $('.header .gnb_wrap .dep1').hover(
+                    function() {
+                        $(this).find('.dep2').css('display', 'block');
+                        $('.header .gnb_wrap .dep1_ul.on').addClass('tmpon');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('block');
+                    },
+                    function() {
+                        $(this).find('.dep2').css('display', 'none');
+                        $('.header .gnb_wrap .dep1_ul.tmpon').addClass('block');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('tmpon');
+                    }
+                );
+            }
+        });
+
+        /* footer */
+        
+
+        // 마이메뉴 > 열기
+        $('.myMenu').on('click',function(){
+            $('.subpage_lnb').toggleClass('!block');
+        });
+        // 마이메뉴 > 닫기
+        $('.myMenu').on('click',function(){
+            $('.myMenu > em').toggleClass('bg-[#212121] before:top-0 before:rotate-45 after:top-0 after:-rotate-45');
+        });
+        // 마이메뉴 > 화살표
+        $('.accordion-open-heading').on('click',function(){
+            $('.accordion-open-heading button[aria-expanded="true"] > a').addClass('after:top-3 after:rotate-[220deg]');
+            $('.accordion-open-heading button[aria-expanded="false"] > a').removeClass('after:top-3 after:rotate-[220deg]');
+        });
+
+        // 피씨 상품 hover
+        if ($(window).width() > 768) {
+			$(".goods_list_wrap li .imgBox").bind("mouseover", function () {
+				if ($(this).find('.goods_image').length > 1) {
+					$(this).find('.goods_image').eq(0).hide();
+					$(this).find('.goods_image').eq(1).show();
+				}
+			}).bind("mouseout", function () {
+				if ($(this).find('.goods_image').length > 1) {
+					$(this).find('.goods_image').eq(0).show();
+					$(this).find('.goods_image').eq(1).hide();
+				}
+			});
+		}
+
+        // layer - 컬러 및 사이즈 선택
+        $('.btn-cart').on('click',function(){
+            $('.layer-prod_option').removeClass('hidden');
+        });
+        $('.layer-prod_option .btn-close').on('click',function(){
+            $('.layer-prod_option').addClass('hidden');
+        });
+
+        // layer - 컬러 및 사이즈 선택 > select
+        $('.btn-sbToggle').on('click',function(){
+            $('.sbOptions').toggleClass('!block');
+        });
+    </script>
+
+</body>
+</html>

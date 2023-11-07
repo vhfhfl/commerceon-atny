@@ -1,0 +1,54 @@
+<div id="live-wrap">
+  <div class="pl-[15px] md:px-[63px] md:mx-[-63px]">
+    <div class="group relative">
+      <div class="swiper pb-[15px] md:pb-0">
+        <div class="swiper-wrapper">
+          {{#times 7}}
+            <div class="swiper-slide mb-[9px] flex bg-white rounded-[5px] flex-wrap md:pb-[15px]" data-key="{{@key}}">
+              <div class="mb-[10px] mr-2 md:mb-[11px] md:mr-0">
+                <a href="javascript:;" target="_blank">
+                  <img src="../images/img-3-{{number}}.jpg" title="" alt="">
+                </a>
+              </div>
+            </div>
+          {{/times}}
+        </div>
+      </div>
+      <div class="absolute top-1/2 left-0 z-10 w-full h-0 flex flex-row items-center justify-between">
+        <div class="relative swiper-button-prev hidden md:block w-[37px] h-[59px] top-0 left-[-63px] mt-0 cursor-pointer z-50 bg-[url('../assets/icon/btn-slide-left.png')] bg-center bg-no-repeat after:hidden"></div>
+        <div class="relative swiper-button-next hidden md:block w-[37px] h-[59px] top-0 right-[-63px] mt-0 cursor-pointer z-50 bg-[url('../assets/icon/btn-slide-right.png')] bg-center bg-no-repeat after:hidden"></div>
+      </div>
+    </div>
+    <div class="text-center">
+      <a class="inline-block w-[140px] h-[44px] text-black text-xs leading-[44px] text-center border border-[#eff1f4] no-underline outline-none box-border">
+        전체보기
+      </a>
+    </div>
+  </div>
+
+  <script>
+    {
+      /* 애트니 라이브 */
+      var swiper4 = new Swiper("#live-wrap .swiper", {
+        slidesPerView : 2.5,
+        loop : true,
+        watchSlidesProgress : true,
+        navigation : {
+          nextEl : "#live-wrap .swiper-button-next",
+          prevEl : "#live-wrap .swiper-button-prev",
+        },
+        pagination : {
+          el : "#live-wrap .swiper-pagination",
+          clickable : true,
+          type : 'bullets',
+        },
+        breakpoints : {
+          769 : {
+            slidesPerView : 5,
+            spaceBetween : 45,
+          }
+        }
+      })
+    }
+  </script>
+</div>

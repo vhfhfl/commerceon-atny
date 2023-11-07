@@ -1,0 +1,71 @@
+<div id="time_wrap">
+  <div>
+    <div class="relative max-w-[var(--contents-max-width)] mx-auto pl-[15px]">
+      <div class="swiper px-[10px] ml-[-10px] mr-[-10px]">
+        <div class="swiper-wrapper">
+          {{#times 12}}
+            <div class="swiper-slide select-none cursor-pointer">
+              <a href="http://www.google.com" class="block" target="_blank">
+                <div class="pl-5 font-[700] text-[#ff774b] bg-[url('../assets/icon/ico-time.svg')] bg-[left_center] bg-no-repeat z-10 absolute top-[13px] h-[14px] leading-tight right-[16px] text-[14px] md:text-xs md:right-[19px]">
+                  <span>5</span>days <span>3</span>:<span>50</span>:<span>55</span>
+                </div>
+                <div class="flex flex-wrap rounded-sm bg-white p-[15px] justify-center shadow-[0_0_10px_0_rgba(0,0,0,0.02)] md:shadow-[0_0_10px_0_rgba(0,0,0,0.05)]">
+                  <div class="relative h-[154px] w-full md:h-[92px] md:w-[142px]">
+                    <img src="../images/img-2-{{digit}}.jpg" class="object-contain w-full h-full" alt="">
+                  </div>
+                  <div class="grow md:pt-[15px] md:pl-[15px]">
+                    <div class="text-[#121212] font-['EverettM'] text-[13px] md:text-[12px]">
+                      MAX MARA THE CUBE {{digit}}
+                    </div>
+                    <div class="text-[11px] text-[#121212] leading-tight mt-[1px] mb-[2px] overflow-hidden whitespace-nowrap text-ellipsis md:text-xs md:mt-[3px] md:mb-0">
+                      여성 롱 다운/패딩
+                    </div>
+                    <div class="leading-none mt-[5px] mb-[7px] md:mt-[1px] md:mb-[5px]">
+                      <span class="text-[13px] text-[#121212] font-medium align-middle md:text-[14px] md:font-normal">495,900</span>
+                      <span class="text-[13px] text-[#daac53] font-semibold align-middle md:text-[14px]">14%</span>
+                      <span class="text-[11px] text-[#c6cad1] align-middle md:text-[11px] md:pl-[3px] md:font-light">(회원 혜택가)</span>
+                    </div>
+                    <div class="text-[11px] text-[#c6cad1] mb-[2px] leading-tight md:font-light">할인가 610,000</div>
+                    <div class="text-[11px] text-[#c6cad1] mb-[2px] leading-tight md:font-light">정상가 899,783</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          {{/times}}
+        </div>
+      </div>
+      <div class="hidden md:flex flex-row items-center justify-between z-10 absolute top-1/2 left-[0] w-full h-0 bg-red-500/50">
+        <div class="swiper-button swiper-button-prev relative mt-0 hidden md:block w-[37px] h-[59px] left-[-63px] cursor-pointer z-50 bg-[url('../assets/icon/btn-slide-left.png')] bg-center bg-no-repeat after:hidden"></div>
+        <div class="swiper-button swiper-button-next relative mt-0 hidden md:block w-[37px] h-[59px] right-[-63px] cursor-pointer left-auto z-50 bg-[url('../assets/icon/btn-slide-right.png')] bg-center bg-no-repeat after:hidden"></div>
+      </div>
+    </div>
+    <div class="swiper-pagination relative !bottom-0 mt-[20px] md:mt-[30px]"></div>
+  </div>
+
+  <script>
+    {
+      /* 타임특가 */
+      new Swiper('#time_wrap .swiper', {
+        slidesPerView : 1.4,
+        spaceBetween : 10,
+        loop : false,
+        watchSlidesProgress : true,
+        pagination : {
+          el : '#time_wrap .swiper-pagination',
+          clickable : true,
+          type : 'bullets',
+        },
+        breakpoints : {
+          769 : {
+            slidesPerView : 3,
+            // spaceBetween : 44,
+            navigation : {
+              nextEl : '#time_wrap .swiper-button-next',
+              prevEl : '#time_wrap .swiper-button-prev',
+            },
+          }
+        }
+      });
+    }
+  </script>
+</div>

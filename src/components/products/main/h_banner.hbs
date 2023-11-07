@@ -1,0 +1,28 @@
+<section class="H-BANNER-1 SEC-1">
+  <div class="swiper INSIDE">
+    <div class="swiper-wrapper">
+
+      {{#times 10}}
+        <div class="swiper-slide" data-key="{{index}}">
+          <a href="https://atny.com/board/view?id=magazine&amp;seq=4554">
+            <img src="../images/img-9-1.jpg" alt="banner" class="w-full md:hidden">
+            <img src="../images/img-9-de-1.jpg" alt="banner" class="w-full hidden md:block">
+          </a>
+        </div>
+      {{/times}}
+
+    </div>
+  </div>
+  <script>
+    {
+      /* 미니배너 */
+      new Swiper('.H-BANNER-1 .swiper', {
+        loop : true,
+        slidesPerView : 1,
+        autoplay : {
+          delay : 3000
+        }
+      });
+    }
+  </script>
+</section>

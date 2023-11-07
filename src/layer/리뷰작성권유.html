@@ -1,0 +1,51 @@
+<div class="layer" data-layer-id="리뷰작성권유">
+  <div class="BG" onclick="Layer.close(this)"></div>
+  <div class="SHELL">
+    <div class="w-[calc(600/640*100vw)] sm:w-[400px] overflow-hidden text-xs bg-white border border-[#eee] shadow-[0_12px_20px_0_rgb(0,0,0,0.4)]">
+      <!-- header -->
+      <div class="p-[15px] text-center">
+        <div class="pt-10 pb-2 text-[#333] text-base sm:text-lg leading-5 text-center tracking-[-0.2px] "><b>이서은 회원님</b>, 구매하신 상품은 만족하셨나요?</div>
+        <div class="inline-block w-full mt-[10px] mx-auto p-[5px] text-xs leading-[18px] bg-[#eee] rounded relative after:content-[''] after:inline-block after:w-0 after:h-0 after:border-r-4 after:border-r-transparent after:border-b-[6px] after:border-b-[#eee] after:border-l-4 after:border-l-transparent after:absolute after:top-[-6px] after:left-1/2 after:-translate-x-1/2">지금 리뷰를 작성하시면 최대 <strong class="text-[#333]">15,000</strong>원의 포인트를 받을 수 있어요!</div>
+        <a href=""
+          class="inline-block w-4 h-4 text-[0px] bg-transparent bg-[url(../assets/icon/ico-close.png)] bg-center bg-no-repeat bg-[length:auto_100%] no-underline cursor-pointer absolute top-[15px] right-[15px]"
+          data-in-progress-confirm="아직 끝나지 않은 요청이 있습니다. 지금 닫으면 요청이 중단됩니다. 정말로 닫으시겠습니까?"
+          onclick="Layer.close(this)">
+        </a>
+      </div>
+      <!-- //header -->
+      <!-- body -->
+      <div class="p-6 overflow-y-auto max-h-[215px] bg-white border-t border-t-[#eee] box-border">
+        <div class="m-0 mb-1 last:mb-0 p-[10px] border border-[#eee] cursor-pointer relative">
+          <img class="w-[52px] h-[52px] absolute" src="//assets3.cre.ma/p/atny-com/products/00/00/39/45/26/image/extra_small_17580c8e99c77d8b.jpg" alt=""/>
+          <div class="ml-[62px] mr-[38px]">
+            <div class="overflow-hidden text-[#3e3e3e] text-[13px] leading-4 font-bold tracking-[-0.1px] whitespace-nowrap text-ellipsis">알파 SV 재킷 남성 외 <strong class="text-[#ff774b]">2</strong>개</div>
+            <div class="mt-[6px] text-[#909090] text-xs leading-[15px]">주문하신 상품에 대한 솔직한 후기를 작성하시고, 포인트 받아가세요!</div>
+          </div>
+        </div>
+      </div>
+      <!-- //body -->
+      <!-- footer -->
+      <div class="p-[15px] bg-white border-t border-t-[rgb(238,238,238)]">
+        <ul class="flex flex-nowrap justify-between w-full m-0 p-0 list-none">
+          <li class="w-1/2 mr-[15px]">
+            <button type="button"
+              class="w-full h-10 py-0 px-[14px] align-middle text-[#333] text-[13px] leading-9 tracking-tighter whitespace-nowrap bg-white border border-[#333] outline-none rounded-none box-border cursor-pointer"
+              onclick="Layer.close(this)">
+              닫기
+            </button>
+          </li>
+          <li class="w-1/2">
+            <button type="button" class="w-full h-10 py-0 px-[14px] align-middle text-white text-[13px] leading-9 tracking-tighter whitespace-nowrap bg-black border border-black rounded-none outline-none box-border cursor-pointer">후기 작성하고 포인트 받기</button>
+          </li>
+        </ul>
+        <div class="w-full mt-3 text-[10px] leading-[10px] text-left bg-white">
+          <input type="checkbox" id="sel" class="peer hidden" name="" value=""/>
+          <label for="sel" class="inline-block w-[100px] h-[15px] bg-[url(../assets/icon/ico-search-filter-check.png)] bg-[length:15px_15px] peer-checked:bg-[url(../assets/icon/ico-search-filter-check-on.png)] bg-no-repeat bg-[left_center] cursor-pointer">
+            <span class="inline-block mt-[3px] ml-5 align-middle whitespace-nowrap">오늘 하루 열지 않기</span>
+          </label>
+        </div>
+      </div>
+      <!-- //footer -->
+    </div>
+  </div>
+</div>

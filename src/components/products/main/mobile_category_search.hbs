@@ -1,0 +1,80 @@
+<section class="md:hidden">
+  <div>
+    <div id="STICKY-1" class="h-[48px]">
+      <div class="SHELL h-[48px] bg-white box-border border-b border-[#e7e5ea] transition duration-300 z-[110]" data-margin-top="0">
+        <ul class="flex justify-evenly">
+          {{#each array}}
+            <li class="relative">
+              <input type="radio"
+                    name="tab-ad093b4e-78e4-4205-ab89-fbf32fd4e7ee"
+                    class="cursor-pointer opacity-0 z-10 absolute top-[0] left-[0] w-full h-full peer"
+                    value="{{this.tab_key}}"
+                    onclick="Util.activeTab('{{this.tab_key}}')"
+                    {{#if is_active}}checked="checked"{{/if}}
+              />
+              <div class="text-[#c6cad1] cursor-pointer h-[47px] leading-[47px] text-center relative text-[13px] px-[10px]
+                            after:hidden after:border-b-[3px] after:border-[#ff774b] after:content-[''] after:left-0 after:bottom-0 after:right-0 after:absolute
+                            peer-checked:text-[#ff774b] peer-checked:font-black peer-checked:after:block
+              ">
+                {{this.label}}
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sticky = new Sticky("#STICKY-1 > .SHELL");
+      });
+    </script>
+
+    <div class="bg-[#fafafb] py-[10px] px-[14px]">
+      {{#each array}}
+        <!-- {{ label }} -->
+        <ul data-tab-key="{{tab_key}}" class="{{#if is_active}}ACTIVE{{/if}} hidden [&.ACTIVE]:flex">
+          {{#each this.link_list}}
+            <li class="w-1/5 px-[9px]">
+              <a href="javascript:;">
+                <span class="block text-center">
+                  <img class="aspect-square" src="{{img}}" alt="{{name}}">
+                </span>
+                <span class="block text-center text-xs text-[#121212] pt-[3px] pb-[7px] leading-tight">
+                  {{name}}
+                </span>
+              </a>
+            </li>
+          {{/each}}
+        </ul>
+        <!-- // {{ label }} -->
+      {{/each}}
+    </div>
+  </div>
+  <div id="STICKY-2" class="h-[56px]">
+    <div class="SHELL grid grid-cols-10 gap-[9px] h-[56px] bg-white px-[15px] py-[9px] transition duration-300 relative z-[110]" data-margin-top="48">
+      <div class="col-span-9 border border-[#f7f7f9] bg-[#fafafb] h-[38px] relative pr-[45px]
+                  after:content-[''] after:absolute after:top-[-1px] after:left-[-1px] after:right-[-1px] after:bottom-[-1px] after:bg-gradient-to-r after:from-orange-500 after:via-slate-50 after:to-amber-400 after:bg-[length:300%_300%] after:animate-[animatedgradient_2.5s_ease_alternate_infinite]">
+        <input type="text"
+              placeholder="검색어를 입력하세요."
+              class="outline-none border-0 w-full bg-[#fafafb] h-9 leading-9 text-[#c6cad1] relative text-[13px] px-4 z-10"/>
+        <button type="button" class="h-9 w-[47px] bg-[#fafafb] bg-[url('../assets/icon/ico-srch-border3.svg')] bg-center bg-no-repeat bg-[length:16px] absolute top-0 right-0 text-[0] z-10">
+          검색
+        </button>
+      </div>
+      <div class="col-span-1 relative">
+        <a href=""
+          class="inline-block w-full h-[38px] bg-[url('../assets/icon/ico-cart.svg')] bg-center bg-no-repeat absolute top-0 right-0 z-10 text-[0]">
+          장바구니
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sticky = new Sticky("#STICKY-2 > .SHELL");
+    });
+  </script>
+  
+</section>

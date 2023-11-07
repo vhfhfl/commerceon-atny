@@ -1,0 +1,81 @@
+<div class="PRODUCT-LIST-1">
+  <div class="-MD pl-[15px] relative">
+    <div class="swiper">
+      <div class="swiper-wrapper items-stretch RR">
+
+        {{#times 6}}
+          <!--md:float-left md:w-1/6 md:pr-3 md:mb-[50px]-->
+          <div class="swiper-slide" data-key="{{@key}}">
+            <div class="bg-[#fafafb] relative overflow-hidden h-[115px] md:h-[220px]">
+              <a href="javascript:;" class="absolute left-0 top-0 right-0 bottom-0 z-10">
+                <img src="../images/img-4-{{number}}.jpg" class="absolute max-w-[90%] max-h-[90%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="">
+              </a>
+            </div>
+            <div class="pt-[11px]">
+              <div class="text-[11px] text-[#121212] leading-tight font-['EverettM'] md:text-[14px]">
+                AUTRY {{number}}
+              </div>
+              <div class="text-[11px] mt-[3px] overflow-hidden whitespace-nowrap text-ellipsis text-[#121212] md:text-[14px] md:mt-0">
+                여성 메달리스트 화이트 그린 트레이너 스니커즈
+              </div>
+              <div class="mt-[3px] leading-none">
+                <span class="align-top text-[#121212] text-xs md:text-[16px]">
+                  9,999,999
+                </span>
+                <span class="align-top text-[#daac53] text-xs md:text-[16px]">
+                  3%
+                </span>
+              </div>
+            </div>
+          </div>
+        {{/times}}
+
+        <div class="swiper-slide" style="height:auto;">
+          <a href="https://www.google.com" target="_blank" class="flex flex-row items-center justify-center w-full h-full text-black text-[11px]">
+            전체보기
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="MD-">
+    <ul class="grid grid-cols-6 gap-[13px]">
+
+      {{#times 6}}
+        <li data-key="{{index}}">
+          <div class="bg-[#fafafb] aspect-square">
+            <img class="object-contain w-full h-full" src="../images/img-12-{{MATH 'x+1' index}}.png" alt=""/>
+          </div>
+          <div class="mt-[10px]">
+            <div class="font-[400] text-[14px] text-[#121212]] font-['EverettM']">
+              MAX MARA {{index}}
+            </div>
+            <div class="font-[400] text-[14px] text-[#121212] mt-[3px]">여성 캐시미어 스웨터 니트</div>
+            <div class="mt-[3px]">
+              <span class="font-[500] text-[16px] text-[#121212]">745,000</span>
+              <span class="font-[600] text-[16px] text-[#daac53]">35%</span>
+            </div>
+          </div>
+        </li>
+      {{/times}}
+
+    </ul>
+    <div class="mt-[60px] text-center">
+      <button class="w-[141px] h-11 text-center border border-[#eff1f4] text-black text-xs leading-[44px] inline-block" id="btn-more">
+        더보기
+      </button>
+    </div>
+  </div>
+  <script>
+    {
+      const target = document.querySelector('[data-cpntid="{{cpntid}}"] .swiper');
+
+      // const swiper = new Swiper('.PRODUCT-LIST-1 .swiper', {
+      const swiper = new Swiper(target, {
+        slidesPerView : 2.4,
+        spaceBetween : 7,
+      });
+
+    }
+  </script>
+</div>

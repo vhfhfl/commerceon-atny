@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+      <script src="../js/util.js"></script>
+      <script>Util.include('../common/head_2.html');</script>
+    </head>
+<body>
+    <div id="wrap">
+        <!-- header -->
+		<script>Util.include('../common/header.html');</script>
+		<!-- header -->
+        <!-- 모바일용 레이어 -->
+        <div class="fixed top-0 left-0 right-0 bottom-0 -z-10" id="mobile-layer">
+            <div class="fixed left-0 top-0 right-0 bottom-0 bg-black/70 hidden"></div>
+            <div class="absolute left-0 right-0 z-[1000] transition-all duration-500 bottom-[48px] top-[100%]" id="mobile-menu-content">
+                <button type="button" class="h-[31px] rounded-t-[30px] bg-white absolute top-0 left-0 right-0 w-full text-[0] after:content-[''] after:w-[57px] after:h-[3px] after:bg-[#212121] after:rounded-[10px] after:absolute after:top-[9px] after:left-1/2 after:-translate-x-1/2" id="mobile-layer-close">닫기</button>
+                <div class="py-[14px] pr-[65px] pl-6 absolute left-0 top-[31px] right-0 bg-white border-b border-[#e7e5ea]">
+                    <form name="topSearchForm" action="/goods/search">
+                        <div class="relative h-[31px] rounded-[100px] bg-[#fafafb] border border-[#f7f7f9] box-border pr-[47px]">
+                            <input type="text" name="search_text" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="h-[29px] bg-transparent px-[10px] box-border w-full border-0 text-[13px]">
+                            <button class="h-[29px] absolute right-0 top-0 w-[47px] bg-[url('../assets/icon/ico-search.svg')] bg-center bg-no-repeat z-10 text-[0]" type="submit">검색</button>
+                        </div>
+                    </form>
+                    <a href="/mypage" class="absolute bg-[url('../assets/icon/ico-myp.svg')] bg-center bg-no-repeat text-[0] right-[21px] top-[17px] z-10 w-6 h-6">마이페이지</a>
+                </div>
+                <div>
+                    <div class="bg-[#fafafb] overflow-y-auto absolute left-0 top-[91px] bottom-0 right-0">
+                        <div>
+                            <div class="bg-white border-b border-[#e7e5ea]">
+                                <div class="pt-[15px] px-6">
+                                    <ul>
+                                        <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#ff774b] block px-[2px] pb-[3px] border-b-[3px] border-[#ff774b]">WOMEN</a></li>
+                                        <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">MEN</a></li>
+                                        <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">JUNIOR</a></li>
+                                        <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">LIFE</a></li>
+                                    </ul>
+                                </div>
+                                <div class="py-[10px] px-6 block">
+                                    <ul class="menu_list">
+                                        <li><a href="/goods/catalog?code=00020001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                        <li><a href="/goods/catalog?code=00020002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                        <li><a href="/goods/catalog?code=00020003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                        <li><a href="/goods/catalog?code=00020004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                        <li><a href="/goods/catalog?code=00020005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                    </ul>
+                                </div>
+                                <div class="hidden">
+                                    <ul class="menu_list">
+                                        <li><a href="/goods/catalog?code=00010001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                        <li><a href="/goods/catalog?code=00010002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                        <li><a href="/goods/catalog?code=00010003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                        <li><a href="/goods/catalog?code=00010004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                        <li><a href="/goods/catalog?code=00010005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                    </ul>
+                                </div>
+                                <div class="hidden">
+                                    <ul class="menu_list">
+                                        <li><a href="/goods/catalog?code=00030001" class="text-[13px] text-[#212121] block py-[13px]">여아</a></li>
+                                        <li><a href="/goods/catalog?code=00030002" class="text-[13px] text-[#212121] block py-[13px]">남아</a></li>
+                                    </ul>
+                                </div>
+                                <div class="hidden">
+                                    <ul class="menu_list">
+                                        <li><a href="/goods/catalog?code=00040001" class="text-[13px] text-[#212121] block py-[13px]">디지털</a></li>
+                                        <li><a href="/goods/catalog?code=00040002" class="text-[13px] text-[#212121] block py-[13px]">홈</a></li>
+                                        <li><a href="/goods/catalog?code=00040003" class="text-[13px] text-[#212121] block py-[13px]">뷰티</a></li>
+                                        <li><a href="/goods/catalog?code=00040004" class="text-[13px] text-[#212121] block py-[13px]">여행</a></li>
+                                        <li><a href="/goods/catalog?code=00040005" class="text-[13px] text-[#212121] block py-[13px]">반려동물</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                                <div class="py-[10px] px-6">
+                                    <ul>
+                                        <li>
+                                            <a href="/goods/best_designers" class="text-[13px] text-[#212121] block py-[13px]">디자이너</a>
+                                        </li>
+                                        <li>
+                                            <a href="/goods/nft" class="text-[13px] text-[#212121] block py-[13px]">정품감정서</a>
+                                        </li>
+                                        <li>
+                                            <a href="/goods/oneday_delivery" class="text-[13px] text-[#212121] block py-[13px]">하루배송</a>
+                                        </li>
+                                        <li>
+                                            <a href="/goods/free_return" class="text-[13px] text-[#212121] block py-[13px]">무료반품</a>
+                                        </li>
+                                        <li>
+                                            <a href="/board/?id=magazine" class="text-[13px] text-[#212121] block py-[13px]">매거진</a>
+                                        </li>
+                                        <li>
+                                            <a href="/promotion/event" class="text-[13px] text-[#212121] block py-[13px]">이벤트</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                                <div class="py-[17px]">
+                                    <div class="text-[#c6cad1] text-[11px] mb-[6px] px-6">최근 본 상품</div>
+                                    <!-- 내용이 없을 때 -->
+                                    <div class="text-center py-5 w-full text-[11px]">최근 본 상품이 없습니다.</div>
+                                    <!-- //내용이 없을 때 -->
+                                    <div class="swiper pl-6">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><a href="/goods/view?no=1541402"><img src="//img.atny.com/data/goods/ATNY/10/1672510/MzQzNDYw_list1.JPG" alt="여성 타임리스 브라운 미니 숄더/크로스백"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white shadow-[inset_0_-8px_10px_rgba(0,0,0,0.03)]">
+                                <ul class="py-[17px] text-center">
+                                    <li class="inline-block relative"><a href="/mypage" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">마이페이지</a></li>
+                                    <li class="inline-block relative"><a href="/board/?id=faq" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">FAQ</a></li>
+                                    <li class="inline-block relative"><a href="/mypage/myqna_write" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px]">1:1문의</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //모바일용 레이어 -->
+        <!-- 검색 레이어 -->
+        <div class="hidden fixed z-[1000] left-0 top-0 right-0 bottom-0 bg-white overflow-auto" id="search-layer">
+            <div class="w-full max-w-[1240px] mx-auto lg:px-5">
+                <a href="javascript:;" class="w-10 h-[38px] absolute left-[10px] top-[7px] bg-[url('../assets/icon/ico-back.svg')] bg-center bg-no-repeat text-[0] lg:w-[53px] lg:h-[53px] lg:top-[33px] lg:left-auto lg:right-[33px] lg:bg-[url('../assets/icon/ico-close.png')]" id="search-layer-close">뒤로</a>
+                <div class="pt-[9px] pr-4 pl-[50px] mb-[22px] lg:px-0 lg:pt-[180px] lg:mb-14">
+                    <div class="pr-[38px] lg:h-[65px] relative lg:pr-[49px]">
+                        <form name="topSearchForm" id="topSearchForm" action="/goods/search">
+                            <input type="text" name="search_text" id="searchVer3InputBox" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="w-full h-[38px] px-[17px] bg-[#f7f7f9] leading-[38px] lg:h-[65px] lg:leading-[65px] lg:border-0 lg:text-base lg:px-[60px] rounded-[200px]">
+                        </form>
+                        <button type="button" class="w-[38px] h-[38px] absolute z-10 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat text-[0] right-[38px] top-0 lg:top-[13px] lg:right-[69px] lg:bg-[length:12px_12px] lg:bg-[url('../assets/icon/ico-close.png')]">닫기</button>
+                        <button type="button" class="w-[38px] h-[38px] bg-[length:17px_17px] lg:bg-auto lg:w-[49px] lg:h-[65px] absolute top-0 right-0 z-10 text-[0] bg-[url('../assets/icon/ico-srch.png')] bg-center bg-no-repeat" onclick="$('#topSearchForm').submit();">검색</button>
+                    </div>
+                    <!-- 자동완성 -->
+                    <div class="hidden relative py-[10px] mb-5">
+                        <div class="px-[13px] lg:px-[26px]">
+                            <ul id="autoCompleteList">
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('하바이아나스');">하바이아<span class="text-[#ff774b]">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('피오리아나');">피오리아<span class="text-[#ff774b]">나</span><span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('피나이더');">피<span class="text-[#ff774b]">나</span>이더<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('피나모레');">피<span class="text-[#ff774b]">나</span>모레<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('프리티 발레리나스');">프리티 발레리<span class="text-[#ff774b]">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('포르나세티');">포르<span class="text-[#ff774b]">나</span>세티<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('파비아나필리피');">파비아<span class="text-[#ff774b]">나</span>필리피<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('파비아나페리');">파비아<span class="text-[#ff774b]">나</span>페리<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('콜리나 스트라다');">콜리<span class="text-[#ff774b]">나</span> 스트라다<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('컬러스 오브 켈리포이나');">컬러스 오브 켈리포이<span class="text-[#ff774b]">나</span><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //자동완성 -->
+                </div>
+                                    
+                <div>
+                    <!-- 최근 검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative xl:min-h-[640px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:text-2xl lg:px-0">최근 검색어</div>
+                        <div class="px-6 lg:p-0">
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=골든구스 스니커즈" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">골든구스 스니커즈</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515206">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=미우미우 마테라쎄" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">미우미우 마테라쎄</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="523655">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=토트백" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">토트백</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="593942">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=버버리" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">버버리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="467725">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=오트리" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">오트리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="519748">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=구찌 케이스" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">구찌 케이스</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="488299">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=미우미우" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">미우미우</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="557471">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=구찌" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">구찌</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="487328">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=생로랑" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">생로랑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515144">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=구찌 지갑" class="inline-block text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">구찌 지갑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="609453">검색어삭제</button></span>
+                        </div>
+                    </div>
+                    <!-- 추천 검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative pt-[22px] lg:pt[0] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h-[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0">추천 검색어</div>
+                        <div class="px-6 pb-5 lg:px-[30px]">
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/promotion/event_view?event=828" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">미우미우 미니백 득템 찬스!</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/promotion/enjoy_atny" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">✨애트니 200% 즐기기✨</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/promotion/event_view?event=837" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">MD가 추천하는 가을 아이템 #트렌치코트</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/promotion/event_view?event=836" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">여유로운 휴양지 바이브, 카사블랑카</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/promotion/event_view?event=762" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">브라운 아이템 모음zip</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/board/?id=magazine" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">❣️애트니 매거진❣️</a></span>
+                        </div>
+                    </div>
+                    <!-- 인기 검색어 -->
+                    <div class="box-border relative lg:float-left lg:w-1/3">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0 relative pt-[22px] lg:pt[0]">인기검색어<span class="float-right text-[9px] text-[#807e7e] font-normal lg:text-[13px] lg:mt-[7px]]">2022.10.13 업데이트</span></div>
+                        <div class="px-6 lg:pr-0 pb-[30px] lg:pl-[30px]">
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">1</span><a href="/goods/search?osearchtext=미우미우" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">미우미우</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">2</span><a href="/goods/search?osearchtext=프라다"class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">프라다</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">3</span><a href="/goods/search?osearchtext=발렌시아가" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">발렌시아가</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-15 lg:text-[17px] text-[#1dc9ff] pl-4 bg-[url('../assets/icon/ico-ranking-down.png')] bg-[left_center] bg-no-repeat">DOWN</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">4</span><a href="/goods/search?osearchtext=구찌" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">구찌</a>
+                                <span class="absolute right-0 top-0 text-xs text-center h-[1px] w-10 bg-[url('../assets/icon/ico-same.png')] bg-center bg-no-repeat"></span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">5</span><a href="/goods/search?osearchtext=버버리" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">버버리</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b]">NEW</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">6</span><a href="/goods/search?osearchtext=메종키츠네" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">메종키츠네</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">7</span><a href="/goods/search?osearchtext=톰브라운" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">톰브라운</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">8</span><a href="/goods/search?osearchtext=셀린느" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">셀린느</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">9</span><a href="/goods/search?osearchtext=펜디" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">펜디</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">10</span><a href="/goods/search?osearchtext=보테가베네타" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">보테가베네타</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //검색 레이어 -->        
+        <div id="layout_wrap">
+            <div id="layout_content" class="min-h-[80vh] lg:min-h-0 lg:pb-[10px]">
+                <!-- FAQ -->
+                <form>
+                    <div class="flex max-w-[1440px] mx-auto px-[15px] lg:pt-[35px] flex-wrap relative lg:px-0 mt-[50px] lg:mt-[120px]">
+                        <div class="border-b border-[#666] relative w-full pb-[10px] lg:order-2">
+                            <input type="text" name="search_text" id="search_text" value="" placeholder="문의하실 내용을 입력하세요." class="w-full text-[13px] h-8 outline-none text-[#333] px-[10px]">
+                            <button type="submit" class="bg-[url('../assets/icon/ico-srch.png')] bg-center bg-no-repeat w-[30px] h-8 absolute top-0 right-0 text-[0] bg-[length:19px_19px]">검색</button>
+                        </div>
+                        <div class="w-full mt-[38px] lg:mt-8 px-6 lg:px-0 relative lg:absolute text-center lg:text-right top-0 lg:top-[-80px] right-0 overflow-hidden">
+                            <p class="text-[13px] text-black font-medium md:text-[18px] text-center lg:text-right">찾으시는 답변이 없으면 1:1 문의하기를 이용해주세요.</p>
+                            <ul class="mt-[15px] mr-[2px] block lg:flex lg:flex-nowrap justify-center lg:justify-end lg:mt-[13px]">
+                                <li class="inline-block leading-none"><a href="#" class="text-[14px] text-black leading-none">1:1문의하기</a></li>
+                                <li class="pl-2 ml-[5px] relative inline-block leading-none before:content-[''] before:w-[1px] before:h-[10px] before:bg-black before:absolute before:top-[4px] before:left-0 lg:ml-[19px] lg:pl-[19px]"><a href="#" class="text-[14px] text-black leading-none">취소/반품 접수</a></li>
+                                <li class="pl-2 ml-[5px] relative inline-block leading-none before:content-[''] before:w-[1px] before:h-[10px] before:bg-black before:absolute before:top-[4px] before:left-0 lg:ml-[19px] lg:pl-[19px]"><a href="#" class="text-[14px] text-black leading-none">배송조회</a></li>
+                                <li class="pl-2 ml-[5px] relative inline-block leading-none before:content-[''] before:w-[1px] before:h-[10px] before:bg-black before:absolute before:top-[4px] before:left-0 lg:ml-[19px] lg:pl-[19px]"><a href="#" class="text-[14px] text-black leading-none">마이버틀러</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+                <div class="px-[15px] mt-[35px] max-w-[1440px] mx-auto pb-[50px] lg:px-0">
+                    <ul class="block lg:flex lg:flex-nowrap lg:gap-[1px] lg:items-end overflow-hidden">
+                        <li class="inline-block relative sm:static h-0 lg:pb-0 w-[33.3%] md:w-1/4 lg:w-[14.2%] -mt-2 -ml-1 lg:ml-0 md:grow md:h-auto pb-[20%] md:pb-0 border-t-2 border-l-2 border-white box-border"><a href="javascript:;" onclick="$('body,html').animate({scrollTop:$('#faqList01').offset().top},'fast');" class="block w-full overflow-hidden sm:overflow-auto pt-[60%] pb-[20px] text-[12px] text-[#444] bg-[#f6f6f6] bg-[url('../assets/icon/icon_faq01.png')] bg-[length:40px_auto] sm:bg-[length:auto] bg-[center_top_30px] md:bg-[center_top_65px] bg-no-repeat text-center md:text-[16px] md:pt-[165px] md:pb-10 font-medium">주문/결제</a></li>
+                        <li class="inline-block relative sm:static h-0 lg:pb-0 w-[33.3%] md:w-1/4 lg:w-[14.2%] -mt-2 -ml-1 lg:ml-0 md:grow md:h-auto pb-[20%] md:pb-0 border-t-2 border-l-2 border-white box-border"><a href="javascript:;" onclick="$('body,html').animate({scrollTop:$('#faqList02').offset().top},'fast');" class="block w-full overflow-hidden sm:overflow-auto pt-[60%] pb-[20px] text-[12px] text-[#444] bg-[#f6f6f6] bg-[url('../assets/icon/icon_faq02.png')] bg-[length:40px_auto] sm:bg-[length:auto] bg-[center_top_30px] md:bg-[center_top_65px] bg-no-repeat text-center md:text-[16px] md:pt-[165px] md:pb-10 font-medium">취소/환불</a></li>
+                        <li class="inline-block relative sm:static h-0 lg:pb-0 w-[33.3%] md:w-1/4 lg:w-[14.2%] -mt-2 -ml-1 lg:ml-0 md:grow md:h-auto pb-[20%] md:pb-0 border-t-2 border-l-2 border-white box-border"><a href="javascript:;" onclick="$('body,html').animate({scrollTop:$('#faqList03').offset().top},'fast');" class="block w-full overflow-hidden sm:overflow-auto pt-[60%] pb-[20px] text-[12px] text-[#444] bg-[#f6f6f6] bg-[url('../assets/icon/icon_faq03.png')] bg-[length:45px_auto] sm:bg-[length:auto] bg-[center_top_30px] md:bg-[center_top_65px] bg-no-repeat text-center md:text-[16px] md:pt-[165px] md:pb-10 font-medium">상품/배송</a></li>
+                        <li class="inline-block relative sm:static h-0 lg:pb-0 w-[33.3%] md:w-1/4 lg:w-[14.2%] -mt-2 -ml-1 lg:ml-0 md:grow md:h-auto pb-[20%] md:pb-0 border-t-2 border-l-2 border-white box-border"><a href="javascript:;" onclick="$('body,html').animate({scrollTop:$('#faqList04').offset().top},'fast');" class="block w-full overflow-hidden sm:overflow-auto pt-[60%] pb-[20px] text-[12px] text-[#444] bg-[#f6f6f6] bg-[url('../assets/icon/icon_faq04.png')] bg-[length:45px_auto] sm:bg-[length:auto] bg-[center_top_30px] md:bg-[center_top_65px] bg-no-repeat text-center md:text-[16px] md:pt-[165px] md:pb-10 font-medium">교환/반품</a></li>
+                        <li class="inline-block relative sm:static h-0 lg:pb-0 w-[33.3%] md:w-1/4 lg:w-[14.2%] -mt-2 -ml-1 lg:ml-0 md:grow md:h-auto pb-[20%] md:pb-0 border-t-2 border-l-2 border-white box-border"><a href="javascript:;" onclick="$('body,html').animate({scrollTop:$('#faqList05').offset().top},'fast');" class="block w-full overflow-hidden sm:overflow-auto pt-[60%] pb-[20px] text-[12px] text-[#444] bg-[#f6f6f6] bg-[url('../assets/icon/icon_faq05.png')] bg-[length:40px_auto] sm:bg-[length:auto] bg-[center_top_30px] md:bg-[center_top_65px] bg-no-repeat text-center md:text-[16px] md:pt-[165px] md:pb-10 font-medium">포인트/쿠폰</a></li>
+                        <li class="inline-block relative sm:static h-0 lg:pb-0 w-[33.3%] md:w-1/4 lg:w-[14.2%] -mt-2 -ml-1 lg:ml-0 md:grow md:h-auto pb-[20%] md:pb-0 border-t-2 border-l-2 border-white box-border"><a href="javascript:;" onclick="$('body,html').animate({scrollTop:$('#faqList06').offset().top},'fast');" class="block w-full overflow-hidden sm:overflow-auto pt-[60%] pb-[20px] text-[12px] text-[#444] bg-[#f6f6f6] bg-[url('../assets/icon/icon_faq06.png')] bg-[length:40px_auto] sm:bg-[length:auto] bg-[center_top_30px] md:bg-[center_top_65px] bg-no-repeat text-center md:text-[16px] md:pt-[165px] md:pb-10 font-medium">A/S</a></li>
+                        <li class="inline-block relative sm:static h-0 lg:pb-0 w-[33.3%] md:w-1/4 lg:w-[14.2%] -mt-2 -ml-1 lg:ml-0 md:grow md:h-auto pb-[20%] md:pb-0 border-t-2 border-l-2 border-white box-border"><a href="javascript:;" onclick="$('body,html').animate({scrollTop:$('#faqList07').offset().top},'fast');" class="block w-full overflow-hidden sm:overflow-auto pt-[60%] pb-[20px] text-[12px] text-[#444] bg-[#f6f6f6] bg-[url('../assets/icon/icon_faq07.png')] bg-[length:35px_auto] sm:bg-[length:auto] bg-[center_top_30px] md:bg-[center_top_65px] bg-no-repeat text-center md:text-[16px] md:pt-[165px] md:pb-10 font-medium">기타</a></li>
+                    </ul>
+                    <div class="mt-10 md:mt-[80px]">
+                        <div id="faqList01">
+                            <p class="p-[15px] text-[14px] text-black bg-[#f6f6f6] font-medium md:text-[18px] md:px-[30px] md:py-[25px] border-b border-black leading-tight">주문/결제</p>
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 01 - Q. 주문한 상품의 판매 가격이 변경되어 해당 금액으로 재결제, 차액 환불이 가능할까요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            애트니는 실시간으로 현지 부티크의 가격을 업데이트하고 있어 상품 가격 변동이 있을 수 있으며 가격 변동 사항을 사전에 확인, 안내드리기 어렵습니다.<br>
+                                            해외 배송 상품의 경우 결제 시점에서 현지 부티크에서 제공받은 가격으로 상품이 주문, 준비되고 있어 가격 변경에 따른 재결제가 불가능합니다.<br><br>
+                                            *기존 주문 취소 진행 시 상품 배송 상태에 따라 반품비용이 추가될 수 있으며 재주문 상품의 경우 현지 재고 상황에 따라 품절될 수 있습니다.<br>
+                                            자세한 문의는 주문 번호를 포함하여 고객센터로 문의 부탁드립니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 02 - Q. 주문 내역과 진행 상황을 확인하고 싶어요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            로그인 후 [MY Atny - 1. 주문상태]에서 확인할 수 있으며,<br>
+                                            상품이 배송 중인 경우 상태 버튼을 누르면 배송 추적 버튼을 통해 배송 현황을 조회하실 수 있습니다.<br><br>
+                                            해외 상품의 경우 인천공항 세관 통관 완료 후 국내 우체국 택배 이후부터 조회 가능합니다.<br><br>
+                                            진행 상황에 대해 문의가 있을 경우 1:1문의나 카카오톡 문의, 고객센터(1544-6543)로 문의 부탁드립니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 03 - Q. 결제가 진행되지 않을 때는 어떻게 해야 하나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            ATNY는 고객님께 더욱 편리하고 안전한 결제 서비스를 제공하기 위해 결제대행사(PG사)를 이용하고 있습니다.<br>
+                                            다만 결제를 위해 필수적으로 설치해야 하는 프로그램이 고객님의 컴퓨터에 정상적으로 설치되지 않을 경우 결제 진행이 되지 않는 경우가 발생할 수 있습니다.<br>
+                                            이 경우 결제대행사의 고객센터(1544-6543)와 FAQ를 통해 도움을 받아 보시기 바랍니다.<br><br>
+                                            <strong>KG이니시스</strong><br>
+                                            자주 묻는 질문: https://www.inicis.com/blog/archives/category/cs/cs_best
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 04 - Q. 결제 수단이나 할부 개월을 변경하고 싶어요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. 주문 완료 후 결제 방법 변경은 안됩니다. 단, 주문 완료 후 할부 개월 수 변경은 결제하신 카드사에 문의 주시면 변경 가능합니다. 자세한 문의는 고객센터(1544-6543)로 연락 바랍니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 05 - Q. 체크카드로 결제할 수 있나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. 결제 가능합니다. 체크카드 결제는 고객님의 이용 계좌 잔고에서 즉시 이체가 이루어지며 일반 신용카드와 동일한 방법으로 결제 가능합니다. (단, 체크카드는 일시불 결제만 가능하며 이용계좌에 잔고가 상품 결제금액보다 적을 시 결제가 이루어지지 않습니다.)<br>
+                                            체크 카드 결제 후 주문 취소 시 카드사에 따라 고객님의 계좌로 환불되는 날짜가 상이할 수 있으며, 이 점은 해당 카드사에 문의 바랍니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 06 - Q. 카드 무이자 할부 혜택이 궁금해요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. 카드 무이자 혜택 카드는 매월 변경되며, 변경된 내용은 [공지사항]에서 확인하실 수 있습니다.<br>
+                                            <a href="https://atny.com/board/view?id=notice&amp;page=10&amp;seq=246" target="_blank" class="text-[#0055ff] underline">https://atny.com/board/?id=notice&amp;page=10&amp;seq=246</a>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 07 - Q. 무통장 입금 시 금액을 잘못 입금했어요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. 주문 금액과 다르게 입금하신 경우 고객센터(1544-6543)로 연락 바랍니다.<br>
+                                            문의 시 주문번호와 [구매자 성함/구매상품/입금금액]을 알려 주시고, 차액 환불이 필요한 경우 [환불 은행명/계좌번호/예금주명]을 파악 후 연락 주시면 더욱 빠르게 확인할 수 있습니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 08 - Q. 주문 시 입력한 정보를 수정하고 싶어요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. 상품이 현지에서 출고되기 전까지 수취인 정보 및 배송지, 개인통관번호 등을 변경 원하시면 고객센터(1544-6543)로 연락 바랍니다. 상품이 출고된 이후에는 정보 수정이 불가합니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 09 - Q. 주문한 상품을 변경하고 싶어요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. 주문이 완료된 후 상품 변경은 어렵습니다. 결제 확인 상태에서만 가능하며 고객센터(1544-6543)로 문의주시면 가능 여부를 확인해 드리겠습니다. 주문 진행 단계에 따라 불가할 수 있습니다. 자세한 사항은 [취소 및 교환/환불 규정]을 참고해주세요.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 10 - Q. 크롬 브라우저에서도 결제가 가능한가요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. 크롬 브라우저에서 카드결제, 휴대폰결제, 무통장입금 등 결제가 가능합니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 11 - Q. 비회원도 주문결제가 가능한가요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            비회원이신 경우에도 주문 결제가 가능합니다.<br>
+                                            -> 비로그인 > 제품 선택 > 옵션 선택 > 주문하기 > 비회원 구매<br><br>
+                                            비회원 결제건은 주문번호 및 이름으로만 확인이 가능하니 주문번호를 별도로 메모해 주시길 바라며,<br>
+                                            비회원 주문조회를 통해 주문하신 내역을 확인하실 수 있습니다.<br>
+                                            주문번호를 분실하신 경우 고객센터(1544-6543)로 문의 부탁드립니다.<br><br>
+                                            비회원 구매 시 atny.com의 회원과 동일한 서비스 정책이 적용되나,<br>
+                                            회원에게 제공되는 최신 정보 및 포인트,쿠폰의 혜택은 제공하지 않습니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-[60px]" id="faqList02">
+                            <p class="p-[15px] text-[14px] text-black bg-[#f6f6f6] font-medium md:text-[18px] md:px-[30px] md:py-[25px] border-b border-black leading-tight">취소/환불</p>
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 01 - Q. 해외 관부가세 환급은 어떻게 진행되나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            해외배송 상품의 환불은 관세와 부가세 그리고 반품비용(운임, 부대 비용)을 제외한 금액만 애트니를 통해 즉시 환불됩니다.<br><br>
+                                            구매 시 애트니가 고객님 대신 대납한 관세와 부가세는<br>
+                                            관세청에서 본인 확인 후 고객님께 별도로 환급됩니다.<br>
+                                            (하자&오배송 포함)<br><br>
+                                            <strong>(결제금액) - (관세, 부가세) - (반품비용) = 즉시 환급<br>
+                                            (관세, 부가세) = 관세청에서 고객님 명의의 계좌로 직접 환급</strong><br><br>
+                                            * 관세와 부가세 환급 진행 및 서류 준비는 애트니가 직접 도와드립니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 02 - Q. 주문을 취소하고 싶어요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            국내 상품은 상품 준비 단계까지 주문 취소 가능합니다.<br>
+                                            해외 상품은 결제 확인 단계까지만 주문 취소 가능합니다.<br><br>
+                                            * 상품 준비 단계 이후에는 상품을 받아 보신 후 반품 처리를 진행해야 합니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 03 - Q. 환불 계좌 등록이 안됩니다.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            환불 계좌 등록 시 예금주가 회원님 본인 명의와 일치하지 않는 경우,<br>
+                                            또는 계좌 번호에 오류가 있는 경우 등록이 안될 수 있습니다.<br>
+                                            입력하신 계좌 번호를 재확인하여 주시고, 반드시 본인명의로 된 계좌만 등록하여 주시기 바랍니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 04 - Q. 환불 받았는데 주문 내역과 실제 환불 내역이 다릅니다.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            <strong>1. 카드사 할인을 받은 경우</strong><br><br>
+                                            결제 당시 카드사별 할인 및 청구 할인을 받으신 경우 ATNY 주문 내역에 반영되지 않습니다.<br>
+                                            실제 결제하신 금액을 확인하시려면 결제 시 사용한 카드사의 청구 내역을 확인하셔야 합니다.<br>
+                                            환불도 마찬가지로 주문내역 상 환불 금액과 실제 환불된 금액이 다를 수 있습니다.<br><br>
+                                            [적용 예시]<br>
+                                            카드사별 청구 할인 및 선할인 쿠폰을 사용해 결제한 경우 페이코, 스마일페이 할인 쿠폰, 포인트, 청구할인이 적용된 경우<br><br><br>
+                                            <strong>2. 해외 상품 관부가세 별도 환급</strong><br>
+                                            해외배송 상품의 환불은 관세와 부가세 그리고 반품비용(운임, 부대 비용)을 제외한 금액만 애트니를 통해 즉시 환불됩니다.<br><br>
+                                            구매 시 애트니가 고객님 대신 대납한 관세와 부가세는<br>
+                                            관세청에서 본인 확인 후 고객님께 별도로 환급됩니다.<br>
+                                            (하자&오배송 포함)<br><br>
+                                            <strong>
+                                                (결제금액) - (관세, 부가세) - (반품비용) = 즉시 환불<br>
+                                                (관세, 부가세) = 관세청에서 고객님 명의의 계좌로 직접 환급
+                                            </strong>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 05 - Q. 환불 일정이 궁금합니다.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            고객님께서 결제하신 수단에 따라 환불 기간이 상이할 수 있습니다. 또한 결제 당시 카드사별 할인 및 청구 할인 받으신 경우 환불 금액이 상이할 수 있습니다.<br><br>
+                                            1. 신용카드, 간편결제<br>
+                                            - 고객님의 카드 결제일에 따라 청구서 작성 시기가 달라, 자세한 취소 확인 및 금액 확인은 해당카드사로 문의하여 환불 방법 및 환불 날짜를 안내 받으시기 바랍니다.<br><br>
+                                            2. 현금 결제(무통장, 실시간 계좌이체), 휴대폰 결제<br>
+                                            - 계좌 환불의 경우, 영업일 기준 최대 5일 소요될 수 있습니다.<br>
+                                            - 환불 계좌 미등록 시 처리 소요일이 더 지연될 수 있으니 계좌 환불의 경우 꼭 회원 정보에 환불 계좌 등록 부탁드립니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 06 - Q. 환불 시 반품 배송비는 얼마인가요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            <strong>1. 반품 배송비</strong><br>
+                                            국내배송 상품의 반품, 교환비용은 무료입니다. / 해외배송 상품의 경우 [무료반품]대상 상품은 무료 반품이 가능하며 그 외 일반 상품에 대해서는 100,000원 의 반품비용이 발생됩니다.<br><br>
+                                            * 해외 배송의 경우 주문 취소는 결제 확인 단계까지만 가능합니다. 상품 준비 이후에는 상품을 받아 보신 후 반품 처리를 진행해야 합니다.<br><br>
+                                            모든 상품은 수령일로부터 7일 이내에 반품 신청이 가능합니다.<br>
+                                            반품 상품은 한국 내 반송처로 발송해야 하며, 반송처 입고 검수 후 문제가 없을 경우 영업일 기준 입고일로부터 평균 1~3일 이내 처리됩니다.<br><br>
+                                            [반송처: (12982) 경기도 하남시 하남대로 947 하남테크노밸리U1센터 A동 1013호 애트니]<br><br>
+                                            <strong>2. 반품 불가 상품</strong><br>
+                                            - 고객님의 실수로 인한 상품에 하자가 생겼을 경우, 브랜드 박스를 포함한 구성품이 분실 및 훼손되었을 경우 교환/환불이 불가합니다. <br><br>
+                                            - 해외 제품은 유럽 현지에서 상품 준비를 진행하기 때문에 구매 완료 후, 변경 및 취소 과정이 국내 배송과 다르오니 신중한 결정 부탁드립니다.<br>
+                                            해외 제품의 교환을 원하시는 경우 제품을 반품 후 신규 구매로 진행해야 합니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 07 - Q. 상품을 받았는데 반품&amp;환불하고 싶어요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            <strong>1. 반품 신청</strong><br>
+                                            상품 수령 후 24간 이내에 고객센터(1544-6543)로 연락주시면 제품의 이상 유무 파악 후 처리 가능 여부에 관하여 안내드리도록 하겠습니다. <br>
+                                            교환/환불 신청은 상품은 수령일로부터 7일 이내에 가능합니다.<br>
+                                            (제품 교환 요청 시 동일 제품이 품절되었거나 구매가 불가능한 경우 부득이하게 환불 처리 될 수 있는 점 양해 바랍니다.)<br><br>
+                                            반품 상품은 한국 내 주소지인 반송처로 발송해야 하며, 반송처 입고 검수 후 문제가 없을 경우 영업일 기준 입고일로부터 평균 1~3일 이내 처리됩니다.<br>
+                                            [반송처: (12982) 경기도 하남시 하남대로 947 하남테크노밸리U1센터 A동 1013호 애트니]<br><br>
+                                            <strong>2. 반품 배송비</strong><br>
+                                            - 국내 상품의 반품비용은 무료입니다.<br>
+                                            - 해외배송 상품의 경우 [무료반품] 대상 상품은 무료 반품이 가능하며 그 외 상품에 대해서는 100,000원 의 반품비용이 발생됩니다.<br><br>
+                                            <strong>3. 반품 불가 상품</strong><br>
+                                            - 고객님의 실수로 인한 상품에 하자가 생겼을 경우, 브랜드 박스를 포함한 구성품이 분실 및 훼손되었을 경우 교환/환불이 불가합니다.<br>
+                                            - 해외 제품은 유럽 현지에서 상품 준비를 진행하기 때문에 구매 완료 후, 변경 및 취소 과정이 국내 배송과 다르오니 신중한 결정 부탁드립니다.<br>
+                                            교환을 원하시는 경우 제품을 반품 후 신규 구매로 진행해야 합니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 08 - Q. 주문을 취소/환불했는데 금액이 카드 청구 되었어요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. 신용카드는 고객님의 결제일에 따라 청구서 작성 시기가 달라, 카드사로 결제 취소를 요청하더라도 청구되는 경우가 있습니다.<br>
+                                            카드 승인 취소가 정상적으로 완료되었는데 결제 금액이 청구되었다면 자세한 문의를 위해 해당 카드사로 문의 바랍니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 09 - Q. 부분 취소를 하고 싶어요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            부분 취소는 전체 주문 취소와 동일하게 주문 당일 오후 6시까지 가능하며, <br>
+                                            고객센터(1544-6543)로 연락 주시면 취소를 진행해 드립니다. <br>
+                                            취소 제품에 대한 환불은 결제 방법에 따라 부분 취소되며, <br>
+                                            부분 취소가 불가한 결제 수단을 이용하셨을 경우에는 무통장 환불 처리가 될 수 있는 점 양해 바랍니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-[60px]" id="faqList03">
+                            <p class="p-[15px] text-[14px] text-black bg-[#f6f6f6] font-medium md:text-[18px] md:px-[30px] md:py-[25px] border-b border-black leading-tight">상품/배송</p>
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 01 - Q. 네이버페이로 구매한 상품에 대한 배송조회가 되지 않아요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. 네이버페이로 구매하신 상품에 대해서는 네이버 페이 홈페이지를 통하여 상품에 대한 결제정보 및 배송정보가 안내됩니다.<br><br>
+                                            https://pay.naver.com/<br><br>
+                                            우측 상단의 결제내역 페이지에 접속하여 애트니에서 구매하신 상품에 대한 내용 및 배송 정보 확인이 가능합니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 02 - Q. 판매하는 제품은 모두 정품인가요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. ATNY에서 판매되는 모든 상품은 유럽의 브랜드 공식 온/오프 매장과 세계적으로 검증된 유럽 현지 온라인 셀렉숍에서 바잉됩니다. 가품으로 의심될 경우, ATNY 고객센터(1544-6543)로 문의주시면 응대해 드리겠습니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 03 - Q. 주문 상품의 옵션/배송지 정보 변경하고 싶어요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            상품 배송이 시작되지 않은 경우에만 변경이 가능하며, <br>
+                                            주문 상태에 따라 사이트에서 직접 변경 혹은 1:1문의, 고객센터(1544-6543)로 연락 주셔야 합니다. <br>
+                                            발송 전 상품에 일부 변경 사항이 발생하면 상품을 새로 준비하는 기간이 필요하여 발송이 지연될 수 있으니 참고 부탁드립니다.<br><br>
+                                            1. 주문 상태: 결제 확인<br>
+                                            &nbsp;&nbsp;&nbsp;- MY PAGE> 주문/배송 조회> 상세보기> 옵션 변경/배송지 변경 버튼 클릭<br><br>
+                                            2. 주문상태 : 상품 준비 중 이후<br>
+                                            &nbsp;&nbsp;&nbsp;- MY PAGE > 1:1 문의 > 1:1 문의하기 클릭
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 04 - Q. 사진을 확인했는데 상품에 이상이 있어요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. 하자가 있는 제품은 검수팀에서 먼저 연락을 드리고 있지만 미처 발견하지 못한 부분이 있을 수 있습니다. 상품에 이상을 발견하신 경우 즉시 고객센터(1544-6543)로 연락 주시면 자세한 안내를 드리겠습니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 05 - Q. 상품이 반송되었어요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. 주문 작성 시 입력된 연락처 및 수령 주소지 부재로 인해 상품이 반송되는 경우가 있습니다.<br>
+                                            이 경우 고객센터(1544-6543)로 연락 주시고 고객님의 정확한 주소 및 연락처를 알려주시면 다시 발송해 드리도록 하겠습니다.<br>
+                                            (고객님의 실수로 인한 반송일 경우 추가배송비를 지불해야 합니다)
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 06 - Q. 배송 조회는 어디서 하나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            출고 시 운송장 번호를 포함한 문자 알림이 발송되며, <br>
+                                            로그인 후 [MY PAGE - 1.주문정보]에서 배송 추적 버튼을 선택하시면 상세 현황을 보실 수 있습니다. <br>
+                                            해외 상품의 배송 조회는 인천공항 세관 통관 완료 후 국내 우체국 택배 이후부터 가능합니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 07 - Q. 상품 구성품이 궁금합니다.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            ATNY는 제품 구매 시 제공된 구성품을 모두 동봉해서 고객님께 보내 드리고 있습니다. 그러나 유럽국가의 명품 매장들은 지점과 점원에 따라 포장 방법이 다르고, <br>
+                                            온라인 주문이나 셀렉샵 제품의 경우 하드박스, 더스트백, 쇼핑백 등이 제공되지 않는 경우가 대부분입니다.<br>
+                                            상품이 아닌 구성품 관련 문제는 상품 취소 사유에 해당하지 않는 점 참고 부탁드립니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 08 - Q. 영수증과 개런티카드도 동봉되나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. ATNY는 수많은 판매처의 상품을 종합하여 고객님께 제공하고 있습니다. 영수증의 경우 판매처에 따라 상이하여 참고 자료로 사용하지 않고 있습니다. 다만 개런티 카드를 보유한 브랜드일 경우는 동봉해서 발송합니다. 브랜드마다 구성품들이 모두 다르니 참고해주시기 바랍니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 09 - Q. 품절된 상품은 언제 재입고 되나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. 품절된 상품의 경우 해당 브랜드에서 정확한 재입고 여부 및 일정을 공지하지 않기 때문에 답변을 드리기 어려운 점 양해 바랍니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 10 - Q. 관부가세 포함된 가격인가요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. ATNY의 모든 상품에 표시된 모든 금액은 관부가세 및 수수료를 포함한 금액으로 고객님께서 추가로 지불하는 관세/부가세는 발생하지 않습니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 11 - Q. 구매한 상품 중 일부만 배송되었어요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            복수 제품/수량을 주문해 주신 고객님 중 고객 요청이 있거나 일부 상품이 배송 지연될 경우에 <br>
+                                            먼저 준비되는 제품을 발송(분리발송)해드립니다. <br>
+                                            추후 발송되는 제품 추가 배송료는 브랜드에서 모두 부담합니다. <br>
+                                            분리 배송 혹은 한 번에 배송 받길 원하시는 경우 고객센터(1544-6543)로 문의바랍니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 12 - Q. 배송지가 검색되지 않아요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. 고객님께서 지정한 배송지가 행정안전부 주소 찾기 사이트(http://www.juso.go.kr/openIndexPage.do)에서 검색되는지 확인해 주시기 바랍니다. 신축 건물인 경우 행정안전부에 주소가 등록되지 않을 수 있으며, 이 경우 ATNY에서도 검색이 되지 않을 수 있습니다.<br>
+                                            주소 사이트에 주소가 등록되어 있음에도 ATNY에서 검색이 되지 않는 경우에는 [MY PAGE>1:1 문의하기] 또는 고객센터(1544-6543)로 전화 문의 주시면 친절하게 도움 드리겠습니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 13 - Q. 배송완료 상태인데 상품을 받지 못했습니다.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            배송완료 상태이나 아직 수령하지 못하신 경우는 부재중으로 <br>
+                                            인근에 위탁 배송되거나 반송되었을 수 있습니다. (경비실, 소화전, 인근 편의점 혹은 점포, 스마트픽, 옆 집 등)<br><br>
+                                            수령하지 못한 상태라면 배송 상태에서 조회되는 운송장을 바탕으로 <br>
+                                            해당 택배사에 배송일정에 대해서 상세한 안내를 받아 보시거나 ATNY 고객센터(1544-6543)로 문의 부탁드립니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 14 - Q. 송장번호가 조회되지 않아요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. 주문하신 제품은 실시간으로 바코드, 전산작업을 통해 배송 처리가 이루어지며 작업 후 배송 중 단계로 확인이 가능합니다. 지정된 택배사에서 픽업한 뒤, 배송 정보를 입력하는 시점부터 추적이 가능하기 때문에 배송 중 알림톡을 받으셔도 저녁 8~9시 정도 확인이 가능합니다. 알림톡을 받으신 이후에 2일째까지 운송장 흐름이 없는 경우 ATNY고객센터(1544-6543)로 문의바랍니다.           
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-[60px]" id="faqList04">
+                            <p class="p-[15px] text-[14px] text-black bg-[#f6f6f6] font-medium md:text-[18px] md:px-[30px] md:py-[25px] border-b border-black leading-tight">교환/반품</p>
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 01 - Q. 교환이나 반품은 어떻게 신청하나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            <strong>1. 신청방법 안내</strong><br>
+                                            1) MY ATNY > 주문내역 > 주문/배송내역 > 반품신청 교환 신청 탭에서 상품을 선택해주세요.<br><br>
+                                            <strong>2. 교환/반품 반송 방법 안내</strong><br>
+                                            1) ATNY 반품 신청과 동시에 택배 기사 방문 수거를 원하신다면 ATNY를 통해서 신청을 해주세요.<br>
+                                            - 교환/반품은 배송 완료일로 부터 7일 이내 신청 시 가능합니다.<br>
+                                            2) 직접 반송하실 예정이라면 반품 방법을 참고하여 ATNY로 발송해주시고, 이미 발송을 하신 뒤라면 고객 발송 완료를 선택해 주세요.<br>
+                                            3) 반송처: (12982) 경기도 하남시 하남대로 947 하남테크노밸리U1센터 A동 1013호 애트니<br><br>
+                                            <strong>3. 교환/반품 비용 결제</strong>
+                                            1) 교환/반품 비용은 신청 사유와 반송 방법에 따라 비용이 달라질 수 있습니다.<br><br>
+                                            2) ATNY 지정 택배로 수거 요청 시<br>
+                                            - 국내 상품 : 추가 비용이 발생하지 않습니다.<br>
+                                            - 해외 상품 : [무료반품]대상 상품은 무료 반품이 가능하며 그 외 상품에 대해서는 100,000원 의 반품비용이 발생됩니다.<br><br>
+                                            3) 직접 판매자에게 발송 시<br>
+                                            - 국내 상품 : 직접 발송이 가능하며 별도의 택배 비용을 지원하지 않습니다. (착불 발송은 반송 처리될 수 있는 점 양해 부탁드립니다.)<br>
+                                            - 해외 상품 : 직접 발송 불가 (ATNY 직접 수거)
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 02 - Q. 교환/반품 불가한 경우가 있나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            아래 사항에 해당될 경우에는 교환/반품이 불가할 수 있으니 참고 바랍니다.<br><br>
+                                            1. 제품을 사용 또는 훼손한 경우<br>
+                                            2. 사은품 누락, 상품 택, 보증서, 상품 부자재가 제거 혹은 분실된 경우<br>
+                                            3. 밀봉 포장을 개봉했거나 내부 포장재를 훼손 또는 분실한 경우<br>
+                                            4. 시간이 경과되어 재판매가 어려울 정도로 상품가치가 상실된 경우<br>
+                                            5. 고객님의 요청에 따라 수선, 제작되어 고객님 외에 사용이 어려운 경우<br>
+                                            6. 기타 전자상거래 등에서의 소비자보호에 관한 법률이 정하는 청약철회 제한사유에 해당될 때
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 03 - Q. 상품을 반송할 때 주의사항은 무엇인가요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            <strong>1. 회수방법에 따른 주의사항</strong><br>
+                                            1) ATNY에 수거 요청 시: 택배 기사가 반품 회수를 위해 2, 3일 이내 회수지로 방문할 예정이며,<br>
+                                            택배 기사의 연락을 잘 받아주시길 바랍니다.<br>
+                                            2) 개인이 직접 지정한 택배사 반송은 APP, WEB 자동접수 후 취소 시 재접수가 불가하니 택배사 상담원을 통해 유선으로 재접수바랍니다.<br>
+                                            3) 택배사 정책 및 사정에 따른 문제는 ATNY와는 무관 합니다. 택배사로 연락하여 확인해 주시기 바랍니다.<br>
+                                            4) 반송 후 반송장번호는 필히 소지하시기 바랍니다.<br><br>
+                                            <strong>2. 상품 반송 시 주의사항</strong><br>
+                                            1) 택 제거, 포장 박스 훼손, 구성품 누락, 사용 흔적이 있을 경우 기타 추가 비용 발생 및 재반송 될 수 있습니다.<br>
+                                            2) 택배비 미입금, 타상품 반입 등이 있을 경우 환불이 지연될 수 있습니다.<br>
+                                            3) 경비실 등 제3의 장소에 물품을 보관하여 분실, 도난 등 문제 발생하는 경우 고객 귀책사유에 해당됩니다. 반송 시 유의하시기 바랍니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 04 - Q. 교환/반품 택배비 지불 방법을 알려주세요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            상품 종류와 반송 방법에 따라 결제 비용이 달라지며, 교환 및 반품 비용은 동일합니다.<br><br>
+                                            <strong>1. ATNY 지정 택배로 수거 요청 시</strong><br>
+                                            - 국내 상품 : 교환/반품비 10,000원 발생<br>
+                                            - 해외 상품 : 60만원 미만 제품은 100,000원, 60만원 이상 제품은 140,000원의 교환/반품비 발생<br><br>
+                                            <strong>2. 판매자에게 직접 발송 시</strong><br>
+                                            - 국내 상품 : 환불 금액에서 편도 배송비 5,000원 차감<br>
+                                            - 해외 상품 : 직접 발송 불가 (ATNY 직접 수거)
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-[60px]" id="faqList05">
+                            <p class="p-[15px] text-[14px] text-black bg-[#f6f6f6] font-medium md:text-[18px] md:px-[30px] md:py-[25px] border-b border-black leading-tight">포인트/쿠폰</p>
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 01 - Q. 마일리지/쿠폰은 어떻게 받을 수 있나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            ATNY를 이용해주신 고객님들께 감사의 의미를 담아 쿠폰, 마일리지를 지급해드립니다.<br><br>
+                                            <strong>1. 마일리지</strong><br>
+                                            - 결제 : 무통장 입금 시 2% 적립<br>
+                                            - 회원등급별 구매적립금 : 1%~ 2% 적립 (등급별 상이함) <br>
+                                            - 상품평 : 일반상품평 1,000원/포토상품평 3,000원<br>
+                                            * 포토상품평의 경우 제품 사진이 반드시 포함되어 있어야 합니다.<br><br>
+                                            <strong>2. 쿠폰</strong><br>
+                                            - 회원가입: 회원가입 시 1만원 쿠폰 지급<br>
+                                            - 앱 다운로드 쿠폰: 1만원 지급 (1개월 이내 사용)<br>
+                                            - 생일 쿠폰: 5% 생일쿠폰 지급 (1개월이내 사용)<br>
+                                            - 결혼기념일 쿠폰: 5% 결혼기념일 기념일 쿠폰 지급 (1개월 이내 사용)<br><br>
+                                            * 모든 쿠폰은 중복 사용 및 기타 할인과 중복 적용이 불가합니다.<br>
+                                            * 한 아이디 당 동일 상품에 대해서는 중복 리뷰 작성 및 마일리지 적립이 불가합니다.<br>
+                                            * 운영정책에 맞지 않는 불합리한 경우에는 포인트 및 쿠폰을 회수 조치합니다.<br>
+                                            (이 경우 해당 고객님께 개별 연락을 드릴 예정입니다)
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 02 - Q. 마일리지/쿠폰은 어떻게 사용하나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            <strong>1. 마일리지 유의사항</strong><br>
+                                            ATNY 상품 주문 페이지에서 마일리지를 사용해 결제 가능하며, 100원 단위로 사용 가능합니다.<br><br>
+                                            <strong>2. 할인 쿠폰 유의사항</strong><br>
+                                            - 모든 할인 쿠폰은 중복 사용 및 기타 할인과 중복 적용이 불가합니다.<br>
+                                            - 할인 쿠폰은 타인에게 양도하거나 현금으로 전환하실 수 없습니다.<br>
+                                            - 할인 쿠폰은 사용기간 이후에는 효력이 상실됩니다.<br>
+                                            - 모바일 앱 전용 쿠폰은 앱 쇼핑에서만 사용 가능합니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 03 - Q. 상품 구매 후 마일리지는 언제 적립되나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            상품 구매로 발생한 마일리지는 배송 완료 후 구매 확정 시점을 기준으로 지급됩니다.<br>
+                                            구매 확정 이전 주문이 변경되거나 취소될 경우 지급되는 마일리지도 달라질 수 있으며,<br>
+                                            구매 확정 후에도 마일리지가 지급되지 않을 경우 고객센터(1544-6543)로 연락 바랍니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 04 - Q. 주문을 완료했는데 마일리지가 지급되지 않았어요.</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            상품 구매로 발생한 마일리지는 배송 완료 후 구매 확정 시점을 기준으로 지급됩니다. <br>
+                                            구매 확정 이전 주문이 변경되거나 취소될 경우 지급되는 마일리지도 달라질 수 있으며, <br>
+                                            구매 확정 후에도 마일리지가 지급되지 않을 경우 고객센터(1544-6543)로 연락 바랍니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 05 - Q. 마일리지 확인은 어디서 하나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            로그인 후 [MY ATNY] 제일 상단에서 보유한 마일리지 확인 가능하며, <br>
+                                            마일리지를 선택하시면 적립/사용 내역을 보실 수 있습니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-[60px]" id="faqList06">
+                            <p class="p-[15px] text-[14px] text-black bg-[#f6f6f6] font-medium md:text-[18px] md:px-[30px] md:py-[25px] border-b border-black leading-tight">A/S</p>
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 01 - Q. 구입한 상품의 A/S는 어떻게 해야 되나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            ATNY에서 구매한 모든 상품은 ATNY를 통해 진행됩니다. <br>
+                                            백화점과 면세점, 해외구매처를 통해 구입한 상품은 A/S 불가합니다. <br>
+                                            초기 불량으로 인한 A/S는 상품 수령일로부터 3개월까지 무상진행 가능합니다. <br><br>
+                                            * 단, 보증기간이 지나거나 고객 부주의로 인한 A/S는 유상으로 진행되며,<br>
+                                            제품 상태에 따라 수선이 불가능할 수 있습니다.<br><br>
+                                            * 명품 특성 상 가품 유통 방지를 위해 부속품이 유통되지 않는 관계로 타 부속으로 대체될 수 있습니다.<br><br>
+                                            * 시계, 가전, 서적을 포함한 일부 해외배송 상품은 최초 불량을 제외한 상품 A/S가 제한적일 수 있습니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 02 - Q. 국내 백화점에서 A/S 받을 수 있나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            ATNY 판매 제품은 100% 정품으로, 샤넬, 에르메스 등 월드 개런티 가능한 브랜드의 상품은 <br>
+                                            해당 브랜드의 개런티카드 지참 시 국내 매장에서 A/S 가능합니다. <br><br>
+                                            다만, 해외에서 구매한 제품들의 경우 각 브랜드별 인터내셔널 A/S 정책이 다르니 <br>
+                                            정확한 기준은 각 브랜드 매장으로 직접 문의 바랍니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-[60px]" id="faqList07">
+                            <p class="p-[15px] text-[14px] text-black bg-[#f6f6f6] font-medium md:text-[18px] md:px-[30px] md:py-[25px] border-b border-black leading-tight">기타</p>
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 01 - Q. 탈퇴 신청은 어떻게 하나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            MY ATNY> 회원정보수정에서 신청 가능합니다.<br>
+                                            탈퇴 시, 회원 등급 및 마일리지/쿠폰이 초기화되며 복구되지 않습니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 02 - Q. 현금영수증 발행은 어떻게 신청 하나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            현금결제(실시간 계좌이체/무통장 입금) 시 현금영수증 발행 여부를 체크하시고, <br>
+                                            소득공제용/지출 증빙용 선택 후 주민번호, 휴대폰번호, 사업자번호를 입력하여 결제하시면 됩니다.<br>
+                                            (결제 시 현금영수증 발행 여부를 체크하지 않으셨더라도, 국세청으로 자진 발급하므로 국세청에서 직접 확인이 가능합니다.) <br><br>
+                                            세금계산서는 현금영수증 발급으로 대체하고 있으므로 신청하실 수 없습니다. <br>
+                                            관련 문의사항은 1:1상담이나 또는 고객센터(1544-6543)로 문의해 주시면 상세히 안내해 드리도록 하겠습니다.<br><br><br>
+                                            * ATNY는 수입 대행 쇼핑몰로 고객이 현금영수증을 요청할 경우 현금 결제하신 총액에 대해 현금영수증을 발행할 수 있습니다.<br>
+                                            (관계법령 및 예규 부가세법 제12조, 부가-1957)
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 03 - Q. 장바구니와 위시리스트차이는 무엇인가요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            장바구니와 위시리스트 로그인 상태에서 사용 가능합니다. <br>
+                                            장바구니에 담긴 상품은 최대 1달 동안 보관되며 구매까지 바로 이용 가능합니다. <br>
+                                            위시리스트한 상품은 기간 제한없이 보관되며 찜한 상품을 장바구니에 담아 주문하실 수 있습니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="text-[13px] p-[15px] border-b border-[#e5e5e5] text-black whitespace-nowrap overflow-hidden text-ellipsis md:p-5 md:text-[14px] leading-tight">BEST 04 - Q. 장바구니에 담은 상품은 얼마간 보관되나요?</dt>
+                                        <dd class="hidden p-[15px] text-[12px] border-b border-[#e5e5e5] text-black bg-[#f6f6f6] md:text-[13px]">
+                                            A. 장바구니에 담은 상품은 30일간 보관됩니다.<br><br>
+                                            위시리스트에 보관하시면 세일을 비롯한 각종 이벤트가 있을 때 알림을 보내드립니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ -->
+            </div>
+        </div>
+        <!-- mobile floating menu -->
+        <div class="xl:hidden fixed left-0 right-0 bottom-0 z-[99] bg-white p-0">
+			<ul class="px-[35px] flex">
+				<li class="w-[15%]" id="mobile-menu"><a href="javascript:;" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu1.svg')] bg-[center_4px] bg-no-repeat">메뉴</span></a></li>
+				<li class="w-[15%]"><a href="/goods/oneday_delivery" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu2.svg')] bg-[center_4px] bg-no-repeat">하루배송</span></a></li>
+				<li class="w-[40%]"><a href="/" class="block relative h-full"><span class="text-[0] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/logo.svg')] bg-[center_14px] bg-no-repeat bg-[length:76px_18px]">홈</span></a></li>
+				<li class="w-[15%]"><a href="/mypage/wish" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu3.svg')] bg-[center_4px] bg-no-repeat">위시리스트</span></a></li>
+				<li class="w-[15%]"><a href="/mypage" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu4.svg')] bg-[center_4px] bg-no-repeat">마이페이지</span></a></li>
+			</ul>
+		</div>
+        <!-- //mobile floating menu -->
+
+        <!-- footer -->
+		<footer><script>Util.include('../common/footer.html')</script></footer>
+		<!-- //footer -->
+    </div>
+
+    <script src="../js/include.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        // 모바일 메뉴 레이어 열기
+        $('#mobile-menu').on('click',function(){
+            $('#mobile-layer').addClass('!z-[50]');
+            $('#mobile-layer > div:first-child').addClass('!block');
+            $('#mobile-menu-content').addClass('!top-[42px]');
+            var mobile_swiper = new Swiper('#mobile-layer .swiper',{
+                slidesPerView:'4.5',
+                spaceBetween: 8
+            })
+        })
+        // 모바일 메뉴 레이어 닫기
+        $('#mobile-layer-close').on('click',function(){
+            $('#mobile-layer').removeClass('!z-[50]');
+            $('#mobile-layer > div:first-child').removeClass('!block');
+            $('#mobile-menu-content').removeClass('!top-[42px]');
+        })
+        
+        function search_layer(){
+            $('#search-layer').addClass('!block');
+        }
+
+        //검색 레이어 닫기
+        $('#search-layer-close').on('click',function(){
+            $('#search-layer').removeClass('!block');
+        })
+
+        /*gnb*/
+        $(window).on("load resize", function() {
+            if ($(window).width() > 768) {
+                if ($('.main').length > 0) {
+                    $('.header_cont').hover(
+                        function() {
+                            $(this).addClass('on');
+                        },
+                        function() {
+                            $(this).removeClass('on');
+                        }
+                    );
+                }
+                $('.header .gnb_wrap .dep1').hover(
+                    function() {
+                        $(this).find('.dep2').css('display', 'block');
+                        $('.header .gnb_wrap .dep1_ul.on').addClass('tmpon');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('on');
+                    },
+                    function() {
+                        $(this).find('.dep2').css('display', 'none');
+                        $('.header .gnb_wrap .dep1_ul.tmpon').addClass('on');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('tmpon');
+                    }
+                );
+            }
+        });
+
+        /*footer*/
+        
+
+        /* 검색 레이어 관련 */
+        function srch_layer(){
+            $('#search-layer').addClass('!block');
+        }
+
+        $('.search_full_layer .button_back2').on('click', function () {
+            $('.search_full_layer').removeClass('on');
+        });
+
+        $('.mobile-category-wrap input[type="text"]').on('click', function () {
+            $('.search_full_layer').addClass('on');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+
+        $('.header_top .ico_srch, .m_btm_menu .resp_top_search').on('click',function(){
+            $('.search_full_layer').addClass('on');
+        });
+        $('.search_full_layer .btn_close').on('click',function(){
+            $('.search_full_layer').removeClass('on');
+        });
+
+        $('.mobile-category-wrap .button-search').on('click', function () {
+            $('.search_full_layer').addClass('on');
+            if ($('.mobile-category-wrap input[type="text"]').attr('value')) {
+                $('.search_full_layer input[name="search_text"]').attr('value', $('.mobile-category-wrap input[type="text"]').attr('value'));
+            }
+        })
+
+        $('.header .rig_menu .btn-srch').on('click', function () {
+            $('.search_full_layer').addClass('on');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+        
+        /* 질문&문제 클릭시 */
+        $('dl dt').on('click',function(){
+            $(this).next().toggleClass('!block');
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+      <script src="../js/util.js"></script>
+      <script>Util.include('../common/head_2.html');</script>
+    </head>
+<body>
+    <div id="wrap">
+        <!-- header -->
+		<script>Util.include('../common/header.html');</script>
+		<!-- //header -->
+
+        <!-- 모바일용 레이어 -->
+        <div class="fixed left-0 top-0 right-0 bottom-0 bg-black/70 z-[1000] hidden" id="dmm"></div>
+        <div class="fixed left-0 right-0 z-[1001] transition-all duration-500 bottom-[48px] top-[100%]" id="mobile-menu-content">
+            <button type="button" class="h-[31px] rounded-t-[30px] bg-white absolute top-0 left-0 right-0 w-full text-[0] after:content-[''] after:w-[57px] after:h-[3px] after:bg-[#212121] after:rounded-[10px] after:absolute after:top-[9px] after:left-1/2 after:-translate-x-1/2" id="mobile-layer-close">닫기</button>
+            <div class="py-[14px] pr-[65px] pl-6 absolute left-0 top-[31px] right-0 bg-white border-b border-[#e7e5ea]">
+                <form name="topSearchForm" action="/goods/search">
+                    <div class="relative h-[31px] rounded-[100px] bg-[#fafafb] border border-[#f7f7f9] box-border pr-[47px]">
+                        <input type="text" name="search_text" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="h-[29px] bg-transparent px-[10px] box-border w-full border-0 text-[13px]">
+                        <button class="h-[29px] absolute right-0 top-0 w-[47px] bg-[url('../assets/icon/ico-search.svg')] bg-center bg-no-repeat z-10 text-[0]" type="submit">검색</button>
+                    </div>
+                </form>
+                <a href="/mypage" class="absolute bg-[url('../assets/icon/ico-myp.svg')] bg-center bg-no-repeat text-[0] right-[21px] top-[17px] z-10 w-6 h-6">마이페이지</a>
+            </div>
+            <div>
+                <div class="bg-[#fafafb] overflow-y-auto absolute left-0 top-[91px] bottom-0 right-0">
+                    <div>
+                        <div class="bg-white border-b border-[#e7e5ea]">
+                            <div class="pt-[15px] px-6">
+                                <ul>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#ff774b] block px-[2px] pb-[3px] border-b-[3px] border-[#ff774b]">WOMEN</a></li>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">MEN</a></li>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">JUNIOR</a></li>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">LIFE</a></li>
+                                </ul>
+                            </div>
+                            <div class="py-[10px] px-6 block">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00020001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                    <li><a href="/goods/catalog?code=00020002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                    <li><a href="/goods/catalog?code=00020003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                    <li><a href="/goods/catalog?code=00020004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                    <li><a href="/goods/catalog?code=00020005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                </ul>
+                            </div>
+                            <div class="hidden">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00010001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                    <li><a href="/goods/catalog?code=00010002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                    <li><a href="/goods/catalog?code=00010003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                    <li><a href="/goods/catalog?code=00010004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                    <li><a href="/goods/catalog?code=00010005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                </ul>
+                            </div>
+                            <div class="hidden">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00030001" class="text-[13px] text-[#212121] block py-[13px]">여아</a></li>
+                                    <li><a href="/goods/catalog?code=00030002" class="text-[13px] text-[#212121] block py-[13px]">남아</a></li>
+                                </ul>
+                            </div>
+                            <div class="hidden">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00040001" class="text-[13px] text-[#212121] block py-[13px]">디지털</a></li>
+                                    <li><a href="/goods/catalog?code=00040002" class="text-[13px] text-[#212121] block py-[13px]">홈</a></li>
+                                    <li><a href="/goods/catalog?code=00040003" class="text-[13px] text-[#212121] block py-[13px]">뷰티</a></li>
+                                    <li><a href="/goods/catalog?code=00040004" class="text-[13px] text-[#212121] block py-[13px]">여행</a></li>
+                                    <li><a href="/goods/catalog?code=00040005" class="text-[13px] text-[#212121] block py-[13px]">반려동물</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                            <div class="py-[10px] px-6">
+                                <ul>
+                                    <li>
+                                        <a href="/goods/best_designers" class="text-[13px] text-[#212121] block py-[13px]">디자이너</a>
+                                    </li>
+                                    <li>
+                                        <a href="/goods/nft" class="text-[13px] text-[#212121] block py-[13px]">정품감정서</a>
+                                    </li>
+                                    <li>
+                                        <a href="/goods/oneday_delivery" class="text-[13px] text-[#212121] block py-[13px]">하루배송</a>
+                                    </li>
+                                    <li>
+                                        <a href="/goods/free_return" class="text-[13px] text-[#212121] block py-[13px]">무료반품</a>
+                                    </li>
+                                    <li>
+                                        <a href="/board/?id=magazine" class="text-[13px] text-[#212121] block py-[13px]">매거진</a>
+                                    </li>
+                                    <li>
+                                        <a href="/promotion/event" class="text-[13px] text-[#212121] block py-[13px]">이벤트</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                            <div class="py-[17px]">
+                                <div class="text-[#c6cad1] text-[11px] mb-[6px] px-6">최근 본 상품</div>
+                                <!-- 내용이 없을 때 -->
+                                <div class="text-center py-5 w-full text-[11px]">최근 본 상품이 없습니다.</div>
+                                <!-- //내용이 없을 때 -->
+                                <div class="swiper pl-6">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide"><a href="/goods/view?no=1541402"><img src="//img.atny.com/data/goods/ATNY/10/1672510/MzQzNDYw_list1.JPG" alt="여성 타임리스 브라운 미니 숄더/크로스백"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow-[inset_0_-8px_10px_rgba(0,0,0,0.03)]">
+                            <ul class="py-[17px] text-center">
+                                <li class="inline-block relative"><a href="/mypage" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">마이페이지</a></li>
+                                <li class="inline-block relative"><a href="/board/?id=faq" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">FAQ</a></li>
+                                <li class="inline-block relative"><a href="/mypage/myqna_write" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px]">1:1문의</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //모바일용 레이어 -->
+
+        <!-- layer - 검색 -->
+        <div class="hidden fixed z-[1000] left-0 top-0 right-0 bottom-0 bg-white overflow-auto" id="search-layer">
+            <div class="w-full max-w-[1240px] mx-auto lg:px-5">
+                <a href="javascript:void(0)" class="w-10 h-[38px] absolute left-[10px] top-[7px] bg-[url('../assets/icon/ico-back.svg')] bg-center bg-no-repeat text-[0] lg:w-[53px] lg:h-[53px] lg:top-[33px] lg:left-auto lg:right-[33px] lg:bg-[url('../assets/icon/ico-close.png')] text-[#444] no-underline border-none outline-none" id="search-layer-close">뒤로</a>
+                <div class="pt-[9px] pr-4 pl-[50px] mb-[22px] lg:px-0 lg:pt-[180px] lg:mb-14">
+                    <div class="pr-[38px] lg:h-[65px] relative lg:pr-[49px]">
+                        <form name="topSearchForm" id="topSearchForm" action="/goods/search">
+                            <input type="text" name="search_text" id="searchVer3InputBox" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="w-full h-[38px] px-[17px] bg-[#f7f7f9] leading-[38px] lg:h-[65px] lg:leading-[65px] lg:border-0 lg:text-base lg:px-[60px] rounded-[200px] outline-none" />
+                        </form>
+                        <button type="button" class="w-[38px] h-[38px] absolute z-10 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat text-[0] right-[38px] top-0 lg:top-[13px] lg:right-[69px] lg:bg-[length:12px_12px] lg:bg-[url('../assets/icon/ico-close.png')]">닫기</button>
+                        <button type="button" class="w-[38px] h-[38px] bg-[length:17px_17px] lg:bg-auto lg:w-[49px] lg:h-[65px] absolute top-0 right-0 z-10 text-[0] bg-[url('../assets/icon/ico-srch.png')] bg-center bg-no-repeat" onclick="$('#topSearchForm').submit();">검색</button>
+                    </div>
+                    <!-- 자동완성 -->
+                    <div class="hidden relative py-[10px] mb-5">
+                        <div class="px-[13px] lg:px-[26px]">
+                            <ul id="autoCompleteList">
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('하바이아나스');">하바이아<span class="text-[#ff774b] ">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('피오리아나');">피오리아<span class="text-[#ff774b]">나</span><span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('피나이더');">피<span class="text-[#ff774b]">나</span>이더<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('피나모레');">피<span class="text-[#ff774b]">나</span>모레<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('프리티 발레리나스');">프리티 발레리<span class="text-[#ff774b]">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('포르나세티');">포르<span class="text-[#ff774b]">나</span>세티<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('파비아나필리피');">파비아<span class="text-[#ff774b]">나</span>필리피<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('파비아나페리');">파비아<span class="text-[#ff774b]">나</span>페리<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('콜리나 스트라다');">콜리<span class="text-[#ff774b]">나</span> 스트라다<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('컬러스 오브 켈리포이나');">컬러스 오브 켈리포이<span class="text-[#ff774b]">나</span><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //자동완성 -->
+                </div>
+                <div>
+                    <!-- 최근검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative xl:min-h-[640px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:text-2xl lg:px-0">최근 검색어</div>
+                        <div class="px-6 lg:p-0">
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=골든구스 스니커즈" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">골든구스 스니커즈</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515206">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=미우미우 마테라쎄" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">미우미우 마테라쎄</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="523655">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=토트백" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">토트백</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="593942">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=버버리" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">버버리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="467725">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=오트리" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">오트리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="519748">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=구찌 케이스" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">구찌 케이스</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="488299">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=미우미우" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">미우미우</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="557471">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=구찌" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">구찌</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="487328">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=생로랑" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">생로랑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515144">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=구찌 지갑" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">구찌 지갑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="609453">검색어삭제</button></span>
+                        </div>
+                    </div>
+                    <!-- 추천검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative pt-[22px] lg:pt[0] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h-[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0">추천 검색어</div>
+                        <div class="px-6 pb-5 lg:px-[30px]">
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">미우미우 미니백 득템 찬스!</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/enjoy_atny.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">✨애트니 200% 즐기기✨</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">MD가 추천하는 가을 아이템 #트렌치코트</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">여유로운 휴양지 바이브, 카사블랑카</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">브라운 아이템 모음zip</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../board/magazine.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">❣️애트니 매거진❣️</a></span>
+                        </div>
+                    </div>
+                    <!-- 인기검색어 -->
+                    <div class="box-border relative lg:float-left lg:w-1/3">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0 relative pt-[22px] lg:pt[0]">인기검색어<span class="float-right text-[9px] text-[#807e7e] font-normal lg:text-[13px] lg:mt-[7px]]">2022.10.13 업데이트</span></div>
+                        <div class="px-6 lg:pr-0 pb-[30px] lg:pl-[30px]">
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">1</span><a href="../goods/search?osearchtext=미우미우" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">미우미우</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">2</span><a href="../goods/search?osearchtext=프라다"class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">프라다</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">3</span><a href="../goods/search?osearchtext=발렌시아가" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">발렌시아가</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-15 lg:text-[17px] text-[#1dc9ff] pl-4 bg-[url('../assets/icon/ico-ranking-down.png')] bg-[left_center] bg-no-repeat">DOWN</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">4</span><a href="../goods/search?osearchtext=구찌" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">구찌</a>
+                                <span class="absolute right-0 top-0 text-xs text-center h-[1px] w-10 bg-[url('../assets/icon/ico-same.png')] bg-center bg-no-repeat"></span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">5</span><a href="../goods/search?osearchtext=버버리" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">버버리</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b]">NEW</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">6</span><a href="../goods/search?osearchtext=메종키츠네" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">메종키츠네</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">7</span><a href="../goods/search?osearchtext=톰브라운" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">톰브라운</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">8</span><a href="../goods/search?osearchtext=셀린느" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">셀린느</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">9</span><a href="../goods/search?osearchtext=펜디" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">펜디</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">10</span><a href="../goods/search?osearchtext=보테가베네타" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">보테가베네타</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //layer - 검색 -->
+
+        <!-- contents -->
+        <div id="layout_wrap">
+            <div id="layout_content" class="min-h-[80vh] lg:min-h-0 pb-[50px] lg:pb-[100px] leading-[1.2] text-[13px] text-[#666] font-normal font-['Pretendard']">
+                <div class="p-0 align-top relative">
+                    <!-- article -->
+                    <div class="max-w-[1440px] my-[15px] md:mb-0 mx-auto px-[15px] lg:px-0 box-border">
+                        <div><img class="w-full max-w-full align-middle border-none outline-none" src="../images/img-bnr_review.jpeg" alt="리뷰 배너 이미지" /></div>
+                        <!-- 리스트(1) -->
+                        <div class="review_list w-full overflow-hidden mt-[30px] relative">
+                            <!-- 탭메뉴 -->
+                            <div class="border-t-2 border-t-black">
+                                <ul class="overflow-hidden whitespace-nowrap list-none relative before:block before:content-[''] before:w-full sm:before:h-[2px] before:bg-[#ddd] before:absolute before:bottom-0 before:left-0" id="review_list_tab" data-tabs-toggle="#review_list_tab_content" role="tablist">
+                                    <li class="inline-block w-1/2 sm:w-auto" role="presentation">
+                                        <button class="inline-block w-full sm:w-auto py-[15px] px-5 text-black text-sm font-['TTNorms'] rounded-none appearance-none border-b-2 border-b-[#ff774b] relative" id="review_list_first_tab" data-tabs-target="#review_list_first" type="button" role="tab" aria-controls="review_list_first" aria-selected="true">최신순</button>
+                                    </li>
+                                    <li class="inline-block w-1/2 sm:w-auto -ml-1" role="presentation">
+                                        <button class="inline-block w-full sm:w-auto py-[15px] px-5 text-[#ccc] text-sm font-['TTNorms'] border-b-2 border-b-[#ddd] rounded-none appearance-none relative" id="review_list_second_tab" data-tabs-target="#review_list_second" type="button" role="tab" aria-controls="review_list_second" aria-selected="false">별점순</button>
+                                    </li>
+                                    <li class="float-right block sm:inline-block w-full sm:w-auto mt-2 ml-3">
+                                        <div class="w-full sm:w-[238px] h-8 border border-[#ddd] rounded box-border relative">
+                                            <input type="text" value="" class="w-[calc(100%-40px)] my-[6px] mr-2 ml-8 text-xs leading-[18px] border-none outline-none" placeholder="리뷰 키워드 검색" />
+                                            <button type="submit" class="w-[30px] h-[30px] text-[0] bg-[url('../assets/icon/ico-search.svg')] bg-[length:16px] bg-no-repeat bg-center bg-transparent absolute top-0 left-0 z-10 appearance-none cursor-pointer">검색</button>
+                                        </div>
+                                    </li>
+                                    <li class="float-right block sm:inline-block w-full sm:w-auto mt-2 sm:mt-4">
+                                        <label class="media_view text-[#999] text-xs cursor-pointer">
+                                            <input type="checkbox" id="return_method" name="media_view" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                            <span class="media_view_text inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')]">상품별 리뷰 보기</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- //탭메뉴 -->
+                            <!-- 필터 -->
+                            <div class="pt-2 sm:pt-4 pb-4 border-b border-b-[#ddd] relative">
+                                <!-- 카테고리 -->
+                                <span>
+                                    <div class="btn-category_filter_sort_list inline-block bg-white h-8 pl-2 pr-4 align-top text-[#666] text-[13px] leading-8 bg-[url('../assets/icon/ico-select_arrow.png')] bg-[length:7px] bg-no-repeat bg-[right_5px_center] border border-[#ccc] rounded-sm outline-none cursor-pointer">전체 카테고리</div>
+                                    <div class="hidden category_filter_sort_list w-[320px] max-h-[380px] overflow-y-auto mt-2 bg-white border border-[#ddd] shadow-[0_12px_20px_0_rgb(0,0,0,0.4)] absolute top-[35px] sm:top-[43px] left-0 z-[1]">
+                                        <div class="py-2 px-4 relative">
+                                            <div class="clear-both overflow-hidden">
+                                                <div class="inline-block float-left min-w-[200px] py-3 text-sm leading-5 font-bold">카테고리</div>
+                                                <div class="inline-block float-right py-3 cursor-pointer">
+                                                    <svg class="inline-block my-[1px] mx-1 w-4 h-4 stroke-[#666] fill-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.667 7.667L12.56 9.792l-2.105-2.125"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.948 13.333c-3.101 0-5.615-2.537-5.615-5.666C1.333 4.537 3.847 2 6.949 2c3.1 0 5.614 2.537 5.614 5.667v1.416"></path>
+                                                    </svg>
+                                                    <span class="align-bottom text-[#666] text-xs leading-[18px]">초기화</span>
+                                                </div>
+                                            </div>
+                                            <ul class="my-1 mr-1 pl-1 relative" role="listbox">
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">전체 카테고리</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">전체 카테고리</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">남성 가방</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">남성 가방</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">남성 지갑</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">남성 지갑</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">남성 의류</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">남성 의류</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">남성 슈즈</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">남성 슈즈</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">남성 액세서리</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">남성 액세서리</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">여성 가방</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">여성 가방</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">여성 지갑</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">여성 지갑</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">여성 의류</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">여성 의류</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">여성 슈즈</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">여성 슈즈</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">여성 액세서리</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">여성 액세서리</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">여아</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">여아</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">남아</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">남아</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">디지털</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">디지털</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">홈</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">홈</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">뷰티</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">뷰티</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">여행</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">여행</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">반려동물</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">반려동물</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </span>
+                                <!-- //카테고리 -->
+                                <!-- 별점 -->
+                                <span>
+                                    <div class="btn-star_filter_sort_list inline-block bg-white h-8 pl-2 pr-4 align-top text-[#666] text-[13px] leading-8 bg-[url('../assets/icon/ico-select_arrow.png')] bg-[length:7px] bg-no-repeat bg-[right_5px_center] border border-[#ccc] rounded-sm outline-none cursor-pointer">별점</div>
+                                    <div class="hidden star_filter_sort_list w-[320px] max-h-[400px] overflow-y-auto mt-2 text-[0] bg-white border border-[#ddd] shadow-[0_12px_20px_0_rgb(0,0,0,0.4)] absolute top-[35px] sm:top-[43px] left-0 z-[1]">
+                                        <div class="py-2 px-4 relative">
+                                            <div class="clear-both overflow-hidden">
+                                                <div class="inline-block float-left min-w-[200px] py-3 text-sm leading-5 font-bold">별점</div>
+                                                <div class="inline-block float-right py-3 cursor-pointer">
+                                                    <svg class="inline-block my-[1px] mx-1 w-4 h-4 stroke-[#666] fill-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.667 7.667L12.56 9.792l-2.105-2.125"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.948 13.333c-3.101 0-5.615-2.537-5.615-5.666C1.333 4.537 3.847 2 6.949 2c3.1 0 5.614 2.537 5.614 5.667v1.416"></path>
+                                                    </svg>
+                                                    <span class="align-bottom text-[#666] text-xs leading-[18px]">초기화</span>
+                                                </div>
+                                            </div>
+                                            <ul class="my-1 mr-1 pl-1 relative" role="listbox">
+                                                <li class="list-item list-none mt-[5px] pt-[3px] px-[7px] leading-5" role="presentation">
+                                                    <div class="m-0 cursor-pointer select-none" id="select2-result-label-9" role="option">
+                                                        <div class="py-2 border-b border-b-[#ddd] relative">
+                                                            <span class="inline-block w-[80px] mr-[10px] text-[#878787] text-[13px]">아주 좋아요</span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block absolute top-[5px] right-0">
+                                                                <input type="checkbox" name="" id="star_check1" class="peer hidden invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" />
+                                                                <label for="star_check1" class="inline-block pl-5 text-[#666] text-sm bg-[url(../assets/icon/ico-search-filter-check.png)] bg-[length:15px] peer-checked:bg-[url(../assets/icon/ico-search-filter-check-on.png)] bg-no-repeat bg-[left_center] cursor-pointer -indent-96">선택</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none mt-[5px] pt-[3px] px-[7px] leading-5" role="presentation">
+                                                    <div class="m-0 cursor-pointer select-none" id="select2-result-label-10" role="option">
+                                                        <div class="py-2 border-b border-b-[#ddd] relative">
+                                                            <span class="inline-block w-[80px] mr-[10px] text-[#878787] text-[13px]">맘에 들어요</span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                            <span class="inline-block absolute top-[5px] right-0">
+                                                                <input type="checkbox" name="" id="star_check2" class="peer hidden invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" />
+                                                                <label for="star_check2" class="inline-block pl-5 text-[#666] text-sm bg-[url(../assets/icon/ico-search-filter-check.png)] bg-[length:15px] peer-checked:bg-[url(../assets/icon/ico-search-filter-check-on.png)] bg-no-repeat bg-[left_center] cursor-pointer -indent-96">선택</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none mt-[5px] pt-[3px] px-[7px] leading-5" role="presentation">
+                                                    <div class="m-0 cursor-pointer select-none" id="select2-result-label-11" role="option">
+                                                        <div class="py-2 border-b border-b-[#ddd] relative">
+                                                            <span class="inline-block w-[80px] mr-[10px] text-[#878787] text-[13px]">보통이에요</span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                            <span class="inline-block absolute top-[5px] right-0">
+                                                                <input type="checkbox" name="" id="star_check3" class="peer hidden invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" />
+                                                                <label for="star_check3" class="inline-block pl-5 text-[#666] text-sm bg-[url(../assets/icon/ico-search-filter-check.png)] bg-[length:15px] peer-checked:bg-[url(../assets/icon/ico-search-filter-check-on.png)] bg-no-repeat bg-[left_center] cursor-pointer -indent-96">선택</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none mt-[5px] pt-[3px] px-[7px] leading-5" role="presentation">
+                                                    <div class="m-0 cursor-pointer select-none" id="select2-result-label-12" role="option">
+                                                        <div class="py-2 border-b border-b-[#ddd] relative">
+                                                            <span class="inline-block w-[80px] mr-[10px] text-[#878787] text-[13px]">그냥 그래요</span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                            <span class="inline-block absolute top-[5px] right-0">
+                                                                <input type="checkbox" name="" id="star_check4" class="peer hidden invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" />
+                                                                <label for="star_check4" class="inline-block pl-5 text-[#666] text-sm bg-[url(../assets/icon/ico-search-filter-check.png)] bg-[length:15px] peer-checked:bg-[url(../assets/icon/ico-search-filter-check-on.png)] bg-no-repeat bg-[left_center] cursor-pointer -indent-96">선택</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none mt-[5px] pt-[3px] px-[7px] leading-5" role="presentation">
+                                                    <div class="m-0 cursor-pointer select-none" id="select2-result-label-13" role="option">
+                                                        <div class="py-2 relative">
+                                                            <span class="inline-block w-[80px] mr-[10px] text-[#878787] text-[13px]">별로에요</span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                            <span class="inline-block w-3 h-3 mr-[2px] text-[0px] bg-[url('../assets/icon/ico_star.png')] bg-[-24px_0px]"></span>
+                                                            <span class="inline-block absolute top-[5px] right-0">
+                                                                <input type="checkbox" name="" id="star_check5" class="peer hidden invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" />
+                                                                <label for="star_check5" class="inline-block pl-5 text-[#666] text-sm bg-[url(../assets/icon/ico-search-filter-check.png)] bg-[length:15px] peer-checked:bg-[url(../assets/icon/ico-search-filter-check-on.png)] bg-no-repeat bg-[left_center] cursor-pointer -indent-96">선택</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="mt-[-3px] p-4 bg-white border-t border-t-[#ddd] sticky bottom-0">
+                                            <button type="submit" class="btn-filter_sort_list_submit w-full h-10 text-white text-[13px] bg-black cursor-pointer">완료</button>
+                                        </div>
+                                    </div>
+                                </span>
+                                <!-- //별점 -->
+                            </div>
+                            <!-- 필터 -->
+                            <div class="hidden min-h-[400px] p-[15px] sm:p-[40px] text-[#666] text-xs sm:text-sm text-center">조건에 맞는 리뷰가 없습니다.</div>
+                            <!-- 컨텐츠 -->
+                            <div id="review_list_tab_content">
+                                <div class="bg-white" id="review_list_first" role="tabpanel" aria-labelledby="review_list_first_tab">
+                                    <div class="w-full mb-[30px] py-[15px] px-0 border-b border-b-[#e5e5e5]">
+                                        <div class="block sm:flex sm:flex-nowrap sm:gap-6">
+                                            <div class="block sm:inline-block w-full sm:w-3/4 sm:min-h-[122px] sm:pr-6 text-left sm:border-r sm:border-r-[#e5e5e5] box-border">
+                                                <div class="flex flex-wrap justify-start gap-[5px]">
+                                                    <span class="h-[17px] leading-[17px] inline-block bg-[#f7f7f9] text-[#3f3b3b] px-[5px] text-[9px] mr-[-2px] border border-[#e7e5ea] align-top">NEW</span>
+                                                    <span class="h-[17px] leading-[17px] inline-block bg-[#f7f7f9] text-[#3f3b3b] px-[5px] text-[9px] mr-[-2px] border border-[#e7e5ea] align-top">재구매</span>
+                                                </div>
+                                                <div class="py-2">
+                                                    <span class="inline-block w-3 h-3 text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                    <span class="inline-block w-3 h-3 text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                    <span class="inline-block w-3 h-3 text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                    <span class="inline-block w-3 h-3 text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                    <span class="inline-block w-3 h-3 mr-[10px] text-[0px] bg-[url('../assets/icon/ico_star.png')]"></span>
+                                                    <span class="inline-block text-black text-sm font-bold">아주 좋아요</span>
+                                                </div>
+                                                <div class="py-3">
+                                                    <a href="../products/view.html" class="text-[#444] no-underline border-none outline-none">
+                                                        <div class="inline-block w-10 h-10 box-border">
+                                                            <img class="w-full h-auto" src="//assets3.cre.ma/p/atny-com/products/00/01/53/12/06/image/extra_small_13dd9cb77f618c64.jpg" alt="씨피컴퍼니 남성 컴퍼니 재킷 13CMOW175A006099A 999" />
+                                                        </div>
+                                                        <div class="inline-block w-[calc(100%-52px)] align-top ml-2">
+                                                            <div class="w-full text-xs leading-[18px] font-bold truncate">씨피컴퍼니 남성 컴퍼니 재킷 13CMOW175A006099A 999</div>
+                                                            <div class="w-full">
+                                                                <div class="inline-block w-[14px] h-[14px] align-top">
+                                                                    <svg class="fill-[#333]" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+                                                                        <defs><path id="star-full" d="M7.157 6.698l2.165-4.59a.743.743 0 0 1 1.358 0l2.165 4.59 4.84.74c.622.096.87.895.42 1.353l-3.503 3.57.827 5.044c.106.647-.544 1.141-1.1.835l-4.328-2.382-4.329 2.382c-.556.306-1.205-.188-1.099-.835l.826-5.044-3.502-3.57c-.45-.458-.202-1.257.42-1.352l4.84-.74z"></path></defs>
+                                                                        <use xlink:href="#star-full"></use>
+                                                                    </svg>
+                                                                </div>
+                                                                <span class="inline-block align-top mr-1 text-[#666] text-xs leading-4 font-bold">5.0</span>
+                                                                <div class="inline-block text-[#999] text-xs leading-4">리뷰 29</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="text-[13px] leading-[18px] relative">
+                                                    <div class="block transition-all">
+                                                        <div class="review_content max-h-[54px] overflow-hidden box-content">
+                                                            구매한지 조금 됐지만 꼭 후기를 써야겠다고 생각해서 늦게나마 올립니다!<br>일단 배송지연으로 빨리 받지는 못했지만 예정대로 잘 입구 놀러갔구요<br>어깨 부분이 오버스럽게 잡혀있는 핏을 걱정했지만 사진에서 생각보다 귀엽게 보여서 다행이었습니다! 실생활에서 입기는 좀 어깨깡패 같을 것 같긴 해용<br>색상은 화면보다 조금 더 찐한 레드 색상이라고 보시면 될 것 같아요.<br>기장도 160인 저한테 너무 길지 않았어요! 종아리 중간 정도 왔습니다.<br>저렴한 가격에 예쁘게 입고 놀러 다녀온 것 같아서 만족합니다.
+                                                            구매한지 조금 됐지만 꼭 후기를 써야겠다고 생각해서 늦게나마 올립니다!<br>일단 배송지연으로 빨리 받지는 못했지만 예정대로 잘 입구 놀러갔구요<br>어깨 부분이 오버스럽게 잡혀있는 핏을 걱정했지만 사진에서 생각보다 귀엽게 보여서 다행이었습니다! 실생활에서 입기는 좀 어깨깡패 같을 것 같긴 해용<br>색상은 화면보다 조금 더 찐한 레드 색상이라고 보시면 될 것 같아요.<br>기장도 160인 저한테 너무 길지 않았어요! 종아리 중간 정도 왔습니다.<br>저렴한 가격에 예쁘게 입고 놀러 다녀온 것 같아서 만족합니다.
+                                                            구매한지 조금 됐지만 꼭 후기를 써야겠다고 생각해서 늦게나마 올립니다!<br>일단 배송지연으로 빨리 받지는 못했지만 예정대로 잘 입구 놀러갔구요<br>어깨 부분이 오버스럽게 잡혀있는 핏을 걱정했지만 사진에서 생각보다 귀엽게 보여서 다행이었습니다! 실생활에서 입기는 좀 어깨깡패 같을 것 같긴 해용<br>색상은 화면보다 조금 더 찐한 레드 색상이라고 보시면 될 것 같아요.<br>기장도 160인 저한테 너무 길지 않았어요! 종아리 중간 정도 왔습니다.<br>저렴한 가격에 예쁘게 입고 놀러 다녀온 것 같아서 만족합니다.
+                                                        </div>
+                                                        <div class="btn-review_more mt-2 mb-1 cursor-pointer relative">
+                                                            <span class="text-[#999] hover:text-black text-xs">리뷰 더보기</span>
+                                                            <svg class="review_notice_arrow inline-block w-2 h-2 mt-[-2px] ml-1 stroke-[#999] fill-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M.667 2.333L4 5.667l3.333-3.334"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="hidden btn-review_more_close mt-3 mb-1 cursor-pointer relative">
+                                                            <span class="text-[#999] hover:text-black text-xs">리뷰 접기</span>
+                                                            <svg class="review_notice_arrow inline-block w-2 h-2 mt-[-2px] ml-1 stroke-[#999] fill-none rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M.667 2.333L4 5.667l3.333-3.334"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-4 overflow-auto whitespace-nowrap text-[0]">
+                                                        <ul class="m-0 p-0 list-none">
+                                                            <li class="inline-block w-[132px] h-[132px] overflow-hidden mr-2 hover:grayscale transition-[500ms]">
+                                                                <a class="btn-reviews_index_gallery_review no-underline cursor-poiter" href="javascript:;">
+                                                                    <div class="overflow-hidden relative">
+                                                                        <video class="w-full h-full" playsinline="" loop="" muted="" autoplay="" src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4" data-src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4"></video>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="inline-block w-[132px] h-[132px] overflow-hidden mr-2 hover:grayscale transition-[500ms]">
+                                                                <a class="btn-reviews_index_gallery_review no-underline cursor-poiter" href="javascript:;">
+                                                                    <div class="overflow-hidden relative">
+                                                                        <img class="w-full h-full" src="//assets4.cre.ma/p/jsh0501-cafe24-com/reviews/00/00/00/14/65/image3/portrait_428a726b1dba1ec7.jpg" alt="너무 이쁩니다. 잘 입고 다닐게요.~" />
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="inline-block w-[132px] h-[132px] overflow-hidden hover:grayscale transition-[500ms]">
+                                                                <a class="btn-reviews_index_gallery_review no-underline cursor-poiter" href="javascript:;">
+                                                                    <div class="overflow-hidden relative">
+                                                                        <img class="w-full h-full" src="//assets4.cre.ma/p/jsh0501-cafe24-com/reviews/00/00/00/14/65/image4/portrait_c1221a0b500f2477.jpg" alt="너무 이쁩니다. 잘 입고 다닐게요.~" />
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="main_review_comment h-[18px] mt-4 text-left relative">
+                                                        <button class="btn-review_comment block mt-4 no-decoration cursor-pointer text-[#666] stroke-[#666] hover:text-black hover:stroke-black" onclick="Util.toggleByKey('1054b9ac-2b47-4145-aa1d-67a101894b43'); Util.TOGGLE(this);">
+                                                            <span class="h-[18px] text-xs leading-[1.5]">댓글</span>
+                                                            <span class="h-[18px] mx-1 text-xs leading-[1.5] font-bold">1</span>
+                                                            <img class="inline-block [.ACTIVE_>_&]:rotate-180" src="../assets/icon/comment_array.svg" alt=""/>
+                                                        </button>
+                                                    </div>
+                                                    <div class="main_review_comment_view hidden mt-6 border-t border-t-[#ddd]">
+                                                        <div class="mt-4 pb-3 border-b border-b-[#ddd] relative">
+                                                            <div class="text-xs leading-[1.5] font-bold" title="관리자">관리자</div>
+                                                            <div class="mt-1 text-xs leading-[1.5] break-words">안녕하세요,<br><br>소중한 후기 감사드려용 !!<br>앞으로도 만족스러운 후기 남기실 수 있도록 <br>예쁜 상품들 많이 많이 업데이트 하겠습니당!!<br>오늘 하루도 행복한 하루 보내세요 ♥</div>
+                                                        </div>
+                                                        <div class="mt-4">
+                                                            <textarea class="block w-full m-0 p-2 overflow-hidden text-xs leading-[1.5] text-ellipsis bg-white border border-[#ddd] resize-none outline-none box-border" name="comment[message]" placeholder="댓글을 작성해주세요." rows="1" autocomplete="off"></textarea>
+                                                            <div class="h-8 mt-1 text-right">
+                                                              <button class="h-8 mt-0 py-0 px-4 text-xs leading-8 bg-white border border-[#ddd] cursor-pointer" type="button">취소</button>
+                                                              <button class="h-8 mt-0 py-0 px-4 text-white text-xs leading-8 bg-black border border-black cursor-pointer">등록</button>
+                                                            </div>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="block sm:inline-block w-full sm:w-1/4 sm:min-h-[122px] mt-6 sm:mt-0 pt-[15px] sm:pt-0 border-t border-t-[#ddd] sm:border-none">
+                                                <div class="text-black text-xs box-border">
+                                                    <p><b class="font-bold">네이버페이 구****</b>님의 리뷰입니다.</p>
+                                                    <div class="mt-5">
+                                                        <div class="mt-1"><span class="mr-1 text-[#666] font-bold">선택한 옵션</span><span class="text-[#666] font-normal">WHITE</span> / <span class="text-[#666] font-normal">FREE</span></div>
+                                                        <div class="mt-1"><span class="mr-1 text-[#666] font-bold">평소 하의 사이즈</span><span class="text-[#666] font-normal">28</span></div>
+                                                        <div class="mt-1"><span class="mr-1 text-[#666] font-bold">평소 신발 사이즈</span><span class="text-[#666] font-normal">260</span></div>
+                                                        <div class="mt-1"><span class="mr-1 text-[#666] font-bold">사이즈 평가</span><span class="text-[#666] font-normal">정사이즈에요</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <!-- paging -->
+                                     <div class="mt-[30px] mb-[50px] mx-0 font-['TTNorms'] text-center">
+                                        <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border text-white font-medium bg-black border-black rounded-[100%] cursor-default relative">1</a>
+                                        <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">2</a>
+                                        <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">3</a>
+                                        <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">4</a>
+                                        <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">5</a>
+                                        <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]"><span class="inline-block w-[15px] h-[15px] mt-1 bg-[url(../assets/icon/btn_pageNext.gif)] bg-center bg-no-repeat"></span></a>
+                                    </div>
+                                    <!-- //paging -->
+                                </div>
+                                <div class="hidden bg-white" id="review_list_second" role="tabpanel" aria-labelledby="review_list_second-tab">2</div>
+                            </div>
+                            <!-- //컨텐츠 -->
+                        </div>
+                        <!-- //리스트(1) -->
+                        <!-- 리스트(2)-상품별리뷰 -->
+                        <div class="hidden review_list_pdt w-full overflow-hidden mt-[30px] relative">
+                            <!-- 탭메뉴 -->
+                            <div class="border-t-2 border-t-black">
+                                <ul class="overflow-hidden whitespace-nowrap list-none relative before:block before:content-[''] before:w-full sm:before:h-[2px] before:bg-[#ddd] before:absolute before:bottom-0 before:left-0" id="review_list_pdt_tab" data-tabs-toggle="#review_list_pdt_tab_content" role="tablist">
+                                    <li class="inline-block w-1/4 sm:w-auto" role="presentation">
+                                        <button class="inline-block w-full sm:w-auto py-[15px] px-5 text-black text-sm font-['TTNorms'] rounded-none appearance-none border-b-2 border-b-[#ff774b] relative" id="review_list_pdt_first_tab" data-tabs-target="#review_list_pdt_first" type="button" role="tab" aria-controls="review_list_pdt_first" aria-selected="true">최신순</button>
+                                    </li>
+                                    <li class="inline-block w-1/4 sm:w-auto -ml-1" role="presentation">
+                                        <button class="inline-block w-full sm:w-auto py-[15px] px-5 text-[#ccc] text-sm font-['TTNorms'] border-b-2 border-b-[#ddd] rounded-none appearance-none relative" id="review_list_pdt_second_tab" data-tabs-target="#review_list_pdt_second" type="button" role="tab" aria-controls="review_list_pdt_second" aria-selected="false">이름순</button>
+                                    </li>
+                                    <li class="inline-block w-1/4 sm:w-auto -ml-1" role="presentation">
+                                        <button class="inline-block w-full sm:w-auto py-[15px] px-5 text-[#ccc] text-sm font-['TTNorms'] border-b-2 border-b-[#ddd] rounded-none appearance-none relative" id="review_list_pdt_third_tab" data-tabs-target="#review_list_pdt_third" type="button" role="tab" aria-controls="review_list_pdt_third" aria-selected="false">리뷰 많은 순</button>
+                                    </li>
+                                    <li class="inline-block w-1/4 sm:w-auto -ml-1" role="presentation">
+                                        <button class="inline-block w-full sm:w-auto py-[15px] px-5 text-[#ccc] text-sm font-['TTNorms'] border-b-2 border-b-[#ddd] rounded-none appearance-none relative" id="review_list_pdt_fourth_tab" data-tabs-target="#review_list_pdt_fourth" type="button" role="tab" aria-controls="review_list_pdt_fourth" aria-selected="false">판매량순</button>
+                                    </li>
+                                    <li class="float-right block sm:inline-block w-full sm:w-auto mt-2 ml-3">
+                                        <div class="w-full sm:w-[238px] h-8 border border-[#ddd] rounded box-border relative">
+                                            <input type="text" value="" class="w-[calc(100%-40px)] my-[6px] mr-2 ml-8 text-xs leading-[18px] border-none outline-none" placeholder="리뷰 키워드 검색" />
+                                            <button type="submit" class="w-[30px] h-[30px] text-[0] bg-[url('../assets/icon/ico-search.svg')] bg-[length:16px] bg-no-repeat bg-center bg-transparent absolute top-0 left-0 z-10 appearance-none cursor-pointer">검색</button>
+                                        </div>
+                                    </li>
+                                    <li class="float-right block sm:inline-block w-full sm:w-auto mt-2 sm:mt-4">
+                                        <label class="media_view text-[#999] text-xs cursor-pointer">
+                                            <input type="checkbox" id="return_method" name="media_view" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" checked />
+                                            <span class="media_view_text inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')]">상품별 리뷰 보기</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- //탭메뉴 -->
+                            <!-- 필터 -->
+                            <div class="pt-2 sm:pt-4 pb-4 border-b border-b-[#ddd] relative">
+                                <!-- 카테고리 -->
+                                <span>
+                                    <div class="btn-category_filter_sort_list inline-block bg-white h-8 pl-2 pr-4 align-top text-[#666] text-[13px] leading-8 bg-[url('../assets/icon/ico-select_arrow.png')] bg-[length:7px] bg-no-repeat bg-[right_5px_center] border border-[#ccc] rounded-sm outline-none cursor-pointer">전체 카테고리</div>
+                                    <div class="hidden category_filter_sort_list w-[320px] max-h-[380px] overflow-y-auto mt-2 bg-white border border-[#ddd] shadow-[0_12px_20px_0_rgb(0,0,0,0.4)] absolute top-[35px] sm:top-[43px] left-0 z-[1]">
+                                        <div class="py-2 px-4 relative">
+                                            <div class="clear-both overflow-hidden">
+                                                <div class="inline-block float-left min-w-[200px] py-3 text-sm leading-5 font-bold">카테고리</div>
+                                                <div class="inline-block float-right py-3 cursor-pointer">
+                                                    <svg class="inline-block my-[1px] mx-1 w-4 h-4 stroke-[#666] fill-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.667 7.667L12.56 9.792l-2.105-2.125"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.948 13.333c-3.101 0-5.615-2.537-5.615-5.666C1.333 4.537 3.847 2 6.949 2c3.1 0 5.614 2.537 5.614 5.667v1.416"></path>
+                                                    </svg>
+                                                    <span class="align-bottom text-[#666] text-xs leading-[18px]">초기화</span>
+                                                </div>
+                                            </div>
+                                            <ul class="my-1 mr-1 pl-1 relative" role="listbox">
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">전체 카테고리</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">전체 카테고리</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">남성 가방</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">남성 가방</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">남성 지갑</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">남성 지갑</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">남성 의류</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">남성 의류</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">남성 슈즈</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">남성 슈즈</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">남성 액세서리</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">남성 액세서리</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">여성 가방</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">여성 가방</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">여성 지갑</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">여성 지갑</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">여성 의류</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">여성 의류</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">여성 슈즈</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">여성 슈즈</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">여성 액세서리</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">여성 액세서리</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">여아</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">여아</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">남아</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">남아</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">디지털</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">디지털</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">홈</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">홈</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">뷰티</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">뷰티</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">여행</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">여행</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="category_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">반려동물</span>
+                                                            <input type="radio" id="category_filter" name="category_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">반려동물</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </span>
+                                <!-- //카테고리 -->
+                                <!-- 상품평점 -->
+                                <span>
+                                    <div class="btn-star_filter_sort_list inline-block bg-white h-8 pl-2 pr-4 align-top text-[#666] text-[13px] leading-8 bg-[url('../assets/icon/ico-select_arrow.png')] bg-[length:7px] bg-no-repeat bg-[right_5px_center] border border-[#ccc] rounded-sm outline-none cursor-pointer">전체 상품 평점</div>
+                                    <div class="hidden star_filter_sort_list w-[320px] max-h-[400px] overflow-y-auto mt-2 bg-white border border-[#ddd] shadow-[0_12px_20px_0_rgb(0,0,0,0.4)] absolute top-[35px] sm:top-[43px] left-0 z-[1]">
+                                        <div class="py-2 px-4 relative">
+                                            <div class="clear-both overflow-hidden">
+                                                <div class="inline-block float-left min-w-[200px] py-3 text-sm leading-5 font-bold">상품 평점</div>
+                                                <div class="inline-block float-right py-3 cursor-pointer">
+                                                    <svg class="inline-block my-[1px] mx-1 w-4 h-4 stroke-[#666] fill-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.667 7.667L12.56 9.792l-2.105-2.125"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.948 13.333c-3.101 0-5.615-2.537-5.615-5.666C1.333 4.537 3.847 2 6.949 2c3.1 0 5.614 2.537 5.614 5.667v1.416"></path>
+                                                    </svg>
+                                                    <span class="align-bottom text-[#666] text-xs leading-[18px]">초기화</span>
+                                                </div>
+                                            </div>
+                                            <ul class="my-1 mr-1 pl-1 relative" role="listbox">
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="grade_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">전체 상품 평점</span>
+                                                            <input type="radio" id="grade_filter" name="grade_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">전체 상품 평점</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="grade_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">평점 4.5점 이상</span>
+                                                            <input type="radio" id="grade_filter" name="grade_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">평점 4.5점 이상</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="grade_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">평점 4.0점 이상</span>
+                                                            <input type="radio" id="grade_filter" name="grade_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">평점 4.0점 이상</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="list-item list-none px-[7px]" role="presentation">
+                                                    <div class="py-2 cursor-pointer select-none relative">
+                                                        <label class="grade_filter cursor-pointer">
+                                                            <span class="inline-block text-[#878787] text-[13px]">평점 3.5점 이상</span>
+                                                            <input type="radio" id="grade_filter" name="grade_filter" class="peer invisible w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden align-middle border-none rounded-none absolute" value="" />
+                                                            <span class="float-right inline-block pl-5 align-top bg-[url('../assets/icon/ico_radio.jpg')] bg-[left_center] bg-no-repeat cursor-pointer peer-checked:bg-[url('../assets/icon/ico_radio_on.jpg')] -indent-96">평점 3.5점 이상</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </span>
+                                <!-- //상품평점 -->
+                            </div>
+                            <!-- //필터 -->
+                            <!-- 컨텐츠 -->
+                            <div id="review_list_pdt_tab_content">
+                                <div class="bg-white" id="review_list_pdt_first" role="tabpanel" aria-labelledby="review_list_pdt_first_tab">
+                                    <!-- 1 -->
+                                    <div class="w-full py-[15px] sm:p-[15px] border-b border-b-[#e5e5e5] box-border relative">
+                                        <div class="inline-block w-[80px] sm:w-[120px] h-[80px] sm:h-[120px] box-border">
+                                            <a href="../products/view.html"><img class="w-full h-auto" src="//assets3.cre.ma/p/atny-com/products/00/00/26/16/78/image/small_6156d0f2fb161397.jpg" alt="구찌 GG 마몬트 마틀라세 숄더백 447632 DTD1T 1000 BLACK" /></a>
+                                        </div>
+                                        <div class="inline-block w-[calc(100%-92px)] sm:w-[calc(100%-132px)] align-top ml-2">
+                                            <div class="w-full text-black text-xs sm:text-base leading-[18px] font-bold truncate"><a href="../products/view.html">구찌 GG 마몬트 마틀라세 숄더백 447632 DTD1T 1000 BLACK</a></div>
+                                            <div class="w-full">
+                                                <div class="inline-block w-[14px] h-[14px] align-top">
+                                                    <svg class="fill-[#333]" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+                                                        <defs><path id="star-full" d="M7.157 6.698l2.165-4.59a.743.743 0 0 1 1.358 0l2.165 4.59 4.84.74c.622.096.87.895.42 1.353l-3.503 3.57.827 5.044c.106.647-.544 1.141-1.1.835l-4.328-2.382-4.329 2.382c-.556.306-1.205-.188-1.099-.835l.826-5.044-3.502-3.57c-.45-.458-.202-1.257.42-1.352l4.84-.74z"></path></defs>
+                                                        <use xlink:href="#star-full"></use>
+                                                    </svg>
+                                                </div>
+                                                <span class="inline-block align-top mr-1 text-[#666] text-xs leading-4 font-bold">5.0</span>
+                                                <div class="inline-block text-[#999] text-xs leading-4">리뷰 73</div>
+                                            </div>
+                                            <div class="mt-1">
+                                                <div class="btn-reviews_index_gallery_review w-full h-auto py-2 cursor-pointer">
+                                                    <div class="float-left w-[33px] h-[33px] overflow-hidden">
+                                                        <img class="w-full h-auto" src="../assets/icon/ico-noimage.gif" alt="구찌 GG 마몬트 마틀라세 숄더백 447632 DTD1T 1000 BLACK">
+                                                    </div>
+                                                    <div class="ml-10 pt-2 text-[10px] sm:text-xs">
+                                                        <div class="text-[#999] text-left truncate">가격도 저렴하고 사이즈도 적당하고 포장도 예쁘게 잘 해 주셔서 정말 마음에 들어요. 가을에 트렌치코트랑 코디할려고 미리 샀어요. 빨리 안 사면 없을까봐~ㅎㅎ 담에도 이쁜가방 사러 올게용.ㅎㅎ</div>
+                                                    </div>
+                                                </div>
+                                                <div class="btn-reviews_index_gallery_revieww-full h-auto py-2 cursor-pointer">
+                                                    <div class="float-left w-[33px] h-[33px] overflow-hidden">
+                                                        <img class="w-full h-auto" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/21/86/image1/thumbnail_157c238172af68ec.jpg" alt="구찌 GG 마몬트 마틀라세 숄더백 447632 DTD1T 1000 BLACK">
+                                                    </div>
+                                                    <div class="ml-10 pt-2 text-[10px] sm:text-xs">
+                                                        <div class="text-[#999] text-left truncate">진짜 너무 예뻐요 고민 엄청 했는데 후회없어요 . 화면보다 실물이 더 예뻐요 포장도 신경 많이써주시고 .. 감동입니다 앞으로 명품은 애트니에요</div>
+                                                    </div>
+                                                </div>
+                                                <div class="btn-reviews_index_gallery_revieww-full h-auto py-2 cursor-pointer">
+                                                    <div class="float-left w-[33px] h-[33px] overflow-hidden">
+                                                        <img class="w-full h-auto" src="../assets/icon/ico-noimage.gif" alt="구찌 GG 마몬트 마틀라세 숄더백 447632 DTD1T 1000 BLACK">
+                                                    </div>
+                                                    <div class="ml-10 pt-2 text-[10px] sm:text-xs">
+                                                        <div class="text-[#999] text-left truncate">일단 제품도 제품인데 배송이 진짜 총알이네요 
+                                                            택배 박스 열어보면 애트니 전용 패키지인지 모르겠는데 엄청 예쁜 박스에 립밤까지 보내 주셨어요
+                                                            선물용이라 보내주신건지 다 보내주신건지 모르지만 너무 예뻐서 립밤은 제가쓰고 나머지만 선물하려구요 하하하
+                                                            제품 상태도 좋고 일단 선물 하는 사람도 기분 좋고 받는 사람도 좋을거 같아요 
+                                                            패키지 디자인이 예술입니다. 
+                                                            진짜 이패키지 디자인 덕에 기분이 너무 좋네요 
+                                                            남편이 저 선물 사줄때 이쪽으로 이용하라고 해야겠어요 저도 저렇게 예쁜 패키지에 선물 받아보고 싶어지네요  작은거 하나하나 세세하넥 신경 쓰시는거보니 믿음이 갑니다. 
+                                                            카톡 상담도 너무 친절하시고 앞으로도 예쁘고 좋은 제품 많이 많이 판매 해주세요 ~
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="../products/view.html" class="block sm:inline-block sm:w-[100px] h-7 leading-7 mt-[15px] sm:mt-0 sm:absolute top-[15px] right-0 text-white text-center text-xs bg-black no-underline border-none outline-none">리뷰 전체 보기</a>
+                                    </div>
+                                    <!-- 2 -->
+                                    <div class="w-full py-[15px] sm:p-[15px] border-b border-b-[#e5e5e5] box-border relative">
+                                        <div class="inline-block w-[80px] sm:w-[120px] h-[80px] sm:h-[120px] box-border">
+                                            <a href="../products/view.html"><img class="w-full h-auto" src="//assets3.cre.ma/p/atny-com/products/00/00/25/99/44/image/small_b6b94bbd29809caf.jpg" alt="아페쎄 로르 에코백 COCSX M61445 IAI INDIGO" /></a>
+                                        </div>
+                                        <div class="inline-block w-[calc(100%-92px)] sm:w-[calc(100%-132px)] align-top ml-2">
+                                            <div class="w-full text-black text-xs sm:text-base leading-[18px] font-bold truncate"><a href="../products/view.html">아페쎄 로르 에코백 COCSX M61445 IAI INDIGO</a></div>
+                                            <div class="w-full">
+                                                <div class="inline-block w-[14px] h-[14px] align-top">
+                                                    <svg class="fill-[#333]" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+                                                        <defs><path id="star-full" d="M7.157 6.698l2.165-4.59a.743.743 0 0 1 1.358 0l2.165 4.59 4.84.74c.622.096.87.895.42 1.353l-3.503 3.57.827 5.044c.106.647-.544 1.141-1.1.835l-4.328-2.382-4.329 2.382c-.556.306-1.205-.188-1.099-.835l.826-5.044-3.502-3.57c-.45-.458-.202-1.257.42-1.352l4.84-.74z"></path></defs>
+                                                        <use xlink:href="#star-full"></use>
+                                                    </svg>
+                                                </div>
+                                                <span class="inline-block align-top mr-1 text-[#666] text-xs leading-4 font-bold">5.0</span>
+                                                <div class="inline-block text-[#999] text-xs leading-4">리뷰 29</div>
+                                            </div>
+                                            <div class="mt-1">
+                                                <div class="btn-reviews_index_gallery_review w-full h-auto py-2 cursor-pointer">
+                                                    <div class="float-left w-[33px] h-[33px] overflow-hidden">
+                                                        <video class="w-full h-auto" playsinline="" loop="" muted="" autoplay="" src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4" data-src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4"></video>
+                                                    </div>
+                                                    <div class="ml-10 pt-2 text-[10px] sm:text-xs">
+                                                        <div class="text-[#999] text-left truncate">친구에게 선물했는데 엄청 좋아했어요 손글씨 써주셔서 뭔가 더 성의있어보고 좋아요</div>
+                                                    </div>
+                                                </div>
+                                                <div class="btn-reviews_index_gallery_revieww-full h-auto py-2 cursor-pointer">
+                                                    <div class="float-left w-[33px] h-[33px] overflow-hidden">
+                                                        <video class="w-full h-auto" playsinline="" loop="" muted="" autoplay="" src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/06/e4ded258665f822c5a7ee270aaf10a62.mp4" poster="//assets3.cre.ma/p/atny-com/review_videos/00/00/00/01/06/thumbnail/thumbnail_d7075a1b64b5d21f.jpg" data-width="" data-height="" data-src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/06/e4ded258665f822c5a7ee270aaf10a62.mp4"></video>
+                                                    </div>
+                                                    <div class="ml-10 pt-2 text-[10px] sm:text-xs">
+                                                        <div class="text-[#999] text-left truncate">딱 노트북 잘 들어가는 사이즈라서 매우 만족합니다 ㅎㅎ 포장도 꼼꼼히 오고, 믿음이 가네요!!!! 다음에 또 애트니에서 구매하려구요 ㅎㅎ</div>
+                                                    </div>
+                                                </div>
+                                                <div class="btn-reviews_index_gallery_revieww-full h-auto py-2 cursor-pointer">
+                                                    <div class="float-left w-[33px] h-[33px] overflow-hidden">
+                                                        <img class="w-full h-auto" src="../assets/icon/ico-noimage.gif" alt="아페쎄 로르 에코백 COCSX M61445 IAI INDIGO">
+                                                    </div>
+                                                    <div class="ml-10 pt-2 text-[10px] sm:text-xs">
+                                                        <div class="text-[#999] text-left truncate">예뻐용 자주 들고다니는 중 입니다.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="../products/view.html" class="block sm:inline-block sm:w-[100px] h-7 leading-7 mt-[15px] sm:mt-0 sm:absolute top-[15px] right-0 text-white text-center text-xs bg-black no-underline border-none outline-none">리뷰 전체 보기</a>
+                                    </div>
+                                    <!-- paging -->
+                                    <div class="mt-[30px] mb-[50px] mx-0 font-['TTNorms'] text-center">
+                                        <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border text-white font-medium bg-black border-black rounded-[100%] cursor-default relative">1</a>
+                                        <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">2</a>
+                                        <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">3</a>
+                                        <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">4</a>
+                                        <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">5</a>
+                                        <a href="javascript:;" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]"><span class="inline-block w-[15px] h-[15px] mt-1 bg-[url(../assets/icon/btn_pageNext.gif)] bg-center bg-no-repeat"></span></a>
+                                    </div>
+                                    <!-- //paging -->
+                                </div>
+                                <div class="hidden bg-white" id="review_list_pdt_second" role="tabpanel" aria-labelledby="review_list_pdt_second_tab">2</div>
+                                <div class="hidden bg-white" id="review_list_pdt_third" role="tabpanel" aria-labelledby="review_list_pdt_third_tab">3</div>
+                                <div class="hidden bg-white" id="review_list_pdt_fourth" role="tabpanel" aria-labelledby="review_list_pdt_fourth_tab">4</div>
+                            </div>
+                            <!-- //컨텐츠 -->
+                        </div>
+                        <!-- //리스트(2)-상품별리뷰 -->
+                    </div>
+                    <!-- //article -->
+
+                    <!-- layer - 리뷰상세보기 -->
+                    <div class="layer-reviews_index_gallery_review layer hidden my-0 mx-auto overflow-hidden fixed top-0 right-0 bottom-0 left-0 z-[10020]">
+                        <div class="h-[100vh] overflow-y-auto text-[0] bg-white sm:bg-[rgba(0,0,0,0.7)]">
+                            <!-- left -->
+                            <div class="sm:inline-block w-full sm:w-[calc(100%-375px)] h-[400px] sm:h-full mt-[75px] sm:mt-0 sm:relative">
+                                <div class="inline-block w-[60px] sm:w-[100px] h-full relative">
+                                    <a href="javascript:;" class="block w-full h-full cursor-pointer"><!-- 화살표 제거시 해당 태그에 class="hidden" 추가 -->
+                                        <span class="inline-block w-7 sm:w-8 h-7 sm:h-8 mr-[14px] sm:mr-8 bg-[url('../assets/icon/ico-arrow.png')] bg-[length:15px] bg-center bg-no-repeat absolute top-1/2 right-0 -translate-y-1/2 rotate-180"></span>
+                                    </a>
+                                </div>
+                                <div class="inline-block w-[calc(100%-(60px*2))] sm:w-[calc(100%-(100px*2))] h-full overflow-hidden align-top relative">
+                                    <div class="block w-full mt-[-30px] text-center absolute top-1/2 -translate-y-1/2">
+                                        <!-- 이미지 -->
+                                        <img class="w-auto h-[300px] sm:h-[530px] my-0 mx-auto" alt="해외배송에, 연말이라 그런지 시일이 소요됐지만 상품 받으니 너무 만족스럽네요!" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/45/96/image1/358e9ab1fe687eb4.jpg" />
+                                        <!-- 동영상 -->
+                                        <video class="hidden w-auto h-[300px] sm:h-[530px] my-0 mx-auto" playsinline="" loop="" muted="" autoplay="" src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4" data-src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4"></video>
+                                    </div>
+                                    <div class="w-full text-center absolute bottom-5 sm:bottom-[150px]">
+                                        <ul class="m-0 p-0 list-none">
+                                            <li class="inline-block w-10 h-10 overflow-hidden cursor-pointer relative" data-index="1">
+                                                <div class="h-full overflow-hidden relative after:content-[''] after:w-full after:h-full after:box-border after:absolute after:top-0 after:left-0 after:border after:border-black">
+                                                    <video class="w-full h-auto grayscale absolute" playsinline="" loop="" muted="" autoplay="" src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4" data-src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4"></video>
+                                                </div>
+                                            </li>
+                                            <li class="inline-block w-10 h-10 overflow-hidden ml-2 cursor-pointer relative" data-index="2">
+                                                <div class="overflow-hidden relative">
+                                                    <img class="w-full h-full" alt="예시 이미지2" src="//assets4.cre.ma/p/jsh0501-cafe24-com/reviews/00/00/00/18/53/image2/thumbnail_c6a549d80c82c3a5.jpg" />
+                                                </div>
+                                            </li>
+                                            <li class="inline-block w-10 h-10 overflow-hidden ml-2 cursor-pointer relative" data-index="3">
+                                                <div class="overflow-hidden relative">
+                                                    <img class="w-full h-full" alt="예시 이미지3" src="//assets4.cre.ma/p/jsh0501-cafe24-com/reviews/00/00/00/18/53/image3/thumbnail_9fb2d46372d4fca6.jpg" />
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="inline-block w-[60px] sm:w-[100px] h-full relative">
+                                    <a href="javascript:;" class="block w-full h-full cursor-pointer"><!-- 화살표 제거시 해당 태그에 class="hidden" 추가 -->
+                                        <span class="inline-block w-7 sm:w-8 h-7 sm:h-8 mr-[14px] sm:mr-8 bg-[url('../assets/icon/ico-arrow.png')] bg-[length:15px] bg-center bg-no-repeat absolute top-1/2 right-0 -translate-y-1/2"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- right -->
+                            <div class="sm:inline-block w-full sm:w-[375px] h-full align-top bg-white">
+                                <div class="w-full h-[75px] bg-white fixed sm:relative top-0 left-0 right-0 z-[10030]">
+                                    <a class="underline cursor-pointer">
+                                        <div class="py-4 pl-6 text-[0] border-b border-b-[#ddd] relative">
+                                            <div class="inline-block w-10 h-10 box-border">
+                                                <img class="w-full h-auto" src="//assets3.cre.ma/p/atny-com/products/00/01/53/12/06/image/extra_small_13dd9cb77f618c64.jpg" alt="씨피컴퍼니 남성 컴퍼니 재킷 13CMOW175A006099A 999" />
+                                            </div>
+                                            <div class="inline-block align-top ml-2">
+                                                <div class="w-[236px] text-xs leading-[18px] font-bold truncate">씨피컴퍼니 남성 컴퍼니 재킷 13CMOW175A006099A 999</div>
+                                                <div>
+                                                    <div class="inline-block w-[14px] h-[14px] align-top">
+                                                        <svg class="fill-[#333]" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+                                                            <defs><path id="star-full" d="M7.157 6.698l2.165-4.59a.743.743 0 0 1 1.358 0l2.165 4.59 4.84.74c.622.096.87.895.42 1.353l-3.503 3.57.827 5.044c.106.647-.544 1.141-1.1.835l-4.328-2.382-4.329 2.382c-.556.306-1.205-.188-1.099-.835l.826-5.044-3.502-3.57c-.45-.458-.202-1.257.42-1.352l4.84-.74z"></path></defs>
+                                                            <use xlink:href="#star-full"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="inline-block align-top mr-1 text-[#666] text-xs leading-4 font-bold">5.0</span>
+                                                    <div class="inline-block text-[#999] text-xs leading-4">리뷰 1</div>
+                                                </div>
+                                            </div>
+                                            <a href="javascript:;" class="btn-pop_close inline-block w-6 h-6 p-[33px] text-[0] bg-transparent bg-[url(../assets/icon/ico-close.png)] bg-center bg-no-repeat bg-[length:20px] absolute top-0 right-0"></a>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="h-[calc(100%-75px)] relative">
+                                    <div class="sm:h-full sm:overflow-y-auto relative">
+                                        <div class="absolute top-0 right-0 bottom-0 left-0">
+                                            <div class="p-6 border-y border-y-[#ddd] sm:border-t-0">
+                                                <div class="inline-block h-5">
+                                                    <div class="inline-block my-[1px]">
+                                                        <div class="inline-block w-[18px] h-[18px] align-sub">
+                                                            <svg class="w-full h-full fill-black" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+                                                                <defs><path id="star-full" d="M7.157 6.698l2.165-4.59a.743.743 0 0 1 1.358 0l2.165 4.59 4.84.74c.622.096.87.895.42 1.353l-3.503 3.57.827 5.044c.106.647-.544 1.141-1.1.835l-4.328-2.382-4.329 2.382c-.556.306-1.205-.188-1.099-.835l.826-5.044-3.502-3.57c-.45-.458-.202-1.257.42-1.352l4.84-.74z"></path></defs>
+                                                                <use xlink:href="#star-full"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="inline-block w-[18px] h-[18px] align-sub">
+                                                            <svg class="w-full h-full fill-black" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+                                                                <defs><path id="star-full" d="M7.157 6.698l2.165-4.59a.743.743 0 0 1 1.358 0l2.165 4.59 4.84.74c.622.096.87.895.42 1.353l-3.503 3.57.827 5.044c.106.647-.544 1.141-1.1.835l-4.328-2.382-4.329 2.382c-.556.306-1.205-.188-1.099-.835l.826-5.044-3.502-3.57c-.45-.458-.202-1.257.42-1.352l4.84-.74z"></path></defs>
+                                                                <use xlink:href="#star-full"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="inline-block w-[18px] h-[18px] align-sub">
+                                                            <svg class="w-full h-full fill-black" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+                                                                <defs><path id="star-full" d="M7.157 6.698l2.165-4.59a.743.743 0 0 1 1.358 0l2.165 4.59 4.84.74c.622.096.87.895.42 1.353l-3.503 3.57.827 5.044c.106.647-.544 1.141-1.1.835l-4.328-2.382-4.329 2.382c-.556.306-1.205-.188-1.099-.835l.826-5.044-3.502-3.57c-.45-.458-.202-1.257.42-1.352l4.84-.74z"></path></defs>
+                                                                <use xlink:href="#star-full"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="inline-block w-[18px] h-[18px] align-sub">
+                                                            <svg class="w-full h-full fill-black" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+                                                                <defs><path id="star-full" d="M7.157 6.698l2.165-4.59a.743.743 0 0 1 1.358 0l2.165 4.59 4.84.74c.622.096.87.895.42 1.353l-3.503 3.57.827 5.044c.106.647-.544 1.141-1.1.835l-4.328-2.382-4.329 2.382c-.556.306-1.205-.188-1.099-.835l.826-5.044-3.502-3.57c-.45-.458-.202-1.257.42-1.352l4.84-.74z"></path></defs>
+                                                                <use xlink:href="#star-full"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="inline-block w-[18px] h-[18px] align-sub">
+                                                            <svg class="w-full h-full fill-black" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+                                                                <defs><path id="star-full" d="M7.157 6.698l2.165-4.59a.743.743 0 0 1 1.358 0l2.165 4.59 4.84.74c.622.096.87.895.42 1.353l-3.503 3.57.827 5.044c.106.647-.544 1.141-1.1.835l-4.328-2.382-4.329 2.382c-.556.306-1.205-.188-1.099-.835l.826-5.044-3.502-3.57c-.45-.458-.202-1.257.42-1.352l4.84-.74z"></path></defs>
+                                                                <use xlink:href="#star-full"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="w-[1px] h-[1px] overflow-hidden m-[1px] p-0 whitespace-nowrap border-none absolute">별점 : 5점</span>
+                                                    </div>
+                                                    <div class="inline-block ml-[2px] align-top text-black text-sm leading-6 font-bold">아주 좋아요</div>
+                                                </div>
+                                                <div>
+                                                    <div class="mt-4 p-2 text-black text-xs border border-[#ddd] box-border">
+                                                        <p><b class="font-bold">네이버페이 구****</b>님의 리뷰입니다.</p>
+                                                        <div class="mt-5">
+                                                            <div class="mt-1"><span class="mr-1 text-[#666] font-bold">선택한 옵션</span><span class="text-[#666] font-normal">WHITE</span> / <span class="text-[#666] font-normal">FREE</span></div>
+                                                            <div class="mt-1"><span class="mr-1 text-[#666] font-bold">평소 하의 사이즈</span><span class="text-[#666] font-normal">28</span></div>
+                                                            <div class="mt-1"><span class="mr-1 text-[#666] font-bold">평소 신발 사이즈</span><span class="text-[#666] font-normal">260</span></div>
+                                                            <div class="mt-1"><span class="mr-1 text-[#666] font-bold">사이즈 평가</span><span class="text-[#666] font-normal">정사이즈에요</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-4 text-sm box-content">
+                                                        고트리! 구입하려고 여기 저기 검색했는데,<br>사이즈도 맞고 가격도 저렴해서 애트니에서 구입했어요!<br><br>운동화 막 신는 스타일인데, 빈티지한 무드가 더해져서 오히려 좋은😀<br><br>구매할 때 제가 사이즈 때문에 계속 여쭤봤는데 빠르게 알려주시고 친절하게 대해주셔서 정말 만족했습니다. 참고로 저는 반스 240, 나이키 에어맥스  US7 꽉 맞게 신는데, 오트리 38 사이즈로 구매해서 넉넉하게 신고 다닙니다. 크게 신는게 더 멋있는 것 같아요!<br><br>청바지 입을 때는 꼭 오트리 신습니다! 데일리 슈즈 찾으시는 분들 강추 드려요👍👍👍
+                                                    </div>
+                                                </div>
+                                                <button class="btn-review_comment block mt-4 no-decoration cursor-pointer text-[#666] stroke-[#666] hover:text-black hover:stroke-black" onclick="Util.toggleByKey('9851caa3-124e-4ca0-96bf-895d99f2dc33'); Util.TOGGLE(this);">
+                                                    <span class="h-[18px] text-xs leading-[1.5]">댓글</span>
+                                                    <span class="h-[18px] mx-1 text-xs leading-[1.5] font-bold">1</span>
+                                                    <img class="inline-block mt-[-8px] [.ACTIVE_>_&]:rotate-180" src="../assets/icon/comment_array.svg" alt=""/>
+                                                </button>
+                                                <div class="review_comment hidden mt-[15px] border-t border-t-[#ddd]">
+                                                    <div class="mt-4 pb-3 border-b border-b-[#ddd] relative">
+                                                        <div class="text-xs leading-[1.5] font-bold" title="관리자">관리자</div>
+                                                        <div class="mt-1 text-xs leading-[1.5] break-words">안녕하세요,<br><br>소중한 후기 감사드려용 !!<br>앞으로도 만족스러운 후기 남기실 수 있도록 <br>예쁜 상품들 많이 많이 업데이트 하겠습니당!!<br>오늘 하루도 행복한 하루 보내세요 ♥</div>
+                                                    </div>
+                                                    <div class="mt-4">
+                                                        <textarea class="block w-full m-0 p-2 overflow-hidden text-xs leading-[1.5] text-ellipsis bg-white border border-[#ddd] resize-none outline-none box-border" name="comment[message]" placeholder="댓글을 작성해주세요." rows="1" autocomplete="off"></textarea>
+                                                        <div class="h-8 mt-1 text-right">
+                                                          <button class="h-8 mt-0 py-0 px-4 text-xs leading-8 bg-white border border-[#ddd] cursor-pointer" type="button">취소</button>
+                                                          <button class="h-8 mt-0 ml-1 py-0 px-4 text-white text-xs leading-8 bg-black border border-black cursor-pointer">등록</button>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                            <div class="h-auto p-6 overflow-hidden box-border">
+                                                <div class="inline-block h-6 my-[2px] text-black text-base leading-[1.5] font-bold">다른 상품 리뷰</div>
+                                                <div class="mt-[10px] max-h-[225px] sm:max-h-[300px] overflow-y-auto">
+                                                    <ul class="m-0 p-0 list-none flex flex-wrap justify-start gap-1">
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative after:content-[''] after:w-[calc(130/640*100vw)] after:sm:w-[70px] after:h-[calc(130/640*100vw)] after:sm:h-[70px] after:box-border after:absolute after:top-0 after:left-0 after:border-2 after:border-black">
+                                                                <img class="w-full h-auto grayscale absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/45/96/image1/358e9ab1fe687eb4.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <video class="w-full h-auto absolute" playsinline="" loop="" muted="" autoplay="" src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4" data-src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4"></video>
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/43/80/image1/thumbnail_8fb8425dddce4a2d.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/40/69/image1/thumbnail_6aa28f67576f3e74.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/36/59/image1/thumbnail_e497f1e08b9914bf.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <video class="w-full h-auto absolute" playsinline="" loop="" muted="" autoplay="" src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4" data-src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4"></video>
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/43/80/image1/thumbnail_8fb8425dddce4a2d.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/40/69/image1/thumbnail_6aa28f67576f3e74.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/36/59/image1/thumbnail_e497f1e08b9914bf.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <video class="w-full h-auto absolute" playsinline="" loop="" muted="" autoplay="" src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4" data-src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4"></video>
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/43/80/image1/thumbnail_8fb8425dddce4a2d.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/40/69/image1/thumbnail_6aa28f67576f3e74.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/36/59/image1/thumbnail_e497f1e08b9914bf.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <video class="w-full h-auto absolute" playsinline="" loop="" muted="" autoplay="" src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4" data-src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4"></video>
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/43/80/image1/thumbnail_8fb8425dddce4a2d.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/40/69/image1/thumbnail_6aa28f67576f3e74.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/36/59/image1/thumbnail_e497f1e08b9914bf.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <video class="w-full h-auto absolute" playsinline="" loop="" muted="" autoplay="" src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4" data-src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4"></video>
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/43/80/image1/thumbnail_8fb8425dddce4a2d.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/40/69/image1/thumbnail_6aa28f67576f3e74.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/36/59/image1/thumbnail_e497f1e08b9914bf.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <video class="w-full h-auto absolute" playsinline="" loop="" muted="" autoplay="" src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4" data-src="https://d2q2zwuq6juvrx.cloudfront.net/atny.com/00/00/00/01/29/d2ed7250cc492f24dd7d8adcb8ff4d04.mp4"></video>
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/43/80/image1/thumbnail_8fb8425dddce4a2d.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/40/69/image1/thumbnail_6aa28f67576f3e74.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                        <a class="no-underline cursor-pointer" href="javascript:;">
+                                                            <li class="inline-block w-[calc(130/640*100vw)] sm:w-[70px] h-[calc(130/640*100vw)] sm:h-[70px] overflow-hidden cursor-pointer relative">
+                                                                <img class="w-full h-auto absolute" src="//assets3.cre.ma/p/atny-com/reviews/00/00/00/36/59/image1/thumbnail_e497f1e08b9914bf.jpg" alt="" />
+                                                            </li>
+                                                        </a>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //layer - 리뷰상세보기 -->
+
+                </div>
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <!-- mobile floating menu -->
+        <div class="xl:hidden fixed left-0 right-0 bottom-0 z-[1001] bg-white p-0">
+			<ul class="px-[35px] flex">
+				<li class="w-[15%]" id="mobile-menu"><a href="javascript:;" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu1.svg')] bg-[center_4px] bg-no-repeat">메뉴</span></a></li>
+				<li class="w-[15%]"><a href="../goods/oneday_delivery.html" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu2.svg')] bg-[center_4px] bg-no-repeat">하루배송</span></a></li>
+				<li class="w-[40%]"><a href="../products/main.html" class="block relative h-full"><span class="text-[0] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/logo.svg')] bg-[center_14px] bg-no-repeat bg-[length:76px_18px]">홈</span></a></li>
+				<li class="w-[15%]"><a href="../mypage/wish.html" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu3.svg')] bg-[center_4px] bg-no-repeat">위시리스트</span></a></li>
+				<li class="w-[15%]"><a href="../mypage/mypage.html" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu4.svg')] bg-[center_4px] bg-no-repeat">마이페이지</span></a></li>
+			</ul>
+		</div>
+        <!-- //mobile floating menu -->
+        
+        <!-- footer -->
+		<footer><script>Util.include('../common/footer.html')</script></footer>
+		<!-- //footer -->
+    </div>
+
+    <script src="../js/include.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script><!--flowbite-->
+    <script>
+        // 모바일 메뉴 레이어 열기
+        $('#mobile-menu').on('click',function(){
+            $('#dmm').removeClass('hidden');
+            $('#mobile-menu-content').addClass('!top-[42px]');
+            var mobile_swiper = new Swiper('#mobile-menu-content .swiper',{
+                slidesPerView:'4.5',
+                spaceBetween: 8
+            })
+        });
+        // 모바일 메뉴 레이어 닫기
+        $('#mobile-layer-close').on('click',function(){
+            $('#dmm').addClass('hidden');
+            $('#mobile-menu-content').removeClass('!top-[42px]');
+        });
+        
+        // layer - 검색 > 열기
+        function search_layer(){
+            $('#search-layer').addClass('!block');
+        };
+        // layer - 검색 > 닫기
+        $('#search-layer-close').on('click',function(){
+            $('#search-layer').removeClass('!block');
+        });
+        /* layer - 검색 관련 */
+        function srch_layer(){
+            $('#search-layer').addClass('!block');
+        }
+        $('.search_full_layer .button_back2').on('click', function () {
+            $('.search_full_layer').removeClass('block');
+        });
+        $('.mobile-category-wrap input[type="text"]').on('click', function () {
+            $('.search_full_layer').addClass('block');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+        $('.header_top .ico_srch, .m_btm_menu .resp_top_search').on('click',function(){
+            $('.search_full_layer').addClass('block');
+        });
+        $('.search_full_layer .btn_close').on('click',function(){
+            $('.search_full_layer').removeClass('block');
+        });
+        $('.mobile-category-wrap .button-search').on('click', function () {
+            $('.search_full_layer').addClass('block');
+            if ($('.mobile-category-wrap input[type="text"]').attr('value')) {
+                $('.search_full_layer input[name="search_text"]').attr('value', $('.mobile-category-wrap input[type="text"]').attr('value'));
+            }
+        });
+        $('.header .rig_menu .btn-srch').on('click', function () {
+            $('.search_full_layer').addClass('block');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+
+        /* gnb */
+        $(window).on("load resize", function() {
+            if ($(window).width() > 768) {
+                if ($('.main').length > 0) {
+                    $('.header_cont').hover(
+                        function() {
+                            $(this).addClass('block');
+                        },
+                        function() {
+                            $(this).removeClass('block');
+                        }
+                    );
+                }
+                $('.header .gnb_wrap .dep1').hover(
+                    function() {
+                        $(this).find('.dep2').css('display', 'block');
+                        $('.header .gnb_wrap .dep1_ul.on').addClass('tmpon');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('block');
+                    },
+                    function() {
+                        $(this).find('.dep2').css('display', 'none');
+                        $('.header .gnb_wrap .dep1_ul.tmpon').addClass('block');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('tmpon');
+                    }
+                );
+            }
+        });
+
+        /* footer */
+        
+        // 리뷰 리스트 / 리스트-상품별리뷰
+        $('.media_view').on('click',function(){
+            $('.review_list').addClass('hidden');
+            $('.review_list_pdt').removeClass('hidden');
+        });
+        // 리뷰 > 정렬 탭메뉴
+        $('#review_list_tab li').on('click',function(){
+            $('#review_list_tab li button[aria-selected="true"]').addClass('!text-black border-b-2 border-b-[#ff774b]');
+            $('#review_list_tab li button[aria-selected="false"]').removeClass('!text-black !border-b-2 border-b-[#ff774b]');
+            $('#review_list_tab li button[aria-selected="false"]').addClass('text-[#ccc]');
+        });
+        // 리뷰-상품별리뷰 > 정렬 탭메뉴
+        $('#review_list_pdt_tab li').on('click',function(){
+            $('#review_list_pdt_tab li button[aria-selected="true"]').addClass('!text-black border-b-2 border-b-[#ff774b]');
+            $('#review_list_pdt_tab li button[aria-selected="false"]').removeClass('!text-black !border-b-2 border-b-[#ff774b]');
+            $('#review_list_pdt_tab li button[aria-selected="false"]').addClass('text-[#ccc]');
+        });
+        // 리뷰 > 카테고리 selectbox
+        $('.btn-category_filter_sort_list, .category_filter_sort_list .btn-filter_sort_list_submit').on('click',function(){
+            $('.category_filter_sort_list').toggleClass('!block');
+            $('.review_list').addClass('min-h-[580px]');
+        });
+        // 리뷰 > 별점 selectbox
+        $('.btn-star_filter_sort_list, .star_filter_sort_list .btn-filter_sort_list_submit').on('click',function(){
+            $('.star_filter_sort_list').toggleClass('!block');
+            $('.review_list').addClass('min-h-[580px]');
+        });
+        // 리뷰 > 카테고리/별점 selectbox 닫기
+        $(document).mouseup(function (e){
+            var LayerPopup = $(".category_filter_sort_list, .star_filter_sort_list");
+            if(LayerPopup.has(e.target).length === 0){
+                LayerPopup.removeClass("!block");
+                $('.review_list').removeClass('min-h-[580px]');
+            };
+        });
+
+        // 리뷰 - 리뷰더보기
+        $('.btn-review_more').on('click',function(){
+            $(this).addClass('!hidden');
+            $('.review_content').addClass('!min-h-[200px]');
+            $('.btn-review_more_close').addClass('!block');
+        });
+        // 리뷰 - 리뷰더보기 > 닫기
+        $('.btn-review_more_close').on('click',function(){
+            $(this).removeClass('!block');
+            $('.review_content').removeClass('!min-h-[200px]');
+            $('.btn-review_more').removeClass('!hidden');
+        });
+        // 리뷰 - 리뷰상세보기 > 댓글
+        $('.main_review_comment .btn-review_comment').on('click',function(){
+            $('.main_review_comment .btn-review_comment svg').toggleClass('rotate-180');
+            $('.main_review_comment_view').toggleClass('!block');
+        });
+
+        // layer - 리뷰상세보기
+        $('.btn-reviews_index_gallery_review').on('click',function(){
+            $('.layer-reviews_index_gallery_review').addClass('!block');
+            $('body').addClass('overflow-hidden');
+        });
+        // layer - 리뷰상세보기 > 댓글
+        $('.layer-reviews_index_gallery_review .btn-review_comment').on('click',function(){
+            $('.layer-reviews_index_gallery_review .btn-review_comment svg').toggleClass('rotate-180');
+            $('.layer-reviews_index_gallery_review .review_comment').toggleClass('!block');
+        });
+        // layer - 닫기
+        $('.btn-pop_close').on('click',function(){
+            $('.layer, .layer-bg').removeClass('!block');
+            $('.layer .review_comment').removeClass('!block');
+            $('.layer .btn-review_comment svg').removeClass('rotate-180');
+            $('body').removeClass('overflow-hidden');
+        });
+    </script>
+
+</body>
+</html>

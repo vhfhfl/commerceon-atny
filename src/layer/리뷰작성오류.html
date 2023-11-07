@@ -1,0 +1,37 @@
+<div class="layer" data-layer-id="리뷰작성오류">
+  <div class="BG" onclick="Layer.close(this)"></div>
+  <div class="SHELL">
+    <div class="w-[calc(600/640*100vw)] sm:w-[400px] overflow-hidden text-xs bg-white border border-[#eee] shadow-[0_12px_20px_0_rgb(0,0,0,0.4)]">
+      <!-- header -->
+      <div class="p-[15px] relative">
+        <div class="text-[#333] text-base sm:text-lg leading-5 pb-[8px] border-b border-b-[#eee">리뷰 작성 오류</div>
+        <a href="javascript:;"
+           class="inline-block w-4 h-4 text-[0px] bg-transparent bg-[url(../assets/icon/ico-close.png)] bg-center bg-no-repeat bg-[length:auto_100%] no-underline cursor-pointer absolute top-[20px] right-[15px]"
+           data-in-progress-confirm="아직 끝나지 않은 요청이 있습니다. 지금 닫으면 요청이 중단됩니다. 정말로 닫으시겠습니까?"
+           onclick="Layer.close(this)">
+        </a>
+      </div>
+      <!-- //header -->
+      <!-- body -->
+      <div class="p-[15px] overflow-y-auto max-h-[215px] bg-white box-border">
+        <div class="text-[#333]">
+          <span class="font-semibold text-black">5</span>분내 <span class="font-semibold text-black">10</span>개 이상의 게시글을 작성하셨습니다.<br />
+          게시글, 문의, 후기등의 작성이 운영정책에 따라 <span class="font-semibold text-black">10</span>분간 제한됩니다.
+        </div>
+        <div class="mt-5 text-center">
+          <span class="text-[#ff774b]"><i class="fa-regular fa-clock"></i> 00:04:58</span>
+        </div>
+      </div>
+      <!-- //body -->
+      <!-- footer -->
+      <div class="p-[15px] bg-white border-t border-t-[#eee]">
+        <button type="button"
+          class="w-full h-10 py-0 px-[14px] align-middle text-[#333] text-[13px] leading-9 tracking-tighter whitespace-nowrap bg-white border border-[#333] outline-none rounded-none box-border cursor-pointer"
+          onclick="Layer.close(this)">
+          닫기
+        </button>
+      </div>
+      <!-- //footer -->
+    </div>
+  </div>
+</div>
