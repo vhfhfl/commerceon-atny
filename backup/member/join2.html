@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+      <script src="../js/util.js"></script>
+      <script>Util.include('../common/head_2.html');</script>
+    </head>
+<body>
+    <div id="wrap">
+        <!-- header -->
+		<script>Util.include('../common/header.html');</script>
+		<!-- header -->
+        <!-- 모바일용 레이어 -->
+        <div class="fixed top-0 left-0 right-0 bottom-0 -z-10" id="mobile-layer">
+            <div class="fixed left-0 top-0 right-0 bottom-0 bg-black/70 hidden"></div>
+            <div class="absolute left-0 right-0 z-[1000] transition-all duration-500 bottom-[48px] top-[100%]" id="mobile-menu-content">
+                <button type="button" class="h-[31px] rounded-t-[30px] bg-white absolute top-0 left-0 right-0 w-full text-[0] after:content-[''] after:w-[57px] after:h-[3px] after:bg-[#212121] after:rounded-[10px] after:absolute after:top-[9px] after:left-1/2 after:-translate-x-1/2" id="mobile-layer-close">닫기</button>
+                <div class="py-[14px] pr-[65px] pl-6 absolute left-0 top-[31px] right-0 bg-white border-b border-[#e7e5ea]">
+                    <form name="topSearchForm" action="/goods/search">
+                        <div class="relative h-[31px] rounded-[100px] bg-[#fafafb] border border-[#f7f7f9] box-border pr-[47px]">
+                            <input type="text" name="search_text" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="h-[29px] bg-transparent px-[10px] box-border w-full border-0 text-[13px]">
+                            <button class="h-[29px] absolute right-0 top-0 w-[47px] bg-[url('../assets/icon/ico-search.svg')] bg-center bg-no-repeat z-10 text-[0]" type="submit">검색</button>
+                        </div>
+                    </form>
+                    <a href="/mypage" class="absolute bg-[url('../assets/icon/ico-myp.svg')] bg-center bg-no-repeat text-[0] right-[21px] top-[17px] z-10 w-6 h-6">마이페이지</a>
+                </div>
+                <div>
+                    <div class="bg-[#fafafb] overflow-y-auto absolute left-0 top-[91px] bottom-0 right-0">
+                        <div>
+                            <div class="bg-white border-b border-[#e7e5ea]">
+                                <div class="pt-[15px] px-6">
+                                    <ul>
+                                        <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#ff774b] block px-[2px] pb-[3px] border-b-[3px] border-[#ff774b]">WOMEN</a></li>
+                                        <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">MEN</a></li>
+                                        <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">JUNIOR</a></li>
+                                        <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">LIFE</a></li>
+                                    </ul>
+                                </div>
+                                <div class="py-[10px] px-6 block">
+                                    <ul class="menu_list">
+                                        <li><a href="/goods/catalog?code=00020001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                        <li><a href="/goods/catalog?code=00020002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                        <li><a href="/goods/catalog?code=00020003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                        <li><a href="/goods/catalog?code=00020004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                        <li><a href="/goods/catalog?code=00020005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                    </ul>
+                                </div>
+                                <div class="hidden">
+                                    <ul class="menu_list">
+                                        <li><a href="/goods/catalog?code=00010001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                        <li><a href="/goods/catalog?code=00010002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                        <li><a href="/goods/catalog?code=00010003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                        <li><a href="/goods/catalog?code=00010004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                        <li><a href="/goods/catalog?code=00010005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                    </ul>
+                                </div>
+                                <div class="hidden">
+                                    <ul class="menu_list">
+                                        <li><a href="/goods/catalog?code=00030001" class="text-[13px] text-[#212121] block py-[13px]">여아</a></li>
+                                        <li><a href="/goods/catalog?code=00030002" class="text-[13px] text-[#212121] block py-[13px]">남아</a></li>
+                                    </ul>
+                                </div>
+                                <div class="hidden">
+                                    <ul class="menu_list">
+                                        <li><a href="/goods/catalog?code=00040001" class="text-[13px] text-[#212121] block py-[13px]">디지털</a></li>
+                                        <li><a href="/goods/catalog?code=00040002" class="text-[13px] text-[#212121] block py-[13px]">홈</a></li>
+                                        <li><a href="/goods/catalog?code=00040003" class="text-[13px] text-[#212121] block py-[13px]">뷰티</a></li>
+                                        <li><a href="/goods/catalog?code=00040004" class="text-[13px] text-[#212121] block py-[13px]">여행</a></li>
+                                        <li><a href="/goods/catalog?code=00040005" class="text-[13px] text-[#212121] block py-[13px]">반려동물</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                                <div class="py-[10px] px-6">
+                                    <ul>
+                                        <li>
+                                            <a href="/goods/best_designers" class="text-[13px] text-[#212121] block py-[13px]">디자이너</a>
+                                        </li>
+                                        <li>
+                                            <a href="/goods/nft" class="text-[13px] text-[#212121] block py-[13px]">정품감정서</a>
+                                        </li>
+                                        <li>
+                                            <a href="/goods/oneday_delivery" class="text-[13px] text-[#212121] block py-[13px]">하루배송</a>
+                                        </li>
+                                        <li>
+                                            <a href="/goods/free_return" class="text-[13px] text-[#212121] block py-[13px]">무료반품</a>
+                                        </li>
+                                        <li>
+                                            <a href="/board/?id=magazine" class="text-[13px] text-[#212121] block py-[13px]">매거진</a>
+                                        </li>
+                                        <li>
+                                            <a href="/promotion/event" class="text-[13px] text-[#212121] block py-[13px]">이벤트</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                                <div class="py-[17px]">
+                                    <div class="text-[#c6cad1] text-[11px] mb-[6px] px-6">최근 본 상품</div>
+                                    <!-- 내용이 없을 때 -->
+                                    <div class="text-center py-5 w-full text-[11px]">최근 본 상품이 없습니다.</div>
+                                    <!-- //내용이 없을 때 -->
+                                    <div class="swiper pl-6">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide"><a href="/goods/view?no=1541402"><img src="//img.atny.com/data/goods/ATNY/10/1672510/MzQzNDYw_list1.JPG" alt="여성 타임리스 브라운 미니 숄더/크로스백"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                            <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white shadow-[inset_0_-8px_10px_rgba(0,0,0,0.03)]">
+                                <ul class="py-[17px] text-center">
+                                    <li class="inline-block relative"><a href="/mypage" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">마이페이지</a></li>
+                                    <li class="inline-block relative"><a href="/board/?id=faq" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">FAQ</a></li>
+                                    <li class="inline-block relative"><a href="/mypage/myqna_write" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px]">1:1문의</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //모바일용 레이어 -->
+        <!-- 검색 레이어 -->
+        <div class="hidden fixed z-[1000] left-0 top-0 right-0 bottom-0 bg-white overflow-auto" id="search-layer">
+            <div class="w-full max-w-[1240px] mx-auto lg:px-5">
+                <a href="javascript:;" class="w-10 h-[38px] absolute left-[10px] top-[7px] bg-[url('../assets/icon/ico-back.svg')] bg-center bg-no-repeat text-[0] lg:w-[53px] lg:h-[53px] lg:top-[33px] lg:left-auto lg:right-[33px] lg:bg-[url('../assets/icon/ico-close.png')]" id="search-layer-close">뒤로</a>
+                <div class="pt-[9px] pr-4 pl-[50px] mb-[22px] lg:px-0 lg:pt-[180px] lg:mb-14">
+                    <div class="pr-[38px] lg:h-[65px] relative lg:pr-[49px]">
+                        <form name="topSearchForm" id="topSearchForm" action="/goods/search">
+                            <input type="text" name="search_text" id="searchVer3InputBox" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="w-full h-[38px] px-[17px] bg-[#f7f7f9] leading-[38px] lg:h-[65px] lg:leading-[65px] lg:border-0 lg:text-base lg:px-[60px] rounded-[200px]">
+                        </form>
+                        <button type="button" class="w-[38px] h-[38px] absolute z-10 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat text-[0] right-[38px] top-0 lg:top-[13px] lg:right-[69px] lg:bg-[length:12px_12px] lg:bg-[url('../assets/icon/ico-close.png')]">닫기</button>
+                        <button type="button" class="w-[38px] h-[38px] bg-[length:17px_17px] lg:bg-auto lg:w-[49px] lg:h-[65px] absolute top-0 right-0 z-10 text-[0] bg-[url('../assets/icon/ico-srch.png')] bg-center bg-no-repeat" onclick="$('#topSearchForm').submit();">검색</button>
+                    </div>
+                    <!-- 자동완성 -->
+                    <div class="hidden relative py-[10px] mb-5">
+                        <div class="px-[13px] lg:px-[26px]">
+                            <ul id="autoCompleteList">
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('하바이아나스');">하바이아<span class="text-[#ff774b]">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('피오리아나');">피오리아<span class="text-[#ff774b]">나</span><span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('피나이더');">피<span class="text-[#ff774b]">나</span>이더<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('피나모레');">피<span class="text-[#ff774b]">나</span>모레<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('프리티 발레리나스');">프리티 발레리<span class="text-[#ff774b]">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('포르나세티');">포르<span class="text-[#ff774b]">나</span>세티<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('파비아나필리피');">파비아<span class="text-[#ff774b]">나</span>필리피<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('파비아나페리');">파비아<span class="text-[#ff774b]">나</span>페리<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('콜리나 스트라다');">콜리<span class="text-[#ff774b]">나</span> 스트라다<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item" href="javascript:void(0)" onclick="setAutoComplete('컬러스 오브 켈리포이나');">컬러스 오브 켈리포이<span class="text-[#ff774b]">나</span><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //자동완성 -->
+                </div>
+                                    
+                <div>
+                    <!-- 최근 검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative xl:min-h-[640px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:text-2xl lg:px-0">최근 검색어</div>
+                        <div class="px-6 lg:p-0">
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=골든구스 스니커즈" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">골든구스 스니커즈</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515206">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=미우미우 마테라쎄" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">미우미우 마테라쎄</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="523655">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=토트백" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">토트백</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="593942">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=버버리" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">버버리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="467725">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=오트리" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">오트리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="519748">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=구찌 케이스" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">구찌 케이스</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="488299">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=미우미우" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">미우미우</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="557471">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=구찌" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">구찌</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="487328">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=생로랑" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">생로랑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515144">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="/goods/search?osearchtext=구찌 지갑" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px]">구찌 지갑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="609453">검색어삭제</button></span>
+                        </div>
+                    </div>
+                    <!-- 추천 검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative pt-[22px] lg:pt[0] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h-[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0">추천 검색어</div>
+                        <div class="px-6 pb-5 lg:px-[30px]">
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/promotion/event_view?event=828" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">미우미우 미니백 득템 찬스!</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/promotion/enjoy_atny" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">✨애트니 200% 즐기기✨</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/promotion/event_view?event=837" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">MD가 추천하는 가을 아이템 #트렌치코트</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/promotion/event_view?event=836" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">여유로운 휴양지 바이브, 카사블랑카</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/promotion/event_view?event=762" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">브라운 아이템 모음zip</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="/board/?id=magazine" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap">❣️애트니 매거진❣️</a></span>
+                        </div>
+                    </div>
+                    <!-- 인기 검색어 -->
+                    <div class="box-border relative lg:float-left lg:w-1/3">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0 relative pt-[22px] lg:pt[0]">인기검색어<span class="float-right text-[9px] text-[#807e7e] font-normal lg:text-[13px] lg:mt-[7px]]">2022.10.13 업데이트</span></div>
+                        <div class="px-6 lg:pr-0 pb-[30px] lg:pl-[30px]">
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">1</span><a href="/goods/search?osearchtext=미우미우" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">미우미우</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">2</span><a href="/goods/search?osearchtext=프라다"class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">프라다</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">3</span><a href="/goods/search?osearchtext=발렌시아가" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">발렌시아가</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-15 lg:text-[17px] text-[#1dc9ff] pl-4 bg-[url('../assets/icon/ico-ranking-down.png')] bg-[left_center] bg-no-repeat">DOWN</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">4</span><a href="/goods/search?osearchtext=구찌" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">구찌</a>
+                                <span class="absolute right-0 top-0 text-xs text-center h-[1px] w-10 bg-[url('../assets/icon/ico-same.png')] bg-center bg-no-repeat"></span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">5</span><a href="/goods/search?osearchtext=버버리" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">버버리</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b]">NEW</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">6</span><a href="/goods/search?osearchtext=메종키츠네" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">메종키츠네</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">7</span><a href="/goods/search?osearchtext=톰브라운" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">톰브라운</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">8</span><a href="/goods/search?osearchtext=셀린느" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">셀린느</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">9</span><a href="/goods/search?osearchtext=펜디" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">펜디</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">10</span><a href="/goods/search?osearchtext=보테가베네타" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px]">보테가베네타</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //검색 레이어 -->
+        <div id="layout_wrap">
+            <div id="layout_content" class="min-h-[80vh] lg:min-h-0 lg:pb-[10px]">
+                <!-- 회원가입 step2 -->
+                <div class="px-6 box-border lg:w-[553px] lg:px-0 lg:pt-[167px] lg:mx-auto">
+                    <form name="registFrm" id="registFrm" target="actionFrame" method="post" action="../member_process/register_ok" onsubmit="registAct()" novalidate="">
+                    <div id="formMemberArea">
+                        <h3 class="box-border border-b border-[#e5e5e5] text-sm leading-[22px] py-[9px] text-center lg:border-t lg:border-t-black lg:py-[30px] lg:font-medium lg:text-[18px]">일반 회원가입</h3>
+                        <div class="text-[#f00] mt-[6px] text-right pt-[14px] text-[13px] float-right lg:mt-0">*모든 입력값 필수</div>
+                        <div class="mt-[3%] mx-auto text-xs lg:w-[464px] text-[13px]">
+                            <ul>
+                                <li class="text-sm font-bold text-black py-1"><span class="text-[#f00]">*</span>아이디</li>            
+                                <li>
+                                    <input type="text" name="userid" id="userid" placeholder="아이디를 입력해주세요. (영문/숫자 포함 6~20자리)" class="h-11 border border-[#e7e5ea] text-xs leading-[22px] w-full p-[5px] lg:p-[10px]">
+                                </li>
+                                <li>
+                                    <p id="id_info" class="leading-[29px] text-[13px] mt-[6px] text-[#ed3347] font-normal">*이미 사용중인 아이디 입니다.</p>
+                                    <!--p id="id_info" class="leading-[29px] text-[13px] mt-[6px] text-[#008aff] font-normal">*사용할 수 있는 아이디 입니다.</p-->
+                                </li>
+                            </ul>
+            
+                            <ul class="mt-[2%] lg:mt-5">
+                                <li class="text-sm font-bold text-black py-1"><span class="text-[#f00]">*</span>비밀번호</li>
+                                <li>
+                                    <input type="password" name="password" value="" class="h-11 border border-[#e7e5ea] text-xs leading-[22px] w-full p-[5px] lg:p-[10px]" placeholder="영문/숫자 포함 6~20자리">
+                                </li>
+                            </ul>
+                            <ul class="mt-[2%] lg:mt-5">
+                                <li class="text-sm font-bold text-black py-1"><span class="text-[#f00]">*</span>비밀번호 재입력</li>
+                                <li>
+                                    <input type="password" name="re_password" value="" class="h-11 border border-[#e7e5ea] text-xs leading-[22px] w-full p-[5px] lg:p-[10px]">
+                                </li>
+                                <li><p id="re_password_info" class="guide_text"></p></li>
+                            </ul>
+                            <ul class="mt-[2%] lg:mt-5">
+                                <li class="text-sm font-bold text-black py-1"><span class="text-[#f00]">*</span>이메일</li>
+                                <li>
+                                    <input type="email" name="email[0]" value="" class="h-11 border border-[#e7e5ea] text-xs leading-[22px] w-1/3 p-[5px] lg:p-[10px]">
+                                    <span class="w-4 inline-block leading-[45px] text-center">@</span>
+                                    <input type="email" name="email[1]" value="" class="h-11 border border-[#e7e5ea] text-xs leading-[22px] w-1/3 p-[5px] lg:p-[10px]">
+                                    <select name="find_email" id="find_email" class="w-1/4 h-11 border border-[#e7e5ea] p-[5px] text-xs float-right">
+                                        <option value="">직접입력</option>
+                                        <option value="naver.com">naver.com</option>
+                                        <option value="nate.com">nate.com</option>
+                                        <option value="dreamwiz.com">dreamwiz.com</option>
+                                        <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                        <option value="empal.com">empal.com</option>
+                                        <option value="unitel.co.kr">unitel.co.kr</option>
+                                        <option value="gmail.com">gmail.com</option>
+                                        <option value="korea.com">korea.com</option>
+                                        <option value="chol.com">chol.com</option>
+                                        <option value="paran.com">paran.com</option>
+                                        <option value="freechal.com">freechal.com</option>
+                                        <option value="hanmail.net">hanmail.net</option>
+                                        <option value="hotmail.com">hotmail.com</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <p id="id_info" class="leading-[29px] text-[13px] mt-[6px] text-[#ed3347] font-normal">*이미 사용중인 이메일 입니다.</p>
+                                    <!--p id="id_info" class="leading-[29px] text-[13px] mt-[6px] text-[#008aff] font-normal">*사용할 수 있는 이메일 입니다.</p-->
+                                </li>
+                            </ul>
+                            <ul class="mt-[2%] lg:mt-5">
+                                <li class="text-sm font-bold text-black py-1"><span class="text-[#f00]">*</span>이름</li>
+                                <li>
+                                    <input type="text" name="user_name" value="" placeholder="이름을 입력해주세요." class="h-11 border border-[#e7e5ea] text-xs leading-[22px] w-full p-[5px] lg:p-[10px]">
+                                </li>
+                                <li><p id="" class="guide_text"></p></li>
+                            </ul>
+                            <ul class="mt-[2%] lg:mt-5">
+                                <li class="text-sm font-bold text-black py-1"><span class="text-[#f00]">*</span>휴대폰번호</li>
+                                <li>
+                                    <div class="relative box-border pr-[100px]">
+                                        <input type="text" name="cellphone_sms" value="" placeholder="전화번호 입력 (숫자만 입력)" maxlength="11" class="h-11 border border-[#e7e5ea] text-xs leading-[22px] w-full p-[5px] lg:p-[10px]">
+                                        <button type="button" class="w-[95px] h-11 bg-black text-white align-top rounded-none absolute right-0 top-0" onclick="authphone_send();">인증번호 받기</button>
+                                        <input type="hidden" name="cellphone[]" value="" class="size_phone" maxlength="4" readonly="">
+                                        <input type="hidden" name="cellphone[]" value="" class="size_phone" maxlength="4" readonly="">
+                                        <input type="hidden" name="cellphone[]" value="" class="size_phone" maxlength="4" readonly="">
+                                    </div>
+                                </li>
+                                <li class="mt-2">
+                                    <div class="relative border border-[#999] box-border pr-[100px]">
+                                        <input type="text" name="authnum" id="authnum" value="" placeholder="인증번호를 입력하세요." class="h-11 bg-white text-xs leading-[22px] w-full p-[5px] lg:p-[10px] " maxlength="5" pattern="[0-9]*" inputmode="numeric" disabled="">
+                                        <span class="txt success" id="auth_success" style="display:none;">일치</span>
+                                        <span class="txt fail" id="auth_fail" style="display:none;">불일치</span>
+                                        <p id="auth_txt" style="display:none;">인증번호를 발송했습니다. (유효시간 3분)</p>                                    
+                                    </div>
+                                </li>
+                                <li><p id="" class="guide_text"></p></li>
+                            </ul>
+                            <ul class="mt-[2%] lg:mt-5">
+                                <li class="text-sm font-bold text-black py-1">생년월일</li>
+                                <li>
+                                    <label>
+                                        <input type="text" name="birthday" value="" readonly="" id="datepicker_51291495_0" class="h-11 border border-[#e7e5ea] p-[5px] text-xs bg-[#f4f4f4]">
+                                        <span class="h-11 leading-[44px] bg-black text-white align-top rounded-none ml-[3px] text-[13px] w-[60px] cursor-pointer inline-block text-center">찾기</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-[60px] border-t border-[#e5e5e5] text-[15px] text-black pt-[18px] pb-[14px]">                            
+                            <div class="inline-block">
+                                <input type="checkbox" id="snsAgreeAll" name="snsAgreeAll" class="peer hidden">    
+                                <label for="snsAgreeAll" class="leading-tight lg:leading-6 pl-7 lg:pl-6 inline-block align-top relative bg-[url('../assets/icon/ico-checkbox.svg')] bg-[left_center] bg-no-repeat text-xs text-[#121212] cursor-pointer peer-checked:bg-[url('../assets/icon/ico-checkbox-on.svg')]">이용약관, 개인정보 수집 및이용, 마케팅정보 수신(선택)에 모두 동의합니다.</label>
+                            </div>
+                        </div>
+                        <dl>
+                            <dt class="py-[10px] box-border border-t border-[#666]">
+                                <div class="inline-block">
+                                    <input type="checkbox" id="pilsuAgreeAll" name="pilsuAgreeAll" class="peer hidden">
+                                    <label for="pilsuAgreeAll" class="leading-6 pl-7 lg:pl-6 h-6 inline-block align-top relative bg-[url('../assets/icon/ico-checkbox.svg')] bg-[left_center] bg-no-repeat text-xs text-[#121212] cursor-pointer peer-checked:bg-[url('../assets/icon/ico-checkbox-on.svg')]">이용약관 및 개인정보 수집/이용 동의 <span class="!text-[#f00]">[필수]</span></label>
+                                </div>
+                            </dt>
+                            <dd class="pb-5 xl:pb-10">
+                                <ul id="agreeList" class="border-b border-[#e5e5e5]">
+                                    <li class="border-t border-[#e5e5e5]">
+                                        <div class="inline-block">
+                                            <input type="checkbox" id="agree" name="agree" value="Y" class="peer hidden"> 
+                                            <label for="agree" class="leading-6 pl-7 lg:pl-6 h-6 inline-block align-top relative bg-[url('../assets/icon/ico-checkbox.svg')] bg-[left_center] bg-no-repeat text-xs text-[#121212] cursor-pointer peer-checked:bg-[url('../assets/icon/ico-checkbox-on.svg')] mt-[10px] mb-2">이용약관</label>
+                                        </div>
+                                        <span class="border border-black font-normal text-black float-right text-center box-border cursor-pointer text-xs w-[90px] h-[25px] mt-3 leading-[25px]">내용보기</span>
+                                        <div class="border border-[#e5e5e5] bg-[#f6f6f6] text-[#333] box-border overflow-y-auto h-[136px] p-[14px] mb-[30px] text-xs">
+                                            전자상거래(인터넷사이버몰) 표준약관<br>
+                                            <br>
+                                            표준약관 제10023호<br>
+                                            (2019. 12. 01. 개정)<br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            제1조(목적) 이 약관은주식회사 애트니 회사(전자상거래 사업자)가 운영하는 주식회사 애트니 사이버 몰(이하 “몰”이라 한다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 한다)를 이용함에 있어 사이버 몰과 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.<br>
+                                            <br>
+                                            ※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 준용합니다.」<br>
+                                            <br>
+                                            제2조(정의)<br>
+                                            <br>
+                                            ① “몰”이란 주식회사 애트니 회사가 재화 또는 용역(이하 “재화 등” 이라 함)을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 사이버몰을 운영하는 사업자의 의미로도 사용합니다.<br>
+                                            <br>
+                                            ② “이용자”란 “몰”에 접속하여 이 약관에 따라 “몰”이 제공하는 서비스를 받는 회원 및 비회원을 말합니다.<br>
+                                            <br>
+                                            ③ ‘회원’이라 함은 “몰”에 회원등록을 한 자로서, 계속적으로 “몰”이 제공하는 서비스를 이용할 수 있는 자를 말합니다.<br>
+                                            <br>
+                                            ④ ‘비회원’이라 함은 회원에 가입하지 않고 “몰”이 제공하는 서비스를 이용하는 자를 말합니다.<br>
+                                            <br>
+                                            제3조 (약관 등의 명시와 설명 및 개정) <br>
+                                            <br>
+                                            ① “몰”은 이 약관의 내용과 상호 및 대표자 성명, 영업소 소재지 주소(소비자의 불만을 처리할 수 있는 곳의 주소를 포함), 전화번호·모사전송번호·전자우편주소, 사업자등록번호, 통신판매업 신고번호, 개인정보관리책임자 등을 이용자가 쉽게 알 수 있도록 주식회사 애트니 사이버몰의 초기 서비스화면(전면)에 게시합니다. 다만, 약관의 내용은 이용자가 연결화면을 통하여 볼 수 있도록 할 수 있습니다.<br>
+                                            <br>
+                                            ② “몰은 이용자가 약관에 동의하기에 앞서 약관에 정하여져 있는 내용 중 청약철회·배송책임·환불조건 등과 같은 중요한 내용을 이용자가 이해할 수 있도록 별도의 연결화면 또는 팝업화면 등을 제공하여 이용자의 확인을 구하여야 합니다.<br>
+                                            <br>
+                                            ③ “몰”은 「전자상거래 등에서의 소비자보호에 관한 법률」, 「약관의 규제에 관한 법률」, 「전자문서 및 전자거래기본법」, 「전자금융거래법」, 「전자서명법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」, 「방문판매 등에 관한 법률」, 「소비자기본법」 등 관련 법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.<br>
+                                            <br>
+                                            ④ “몰”이 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 몰의 초기화면에 그 적용일자 7일 이전부터 적용일자 전일까지 공지합니다.<br>
+                                                다만, 이용자에게 불리하게 약관내용을 변경하는 경우에는 최소한 30일 이상의 사전 유예기간을 두고 공지합니다. 이 경우 "몰“은 개정 전 내용과 개정 후 내용을 명확하게 비교하여 이용자가 알기 쉽도록 표시합니다.<br>
+                                            <br>
+                                            ⑤ “몰”이 약관을 개정할 경우에는 그 개정약관은 그 적용일자 이후에 체결되는 계약에만 적용되고 그 이전에 이미 체결된 계약에 대해서는 개정 전의 약관조항이 그대로 적용됩니다. 다만 이미 계약을 체결한 이용자가 개정약관 조항의 적용을 받기를 원하는 뜻을 제3항에 의한 개정약관의 공지기간 내에 “몰”에 송신하여 “몰”의 동의를 받은 경우에는 개정약관 조항이 적용됩니다.<br>
+                                            <br>
+                                            ⑥ 이 약관에서 정하지 아니한 사항과 이 약관의 해석에 관하여는 전자상거래 등에서의 소비자보호에 관한 법률, 약관의 규제 등에 관한 법률, 공정거래위원회가 정하는 「전자상거래 등에서의 소비자 보호지침」 및 관계법령 또는 상관례에 따릅니다.<br>
+                                            <br>
+                                            제4조(서비스의 제공 및 변경) <br>
+                                            <br>
+                                            ① “몰”은 다음과 같은 업무를 수행합니다.<br>
+                                            <br>
+                                                1. 재화 또는 용역에 대한 정보 제공 및 구매계약의 체결<br>
+                                                2. 구매계약이 체결된 재화 또는 용역의 배송<br>
+                                                3. 기타 “몰”이 정하는 업무<br>
+                                            <br>
+                                            ② “몰”은 재화 또는 용역의 품절 또는 기술적 사양의 변경 등의 경우에는 장차 체결되는 계약에 의해 제공할 재화 또는 용역의 내용을 변경할 수 있습니다. 이 경우에는 변경된 재화 또는 용역의 내용 및 제공일자를 명시하여 현재의 재화 또는 용역의 내용을 게시한 곳에 즉시 공지합니다.<br>
+                                            <br>
+                                            ③ “몰”이 제공하기로 이용자와 계약을 체결한 서비스의 내용을 재화 등의 품절 또는 기술적 사양의 변경 등의 사유로 변경할 경우에는 그 사유를 이용자에게 통지 가능한 주소로 즉시 통지합니다.<br>
+                                            <br>
+                                            ④ 전항의 경우 “몰”은 이로 인하여 이용자가 입은 손해를 배상합니다. 다만, “몰”이 고의 또는 과실이 없음을 입증하는 경우에는 그러하지 아니합니다.<br>
+                                            <br>
+                                            제5조(서비스의 중단) <br>
+                                            <br>
+                                            ① “몰”은 컴퓨터 등 정보통신설비의 보수점검·교체 및 고장, 통신의 두절 등의 사유가 발생한 경우에는 서비스의 제공을 일시적으로 중단할 수 있습니다.<br>
+                                            <br>
+                                            ② “몰”은 제1항의 사유로 서비스의 제공이 일시적으로 중단됨으로 인하여 이용자 또는 제3자가 입은 손해에 대하여 배상합니다. 단, “몰”이 고의 또는 과실이 없음을 입증하는 경우에는 그러하지 아니합니다.<br>
+                                            <br>
+                                            ③ 사업종목의 전환, 사업의 포기, 업체 간의 통합 등의 이유로 서비스를 제공할 수 없게 되는 경우에는 “몰”은 제8조에 정한 방법으로 이용자에게 통지하고 당초 “몰”에서 제시한 조건에 따라 소비자에게 보상합니다. 다만, “몰”이 보상기준 등을 고지하지 아니한 경우에는 이용자들의 마일리지 또는 적립금 등을 “몰”에서 통용되는 통화가치에 상응하는 현물 또는 현금으로 이용자에게 지급합니다.<br>
+                                            <br>
+                                            제6조(회원가입) <br>
+                                            <br>
+                                            ① 이용자는 “몰”이 정한 가입 양식에 따라 회원정보를 기입한 후 이 약관에 동의한다는 의사표시를 함으로서 회원가입을 신청합니다.<br>
+                                            <br>
+                                            ② “몰”은 제1항과 같이 회원으로 가입할 것을 신청한 이용자 중 다음 각 호에 해당하지 않는 한 회원으로 등록합니다.<br>
+                                            <br>
+                                                1. 가입신청자가 이 약관 제7조제3항에 의하여 이전에 회원자격을 상실한 적이 있는 경우, 다만 제7조제3항에 의한 회원자격 상실 후 3년이 경과한 자로서 “몰”의 회원재가입 승낙을 얻은 경우에는 예외로 한다.<br>
+                                                2. 등록 내용에 허위, 기재누락, 오기가 있는 경우<br>
+                                                3. 기타 회원으로 등록하는 것이 “몰”의 기술상 현저히 지장이 있다고 판단되는 경우<br>
+                                            <br>
+                                            ③ 회원가입계약의 성립 시기는 “몰”의 승낙이 회원에게 도달한 시점으로 합니다.<br>
+                                            <br>
+                                            ④ 회원은 회원가입 시 등록한 사항에 변경이 있는 경우, 상당한 기간 이내에 “몰”에 대하여 회원정보 수정 등의 방법으로 그 변경사항을 알려야 합니다.<br>
+                                            <br>
+                                            제7조(회원 탈퇴 및 자격 상실 등) <br>
+                                            <br>
+                                            ① 회원은 “몰”에 언제든지 탈퇴를 요청할 수 있으며 “몰”은 즉시 회원탈퇴를 처리합니다.<br>
+                                            <br>
+                                            ② 회원이 다음 각 호의 사유에 해당하는 경우, “몰”은 회원자격을 제한 및 정지시킬 수 있습니다.<br>
+                                            <br>
+                                                1. 가입 신청 시에 허위 내용을 등록한 경우<br>
+                                                2. “몰”을 이용하여 구입한 재화 등의 대금, 기타 “몰”이용에 관련하여 회원이 부담하는 채무를 기일에 지급하지 않는 경우<br>
+                                                3. 다른 사람의 “몰” 이용을 방해하거나 그 정보를 도용하는 등 전자상거래 질서를 위협하는 경우<br>
+                                                4. “몰”을 이용하여 법령 또는 이 약관이 금지하거나 공서양속에 반하는 행위를 하는 경우<br>
+                                            <br>
+                                            ③ “몰”이 회원 자격을 제한·정지 시킨 후, 동일한 행위가 2회 이상 반복되거나 30일 이내에 그 사유가 시정되지 아니하는 경우 “몰”은 회원자격을 상실시킬 수 있습니다.<br>
+                                            <br>
+                                            ④ “몰”이 회원자격을 상실시키는 경우에는 회원등록을 말소합니다. 이 경우 회원에게 이를 통지하고, 회원등록 말소 전에 최소한 30일 이상의 기간을 정하여 소명할 기회를 부여합니다.<br>
+                                            <br>
+                                            제8조(회원에 대한 통지)<br>
+                                            <br>
+                                            ① “몰”이 회원에 대한 통지를 하는 경우, 회원이 “몰”과 미리 약정하여 지정한 전자우편 주소로 할 수 있습니다.<br>
+                                            <br>
+                                            ② “몰”은 불특정다수 회원에 대한 통지의 경우 1주일이상 “몰” 게시판에 게시함으로서 개별 통지에 갈음할 수 있습니다. 다만, 회원 본인의 거래와 관련하여 중대한 영향을 미치는 사항에 대하여는 개별통지를 합니다.<br>
+                                            <br>
+                                            제9조(구매신청)<br>
+                                            <br>
+                                            ① “몰”이용자는 “몰”상에서 다음 또는 이와 유사한 방법에 의하여 구매를 신청하며, “몰”은 이용자가 구매신청을 함에 있어서 다음의 각 내용을 알기 쉽게 제공하여야 합니다.<br>
+                                            <br>
+                                                1. 재화등의 검색 및 선택<br>
+                                                2. 성명, 주소, 전화번호, 전자우편주소(또는 이동전화번호) 등의 입력<br>
+                                                3. 약관내용, 청약철회권이 제한되는 서비스, 배송료·설치비 등의 비용부담과 관련한 내용에 대한 확인<br>
+                                                4. 이 약관에 동의하고 위 3.호의 사항을 확인하거나 거부하는 표시<br>
+                                                5. 재화등의 구매신청 및 이에 관한 확인 또는 “몰”의 확인에 대한 동의<br>
+                                                6. 결제방법의 선택<br>
+                                            <br>
+                                            ② “몰”이 제3자에게 구매자 개인정보를 제공·위탁할 필요가 있는 경우 실제 구매신청 시 구매자의 동의를 받아야 하며, 회원가입 시 미리 포괄적으로 동의를 받지 않습니다. 이 때 “몰”은 제공되는 개인정보 항목, 제공받는 자, 제공받는 자의 개인정보 이용 목적 및 보유·이용 기간 등을 구매자에게 명시하여야 합니다.<br>
+                                                다만 「정보통신망이용촉진 및 정보보호 등에 관한 법률」 제25조 제1항에 의한 개인정보 취급위탁의 경우 등 관련 법령에 달리 정함이 있는 경우에는 그에 따릅니다.<br>
+                                            <br>
+                                            제10조 (계약의 성립)<br>
+                                            <br>
+                                            ① “몰”은 제9조와 같은 구매신청에 대하여 다음 각 호에 해당하면 승낙하지 않을 수 있습니다. 다만, 미성년자와 계약을 체결하는 경우에는 법정대리인의 동의를 얻지 못하면 미성년자 본인 또는 법정대리인이 계약을 취소할 수 있다는 내용을 고지하여야 합니다.<br>
+                                            <br>
+                                                1. 신청 내용에 허위, 기재누락, 오기가 있는 경우<br>
+                                                2. 미성년자가 담배, 주류 등 청소년보호법에서 금지하는 재화 및 용역을 구매하는 경우<br>
+                                                3. 기타 구매신청에 승낙하는 것이 “몰” 기술상 현저히 지장이 있다고 판단하는 경우<br>
+                                            <br>
+                                            ② “몰”의 승낙이 제12조제1항의 수신확인통지형태로 이용자에게 도달한 시점에 계약이 성립한 것으로 봅니다.<br>
+                                            <br>
+                                            ③ “몰”의 승낙의 의사표시에는 이용자의 구매 신청에 대한 확인 및 판매가능 여부, 구매신청의 정정 취소 등에 관한 정보 등을 포함하여야 합니다.<br>
+                                            <br>
+                                            제11조(지급방법) “몰”에서 구매한 재화 또는 용역에 대한 대금지급방법은 다음 각 호의 방법중 가용한 방법으로 할 수 있습니다. 단, “몰”은 이용자의 지급방법에 대하여 재화 등의 대금에 어떠한 명목의 수수료도 추가하여 징수할 수 없습니다.<br>
+                                            <br>
+                                                1. 폰뱅킹, 인터넷뱅킹, 메일 뱅킹 등의 각종 계좌이체<br>
+                                                2. 선불카드, 직불카드, 신용카드 등의 각종 카드 결제<br>
+                                                3. 온라인무통장입금<br>
+                                                4. 전자화폐에 의한 결제<br>
+                                                5. 수령 시 대금지급<br>
+                                                6. 마일리지 등 “몰”이 지급한 포인트에 의한 결제<br>
+                                                7. “몰”과 계약을 맺었거나 “몰”이 인정한 상품권에 의한 결제<br>
+                                                8. 기타 전자적 지급 방법에 의한 대금 지급 등<br>
+                                            <br>
+                                            제12조(수신확인통지·구매신청 변경 및 취소)<br>
+                                            <br>
+                                            ① “몰”은 이용자의 구매신청이 있는 경우 이용자에게 수신확인통지를 합니다.<br>
+                                            <br>
+                                            ② 수신확인통지를 받은 이용자는 의사표시의 불일치 등이 있는 경우에는 수신확인통지를 받은 후 즉시 구매신청 변경 및 취소를 요청할 수 있고 “몰”은 배송 전에 이용자의 요청이 있는 경우에는 지체 없이 그 요청에 따라 처리하여야 합니다. 다만 이미 대금을 지불한 경우에는 제15조의 청약철회 등에 관한 규정에 따릅니다.<br>
+                                            <br>
+                                            제13조(재화 등의 공급)<br>
+                                            <br>
+                                            ① “몰”은 이용자와 재화 등의 공급시기에 관하여 별도의 약정이 없는 이상, 이용자가 청약을 한 날부터 7일 이내에 재화 등을 배송할 수 있도록 주문제작, 포장 등 기타의 필요한 조치를 취합니다. 다만, “몰”이 이미 재화 등의 대금의 전부 또는 일부를 받은 경우에는 대금의 전부 또는 일부를 받은 날부터 3영업일 이내에 조치를 취합니다. 이때 “몰”은 이용자가 재화 등의 공급 절차 및 진행 사항을 확인할 수 있도록 적절한 조치를 합니다.<br>
+                                            <br>
+                                            ② “몰”은 이용자가 구매한 재화에 대해 배송수단, 수단별 배송비용 부담자, 수단별 배송기간 등을 명시합니다. 만약 “몰”이 약정 배송기간을 초과한 경우에는 그로 인한 이용자의 손해를 배상하여야 합니다. 다만 “몰”이 고의·과실이 없음을 입증한 경우에는 그러하지 아니합니다.<br>
+                                            <br>
+                                            제14조(환급) “몰”은 이용자가 구매신청한 재화 등이 품절 등의 사유로 인도 또는 제공을 할 수 없을 때에는 지체 없이 그 사유를 이용자에게 통지하고 사전에 재화 등의 대금을 받은 경우에는 대금을 받은 날부터 3영업일 이내에 환급하거나 환급에 필요한 조치를 취합니다.<br>
+                                            <br>
+                                            제15조(청약철회 등)<br>
+                                            <br>
+                                            ① “몰”과 재화등의 구매에 관한 계약을 체결한 이용자는 「전자상거래 등에서의 소비자보호에 관한 법률」 제13조 제2항에 따른 계약내용에 관한 서면을 받은 날(그 서면을 받은 때보다 재화 등의 공급이 늦게 이루어진 경우에는 재화 등을 공급받거나 재화 등의 공급이 시작된 날을 말합니다)부터 7일 이내에는 청약의 철회를 할 수 있습니다.<br>
+                                                다만, 청약철회에 관하여 「전자상거래 등에서의 소비자보호에 관한 법률」에 달리 정함이 있는 경우에는 동 법 규정에 따릅니다.<br>
+                                            <br>
+                                            ② 이용자는 재화 등을 배송 받은 경우 다음 각 호의 1에 해당하는 경우에는 반품 및 교환을 할 수 없습니다.<br>
+                                            <br>
+                                                1. 이용자에게 책임 있는 사유로 재화 등이 멸실 또는 훼손된 경우(다만, 재화 등의 내용을 확인하기 위하여 포장 등을 훼손한 경우에는 청약철회를 할 수 있습니다)<br>
+                                                2. 이용자의 사용 또는 일부 소비에 의하여 재화 등의 가치가 현저히 감소한 경우<br>
+                                                3. 시간의 경과에 의하여 재판매가 곤란할 정도로 재화등의 가치가 현저히 감소한 경우<br>
+                                                4. 같은 성능을 지닌 재화 등으로 복제가 가능한 경우 그 원본인 재화 등의 포장을 훼손한 경우<br>
+                                            <br>
+                                            ③ 제2항제2호 내지 제4호의 경우에 “몰”이 사전에 청약철회 등이 제한되는 사실을 소비자가 쉽게 알 수 있는 곳에 명기하거나 시용상품을 제공하는 등의 조치를 하지 않았다면 이용자의 청약철회 등이 제한되지 않습니다.<br>
+                                            <br>
+                                            ④ 이용자는 제1항 및 제2항의 규정에 불구하고 재화 등의 내용이 표시·광고 내용과 다르거나 계약내용과 다르게 이행된 때에는 당해 재화 등을 공급받은 날부터 3월 이내, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 청약철회 등을 할 수 있습니다.<br>
+                                            <br>
+                                            제16조(청약철회 등의 효과)<br>
+                                            <br>
+                                            ① “몰”은 이용자로부터 재화 등을 반환받은 경우 3영업일 이내에 이미 지급받은 재화 등의 대금을 환급합니다. 이 경우 “몰”이 이용자에게 재화등의 환급을 지연한때에는 그 지연기간에 대하여 「전자상거래 등에서의 소비자보호에 관한 법률 시행령」제21조의2에서 정하는 지연이자율을 곱하여 산정한 지연이자를 지급합니다.<br>
+                                            <br>
+                                            ② “몰”은 위 대금을 환급함에 있어서 이용자가 신용카드 또는 전자화폐 등의 결제수단으로 재화 등의 대금을 지급한 때에는 지체 없이 당해 결제수단을 제공한 사업자로 하여금 재화 등의 대금의 청구를 정지 또는 취소하도록 요청합니다.<br>
+                                            <br>
+                                            ③ 청약철회 등의 경우 공급받은 재화 등의 반환에 필요한 비용은 이용자가 부담합니다. “몰”은 이용자에게 청약철회 등을 이유로 위약금 또는 손해배상을 청구하지 않습니다. 다만 재화 등의 내용이 표시·광고 내용과 다르거나 계약내용과 다르게 이행되어 청약철회 등을 하는 경우 재화 등의 반환에 필요한 비용은 “몰”이 부담합니다.<br>
+                                            <br>
+                                            ④ 이용자가 재화 등을 제공받을 때 발송비를 부담한 경우에 “몰”은 청약철회 시 그 비용을 누가 부담하는지를 이용자가 알기 쉽도록 명확하게 표시합니다.<br>
+                                            <br>
+                                            제17조(개인정보보호)<br>
+                                            <br>
+                                            ① “몰”은 이용자의 개인정보 수집시 서비스제공을 위하여 필요한 범위에서 최소한의 개인정보를 수집합니다.<br>
+                                            <br>
+                                            ② “몰”은 회원가입시 구매계약이행에 필요한 정보를 미리 수집하지 않습니다. 다만, 관련 법령상 의무이행을 위하여 구매계약 이전에 본인확인이 필요한 경우로서 최소한의 특정 개인정보를 수집하는 경우에는 그러하지 아니합니다.<br>
+                                            <br>
+                                            ③ “몰”은 이용자의 개인정보를 수집·이용하는 때에는 당해 이용자에게 그 목적을 고지하고 동의를 받습니다. <br>
+                                            <br>
+                                            ④ “몰”은 수집된 개인정보를 목적외의 용도로 이용할 수 없으며, 새로운 이용목적이 발생한 경우 또는 제3자에게 제공하는 경우에는 이용·제공단계에서 당해 이용자에게 그 목적을 고지하고 동의를 받습니다. 다만, 관련 법령에 달리 정함이 있는 경우에는 예외로 합니다.<br>
+                                            <br>
+                                            ⑤ “몰”이 제3항과 제4항에 의해 이용자의 동의를 받아야 하는 경우에는 개인정보관리 책임자의 신원(소속, 성명 및 전화번호, 기타 연락처), 정보의 수집목적 및 이용목적, 제3자에 대한 정보제공 관련사항(제공받은자, 제공목적 및 제공할 정보의 내용) 등 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 제22조제2항이 규정한 사항을 미리 명시하거나 고지해야 하며 이용자는 언제든지 이 동의를 철회할 수 있습니다.<br>
+                                            <br>
+                                            ⑥ 이용자는 언제든지 “몰”이 가지고 있는 자신의 개인정보에 대해 열람 및 오류정정을 요구할 수 있으며 “몰”은 이에 대해 지체 없이 필요한 조치를 취할 의무를 집니다. 이용자가 오류의 정정을 요구한 경우에는 “몰”은 그 오류를 정정할 때까지 당해 개인정보를 이용하지 않습니다.<br>
+                                            <br>
+                                            ⑦ “몰”은 개인정보 보호를 위하여 이용자의 개인정보를 취급하는 자를 최소한으로 제한하여야 하며 신용카드, 은행계좌 등을 포함한 이용자의 개인정보의 분실, 도난, 유출, 동의 없는 제3자 제공, 변조 등으로 인한 이용자의 손해에 대하여 모든 책임을 집니다.<br>
+                                            <br>
+                                            ⑧ “몰” 또는 그로부터 개인정보를 제공받은 제3자는 개인정보의 수집목적 또는 제공받은 목적을 달성한 때에는 당해 개인정보를 지체 없이 파기합니다.<br>
+                                            <br>
+                                            ⑨ “몰”은 개인정보의 수집·이용·제공에 관한 동의란을 미리 선택한 것으로 설정해두지 않습니다. 또한 개인정보의 수집·이용·제공에 관한 이용자의 동의거절시 제한되는 서비스를 구체적으로 명시하고, 필수수집항목이 아닌 개인정보의 수집·이용·제공에 관한 이용자의 동의 거절을 이유로 회원가입 등 서비스 제공을 제한하거나 거절하지 않습니다.<br>
+                                            <br>
+                                            제18조(“몰“의 의무)<br>
+                                            <br>
+                                            ① “몰”은 법령과 이 약관이 금지하거나 공서양속에 반하는 행위를 하지 않으며 이 약관이 정하는 바에 따라 지속적이고, 안정적으로 재화·용역을 제공하는데 최선을 다하여야 합니다.<br>
+                                            <br>
+                                            ② “몰”은 이용자가 안전하게 인터넷 서비스를 이용할 수 있도록 이용자의 개인정보(신용정보 포함)보호를 위한 보안 시스템을 갖추어야 합니다.<br>
+                                            <br>
+                                            ③ “몰”이 상품이나 용역에 대하여 「표시·광고의 공정화에 관한 법률」 제3조 소정의 부당한 표시·광고행위를 함으로써 이용자가 손해를 입은 때에는 이를 배상할 책임을 집니다.<br>
+                                            <br>
+                                            ④ “몰”은 이용자가 원하지 않는 영리목적의 광고성 전자우편을 발송하지 않습니다.<br>
+                                            <br>
+                                            제19조(회원의 ID 및 비밀번호에 대한 의무)<br>
+                                            <br>
+                                            ① 제17조의 경우를 제외한 ID와 비밀번호에 관한 관리책임은 회원에게 있습니다.<br>
+                                            <br>
+                                            ② 회원은 자신의 ID 및 비밀번호를 제3자에게 이용하게 해서는 안됩니다.<br>
+                                            <br>
+                                            ③ 회원이 자신의 ID 및 비밀번호를 도난당하거나 제3자가 사용하고 있음을 인지한 경우에는 바로 “몰”에 통보하고 “몰”의 안내가 있는 경우에는 그에 따라야 합니다.<br>
+                                            <br>
+                                            제20조(이용자의 의무) 이용자는 다음 행위를 하여서는 안 됩니다.<br>
+                                            <br>
+                                                1. 신청 또는 변경시 허위 내용의 등록<br>
+                                                2. 타인의 정보 도용<br>
+                                                3. “몰”에 게시된 정보의 변경<br>
+                                                4. “몰”이 정한 정보 이외의 정보(컴퓨터 프로그램 등) 등의 송신 또는 게시<br>
+                                                5. “몰” 기타 제3자의 저작권 등 지적재산권에 대한 침해<br>
+                                                6. “몰” 기타 제3자의 명예를 손상시키거나 업무를 방해하는 행위<br>
+                                                7. 외설 또는 폭력적인 메시지, 화상, 음성, 기타 공서양속에 반하는 정보를 몰에 공개 또는 게시하는 행위<br>
+                                            <br>
+                                            제21조(연결“몰”과 피연결“몰” 간의 관계)<br>
+                                            <br>
+                                            ① 상위 “몰”과 하위 “몰”이 하이퍼링크(예: 하이퍼링크의 대상에는 문자, 그림 및 동화상 등이 포함됨)방식 등으로 연결된 경우, 전자를 연결 “몰”(웹 사이트)이라고 하고 후자를 피연결 “몰”(웹사이트)이라고 합니다.<br>
+                                            <br>
+                                            ② 연결“몰”은 피연결“몰”이 독자적으로 제공하는 재화 등에 의하여 이용자와 행하는 거래에 대해서 보증 책임을 지지 않는다는 뜻을 연결“몰”의 초기화면 또는 연결되는 시점의 팝업화면으로 명시한 경우에는 그 거래에 대한 보증 책임을 지지 않습니다.<br>
+                                            <br>
+                                            제22조(저작권의 귀속 및 이용제한)<br>
+                                            <br>
+                                            ① “몰“이 작성한 저작물에 대한 저작권 기타 지적재산권은 ”몰“에 귀속합니다.<br>
+                                            <br>
+                                            ② 이용자는 “몰”을 이용함으로써 얻은 정보 중 “몰”에게 지적재산권이 귀속된 정보를 “몰”의 사전 승낙 없이 복제, 송신, 출판, 배포, 방송 기타 방법에 의하여 영리목적으로 이용하거나 제3자에게 이용하게 하여서는 안됩니다.<br>
+                                            <br>
+                                            ③ “몰”은 약정에 따라 이용자에게 귀속된 저작권을 사용하는 경우 당해 이용자에게 통보하여야 합니다.<br>
+                                            <br>
+                                            제23조(분쟁해결)<br>
+                                            <br>
+                                            ① “몰”은 이용자가 제기하는 정당한 의견이나 불만을 반영하고 그 피해를 보상처리하기 위하여 피해보상처리기구를 설치·운영합니다.<br>
+                                            <br>
+                                            ② “몰”은 이용자로부터 제출되는 불만사항 및 의견은 우선적으로 그 사항을 처리합니다. 다만, 신속한 처리가 곤란한 경우에는 이용자에게 그 사유와 처리일정을 즉시 통보해 드립니다.<br>
+                                            <br>
+                                            ③ “몰”과 이용자 간에 발생한 전자상거래 분쟁과 관련하여 이용자의 피해구제신청이 있는 경우에는 공정거래위원회 또는 시·도지사가 의뢰하는 분쟁조정기관의 조정에 따를 수 있습니다.<br>
+                                            <br>
+                                            제24조(재판권 및 준거법)<br>
+                                            <br>
+                                            ① “몰”과 이용자 간에 발생한 전자상거래 분쟁에 관한 소송은 제소 당시의 이용자의 주소에 의하고, 주소가 없는 경우에는 거소를 관할하는 지방법원의 전속관할로 합니다. 다만, 제소 당시 이용자의 주소 또는 거소가 분명하지 않거나 외국 거주자의 경우에는 민사소송법상의 관할법원에 제기합니다.<br>
+                                            <br>
+                                            ② “몰”과 이용자 간에 제기된 전자상거래 소송에는 한국법을 적용합니다.<br>
+                                            <br>
+                                            <br>
+                
+                                        </div>
+                                    </li>
+                                    <li class="border-t border-[#e5e5e5]">
+                                        <div class="inline-block">
+                                            <input type="checkbox" id="agree2" name="agree2" value="Y" class="peer hidden">
+                                            <label for="agree2" class="leading-6 pl-7 lg:pl-6 h-6 inline-block align-top relative bg-[url('../assets/icon/ico-checkbox.svg')] bg-[left_center] bg-no-repeat text-xs text-[#121212] cursor-pointer peer-checked:bg-[url('../assets/icon/ico-checkbox-on.svg')] mt-[10px] mb-2">개인정보의 수집·이용 동의</label>
+                                        </div>
+                                        <span class="border border-black font-normal text-black float-right text-center box-border cursor-pointer text-xs w-[90px] h-[25px] mt-3 leading-[25px]">내용보기</span>
+                                        <div class="border border-[#e5e5e5] bg-[#f6f6f6] text-[#333] box-border overflow-y-auto h-[136px] p-[14px] mb-[30px] text-xs">
+                                            주식회사 애트니(이하 '회사'는)은<br>
+                                            고객님의 개인정보를 중요시하며, "정보통신망 이용촉진 및 정보보호"에 관한 법률을 준수하고 있습니다.<br>
+                                            <br>
+                                            [개인정보의 수집 및 이용목적]<br>
+                                            "개인정보"라 함은 생존하는 개인에 관한 정보로서 당해 정보에 포함되어 있는 성명, 주민등록번호 등의 사항에 의하여 당해 개인을 식별할 수 있는 정보(당해 정보만으로는 특정 개인을 식별할 수 없더라도 다른 정보와 용이하게 결합하여 식별할 수 있는 것을 포함)를 말합니다.<br>
+                                            <br>
+                                            대부분의 회사 서비스는 별도의 사용자 등록이 없이 언제든지 사용할 수 있습니다. 그러나 회사는 회원서비스를 통하여 이용자들에게 맞춤식 서비스를 비롯한 보다 더 향상된 양질의 서비스를 제공하기 위하여 이용자 개인의 정보를 수집하고 있습니다.<br>
+                                            <br>
+                                            [개인정보의 보유 및 이용기간]<br>
+                                            이용자가 회사의 회원으로서 회사에 제공하는 서비스를 이용하는 동안 회사는 이용자들의 개인정보를 계속적으로 보유하며 서비스 제공 등을 위해 이용합니다. 다만, 아래의 "마. 이용자 자신의 개인정보 관리(열람,정정,삭제 등)에 관한 사항" 에서 설명한 절차와 방법에 따라 회원 본인이 직접 삭제하거나 수정한 정보, 가입해지를 요청한 경우에는 재생할 수 없는 방법에 의하여 디스크에서 완전히 삭제하며 추후 열람이나 이용이 불가능한 상태로 처리됩니다.<br>
+                                            <br>
+                                            [개인정보의 파기절차 및 방법]<br>
+                                            회사는 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 해당 정보를 지체없이 파기합니다. <br>
+                                            개인정보 파기절차 및 방법은 다음과 같습니다.<br>
+                                            <br>
+                                            1. 파기절차<br>
+                                            회사는 파기 사유가 발생한 개인정보를 선정하고, 회사의 개인정보 보호책임자의 승인을 받아 개인정보를 파기합니다. <br>
+                                            2. 파기방법<br>
+                                            회사는 전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없도록 파기합니다.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>                        
+                        <dl>
+                            <dt class="py-[10px] border-t border-[#666]">
+                                <div class="inline-block">
+                                    <input type="checkbox" id="sns_all_agree" name="sns_all_agree" value="Y" class="peer hidden">
+                                    <label for="sns_all_agree" class="leading-6 pl-7 lg:pl-6 h-6 inline-block align-top relative bg-[url('../assets/icon/ico-checkbox.svg')] bg-[left_center] bg-no-repeat text-xs text-[#121212] cursor-pointer peer-checked:bg-[url('../assets/icon/ico-checkbox-on.svg')]">마케팅정보 수신동의 [선택]</label>
+                                </div>
+                            </dt>
+                            <dd class="pb-5 xl:pb-10">
+                                <div class="border-t border-b border-[#e5e5e5] py-[10px]">
+                                    <div class="inline-block">
+                                        <input type="checkbox" id="mailing" name="mailing" value="Y" class="peer hidden">
+                                        <label for="mailing" class="leading-6 pl-7 lg:pl-6 h-6 inline-block align-top relative bg-[url('../assets/icon/ico-checkbox.svg')] bg-[left_center] bg-no-repeat text-xs text-[#121212] cursor-pointer peer-checked:bg-[url('../assets/icon/ico-checkbox-on.svg')] mr-7">이메일</label>
+                                    </div>
+                                    <div class="inline-block">
+                                        <input type="checkbox" id="sms" name="sms" value="Y" class="peer hidden">                                    
+                                        <label for="sms" class="leading-6 pl-7 lg:pl-6 h-6 inline-block align-top relative bg-[url('../assets/icon/ico-checkbox.svg')] bg-[left_center] bg-no-repeat text-xs text-[#121212] cursor-pointer peer-checked:bg-[url('../assets/icon/ico-checkbox-on.svg')]">SMS</label>                
+                                    </div>
+                                </div>
+                                <p class="pt-[14px] text-black text-xs xl:text-[13px] leading-[18px] xl:leading-5">
+                                    마케팅정보 수신동의를 하시면 애트니만의 다양한 소식과 서비스를 빠르게 받아보실 수 있습니다. <br>
+                                    (아래 내용 외 다른 목적으로 사용/활용되지 않습니다.)<br><br>
+                                    • 고객님께서 결제하신 상품의 주문결제/배송정보 안내 <br> 
+                                    • 이벤트 : 매월 라플 이벤트 명품 구매권, 타임 세일, 시즌성 기획전 등<br>
+                                    • 신상품 : 이태리 명품 부띠크에서 직접 업로드하는 브랜드별 신상품 소식 업데이트<br>
+                                    • 수선 서비스 : 애트니 제휴 명품 수선센터 이용쿠폰 제공<br>
+                                    • 패키징 : 애트니만의 트렌디한 패키징 박스 증정(일부 해외 상품 제외)
+                                </p>
+                            </dd>
+                        </dl>
+                    </div>
+                
+                    <div class="pb-10">
+                        <button id="btn_submit" type="submit" class="bg-black text-white w-full text-base border border-black h-[50px]">가입하기</button>
+                    </div>
+                    </form>
+                </div>
+                <!-- //회원가입 step2 -->
+            </div>
+        </div>
+
+        <!-- mobile floating menu -->
+        <div class="xl:hidden fixed left-0 right-0 bottom-0 z-[99] bg-white p-0">
+			<ul class="px-[35px] flex">
+				<li class="w-[15%]" id="mobile-menu"><a href="javascript:;" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu1.svg')] bg-[center_4px] bg-no-repeat">메뉴</span></a></li>
+				<li class="w-[15%]"><a href="/goods/oneday_delivery" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu2.svg')] bg-[center_4px] bg-no-repeat">하루배송</span></a></li>
+				<li class="w-[40%]"><a href="/" class="block relative h-full"><span class="text-[0] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/logo.svg')] bg-[center_14px] bg-no-repeat bg-[length:76px_18px]">홈</span></a></li>
+				<li class="w-[15%]"><a href="/mypage/wish" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu3.svg')] bg-[center_4px] bg-no-repeat">위시리스트</span></a></li>
+				<li class="w-[15%]"><a href="/mypage" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu4.svg')] bg-[center_4px] bg-no-repeat">마이페이지</span></a></li>
+			</ul>
+		</div>
+        <!-- //mobile floating menu -->
+
+        <!-- footer -->
+		<footer><script>Util.include('../common/footer.html')</script></footer>
+		<!-- //footer -->
+    </div>
+
+    <script src="../js/include.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        // 모바일 메뉴 레이어 열기
+        $('#mobile-menu').on('click',function(){
+            $('#mobile-layer').addClass('!z-[50]');
+            $('#mobile-layer > div:first-child').addClass('!block');
+            $('#mobile-menu-content').addClass('!top-[42px]');
+            var mobile_swiper = new Swiper('#mobile-layer .swiper',{
+                slidesPerView:'4.5',
+                spaceBetween: 8
+            })
+        })
+        // 모바일 메뉴 레이어 닫기
+        $('#mobile-layer-close').on('click',function(){
+            $('#mobile-layer').removeClass('!z-[50]');
+            $('#mobile-layer > div:first-child').removeClass('!block');
+            $('#mobile-menu-content').removeClass('!top-[42px]');
+        })
+        
+        function search_layer(){
+            $('#search-layer').addClass('!block');
+        }
+
+        //검색 레이어 닫기
+        $('#search-layer-close').on('click',function(){
+            $('#search-layer').removeClass('!block');
+        })
+
+        /*gnb*/
+        $(window).on("load resize", function() {
+            if ($(window).width() > 768) {
+                if ($('.main').length > 0) {
+                    $('.header_cont').hover(
+                        function() {
+                            $(this).addClass('on');
+                        },
+                        function() {
+                            $(this).removeClass('on');
+                        }
+                    );
+                }
+                $('.header .gnb_wrap .dep1').hover(
+                    function() {
+                        $(this).find('.dep2').css('display', 'block');
+                        $('.header .gnb_wrap .dep1_ul.on').addClass('tmpon');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('on');
+                    },
+                    function() {
+                        $(this).find('.dep2').css('display', 'none');
+                        $('.header .gnb_wrap .dep1_ul.tmpon').addClass('on');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('tmpon');
+                    }
+                );
+            }
+        });
+
+        /*footer*/
+        
+
+        /* 검색 레이어 관련 */
+        function srch_layer(){
+            $('#search-layer').addClass('!block');
+        }
+
+        $('.search_full_layer .button_back2').on('click', function () {
+            $('.search_full_layer').removeClass('on');
+        });
+
+        $('.mobile-category-wrap input[type="text"]').on('click', function () {
+            $('.search_full_layer').addClass('on');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+
+        $('.header_top .ico_srch, .m_btm_menu .resp_top_search').on('click',function(){
+            $('.search_full_layer').addClass('on');
+        });
+        $('.search_full_layer .btn_close').on('click',function(){
+            $('.search_full_layer').removeClass('on');
+        });
+
+        $('.mobile-category-wrap .button-search').on('click', function () {
+            $('.search_full_layer').addClass('on');
+            if ($('.mobile-category-wrap input[type="text"]').attr('value')) {
+                $('.search_full_layer input[name="search_text"]').attr('value', $('.mobile-category-wrap input[type="text"]').attr('value'));
+            }
+        })
+
+        $('.header .rig_menu .btn-srch').on('click', function () {
+            $('.search_full_layer').addClass('on');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+        
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+      <script src="../js/util.js"></script>
+      <script>Util.include('../common/head_2.html');</script>
+    </head>
+<body>
+    <div id="wrap">
+        <!-- header -->
+		<script>Util.include('../common/header.html');</script>
+		<!-- //header -->
+
+        <!-- 모바일용 레이어 -->
+        <div class="fixed left-0 top-0 right-0 bottom-0 bg-black/70 z-[1000] hidden" id="dmm"></div>
+        <div class="fixed left-0 right-0 z-[1001] transition-all duration-500 bottom-[48px] top-[100%]" id="mobile-menu-content">
+            <button type="button" class="h-[31px] rounded-t-[30px] bg-white absolute top-0 left-0 right-0 w-full text-[0] after:content-[''] after:w-[57px] after:h-[3px] after:bg-[#212121] after:rounded-[10px] after:absolute after:top-[9px] after:left-1/2 after:-translate-x-1/2" id="mobile-layer-close">닫기</button>
+            <div class="py-[14px] pr-[65px] pl-6 absolute left-0 top-[31px] right-0 bg-white border-b border-[#e7e5ea]">
+                <form name="topSearchForm" action="/goods/search">
+                    <div class="relative h-[31px] rounded-[100px] bg-[#fafafb] border border-[#f7f7f9] box-border pr-[47px]">
+                        <input type="text" name="search_text" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="h-[29px] bg-transparent px-[10px] box-border w-full border-0 text-[13px]">
+                        <button class="h-[29px] absolute right-0 top-0 w-[47px] bg-[url('../assets/icon/ico-search.svg')] bg-center bg-no-repeat z-10 text-[0]" type="submit">검색</button>
+                    </div>
+                </form>
+                <a href="/mypage" class="absolute bg-[url('../assets/icon/ico-myp.svg')] bg-center bg-no-repeat text-[0] right-[21px] top-[17px] z-10 w-6 h-6">마이페이지</a>
+            </div>
+            <div>
+                <div class="bg-[#fafafb] overflow-y-auto absolute left-0 top-[91px] bottom-0 right-0">
+                    <div>
+                        <div class="bg-white border-b border-[#e7e5ea]">
+                            <div class="pt-[15px] px-6">
+                                <ul>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#ff774b] block px-[2px] pb-[3px] border-b-[3px] border-[#ff774b]">WOMEN</a></li>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">MEN</a></li>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">JUNIOR</a></li>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">LIFE</a></li>
+                                </ul>
+                            </div>
+                            <div class="py-[10px] px-6 block">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00020001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                    <li><a href="/goods/catalog?code=00020002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                    <li><a href="/goods/catalog?code=00020003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                    <li><a href="/goods/catalog?code=00020004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                    <li><a href="/goods/catalog?code=00020005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                </ul>
+                            </div>
+                            <div class="hidden">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00010001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                    <li><a href="/goods/catalog?code=00010002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                    <li><a href="/goods/catalog?code=00010003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                    <li><a href="/goods/catalog?code=00010004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                    <li><a href="/goods/catalog?code=00010005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                </ul>
+                            </div>
+                            <div class="hidden">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00030001" class="text-[13px] text-[#212121] block py-[13px]">여아</a></li>
+                                    <li><a href="/goods/catalog?code=00030002" class="text-[13px] text-[#212121] block py-[13px]">남아</a></li>
+                                </ul>
+                            </div>
+                            <div class="hidden">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00040001" class="text-[13px] text-[#212121] block py-[13px]">디지털</a></li>
+                                    <li><a href="/goods/catalog?code=00040002" class="text-[13px] text-[#212121] block py-[13px]">홈</a></li>
+                                    <li><a href="/goods/catalog?code=00040003" class="text-[13px] text-[#212121] block py-[13px]">뷰티</a></li>
+                                    <li><a href="/goods/catalog?code=00040004" class="text-[13px] text-[#212121] block py-[13px]">여행</a></li>
+                                    <li><a href="/goods/catalog?code=00040005" class="text-[13px] text-[#212121] block py-[13px]">반려동물</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                            <div class="py-[10px] px-6">
+                                <ul>
+                                    <li>
+                                        <a href="/goods/best_designers" class="text-[13px] text-[#212121] block py-[13px]">디자이너</a>
+                                    </li>
+                                    <li>
+                                        <a href="/goods/nft" class="text-[13px] text-[#212121] block py-[13px]">정품감정서</a>
+                                    </li>
+                                    <li>
+                                        <a href="/goods/oneday_delivery" class="text-[13px] text-[#212121] block py-[13px]">하루배송</a>
+                                    </li>
+                                    <li>
+                                        <a href="/goods/free_return" class="text-[13px] text-[#212121] block py-[13px]">무료반품</a>
+                                    </li>
+                                    <li>
+                                        <a href="/board/?id=magazine" class="text-[13px] text-[#212121] block py-[13px]">매거진</a>
+                                    </li>
+                                    <li>
+                                        <a href="/promotion/event" class="text-[13px] text-[#212121] block py-[13px]">이벤트</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                            <div class="py-[17px]">
+                                <div class="text-[#c6cad1] text-[11px] mb-[6px] px-6">최근 본 상품</div>
+                                <!-- 내용이 없을 때 -->
+                                <div class="text-center py-5 w-full text-[11px]">최근 본 상품이 없습니다.</div>
+                                <!-- //내용이 없을 때 -->
+                                <div class="swiper pl-6">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide"><a href="/goods/view?no=1541402"><img src="//img.atny.com/data/goods/ATNY/10/1672510/MzQzNDYw_list1.JPG" alt="여성 타임리스 브라운 미니 숄더/크로스백"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow-[inset_0_-8px_10px_rgba(0,0,0,0.03)]">
+                            <ul class="py-[17px] text-center">
+                                <li class="inline-block relative"><a href="/mypage" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">마이페이지</a></li>
+                                <li class="inline-block relative"><a href="/board/?id=faq" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">FAQ</a></li>
+                                <li class="inline-block relative"><a href="/mypage/myqna_write" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px]">1:1문의</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //모바일용 레이어 -->
+
+        <!-- layer - 검색 -->
+        <div class="hidden fixed z-[1000] left-0 top-0 right-0 bottom-0 bg-white overflow-auto" id="search-layer">
+            <div class="w-full max-w-[1240px] mx-auto lg:px-5">
+                <a href="javascript:void(0)" class="w-10 h-[38px] absolute left-[10px] top-[7px] bg-[url('../assets/icon/ico-back.svg')] bg-center bg-no-repeat text-[0] lg:w-[53px] lg:h-[53px] lg:top-[33px] lg:left-auto lg:right-[33px] lg:bg-[url('../assets/icon/ico-close.png')] text-[#444] no-underline border-none outline-none" id="search-layer-close">뒤로</a>
+                <div class="pt-[9px] pr-4 pl-[50px] mb-[22px] lg:px-0 lg:pt-[180px] lg:mb-14">
+                    <div class="pr-[38px] lg:h-[65px] relative lg:pr-[49px]">
+                        <form name="topSearchForm" id="topSearchForm" action="/goods/search">
+                            <input type="text" name="search_text" id="searchVer3InputBox" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="w-full h-[38px] px-[17px] bg-[#f7f7f9] leading-[38px] lg:h-[65px] lg:leading-[65px] lg:border-0 lg:text-base lg:px-[60px] rounded-[200px] outline-none" />
+                        </form>
+                        <button type="button" class="w-[38px] h-[38px] absolute z-10 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat text-[0] right-[38px] top-0 lg:top-[13px] lg:right-[69px] lg:bg-[length:12px_12px] lg:bg-[url('../assets/icon/ico-close.png')]">닫기</button>
+                        <button type="button" class="w-[38px] h-[38px] bg-[length:17px_17px] lg:bg-auto lg:w-[49px] lg:h-[65px] absolute top-0 right-0 z-10 text-[0] bg-[url('../assets/icon/ico-srch.png')] bg-center bg-no-repeat" onclick="$('#topSearchForm').submit();">검색</button>
+                    </div>
+                    <!-- 자동완성 -->
+                    <div class="hidden relative py-[10px] mb-5">
+                        <div class="px-[13px] lg:px-[26px]">
+                            <ul id="autoCompleteList">
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('하바이아나스');">하바이아<span class="text-[#ff774b] ">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('피오리아나');">피오리아<span class="text-[#ff774b]">나</span><span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('피나이더');">피<span class="text-[#ff774b]">나</span>이더<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('피나모레');">피<span class="text-[#ff774b]">나</span>모레<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('프리티 발레리나스');">프리티 발레리<span class="text-[#ff774b]">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('포르나세티');">포르<span class="text-[#ff774b]">나</span>세티<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('파비아나필리피');">파비아<span class="text-[#ff774b]">나</span>필리피<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('파비아나페리');">파비아<span class="text-[#ff774b]">나</span>페리<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('콜리나 스트라다');">콜리<span class="text-[#ff774b]">나</span> 스트라다<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('컬러스 오브 켈리포이나');">컬러스 오브 켈리포이<span class="text-[#ff774b]">나</span><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //자동완성 -->
+                </div>
+                <div>
+                    <!-- 최근검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative xl:min-h-[640px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:text-2xl lg:px-0">최근 검색어</div>
+                        <div class="px-6 lg:p-0">
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=골든구스 스니커즈" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">골든구스 스니커즈</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515206">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=미우미우 마테라쎄" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">미우미우 마테라쎄</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="523655">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=토트백" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">토트백</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="593942">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=버버리" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">버버리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="467725">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=오트리" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">오트리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="519748">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=구찌 케이스" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">구찌 케이스</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="488299">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=미우미우" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">미우미우</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="557471">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=구찌" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">구찌</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="487328">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=생로랑" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">생로랑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515144">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=구찌 지갑" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">구찌 지갑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="609453">검색어삭제</button></span>
+                        </div>
+                    </div>
+                    <!-- 추천검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative pt-[22px] lg:pt[0] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h-[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0">추천 검색어</div>
+                        <div class="px-6 pb-5 lg:px-[30px]">
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">미우미우 미니백 득템 찬스!</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/enjoy_atny.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">✨애트니 200% 즐기기✨</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">MD가 추천하는 가을 아이템 #트렌치코트</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">여유로운 휴양지 바이브, 카사블랑카</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">브라운 아이템 모음zip</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../board/magazine.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">❣️애트니 매거진❣️</a></span>
+                        </div>
+                    </div>
+                    <!-- 인기검색어 -->
+                    <div class="box-border relative lg:float-left lg:w-1/3">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0 relative pt-[22px] lg:pt[0]">인기검색어<span class="float-right text-[9px] text-[#807e7e] font-normal lg:text-[13px] lg:mt-[7px]]">2022.10.13 업데이트</span></div>
+                        <div class="px-6 lg:pr-0 pb-[30px] lg:pl-[30px]">
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">1</span><a href="../goods/search?osearchtext=미우미우" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">미우미우</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">2</span><a href="../goods/search?osearchtext=프라다"class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">프라다</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">3</span><a href="../goods/search?osearchtext=발렌시아가" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">발렌시아가</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-15 lg:text-[17px] text-[#1dc9ff] pl-4 bg-[url('../assets/icon/ico-ranking-down.png')] bg-[left_center] bg-no-repeat">DOWN</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">4</span><a href="../goods/search?osearchtext=구찌" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">구찌</a>
+                                <span class="absolute right-0 top-0 text-xs text-center h-[1px] w-10 bg-[url('../assets/icon/ico-same.png')] bg-center bg-no-repeat"></span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">5</span><a href="../goods/search?osearchtext=버버리" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">버버리</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b]">NEW</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">6</span><a href="../goods/search?osearchtext=메종키츠네" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">메종키츠네</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">7</span><a href="../goods/search?osearchtext=톰브라운" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">톰브라운</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">8</span><a href="../goods/search?osearchtext=셀린느" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">셀린느</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">9</span><a href="../goods/search?osearchtext=펜디" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">펜디</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">10</span><a href="../goods/search?osearchtext=보테가베네타" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">보테가베네타</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //layer - 검색 -->
+
+        <!-- contents -->
+        <div id="layout_wrap">
+            <div id="layout_content" class="min-h-[80vh] lg:min-h-0 lg:pb-[100px] leading-[1.2] text-[13px] text-[#666] font-normal font-['Pretendard']">
+                <!-- article -->
+                <div class="max-w-[1440px] my-[15px] md:mb-0 mx-auto px-[15px] lg:px-0 box-border">
+                    <div class="mt-0 sm:mt-[45px] overflow-hidden relative">
+                        <img class="max-w-[140%] sm:max-w-full mx-[-20%] sm:mx-0 align-middle border-none outline-none" src="../images/img-bnr_privacy_main.jpeg" alt="개인정보처리방침">
+                        <div class="text-left absolute top-0 bottom-0 left-[15px] sm:left-[90px]">
+                            <ul class="table h-full list-none">
+                                <li class="table-cell align-middle">
+                                    <h2 class="m-0 py-[10px] px-0 text-[#333] text-[38px] sm:text-[45px] leading-[1.1] font-medium border-b-0">
+                                        <span designelement="text" textindex="1">개인정보처리방침</span>
+                                    </h2>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-5 sm:pt-[60px] leading-[2]">
+                        주식회사 애트니(이하 "회사"라 함)는 회사가 운영하는 atny.com(이하 "사이트"라 함)를 이용하는 이용자들의 개인정보보호를 매우 중요시하며, 이용자가 회사의 웹서비스(이하 "서비스"라 함)를 이용함과 동시에 온라인상에서 회사에 제공한 개인정보가 보호 받을 수 있도록 최선을 다하고 있습니다. 이에 회사는 통신비밀보호법, 전기통신사업법, 정보통신망이용촉진등에관한법률 등 정보통신서비스제공자가 준수하여야 할 관련 법규상의 개인정보보호 규정 및 정보통신부가 제정한 개인정보보호지침을 준수하고 있습니다. 회사는 개인정보 보호정책을 통하여 이용자들이 제공하는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.<br>
+                        <br>
+                        회사는 개인정보 보호정책을 사이트 첫 화면에 공개함으로써 이용자들이 언제나 용이하게 보실 수 있도록 조치하고 있습니다.<br>
+                        <br>
+                        회사의 개인정보 보호정책은 정부의 법률 및 지침 변경이나 회사의 내부 방침 변경 등으로 인하여 수시로 변경될 수 있고, 이에 따른 개인정보 보호정책의 지속적인 개선을 위하여 필요한 절차를 정하고 있습니다. 그리고 개인정보 보호정책을 개정하는 경우 회사는 그 변경사항에 대하여 즉시 사이트를 통하여 게시하고 버전번호 및 개정일자 등을 부여하여 개정된 사항을 이용자들이 쉽게 알아볼 수 있도록 하고 있습니다. 이용자들께서는 사이트 방문시 수시로 확인하시기 바랍니다.<br>
+                        <br>
+                        회사의 개인정보 보호정책은 다음과 같은 내용을 담고 있습니다.<br>
+                        <br>
+                        가. 개인정보 수집에 대한 동의<br>
+                        나. 개인정보의 수집목적 및 이용목적<br>
+                        다. 개인정보 항목 및 수집방법<br>
+                        라. 개인정보의 보유 및 이용기간<br>
+                        마. 이용자 자신의 개인정보 관리(열람,정정,삭제 등)에 관한 사항<br>
+                        바. 쿠키(cookie)의 운영에 관한 사항<br>
+                        사. 개인정보관련 기술적-관리적 대책<br>
+                        아. 개인정보 위탁<br>
+                        <br>
+                        가. 개인정보 수집에 대한 동의 <br>
+                        회사는 이용자들이 회사의 개인정보 보호정책 또는 이용약관의 내용에 대하여 「동의함」버튼 또는 「동의안함」버튼을 클릭할 수 있는 절차를 마련하여, 「동의함」버튼을 클릭하면 개인정보 수집에 대해 동의한 것으로 봅니다.<br>
+                        <br>
+                        <br>
+                        나. 개인정보의 수집목적 및 이용목적 <br>
+                        "개인정보"라 함은 생존하는 개인에 관한 정보로서 당해 정보에 포함되어 있는 성명, 주민등록번호 등의 사항에 의하여 당해 개인을 식별할 수 있는 정보(당해 정보만으로는 특정 개인을 식별할 수 없더라도 다른 정보와 용이하게 결합하여 식별할 수 있는 것을 포함)를 말합니다.<br>
+                        <br>
+                        대부분의 회사 서비스는 별도의 사용자 등록이 없이 언제든지 사용할 수 있습니다. 그러나 회사는 회원서비스를 통하여 이용자들에게 맞춤식 서비스를 비롯한 보다 더 향상된 양질의 서비스를 제공하기 위하여 이용자 개인의 정보를 수집하고 있습니다.<br>
+                        <br>
+                        <br>
+                        다. 개인정보 항목 및 수집방법 <br>
+                        회사는 이용자들이 회원서비스를 이용하기 위해 회원으로 가입하실 때 서비스 제공을 위한 필수적인 정보들을 온라인상에서 입력 받고 있습니다. 회원 가입시에 받는 필수적인 정보는 성명, 주민등록번호, 주소, 전화번호 등입니다. 또한 양질의 서비스 제공을 위하여 이용자들이 선택적으로 입력할 수 있는 사항으로서 회사주소, 회사전화번호, 직업, 이메일주소 및 이메일 수신여부 항목을 입력 받고 있습니다.<br>
+                        <br>
+                        <br>
+                        라. 개인정보의 보유 및 이용기간 <br>
+                        이용자가 회사의 회원으로서 회사에 제공하는 서비스를 이용하는 동안 회사는 이용자들의 개인정보를 계속적으로 보유하며 서비스 제공 등을 위해 이용합니다. 다만, 아래의 "마. 이용자 자신의 개인정보 관리(열람,정정,삭제 등)에 관한 사항" 에서 설명한 절차와 방법에 따라 회원 본인이 직접 삭제하거나 수정한 정보, 가입해지를 요청한 경우에는 재생할 수 없는 방법에 의하여 디스크에서 완전히 삭제하며 추후 열람이나 이용이 불가능한 상태로 처리됩니다.<br>
+                        <br>
+                        <br>
+                        마. 이용자 자신의 개인정보 관리(열람,정정,삭제 등)에 관한 사항 <br>
+                        이용자는 언제든지 회사 홈페이지를 이용하여 회원등록되어 있는 자신의 개인정보를 조회하거나 수정할 수 있으며 회원등록 탈퇴를 요청할 수도 있습니다.<br>
+                        <br>
+                        이용자들의 개인정보 조회 및 수정을 위해서는 사이트의 회원관리 메뉴에서 아이디와 비밀번호를 사용하여 로그인(LOG-IN)하면 되는데, 아이디(ID) 및 주민등록번호, 이름을 제외한 모든 입력사항을 수정할 수 있습니다. 또한, 비밀번호를 잊어버린 경우에는 회원 로그인 메뉴 하단에 있는 "패스워드찾기"를 클릭하여 본인 확인에 필요한 사항을 입력하시면, 본인여부 확인 후 email을 통하여 비밀번호를 알려 드립니다.<br>
+                        <br>
+                        회원등록 탈퇴는 사이트에 있는 나의정보에서 "회원탈퇴"를 클릭하시면, 이용자 본인여부를 확인한 후 처리합니다.<br>
+                        <br>
+                        <br>
+                        바. 쿠키(cookie)의 운영에 관한 사항 <br>
+                        이용자들에게 특화된 맞춤서비스를 제공하기 위해서 회사는 이용자들의 정보를 저장하고 수시로 불러오는 '쿠키(cookie)'를 사용합니다. 쿠키는 웹사이트를 운영하는데 이용되는 서버(HTTP)가 이용자의 컴퓨터 브라우저에게 보내는 소량의 정보이며 이용자들의 PC 컴퓨터내의 하드디스크에 저장되기도 합니다.<br>
+                        <br>
+                        이용자들이 회사에 접속한 후 로그인(LOG-IN)하여 마이페이지(My Page) 등의 서비스를 이용하기 위해서는 쿠키를 허용하셔야 합니다. 회사는 이용자들에게 적합하고 보다 유용한 서비스를 제공하기 위해서 쿠키를 이용하여 ID에 대한 정보를 찾아냅니다. 쿠키는 이용자의 컴퓨터는 식별하지만 이용자를 개인적으로 식별하지는 않습니다.<br>
+                        <br>
+                        쿠키를 이용하여 이용자들이 방문한 사이트의 각 서비스와 이용형태, 이용자 규모 등을 파악하여 더욱 더 편리한 서비스를 만들어 제공할 수 있고 이용자에게 최적화된 정보를 제공할 수 있습니다. 이용자들은 쿠키에 대하여 사용여부를 선택할 수 있습니다. 웹브라우저에서 옵션을 설정함으로써 모든 쿠키를 허용할 수도 있고, 쿠키가 저장될 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수도 있습니다. 다만, 쿠키의 저장을 거부할 경우에는 로그인이 필요한 일부 서비스는 이용할 수 없습니다.<br>
+                        <br>
+                        <br>
+                        사. 개인정보관련 기술적-관리적 대책 <br>
+                        회사는 이용자들의 개인정보를 취급함에 있어 개인정보가 분실, 도난, 누출, 변조 또는 훼손되지 않도록 안전성 확보를 위하여 다음과 같은 기술적 대책을 강구하고 있습니다.<br>
+                        <br>
+                        이용자들의 개인정보는 비밀번호에 의해 철저히 보호되고 있습니다. 회원 아이디(ID)의 비밀번호는 본인만이 알고 있으며, 개인정보의 확인 및 변경도 비밀번호를 알고 있는 본인에 의해서만 가능합니다. 따라서 이용자 여러분께서는 비밀번호를 누구에게도 알려주시면 안됩니다. 이를 위해 회사에서는 기본적으로 PC에서의 사용을 마치신 후 온라인상에서 로그아웃(LOG-OUT)하시고 웹브라우저를 종료하도록 권장합니다. 특히 다른 사람과 PC를 공유하여 사용하거나 공공장소(학교, 도서관, 인터넷 게임방 등)에서 이용한 경우에는 개인정보가 다른 사람에게 알려지는 것을 막기 위해 위와 같은 절차가 더욱 필요할 것입니다.<br>
+                        <br>
+                        회사는 해킹이나 컴퓨터 바이러스 등에 의해 회원의 개인정보가 유출되거나 훼손되는 것을 막기 위해 최선을 다하고 있습니다. 개인정보의 훼손에 대비해서 자료를 수시로 백업하고 있고, 최신 백신프로그램을 이용하여 이용자들의 개인정보나 자료가 누출되거나 손상되지 않도록 방지하고 있으며, 암호알고리즘 등을 통하여 네트워크상에서 개인정보를 안전하게 전송할 수 있도록 하고 있습니다. 그리고 침입차단시스템을 이용하여 외부로부터의 무단 접근을 통제하고 있으며, 기타 시스템적으로 안정성을 확보하기 위한 가능한 모든 기술적 장치를 갖추려 노력하고 있습니다.<br>
+                        <br>
+                        아. 개인정보 위탁<br>
+                        위탁대상자 : ㈜니블스카이 <br>
+                        위탁 업무 내용 : 웹로그 및 CRM 분석, 온사이트 마케팅,개인화 추천,웹/앱 push, SMS/이메일 발송 대행
+                    </div>
+                </div>
+                <!-- //article -->
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <!-- mobile floating menu -->
+        <div class="xl:hidden fixed left-0 right-0 bottom-0 z-[1001] bg-white p-0">
+			<ul class="px-[35px] flex">
+				<li class="w-[15%]" id="mobile-menu"><a href="javascript:;" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu1.svg')] bg-[center_4px] bg-no-repeat">메뉴</span></a></li>
+				<li class="w-[15%]"><a href="/goods/oneday_delivery" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu2.svg')] bg-[center_4px] bg-no-repeat">하루배송</span></a></li>
+				<li class="w-[40%]"><a href="/" class="block relative h-full"><span class="text-[0] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/logo.svg')] bg-[center_14px] bg-no-repeat bg-[length:76px_18px]">홈</span></a></li>
+				<li class="w-[15%]"><a href="/mypage/wish" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu3.svg')] bg-[center_4px] bg-no-repeat">위시리스트</span></a></li>
+				<li class="w-[15%]"><a href="/mypage" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu4.svg')] bg-[center_4px] bg-no-repeat">마이페이지</span></a></li>
+			</ul>
+		</div>
+        <!-- //mobile floating menu -->
+        
+        <!-- footer -->
+		<footer><script>Util.include('../common/footer.html')</script></footer>
+		<!-- //footer -->
+    </div>
+
+    <script src="../js/include.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script><!--flowbite-->
+    <script>
+        // 모바일 메뉴 레이어 열기
+        $('#mobile-menu').on('click',function(){
+            $('#dmm').removeClass('hidden');
+            $('#mobile-menu-content').addClass('!top-[42px]');
+            var mobile_swiper = new Swiper('#mobile-menu-content .swiper',{
+                slidesPerView:'4.5',
+                spaceBetween: 8
+            })
+        });
+        // 모바일 메뉴 레이어 닫기
+        $('#mobile-layer-close').on('click',function(){
+            $('#dmm').addClass('hidden');
+            $('#mobile-menu-content').removeClass('!top-[42px]');
+        });
+        
+        // layer - 검색 > 열기
+        function search_layer(){
+            $('#search-layer').addClass('!block');
+        };
+        // layer - 검색 > 닫기
+        $('#search-layer-close').on('click',function(){
+            $('#search-layer').removeClass('!block');
+        });
+        /* layer - 검색 관련 */
+        function srch_layer(){
+            $('#search-layer').addClass('!block');
+        }
+        $('.search_full_layer .button_back2').on('click', function () {
+            $('.search_full_layer').removeClass('block');
+        });
+        $('.mobile-category-wrap input[type="text"]').on('click', function () {
+            $('.search_full_layer').addClass('block');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+        $('.header_top .ico_srch, .m_btm_menu .resp_top_search').on('click',function(){
+            $('.search_full_layer').addClass('block');
+        });
+        $('.search_full_layer .btn_close').on('click',function(){
+            $('.search_full_layer').removeClass('block');
+        });
+        $('.mobile-category-wrap .button-search').on('click', function () {
+            $('.search_full_layer').addClass('block');
+            if ($('.mobile-category-wrap input[type="text"]').attr('value')) {
+                $('.search_full_layer input[name="search_text"]').attr('value', $('.mobile-category-wrap input[type="text"]').attr('value'));
+            }
+        });
+        $('.header .rig_menu .btn-srch').on('click', function () {
+            $('.search_full_layer').addClass('block');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+
+        /* gnb */
+        $(window).on("load resize", function() {
+            if ($(window).width() > 768) {
+                if ($('.main').length > 0) {
+                    $('.header_cont').hover(
+                        function() {
+                            $(this).addClass('block');
+                        },
+                        function() {
+                            $(this).removeClass('block');
+                        }
+                    );
+                }
+                $('.header .gnb_wrap .dep1').hover(
+                    function() {
+                        $(this).find('.dep2').css('display', 'block');
+                        $('.header .gnb_wrap .dep1_ul.on').addClass('tmpon');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('block');
+                    },
+                    function() {
+                        $(this).find('.dep2').css('display', 'none');
+                        $('.header .gnb_wrap .dep1_ul.tmpon').addClass('block');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('tmpon');
+                    }
+                );
+            }
+        });
+
+        /* footer */
+        
+    </script>
+
+</body>
+</html>

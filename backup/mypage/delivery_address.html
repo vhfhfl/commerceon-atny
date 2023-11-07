@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+      <script src="../js/util.js"></script>
+      <script>Util.include('../common/head_2.html');</script>
+    </head>
+<body>
+    <div id="wrap">
+        <!-- header -->
+		<script>Util.include('../common/header.html');</script>
+		<!-- //header -->
+
+        <!-- 모바일용 레이어 -->
+        <div class="fixed left-0 top-0 right-0 bottom-0 bg-black/70 z-[1000] hidden" id="dmm"></div>
+        <div class="fixed left-0 right-0 z-[1001] transition-all duration-500 bottom-[48px] top-[100%]" id="mobile-menu-content">
+            <button type="button" class="h-[31px] rounded-t-[30px] bg-white absolute top-0 left-0 right-0 w-full text-[0] after:content-[''] after:w-[57px] after:h-[3px] after:bg-[#212121] after:rounded-[10px] after:absolute after:top-[9px] after:left-1/2 after:-translate-x-1/2" id="mobile-layer-close">닫기</button>
+            <div class="py-[14px] pr-[65px] pl-6 absolute left-0 top-[31px] right-0 bg-white border-b border-[#e7e5ea]">
+                <form name="topSearchForm" action="/goods/search">
+                    <div class="relative h-[31px] rounded-[100px] bg-[#fafafb] border border-[#f7f7f9] box-border pr-[47px]">
+                        <input type="text" name="search_text" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="h-[29px] bg-transparent px-[10px] box-border w-full border-0 text-[13px]">
+                        <button class="h-[29px] absolute right-0 top-0 w-[47px] bg-[url('../assets/icon/ico-search.svg')] bg-center bg-no-repeat z-10 text-[0]" type="submit">검색</button>
+                    </div>
+                </form>
+                <a href="/mypage" class="absolute bg-[url('../assets/icon/ico-myp.svg')] bg-center bg-no-repeat text-[0] right-[21px] top-[17px] z-10 w-6 h-6">마이페이지</a>
+            </div>
+            <div>
+                <div class="bg-[#fafafb] overflow-y-auto absolute left-0 top-[91px] bottom-0 right-0">
+                    <div>
+                        <div class="bg-white border-b border-[#e7e5ea]">
+                            <div class="pt-[15px] px-6">
+                                <ul>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#ff774b] block px-[2px] pb-[3px] border-b-[3px] border-[#ff774b]">WOMEN</a></li>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">MEN</a></li>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">JUNIOR</a></li>
+                                    <li class="inline-block mr-5"><a href="javascript:;" class="text-[15px] text-[#c6cad1] block px-[2px] pb-[3px]">LIFE</a></li>
+                                </ul>
+                            </div>
+                            <div class="py-[10px] px-6 block">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00020001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                    <li><a href="/goods/catalog?code=00020002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                    <li><a href="/goods/catalog?code=00020003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                    <li><a href="/goods/catalog?code=00020004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                    <li><a href="/goods/catalog?code=00020005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                </ul>
+                            </div>
+                            <div class="hidden">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00010001" class="text-[13px] text-[#212121] block py-[13px]">가방</a></li>
+                                    <li><a href="/goods/catalog?code=00010002" class="text-[13px] text-[#212121] block py-[13px]">지갑</a></li>
+                                    <li><a href="/goods/catalog?code=00010003" class="text-[13px] text-[#212121] block py-[13px]">의류</a></li>
+                                    <li><a href="/goods/catalog?code=00010004" class="text-[13px] text-[#212121] block py-[13px]">슈즈</a></li>
+                                    <li><a href="/goods/catalog?code=00010005" class="text-[13px] text-[#212121] block py-[13px]">액세서리</a></li>
+                                </ul>
+                            </div>
+                            <div class="hidden">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00030001" class="text-[13px] text-[#212121] block py-[13px]">여아</a></li>
+                                    <li><a href="/goods/catalog?code=00030002" class="text-[13px] text-[#212121] block py-[13px]">남아</a></li>
+                                </ul>
+                            </div>
+                            <div class="hidden">
+                                <ul class="menu_list">
+                                    <li><a href="/goods/catalog?code=00040001" class="text-[13px] text-[#212121] block py-[13px]">디지털</a></li>
+                                    <li><a href="/goods/catalog?code=00040002" class="text-[13px] text-[#212121] block py-[13px]">홈</a></li>
+                                    <li><a href="/goods/catalog?code=00040003" class="text-[13px] text-[#212121] block py-[13px]">뷰티</a></li>
+                                    <li><a href="/goods/catalog?code=00040004" class="text-[13px] text-[#212121] block py-[13px]">여행</a></li>
+                                    <li><a href="/goods/catalog?code=00040005" class="text-[13px] text-[#212121] block py-[13px]">반려동물</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                            <div class="py-[10px] px-6">
+                                <ul>
+                                    <li>
+                                        <a href="/goods/best_designers" class="text-[13px] text-[#212121] block py-[13px]">디자이너</a>
+                                    </li>
+                                    <li>
+                                        <a href="/goods/nft" class="text-[13px] text-[#212121] block py-[13px]">정품감정서</a>
+                                    </li>
+                                    <li>
+                                        <a href="/goods/oneday_delivery" class="text-[13px] text-[#212121] block py-[13px]">하루배송</a>
+                                    </li>
+                                    <li>
+                                        <a href="/goods/free_return" class="text-[13px] text-[#212121] block py-[13px]">무료반품</a>
+                                    </li>
+                                    <li>
+                                        <a href="/board/?id=magazine" class="text-[13px] text-[#212121] block py-[13px]">매거진</a>
+                                    </li>
+                                    <li>
+                                        <a href="/promotion/event" class="text-[13px] text-[#212121] block py-[13px]">이벤트</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white border-b border-[#e7e5ea] mb-[7px]">
+                            <div class="py-[17px]">
+                                <div class="text-[#c6cad1] text-[11px] mb-[6px] px-6">최근 본 상품</div>
+                                <!-- 내용이 없을 때 -->
+                                <div class="text-center py-5 w-full text-[11px]">최근 본 상품이 없습니다.</div>
+                                <!-- //내용이 없을 때 -->
+                                <div class="swiper pl-6">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide"><a href="/goods/view?no=1541402"><img src="//img.atny.com/data/goods/ATNY/10/1672510/MzQzNDYw_list1.JPG" alt="여성 타임리스 브라운 미니 숄더/크로스백"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1535939"><img src="//img.atny.com/data/goods/ATNY/64/1665664/053_c1fb728e-f220-4bd0-b29f-84cb03b4a136_list1.JPG" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=1213309"><img src="//img.atny.com/data/goods/ATNY/11/1274511/fee20963ea19ba70a6ab2ac846d1030d_list1.jpg" alt="남성 스웨트셔츠"></a></li>
+                                        <li class="swiper-slide"><a href="/goods/view?no=507341"><img src="//img.atny.com/data/goods/ATNY/64/409864/AULMLL22_K_AUTRY-WHB_a_list1.jpg" alt="남성 화이트 블랙 레더 메달리스트 스니커즈"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white shadow-[inset_0_-8px_10px_rgba(0,0,0,0.03)]">
+                            <ul class="py-[17px] text-center">
+                                <li class="inline-block relative"><a href="/mypage" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">마이페이지</a></li>
+                                <li class="inline-block relative"><a href="/board/?id=faq" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px] after:w-[1px] after:content-[''] after:h-[9px] after:bg-[#e7e5ea] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2">FAQ</a></li>
+                                <li class="inline-block relative"><a href="/mypage/myqna_write" class="block h-[18px] text-[11px] text-[#212121] leading-[18px] px-[34px]">1:1문의</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //모바일용 레이어 -->
+
+        <!-- layer - 검색 -->
+        <div class="hidden fixed z-[1000] left-0 top-0 right-0 bottom-0 bg-white overflow-auto" id="search-layer">
+            <div class="w-full max-w-[1240px] mx-auto lg:px-5">
+                <a href="javascript:void(0)" class="w-10 h-[38px] absolute left-[10px] top-[7px] bg-[url('../assets/icon/ico-back.svg')] bg-center bg-no-repeat text-[0] lg:w-[53px] lg:h-[53px] lg:top-[33px] lg:left-auto lg:right-[33px] lg:bg-[url('../assets/icon/ico-close.png')] text-[#444] no-underline border-none outline-none" id="search-layer-close">뒤로</a>
+                <div class="pt-[9px] pr-4 pl-[50px] mb-[22px] lg:px-0 lg:pt-[180px] lg:mb-14">
+                    <div class="pr-[38px] lg:h-[65px] relative lg:pr-[49px]">
+                        <form name="topSearchForm" id="topSearchForm" action="/goods/search">
+                            <input type="text" name="search_text" id="searchVer3InputBox" placeholder="검색어를 입력하세요." autocomplete="off" value="" class="w-full h-[38px] px-[17px] bg-[#f7f7f9] leading-[38px] lg:h-[65px] lg:leading-[65px] lg:border-0 lg:text-base lg:px-[60px] rounded-[200px] outline-none" />
+                        </form>
+                        <button type="button" class="w-[38px] h-[38px] absolute z-10 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat text-[0] right-[38px] top-0 lg:top-[13px] lg:right-[69px] lg:bg-[length:12px_12px] lg:bg-[url('../assets/icon/ico-close.png')]">닫기</button>
+                        <button type="button" class="w-[38px] h-[38px] bg-[length:17px_17px] lg:bg-auto lg:w-[49px] lg:h-[65px] absolute top-0 right-0 z-10 text-[0] bg-[url('../assets/icon/ico-srch.png')] bg-center bg-no-repeat" onclick="$('#topSearchForm').submit();">검색</button>
+                    </div>
+                    <!-- 자동완성 -->
+                    <div class="hidden relative py-[10px] mb-5">
+                        <div class="px-[13px] lg:px-[26px]">
+                            <ul id="autoCompleteList">
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('하바이아나스');">하바이아<span class="text-[#ff774b] ">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('피오리아나');">피오리아<span class="text-[#ff774b]">나</span><span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('피나이더');">피<span class="text-[#ff774b]">나</span>이더<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('피나모레');">피<span class="text-[#ff774b]">나</span>모레<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('프리티 발레리나스');">프리티 발레리<span class="text-[#ff774b]">나</span>스<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('포르나세티');">포르<span class="text-[#ff774b]">나</span>세티<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('파비아나필리피');">파비아<span class="text-[#ff774b]">나</span>필리피<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('파비아나페리');">파비아<span class="text-[#ff774b]">나</span>페리<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('콜리나 스트라다');">콜리<span class="text-[#ff774b]">나</span> 스트라다<span></span></a></li>
+                                <li class="text-[13px] py-2 lg:py-[10px] lg:px-[30px] lg:text-base border-b border-[#f5f5f5]"><a class="searched_item text-[#444] no-underline border-none outline-none" href="javascript:void(0)" onclick="setAutoComplete('컬러스 오브 켈리포이나');">컬러스 오브 켈리포이<span class="text-[#ff774b]">나</span><span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //자동완성 -->
+                </div>
+                <div>
+                    <!-- 최근검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative xl:min-h-[640px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:text-2xl lg:px-0">최근 검색어</div>
+                        <div class="px-6 lg:p-0">
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=골든구스 스니커즈" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">골든구스 스니커즈</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515206">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=미우미우 마테라쎄" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">미우미우 마테라쎄</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="523655">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=토트백" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">토트백</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="593942">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=버버리" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">버버리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="467725">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=오트리" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">오트리</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="519748">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=구찌 케이스" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">구찌 케이스</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="488299">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=미우미우" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">미우미우</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="557471">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=구찌" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">구찌</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="487328">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=생로랑" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">생로랑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="515144">검색어삭제</button></span>
+                            <span class="relative block mb-[10px] lg:mb-5"><a href="../goods/search?osearchtext=구찌 지갑" class="inline-blcok text-xs text-[#121212] align-top h-6 leading-6 lg:text-[17px] no-underline border-none outline-none">구찌 지갑</a><button type="button" class="w-6 h-6 bg-[url('../assets/icon/ico-word-del.png')] bg-center bg-no-repeat absolute right-0 top-0 z-10 text-[0] lg:right-6" onclick="searchRecentRemove(this)" data-value="609453">검색어삭제</button></span>
+                        </div>
+                    </div>
+                    <!-- 추천검색어 -->
+                    <div class="box-border border-r-[7px] border-[#fafafb] border-b-8 relative pt-[22px] lg:pt[0] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:border-t after:border-[#eff1f4] lg:float-left lg:w-1/3 lg:after:border-0 lg:border-b-0 lg:min-h-[640px]">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0">추천 검색어</div>
+                        <div class="px-6 pb-5 lg:px-[30px]">
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">미우미우 미니백 득템 찬스!</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/enjoy_atny.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">✨애트니 200% 즐기기✨</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">MD가 추천하는 가을 아이템 #트렌치코트</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">여유로운 휴양지 바이브, 카사블랑카</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../promotion/event_view.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">브라운 아이템 모음zip</a></span>
+                            <span class="inline-block relative bg-[#212121] rounded-[100px] text-white mr-[5px] mb-[13px] lg:mr-2 lg:mb-5"><a href="../board/magazine.html" target="_self" class="text-[11px] h-8 leading-8 text-white px-[14px] lg:text-[15px] whitespace-nowrap no-underline border-none outline-none">❣️애트니 매거진❣️</a></span>
+                        </div>
+                    </div>
+                    <!-- 인기검색어 -->
+                    <div class="box-border relative lg:float-left lg:w-1/3">
+                        <div class="px-6 pb-4 text-xs font-bold text-[#121212] lg:pb-[30px] lg:pl-[30px] lg:text-2xl lg:px-0 relative pt-[22px] lg:pt[0]">인기검색어<span class="float-right text-[9px] text-[#807e7e] font-normal lg:text-[13px] lg:mt-[7px]]">2022.10.13 업데이트</span></div>
+                        <div class="px-6 lg:pr-0 pb-[30px] lg:pl-[30px]">
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">1</span><a href="../goods/search?osearchtext=미우미우" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">미우미우</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">2</span><a href="../goods/search?osearchtext=프라다"class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">프라다</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">3</span><a href="../goods/search?osearchtext=발렌시아가" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">발렌시아가</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-15 lg:text-[17px] text-[#1dc9ff] pl-4 bg-[url('../assets/icon/ico-ranking-down.png')] bg-[left_center] bg-no-repeat">DOWN</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">4</span><a href="../goods/search?osearchtext=구찌" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">구찌</a>
+                                <span class="absolute right-0 top-0 text-xs text-center h-[1px] w-10 bg-[url('../assets/icon/ico-same.png')] bg-center bg-no-repeat"></span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">5</span><a href="../goods/search?osearchtext=버버리" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">버버리</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b]">NEW</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">6</span><a href="../goods/search?osearchtext=메종키츠네" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">메종키츠네</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">7</span><a href="../goods/search?osearchtext=톰브라운" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">톰브라운</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">8</span><a href="../goods/search?osearchtext=셀린느" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">셀린느</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">9</span><a href="../goods/search?osearchtext=펜디" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">펜디</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                            <div class="relative mb-5 lg:mb-10">
+                                <span class="text-xs mr-[10px] font-bold inline-block align-top h-6 text-[#cbcad1] lg:text-[17px] lg:mr-[17px]">10</span><a href="../goods/search?osearchtext=보테가베네타" class="inline-block align-top w-3/4 whitespace-nowrap text-ellipsis h-6 text-[#121212] text-xs lg:text-[17px] no-underline border-none outline-none">보테가베네타</a>
+                                <span class="absolute right-0 top-0 text-xs text-center w-11 lg:text-[17px] text-[#ff774b] pl-4 bg-[url('../assets/icon/ico-ranking-up.png')] bg-[left_center] bg-no-repeat">UP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //layer - 검색 -->
+
+        <!-- contents -->
+        <div id="layout_wrap">
+            <div id="layout_content" class="min-h-[80vh] lg:min-h-0 lg:pb-[100px] leading-[1.2] text-[13px] text-[#666] font-normal font-['Pretendard']">
+                <div class="p-0 align-top relative">
+                    <!-- 마이메뉴 -->
+                    <div class="subpage_lnb hidden w-[274px] lg:w-[297px] ml-[424px] pt-[18px] lg:pt-[25px] px-[26px] lg:px-[38px] pb-[42px] lg:pb-[56px] align-top bg-white border border-[#f7f7f9] box-border absolute top-[68px] lg:top-[120px] right-6 lg:right-auto left-auto lg:left-1/2 z-[600]">
+                        <div class="border-b border-b-[#e4e6ea]">
+                            <p class="mb-7"><span class="block text-black text-sm">MY ATNY</span> <span class="block text-black text-xs">마이 애트니</span></p>
+                            <button type="button" class="myMenuClose w-3 h-3 -indent-[9999px] absolute top-[40px] right-[60px]">닫기</button>
+                            <div id="accordion-open" data-accordion="open">
+                                <h2 id="accordion-open-heading-1" class="accordion-open-heading bg-none border-t border-t-[#e4e6ea] border-b-0">
+                                    <button type="button" class="flex items-center justify-between w-full mt-0 border-b-0 rounded-sm relative !bg-transparent" data-accordion-target="#accordion-open-body-1" aria-expanded="false" aria-controls="accordion-open-body-1">
+                                        <a href="javascrip:void(0)" class="block h-8 leading-8 p-0 text-black font-medium text-xs after:content-[''] after:w-[6px] after:h-[6px] after:border-r after:border-r-[#212121] after:border-b after:border-b-[#212121] after:absolute after:top-[10px] after:right-[3px] after:rotate-45 after:transition-all no-underline border-none outline-none">나의 쇼핑</a>
+                                    </button>
+                                </h2>
+                                <div id="accordion-open-body-1" class="hidden" aria-labelledby="accordion-open-heading-1">
+                                    <ul class="border-t border-t-[#e4e6ea] py-5 px-0 transition ease-in-out">
+                                        <li class="mt-[3px]"><a href="../mypage/order_catalog.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] transition-all ease-in-out">주문/배송내역</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/return_catalog.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">반품/교환내역</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/refund_catalog.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">취소/환불내역</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/wish.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">위시리스트</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/mydesigner.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">마이디자이너</a></li>
+                                        <li class="mt-[3px]"><a href="../goods/recently.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">최근 본 상품</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/delivery_address.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">배송지 관리</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/taxinvoice.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">세금계산서</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/personal.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">개인결제</a></li>
+                                    </ul>
+                                </div>
+                                <h2 id="accordion-open-heading-2" class="accordion-open-heading bg-none border-t border-t-[#e4e6ea] border-b-0">
+                                    <button type="button" class="flex items-center justify-between w-full mt-0 border-b-0 rounded-sm relative !bg-transparent" data-accordion-target="#accordion-open-body-2" aria-expanded="false" aria-controls="accordion-open-body-2">
+                                        <a href="javascrip:void(0)" class="block h-8 leading-8 p-0 text-black font-medium text-xs after:content-[''] after:w-[6px] after:h-[6px] after:border-r after:border-r-[#212121] after:border-b after:border-b-[#212121] after:absolute after:top-[10px] after:right-[3px] after:rotate-45 after:transition-all no-underline border-none outline-none">나의 혜택</a>
+                                    </button>
+                                </h2>
+                                <div id="accordion-open-body-2" class="hidden" aria-labelledby="accordion-open-heading-2">
+                                    <ul class="border-t border-t-[#e4e6ea] py-5 px-0">
+                                        <li class="mt-[3px]"><a href="../mypage/emoney.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">포인트내역</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/coupon.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">쿠폰내역</a></li>
+                                    </ul>
+                                </div>
+                                <h2 id="accordion-open-heading-3" class="accordion-open-heading bg-none border-t border-t-[#e4e6ea] border-b-0">
+                                    <button type="button" class="flex items-center justify-between w-full mt-0 border-b-0 rounded-sm relative !bg-transparent" data-accordion-target="#accordion-open-body-3" aria-expanded="false" aria-controls="accordion-open-body-3">
+                                        <a href="javascrip:void(0)" class="block h-8 leading-8 p-0 text-black font-medium text-xs after:content-[''] after:w-[6px] after:h-[6px] after:border-r after:border-r-[#212121] after:border-b after:border-b-[#212121] after:absolute after:top-[10px] after:right-[3px] after:rotate-45 after:transition-all no-underline border-none outline-none">나의 활동</a>
+                                    </button>
+                                </h2>
+                                <div id="accordion-open-body-3" class="hidden" aria-labelledby="accordion-open-heading-3">
+                                    <ul class="border-t border-t-[#e4e6ea] py-5 px-0">
+                                        <li class="mt-[3px]"><a href="../mypage/myqna_catalog.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">1:1문의 내역</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/mygdqna_catalog.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">상품 Q&amp;A 내역</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/mygdreview_catalog.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">상품 리뷰</a></li>
+                                    </ul>
+                                </div>
+                                <h2 id="accordion-open-heading-4" class="accordion-open-heading bg-none border-t border-t-[#e4e6ea] border-b-0">
+                                    <button type="button" class="flex items-center justify-between w-full mt-0 border-b-0 rounded-sm relative !bg-transparent" data-accordion-target="#accordion-open-body-4" aria-expanded="false" aria-controls="accordion-open-body-4">
+                                        <a href="javascrip:void(0)" class="block h-8 leading-8 p-0 text-black font-medium text-xs after:content-[''] after:w-[6px] after:h-[6px] after:border-r after:border-r-[#212121] after:border-b after:border-b-[#212121] after:absolute after:top-[10px] after:right-[3px] after:rotate-45 after:transition-all no-underline border-none outline-none">나의 정보</a>
+                                    </button>
+                                </h2>
+                                <div id="accordion-open-body-4" class="hidden" aria-labelledby="accordion-open-heading-4">
+                                    <ul class="border-t border-t-[#e4e6ea] py-5 px-0">
+                                        <li class="mt-[3px]"><a href="../mypage/myinfo.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">회원정보 수정</a></li>
+                                        <li class="mt-[3px]"><a href="../mypage/withdrawal.html" class="block text-black text-[11px] pl-0 py-1 leading-[1.3] hover:pl-2 hover:text-[#767676] no-underline border-none outline-none transition-all ease-in-out">회원 탈퇴</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //마이메뉴 -->
+                    <!-- 회원정보 -->
+                    <a class="hidden absolute top-0 left-[-10px] z-20 pr-[20px] pl-[10px] h-[40px] leading-[41px] text-white bg-[#9C9C9C] no-underline border-none outline-none" href="javascript:void(0)">MENU</a>
+                    <div class="bg-[#212121] overflow-hidden">
+                        <div class="w-full lg:w-[1440px] my-0 mx-auto">
+                            <div class="border-b border-b-[#605F5F] relative mx-6 lg:m-0 pt-[74px] lg:pt-[150px] pb-[9px] lg:pb-[10px]">
+                                <p class="lg:pr-0">
+                                    <span class="text-white font-medium text-xl lg:text-[32px]">이서은</span>
+                                    <span class="text-white text-[11px] lg:text-lg"> 고객님</span>
+                                    <a href="../login_process/logout.html" class="float-right w-[53px] lg:w-[64px] h-6 lg:h-[28px] leading-6 lg:leading-7 ml-2 p-0 text-black text-center text-[11px] bg-white border border-white no-underline">로그아웃</a>
+                                    <a href="../mypage/myinfo.html" class="float-right w-[53px] lg:w-[64px] h-6 lg:h-[28px] leading-6 lg:leading-7 ml-2 p-0 text-white text-center text-[10px] lg:text-[11px] bg-[#202122] relative top-0 right-0 border border-[#fff] no-underline">정보수정</a>
+                                </p>
+                                <button type="button" class="myMenu w-[116px] lg:w-[140px] h-10 lg:h-[53px] leading-10 lg:leading-[53px] p-0 pl-[10px] lg:pl-[15px] lg:pr-[58px] text-white text-[11px] lg:text-sm text-left border border-[#3f3b3b] lg:border-[#807e7e] absolute top-[14px] lg:top-[45px] right-0 z-10">MY ATNY<em class="w-[16px] h-[1px] bg-white absolute top-[19px] lg:top-[25px] right-[12px] z-10 transition-all before:content-[''] before:w-4 before:h-[1px] before:bg-white before:absolute before:top-[-5px] before:left-0 before:transition-all after:content-[''] after:w-4 after:h-[1px] after:bg-white after:absolute after:top-[5px] after:left-0 after:transition-all"></em></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-0 px-6 lg:p-0 bg-[#212121]">
+                        <div class="w-full lg:w-[1440px] my-0 mx-auto pb-[9px] lg:pt-[18px] lg:pb-[30px]">
+                            <div class="mt-0 bg-transparent p-0 overflow-hidden">
+                                <div class="float-none lg:float-left w-full lg:w-[40%] h-[134px] lg:h-[177px] pt-[46px] lg:pt-[62px] box-border relative">
+                                    <div class="text-[#807e7e] font-medium text-[11px] lg:text-[14px] absolute top-[10px] lg:top-[8px] left-0">회원등급</div>
+                                    <div class="float-left w-[65px] lg:w-auto"><img class="max-w-full align-middle border-none outline-none" src="//img.atny.com/data/skin/responsive_ver3/images/img-member.svg" title="" alt="MEMBER"></div>
+                                    <p class="float-none lg:float-left w-[calc(100%-65px)] lg:w-auto overflow-hidden sm:leading-[18px] lg:leading-[30px] m-0 pt-[14px] lg:pt-[24px] pl-[10px] lg:pl-[20px] text-[30px] text-black text-left box-border">
+                                        <span class="block float-left w-full mb-[5px] text-white text-xl lg:text-2xl">GOLD</span>
+                                        <span class="block float-left leading-[1] text-white text-[10px] lg:text-xs">등급유지기간 : 2022.01.01 ~ 2022.12.31</span>
+                                    </p>
+                                    <a href="../mypage/gradebenefit.html" class="w-[59px] lg:w-[100px] h-[25px] lg:h-[40px] leading-[25px] lg:leading-[40px] text-white text-center text-[9px] lg:text-xs font-medium border border-white rounded-[100px] absolute top-3 lg:top-[90px] right-0 lg:right-[34px] z-10 no-underline">등급혜택</a>
+                                </div>
+                                <ul class="float-none lg:float-left w-full lg:w-[60%] h-auto lg:h-[177px] mt-0 pt-[6px] lg:pt-0 border-t border-t-[#3f3b3b] lg:border-t-0">
+                                    <li class="block float-left !w-[25%] min-h-auto lg:h-full p-0 box-border relative lg:before:content-[''] lg:before:w-[1px] lg:before:h-full lg:before:absolute lg:before:top-0 lg:before:left-0 lg:before:bg-[#605f5f]"><a href="../mypage/coupon.html" class="block w-full lg:h-full p-0 pl-0 lg:pl-[10px] text-black text-[16px] no-underline border-none outline-none"><span class="block mb-[10px] lg:mb-[66px] p-0 lg:pt-[8px] lg:pl-[27px] text-[#807e7e] text-[11px] lg:text-sm relative top-0">보유쿠폰</span> <span class="ml-0 p-0 lg:pl-[27px] text-white text-[15px] lg:text-[32px] font-medium relative top-0">2<em class="text-white text-[15px] lg:text-[32px] font-medium not-italic relative">장</em></span></a></li>
+                                    <li class="block float-left !w-[25%] min-h-auto lg:h-full p-0 box-border relative before:content-[''] before:w-[1px] before:h-full before:absolute before:top-0 before:left-0 before:bg-[#3f3b3b] lg:before:bg-[#605f5f]"><a href="../mypage/emoney.html" class="block w-full h-[60px] lg:h-full pl-[10px] text-black text-[16px] text-left no-underline border-none outline-none"><span class="block mb-[10px] lg:mb-[66px] lg:pt-[8px] lg:pl-[27px] text-[#807e7e] text-[11px] lg:text-sm relative top-0">보유포인트</span><span class="ml-0 p-0 lg:pl-[27px] text-white text-[15px] lg:text-[32px] font-medium relative top-0">21,135<em class="text-white text-[15px] lg:text-[32px] font-medium not-italic relative">P</em><em class="block mt-[1px] pl-0 lg:pl-[27px] text-white text-[9px] lg:text-xs not-italic">적립율 1.0%</em></span></a></li>
+                                    <li class="block float-left !w-[25%] min-h-auto lg:h-full p-0 box-border relative before:content-[''] before:w-[1px] before:h-full before:absolute before:top-0 before:left-0 before:bg-[#3f3b3b] lg:before:bg-[#605f5f]"><a href="../order/cart.html" class="block w-full h-[60px] lg:h-full pl-[10px] text-black text-[16px] text-left no-underline border-none outline-none"><span class="block mb-[10px] lg:mb-[66px] lg:pt-[8px] lg:pl-[27px] text-[#807e7e] text-[11px] lg:text-sm relative top-0">장바구니</span> <span class="ml-0 p-0 lg:pl-[27px] text-white text-[15px] lg:text-[32px] font-medium relative top-0">0<em class="text-white text-[15px] lg:text-[32px] font-medium not-italic relative">건</em></span></a></li>
+                                    <li class="block float-left !w-[25%] min-h-auto lg:h-full p-0 box-border relative before:content-[''] before:w-[1px] before:h-full before:absolute before:top-0 before:left-0 before:bg-[#3f3b3b] lg:before:bg-[#605f5f]"><a href="../mypage/mygdreview_catalog.html" class="block w-full h-[60px] lg:h-full pl-[10px] text-black text-[16px] text-left no-underline border-none outline-none"><span class="block mb-[10px] lg:mb-[66px] lg:pt-[8px] lg:pl-[27px] text-[#807e7e] text-[11px] lg:text-sm relative top-0">내가 작성한 리뷰</span> <span class="ml-0 p-0 lg:pl-[27px] text-white text-[15px] lg:text-[32px] font-medium relative top-0">0<em class="text-white text-[15px] lg:text-[32px] font-medium not-italic relative">건</em></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //회원정보 -->
+                    <!-- article -->
+                    <div class="delivery-manage hidden sm:block max-w-[1440px] mt-10 mx-auto mb-0 py-[15px] px-[15px] lg:p-0 text-black text-left text-2xl font-medium relative">
+                        <p>배송지 관리</p>
+                        <button type="button" class="btn-delivery_regmodi w-[120px] h-7 absolute top-[33px] right-[15px] lg:right-0 text-white text-center text-base sm:text-[13px] bg-black rounded-none">배송지등록</button>
+                    </div>
+                    <div class="max-w-[1440px] my-0 mx-auto px-[15px] lg:px-0 box-border">
+                        <button type="button" class="btn-delivery_regmodi block sm:hidden w-full sm:w-[120px] h-[50px] sm:h-7 mt-[15px] sm:mt-0 -mb-6 sm:mb-0 text-white text-center text-sm sm:text-[13px] bg-black rounded-none">배송지등록</button>
+                        <!-- 탭메뉴 -->
+                        <ul class="mypage-tab clear-both overflow-hidden mt-10">
+                            <li class="block float-left w-1/2 text-black border border-[#e5e5e5] border-y border-y-black box-border"><button type="button" class="w-full h-10 sm:h-[65px] align-middle leading-3 py-[15px] px-0 text-sm text-white bg-black border-none rounded-none appearance-none cursor-pointer">배송지 목록</button></li>
+                            <li class="float-left w-1/2 text-black border border-[#e5e5e5] box-border"><button type="button" class="w-full h-10 sm:h-[65px] align-middle leading-3 py-[15px] px-0 text-sm border-none rounded-none appearance-none cursor-pointer">최근 배송지</button></li>
+                        </ul>
+                        <!-- //탭메뉴 -->
+                        <!-- 탭메뉴 > 배송지 목록 -->
+                        <div class="delivery-list block overflow-hidden">
+                            <p class="pt-[10px] sm:pt-[30px] px-0 pb-[10px] sm:pb-5 text-black">자주 사용하신 배송지를 최대 30개까지 함께 관리 하실 수 있습니다.</p>
+                            <div class="hidden pt-[10px]">
+                                <button type="button" class="w-auto sm:w-[120px] h-7 absolute top-[33px] right-0 text-white text-center text-[13px] bg-black rounded-none">배송지등록</button>
+                            </div>
+                            <div class="w-full sm:border-t-2 sm:border-t-black">
+                                <ul class="hidden sm:block">
+                                    <li class="float-left w-2/12 py-[15px] pl-[9px] text-black text-center bg-[#f6f6f6] border-b border-b-[#e5e5e5] font-['Pretendard']">배송지</li>
+                                    <li class="float-left w-6/12 py-[15px] pl-[9px] text-black text-center bg-[#f6f6f6] border-b border-b-[#e5e5e5] font-['Pretendard']">주소</li>
+                                    <li class="float-left w-2/12 py-[15px] pl-[9px] text-black text-center bg-[#f6f6f6] border-b border-b-[#e5e5e5] font-['Pretendard']">연락처</li>
+                                    <li class="float-left w-2/12 py-[15px] pl-[9px] text-black text-center bg-[#f6f6f6] border-b border-b-[#e5e5e5] font-['Pretendard']">수정/삭제</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li class="block w-full overflow-hidden py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">문자테스트(최상혁)</span>
+                                            <span class="inline-block w-[63px] mt-[2px] sm:my-0 mx-auto p-[2px] text-white text-xs bg-[#c7c7c7]">기본배송지</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="btn-delivery_regmodi sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white bg-[#999] border border-[#999] rounded-none">수정</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">문자테스트(최상혁)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="btn-delivery_regmodi sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white bg-[#999] border border-[#999] rounded-none">수정</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">문자테스트(최상혁)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="btn-delivery_regmodi sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white bg-[#999] border border-[#999] rounded-none">수정</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">문자테스트(최상혁)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="btn-delivery_regmodi sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white bg-[#999] border border-[#999] rounded-none">수정</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">문자테스트(최상혁)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="btn-delivery_regmodi sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white bg-[#999] border border-[#999] rounded-none">수정</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">알림톡테스트(최상혁)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="btn-delivery_regmodi sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white bg-[#999] border border-[#999] rounded-none">수정</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">송장테스트(최상혁)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="btn-delivery_regmodi sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white bg-[#999] border border-[#999] rounded-none">수정</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">송장테스트(최상혁)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="btn-delivery_regmodi sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white bg-[#999] border border-[#999] rounded-none">수정</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">감정서(주문번호임의생성)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="btn-delivery_regmodi sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white bg-[#999] border border-[#999] rounded-none">수정</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">감정서(주문번호임의생성)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="btn-delivery_regmodi sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white bg-[#999] border border-[#999] rounded-none">수정</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- paging -->
+                            <div class="mt-[30px] mb-[50px] mx-0 font-['TTNorms'] text-center">
+                                <a href="javascript:void(0)" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border text-white font-medium bg-black border-black rounded-[100%] cursor-default relative">1</a>
+                                <a href="javascript:void(0)" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">2</a>
+                                <a href="javascript:void(0)" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">3</a>
+                                <a href="javascript:void(0)" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">4</a>
+                                <a href="javascript:void(0)" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">5</a>
+                                <a href="javascript:void(0)" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]"><span class="inline-block w-[15px] h-[15px] mt-1 bg-[url(../assets/icon/btn_pageNext.gif)] bg-center bg-no-repeat"></span></a>
+                            </div>
+                            <!-- //paging -->
+                            <!-- 탭메뉴 > 배송지 목록 (목록 없을 경우) -->
+                            <div class="hidden max-w-[1440px] h-[200px] lg:mt-10 mb-0 p-0 pt-10 text-[#333] text-center text-[15px] font-normal bg-[url(../assets/icon/ico-nodata.png)] bg-center bg-[length:68px] bg-no-repeat border border-[#ddd] rounded">등록하신 자주 쓰는 배송지가 없습니다.</div>
+                            <!-- //탭메뉴 > 배송지 목록 (목록 없을 경우) -->
+                        </div>
+                        <!-- //탭메뉴 > 배송지 목록 -->
+
+                        <!-- 탭메뉴 > 최근 배송지 -->
+                        <div class="delivery-recent hidden">
+                            <p class="pt-[10px] sm:pt-[30px] px-0 pb-[10px] sm:pb-5 text-black">자주 사용하신 배송지를 최대 30개까지 함께 관리 하실 수 있습니다.</p>
+                            <div class="hidden pt-[10px]">
+                                <button type="button" class="w-[120px] h-7 absolute top-[33px] right-0 text-white text-center text-[13px] bg-black rounded-none">배송지등록</button>
+                            </div>
+                            <div class="w-full sm:border-t-2 sm:border-t-black">
+                                <ul class="hidden sm:block">
+                                    <li class="float-left w-2/12 py-[15px] pl-[9px] text-black text-center bg-[#f6f6f6] border-b border-b-[#e5e5e5] font-['Pretendard']">배송지</li>
+                                    <li class="float-left w-6/12 py-[15px] pl-[9px] text-black text-center bg-[#f6f6f6] border-b border-b-[#e5e5e5] font-['Pretendard']">주소</li>
+                                    <li class="float-left w-2/12 py-[15px] pl-[9px] text-black text-center bg-[#f6f6f6] border-b border-b-[#e5e5e5] font-['Pretendard']">연락처</li>
+                                    <li class="float-left w-2/12 py-[15px] pl-[9px] text-black text-center bg-[#f6f6f6] border-b border-b-[#e5e5e5] font-['Pretendard']">추가/삭제</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li class="block w-full overflow-hidden py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">문자테스트(최상혁)</span>
+                                            <span class="inline-block w-[63px] mt-[2px] sm:my-0 mx-auto p-[2px] text-white text-xs bg-[#c7c7c7]">기본배송지</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white sm:text-black bg-[#999] sm:bg-white border border-[#999] sm:border-black rounded-none">배송지 목록 추가</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">문자테스트(최상혁)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white sm:text-black bg-[#999] sm:bg-white border border-[#999] sm:border-black rounded-none">배송지 목록 추가</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">문자테스트(최상혁)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white sm:text-black bg-[#999] sm:bg-white border border-[#999] sm:border-black rounded-none">배송지 목록 추가</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">문자테스트(최상혁)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white sm:text-black bg-[#999] sm:bg-white border border-[#999] sm:border-black rounded-none">배송지 목록 추가</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">문자테스트(최상혁)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white sm:text-black bg-[#999] sm:bg-white border border-[#999] sm:border-black rounded-none">배송지 목록 추가</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">알림톡테스트(최상혁)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white sm:text-black bg-[#999] sm:bg-white border border-[#999] sm:border-black rounded-none">배송지 목록 추가</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">송장테스트(최상혁)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white sm:text-black bg-[#999] sm:bg-white border border-[#999] sm:border-black rounded-none">배송지 목록 추가</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">송장테스트(최상혁)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white sm:text-black bg-[#999] sm:bg-white border border-[#999] sm:border-black rounded-none">배송지 목록 추가</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">감정서(주문번호임의생성)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white sm:text-black bg-[#999] sm:bg-white border border-[#999] sm:border-black rounded-none">배송지 목록 추가</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                    <li class="block w-full overflow-hidden mt-[15px] sm:mt-0 py-0 text-black border border-[#e5e5e5] sm:border-x-0 sm:border-t-0 sm:border-b sm:border-b-[#e5e5e5]">
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[40px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">감정서(주문번호임의생성)</span>
+                                        </div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-6/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left">(02055)<br /> 서울특별시 중랑구 신내역로1길 85 (신내우디안1단지) 115동 1303호</div>
+                                        <div class="block sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[30px] pb-2 sm:pb-[20px] px-[10px] text-left sm:text-center">
+                                            <span class="block">010-2013-9089</span>
+                                            <span class="block">--</span>
+                                        </div>
+                                        <div class="flex sm:inline-block sm:float-left w-full sm:w-2/12 pt-2 sm:pt-[20px] pb-2 sm:pb-[20px] px-[10px] sm:text-center">
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] my-0 mr-[10px] sm:mx-auto py-2 sm:py-[3px] text-white sm:text-black bg-[#999] sm:bg-white border border-[#999] sm:border-black rounded-none">배송지 목록 추가</button>
+                                            <button type="button" class="sm:block w-1/2 sm:w-[120px] sm:mt-[5px] mb-0 mx-auto py-2 sm:py-[3px] text-black border border-black rounded-none">삭제</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- paging -->
+                            <div class="mt-[30px] mb-[50px] mx-0 font-['TTNorms'] text-center">
+                                <a href="javascript:void(0)" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border text-white font-medium bg-black border-black rounded-[100%] cursor-default relative">1</a>
+                                <a href="javascript:void(0)" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">2</a>
+                                <a href="javascript:void(0)" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">3</a>
+                                <a href="javascript:void(0)" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">4</a>
+                                <a href="javascript:void(0)" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]">5</a>
+                                <a href="javascript:void(0)" class="inline-block min-w-[25px] h-[25px] my-0 mx-[5px] py-0 px-[2px] leading-[25px] align-middle text-center text-xs border-none decoration-0 box-border hover:bg-[#f1f1f1]"><span class="inline-block w-[15px] h-[15px] mt-1 bg-[url(../assets/icon/btn_pageNext.gif)] bg-center bg-no-repeat"></span></a>
+                            </div>
+                            <!-- //paging -->
+                            <!-- 탭메뉴 > 최근 배송지 (목록 없을 경우) -->
+                            <div class="hidden max-w-[1440px] h-[200px] lg:mt-10 mb-0 p-0 pt-10 text-[#333] text-center text-[15px] font-normal bg-[url(../assets/icon/ico-nodata.png)] bg-center bg-[length:68px] bg-no-repeat border border-[#ddd] rounded">최근 배송지가 없습니다.</div>
+                            <!-- //탭메뉴 > 최근 배송지 (목록 없을 경우) -->
+                        </div>
+                        <!-- //탭메뉴 > 최근 배송지 -->
+                    </div>
+
+                    <!-- layer - 배송지등록/수정 -->
+                    <div class="layer-bg hidden bg-[rgba(0,0,0,0.5)] fixed top-0 right-0 left-0 bottom-0 z-[10005]"></div>
+                    <div class="layer-delivery_regmodi hidden w-auto md:w-[700px] md:-translate-x-1/2 md:-translate-y-1/2 m-0 p-[15px] text-left bg-white box-border fixed top-0 sm:top-[10px] md:top-1/2 right-0 sm:right-[10px] bottom-0 sm:bottom-[10px] md:bottom-auto left-0 sm:left-[10px] md:left-1/2 z-[10020]">
+                        <h4 class="block pt-[15px] pb-[20px] px-0 text-left text-black text-base font-medium bg-white border-t border-t-white border-b-2 border-b-black relative">배송지 등록/수정</h4>
+                        <div class="clear-both">
+                            <div class="pt-[10px] md:pt-[10px] px-[10px] md:px-0">
+                                <div class="max-h-[700px] overflow-y-auto">
+                                    <h5 class="pt-[10px] pb-2 px-0 leaading-[1.3] text-[#333] text-sm font-medium">자주 쓰는 배송지는 최대 30개까지 등록할 수 있습니다.</h5>
+                                    <div class="table table-fixed w-full text-[13px] border-y border-y-[#7F858F]">
+                                        <ul class="table-row">
+                                            <li class="table-cell w-[76px] md:w-[90px] overflow-y-auto p-[5px] md:py-[5px] md:px-[10px] align-middle break-all bg-[#f8f8f8] border-t-0 border-r border-r-[#ddd] border-l-0 box-border">기본 배송지 등록</li>
+                                            <li class="table-cell align-middle break-all p-[5px] md:py-[5px] md:px-[10px] border-t-0 border-r-0 box-border">
+                                                <select name="" class="max-w-full h-8 mb-[5px] pl-[5px] align-top leading-[1.2] text-[#666] text-[13px] font-normal bg-white border border-[#ccc] rounded-sm">
+                                                    <option value="기본 그룹">기본 그룹</option>
+                                                    <option value="">새 그룹 만들기</option>
+                                                </select>
+                                                <input type="text" name="" value="" class="w-[180px] h-8 mb-[5px] py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none box-border" size="20" maxlength="20" />
+                                                <div>
+                                                    <input type="checkbox" id="default_delivery" class="peer hidden" name="" value="" />
+                                                    <label for="default_delivery" class="inline-block pl-5 bg-[url(../assets/icon/ico-search-filter-check.png)] bg-[length:15px_15px] peer-checked:bg-[url(../assets/icon/ico-search-filter-check-on.png)] bg-no-repeat bg-[left_center] cursor-pointer">기본 배송지로 지정합니다.</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="table-row">
+                                            <li class="table-cell w-[76px] md:w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all bg-[#f8f8f8] border-t border-t-[#ddd] border-r border-r-[#ddd] border-l-0 box-border">설명</li>
+                                            <li class="table-cell w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all border-t border-t-[#ddd] border-r-0 border-l-0 box-border">
+                                                <input type="text" class="w-[180px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none box-border" name="" value="" size="65" />
+                                            </li>
+                                        </ul>
+                                        <ul class="table-row">
+                                            <li class="table-cell w-[76px] md:w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all bg-[#f8f8f8] border-t border-t-[#ddd] border-r border-r-[#ddd] border-l-0 box-border">받는분</li>
+                                            <li class="table-cell w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all border-t border-t-[#ddd] border-r-0 border-l-0 box-border">
+                                                <input type="text" class="w-[180px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none box-border" name="" value="" size="20" />
+                                            </li>
+                                        </ul>
+                                        <!-- international hidden row -->
+                                        <ul class="table-row" style="display:none;">
+                                            <li class="table-cell w-[76px] md:w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all bg-[#f8f8f8] border-t border-t-[#ddd] border-r border-r-[#ddd] border-l-0 box-border">국가</li>
+                                            <li class="table-cell w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all border-t border-t-[#ddd] border-r-0 border-l-0 box-border">
+                                                <div>
+                                                    <select name="nation_select" class="max-w-full h-8 pl-[5px] align-top leading-[1.2] text-[#666] text-[13px] font-normal bg-white border border-[#ccc] rounded-sm">
+                                                        <option value="KOREA">대한민국(KOREA)</option>
+                                                        <option value="가나 (GHANA)">가나 (GHANA)</option>
+                                                        <option value="가봉 (GABON)">가봉 (GABON)</option>
+                                                        <option value="가이아나 (GUYANA)">가이아나 (GUYANA)</option>
+                                                        <option value="감비아 (GAMBIA)">감비아 (GAMBIA)</option>
+                                                        <option value="과데루프섬 (GUADELOUPE)">과데루프섬 (GUADELOUPE)</option>
+                                                        <option value="과테말라 (GUATEMALA)">과테말라 (GUATEMALA)</option>
+                                                        <option value="괌 (GUAM)">괌 (GUAM)</option>
+                                                        <option value="그레나다 (GRENADA)">그레나다 (GRENADA)</option>
+                                                        <option value="그루지아 (GEORGIA)">그루지아 (GEORGIA)</option>
+                                                        <option value="그리스 (GREECE)">그리스 (GREECE)</option>
+                                                        <option value="그린란드 (GREENLAND)">그린란드 (GREENLAND)</option>
+                                                        <option value="기니 (GUINEA)">기니 (GUINEA)</option>
+                                                        <option value="기니비소 (GUINEA-BISSAU)">기니비소 (GUINEA-BISSAU)</option>
+                                                        <option value="기아나 (GUIANA)">기아나 (GUIANA)</option>
+                                                        <option value="나미비아 (NAMIBIA)">나미비아 (NAMIBIA)</option>
+                                                        <option value="나우루 (NAURU)">나우루 (NAURU)</option>
+                                                        <option value="나이지리아 (NIGERIA)">나이지리아 (NIGERIA)</option>
+                                                        <option value="남아프리카공화국 (REPUBIC OF SOUTH AFRICAN)">남아프리카공화국 (REPUBIC OF SOUTH AFRICAN)</option>
+                                                        <option value="네덜란드 (NETHERLANDS)">네덜란드 (NETHERLANDS)</option>
+                                                        <option value="네덜란드령앤틸리스 (ANTILLES)">네덜란드령앤틸리스 (ANTILLES)</option>
+                                                        <option value="네팔 (NEPAL)">네팔 (NEPAL)</option>
+                                                        <option value="노르웨이 (NORWAY)">노르웨이 (NORWAY)</option>
+                                                        <option value="노퍽섬 (NORFOLK)">노퍽섬 (NORFOLK)</option>
+                                                        <option value="뉴질랜드 (NEW ZEALAND)">뉴질랜드 (NEW ZEALAND)</option>
+                                                        <option value="뉴칼레도니아섬 (NEW CALEDONIA)">뉴칼레도니아섬 (NEW CALEDONIA)</option>
+                                                        <option value="니베섬 (NIEU)">니베섬 (NIEU)</option>
+                                                        <option value="니제르 (NIGER)">니제르 (NIGER)</option>
+                                                        <option value="니카라과 (NICARAGUA)">니카라과 (NICARAGUA)</option>
+                                                        <option value="덴마크 (DENMARK)">덴마크 (DENMARK)</option>
+                                                        <option value="도미니카공화국 (DOMINICAN REPUBLIC)">도미니카공화국 (DOMINICAN REPUBLIC)</option>
+                                                        <option value="도미니카연방 (DOMINICA)">도미니카연방 (DOMINICA)</option>
+                                                        <option value="독일 (GERMANY)">독일 (GERMANY)</option>
+                                                        <option value="동티모르 (EAST TIMOR)">동티모르 (EAST TIMOR)</option>
+                                                        <option value="라오스 (LAOS)">라오스 (LAOS)</option>
+                                                        <option value="라이베리아 (LIBERIA)">라이베리아 (LIBERIA)</option>
+                                                        <option value="라트비아 (LATVIA)">라트비아 (LATVIA)</option>
+                                                        <option value="러시아 (RUSSIAN)">러시아 (RUSSIAN)</option>
+                                                        <option value="레바논 (LEBANON)">레바논 (LEBANON)</option>
+                                                        <option value="레소토 (LESOTHO)">레소토 (LESOTHO)</option>
+                                                        <option value="레위니옹섬 (REUNION)">레위니옹섬 (REUNION)</option>
+                                                        <option value="루마니아 (ROMANIA)">루마니아 (ROMANIA)</option>
+                                                        <option value="룩셈부르크 (LUXEMBOURG)">룩셈부르크 (LUXEMBOURG)</option>
+                                                        <option value="르완다 (RWANDA)">르완다 (RWANDA)</option>
+                                                        <option value="리비아 (LIBYAN JAMAHIRIYA)">리비아 (LIBYAN JAMAHIRIYA)</option>
+                                                        <option value="리첸쉬테인 (LIECHTENSTEIN)">리첸쉬테인 (LIECHTENSTEIN)</option>
+                                                        <option value="리투아니아 (LITHUANIA)">리투아니아 (LITHUANIA)</option>
+                                                        <option value="마다가스카르 (MADAGASCAR)">마다가스카르 (MADAGASCAR)</option>
+                                                        <option value="마르티니크섬 (MARTINIQUE)">마르티니크섬 (MARTINIQUE)</option>
+                                                        <option value="마아샬제도 (MARSHALL)">마아샬제도 (MARSHALL)</option>
+                                                        <option value="마요트 (MAYOTTE)">마요트 (MAYOTTE)</option>
+                                                        <option value="마카오 (MACAO)">마카오 (MACAO)</option>
+                                                        <option value="마케도니아 (MACEDONIA)">마케도니아 (MACEDONIA)</option>
+                                                        <option value="말라위 (MALAWI)">말라위 (MALAWI)</option>
+                                                        <option value="말레이지아 (MALAYSIA)">말레이지아 (MALAYSIA)</option>
+                                                        <option value="말리 (MALI)">말리 (MALI)</option>
+                                                        <option value="멕시코 (MEXICO)">멕시코 (MEXICO)</option>
+                                                        <option value="모나코 (MONACO)">모나코 (MONACO)</option>
+                                                        <option value="모로코 (MOROCCO)">모로코 (MOROCCO)</option>
+                                                        <option value="모리셔스 (MAURITIUS)">모리셔스 (MAURITIUS)</option>
+                                                        <option value="모리타니 (MAURITANIA)">모리타니 (MAURITANIA)</option>
+                                                        <option value="모잠비크 (MOZAMBIQUE)">모잠비크 (MOZAMBIQUE)</option>
+                                                        <option value="몬테네그로 (Republic of Montenegro)">몬테네그로 (Republic of Montenegro)</option>
+                                                        <option value="몰도바 (MOLDOVA)">몰도바 (MOLDOVA)</option>
+                                                        <option value="몰디브 (MALDIVES)">몰디브 (MALDIVES)</option>
+                                                        <option value="몰타 (MALTA)">몰타 (MALTA)</option>
+                                                        <option value="몽골 (MONGOLIA)">몽골 (MONGOLIA)</option>
+                                                        <option value="몽세라 (MONTSERRAT)">몽세라 (MONTSERRAT)</option>
+                                                        <option value="미국 (U.S.A)">미국 (U.S.A)</option>
+                                                        <option value="미얀마 (MYANMAR)">미얀마 (MYANMAR)</option>
+                                                        <option value="미크로네시아 (MICRONESIA)">미크로네시아 (MICRONESIA)</option>
+                                                        <option value="바누아투 (VANUATU)">바누아투 (VANUATU)</option>
+                                                        <option value="바레인 (BAHRAIN)">바레인 (BAHRAIN)</option>
+                                                        <option value="바베이도스 (BARBADOS)">바베이도스 (BARBADOS)</option>
+                                                        <option value="바티칸 (VATICAN)">바티칸 (VATICAN)</option>
+                                                        <option value="바하마 (BAHAMAS)">바하마 (BAHAMAS)</option>
+                                                        <option value="방글라데시 (BANGLADESH)">방글라데시 (BANGLADESH)</option>
+                                                        <option value="버뮤다섬 (BERMUDA)">버뮤다섬 (BERMUDA)</option>
+                                                        <option value="버진제도(미국) (VIRGIN U.S.A)">버진제도(미국) (VIRGIN U.S.A)</option>
+                                                        <option value="버진제도(영국) (VIRGIN UNITED KINGDOM)">버진제도(영국) (VIRGIN UNITED KINGDOM)</option>
+                                                        <option value="베네수엘라 (VENEZUELA)">베네수엘라 (VENEZUELA)</option>
+                                                        <option value="베넹 (BENIN)">베넹 (BENIN)</option>
+                                                        <option value="베트남 (VIET NAM)">베트남 (VIET NAM)</option>
+                                                        <option value="벨기에 (BELGIUM)">벨기에 (BELGIUM)</option>
+                                                        <option value="벨라루스 (BELARUS)">벨라루스 (BELARUS)</option>
+                                                        <option value="벨리세 (BELIZE)">벨리세 (BELIZE)</option>
+                                                        <option value="보스니아헤르체코비나 (Bosnia and Herzegovina)">보스니아헤르체코비나 (Bosnia and Herzegovina)</option>
+                                                        <option value="보츠와나 (BOTSWANA)">보츠와나 (BOTSWANA)</option>
+                                                        <option value="볼리비아 (BOLIVIA)">볼리비아 (BOLIVIA)</option>
+                                                        <option value="부룬디 (BURUNDI)">부룬디 (BURUNDI)</option>
+                                                        <option value="부르키나파소 (BURKINA FASO)">부르키나파소 (BURKINA FASO)</option>
+                                                        <option value="부탄 (BHUTAN)">부탄 (BHUTAN)</option>
+                                                        <option value="불가리아 (BULGARIA)">불가리아 (BULGARIA)</option>
+                                                        <option value="브라질 (BRAZIL)">브라질 (BRAZIL)</option>
+                                                        <option value="브루네이 (BRUNEI DARUSSALAM)">브루네이 (BRUNEI DARUSSALAM)</option>
+                                                        <option value="사모아, 구 서사모아 (WESTERN SAMOA)">사모아, 구 서사모아 (WESTERN SAMOA)</option>
+                                                        <option value="사모아제도 (SAMOA)">사모아제도 (SAMOA)</option>
+                                                        <option value="사우디아라비아 (SAUDI ARABIA)">사우디아라비아 (SAUDI ARABIA)</option>
+                                                        <option value="사이판 (MARIANA ISLANDS)">사이판 (MARIANA ISLANDS)</option>
+                                                        <option value="사이프러스 (CYPRUS)">사이프러스 (CYPRUS)</option>
+                                                        <option value="산마리노 (SAN MARINO)">산마리노 (SAN MARINO)</option>
+                                                        <option value="상토메프린시페 (SAO TOME AND PRINCIPE)">상토메프린시페 (SAO TOME AND PRINCIPE)</option>
+                                                        <option value="세네갈 (SENEGAL)">세네갈 (SENEGAL)</option>
+                                                        <option value="세르비아 (SERBIA)">세르비아 (SERBIA)</option>
+                                                        <option value="세이쉘 (SEYCHELLES)">세이쉘 (SEYCHELLES)</option>
+                                                        <option value="세인트루시아 (SAINT LUCIA)">세인트루시아 (SAINT LUCIA)</option>
+                                                        <option value="세인트빈센트그레나딘 (SAINT VINCENT GRENADIN)">세인트빈센트그레나딘 (SAINT VINCENT GRENADIN)</option>
+                                                        <option value="세인트키츠네비스 (SAINT KITTS AND NEVIS)">세인트키츠네비스 (SAINT KITTS AND NEVIS)</option>
+                                                        <option value="소말리아 (SOMALIA)">소말리아 (SOMALIA)</option>
+                                                        <option value="솔로몬아일란드 (SOLOMON ISLANDS)">솔로몬아일란드 (SOLOMON ISLANDS)</option>
+                                                        <option value="수단 (SUDAN)">수단 (SUDAN)</option>
+                                                        <option value="수리남 (SURINAME)">수리남 (SURINAME)</option>
+                                                        <option value="스리랑카 (SRI LANKA)">스리랑카 (SRI LANKA)</option>
+                                                        <option value="스와질란드 (SWAZILAND)">스와질란드 (SWAZILAND)</option>
+                                                        <option value="스웨덴 (SWEDEN)">스웨덴 (SWEDEN)</option>
+                                                        <option value="스위스 (SWITZERLAND)">스위스 (SWITZERLAND)</option>
+                                                        <option value="스페인(에스파니아) (SPAIN)">스페인(에스파니아) (SPAIN)</option>
+                                                        <option value="슬로바키아 (SLOVAKIA)">슬로바키아 (SLOVAKIA)</option>
+                                                        <option value="슬로베니아 (SLOVENIA)">슬로베니아 (SLOVENIA)</option>
+                                                        <option value="시에라리온 (SIERRA LEONE)">시에라리온 (SIERRA LEONE)</option>
+                                                        <option value="싱가포르 (SINGAPORE)">싱가포르 (SINGAPORE)</option>
+                                                        <option value="쌍뻬에르미켈론섬 (ST PIER AND MIQUELON)">쌍뻬에르미켈론섬 (ST PIER AND MIQUELON)</option>
+                                                        <option value="아랍에미리트연합국 (ARAB EMIRATES)">아랍에미리트연합국 (ARAB EMIRATES)</option>
+                                                        <option value="아루바섬 (ARUBA)">아루바섬 (ARUBA)</option>
+                                                        <option value="아르메니아 (ARMENIA)">아르메니아 (ARMENIA)</option>
+                                                        <option value="아르헨티나 (ARGENTINA)">아르헨티나 (ARGENTINA)</option>
+                                                        <option value="아센션섬 (ASCENSION IS)">아센션섬 (ASCENSION IS)</option>
+                                                        <option value="아이슬란드 (ICELAND)">아이슬란드 (ICELAND)</option>
+                                                        <option value="아이티 (HAITI)">아이티 (HAITI)</option>
+                                                        <option value="아일란드 (IRELAND)">아일란드 (IRELAND)</option>
+                                                        <option value="아제르바이잔 (AZERBAIJAN)">아제르바이잔 (AZERBAIJAN)</option>
+                                                        <option value="아프가니스탄 (AFGHANISTAN)">아프가니스탄 (AFGHANISTAN)</option>
+                                                        <option value="안귈라섬 (ANGUILIA)">안귈라섬 (ANGUILIA)</option>
+                                                        <option value="안도라 (ANDORRA)">안도라 (ANDORRA)</option>
+                                                        <option value="알바니아 (ALBANIA)">알바니아 (ALBANIA)</option>
+                                                        <option value="알제리 (ALGERIA)">알제리 (ALGERIA)</option>
+                                                        <option value="앙골라 (ANGOLA)">앙골라 (ANGOLA)</option>
+                                                        <option value="앤티과바부다 (ANTIGUA AND BARBUDA)">앤티과바부다 (ANTIGUA AND BARBUDA)</option>
+                                                        <option value="에리트리아 (ERITREA)">에리트리아 (ERITREA)</option>
+                                                        <option value="에스토니아 (ESTONIA)">에스토니아 (ESTONIA)</option>
+                                                        <option value="에콰도르 (ECUADOR)">에콰도르 (ECUADOR)</option>
+                                                        <option value="에티오피아 (ETHIOPIA)">에티오피아 (ETHIOPIA)</option>
+                                                        <option value="엘살바도르 (EL SALVADOR)">엘살바도르 (EL SALVADOR)</option>
+                                                        <option value="영국 (UNITED KINGDOM)">영국 (UNITED KINGDOM)</option>
+                                                        <option value="예멘 (YEMEN)">예멘 (YEMEN)</option>
+                                                        <option value="오만 (OMAN)">오만 (OMAN)</option>
+                                                        <option value="오스트레일리아 (AUSTRALIA)">오스트레일리아 (AUSTRALIA)</option>
+                                                        <option value="오스트리아 (AUSTRIA)">오스트리아 (AUSTRIA)</option>
+                                                        <option value="온두라스 (HONDURAS)">온두라스 (HONDURAS)</option>
+                                                        <option value="왈리스푸투나제도 (WALLIS AND FUTUNA)">왈리스푸투나제도 (WALLIS AND FUTUNA)</option>
+                                                        <option value="요르단 (JORDAN)">요르단 (JORDAN)</option>
+                                                        <option value="우간다 (UGANDA)">우간다 (UGANDA)</option>
+                                                        <option value="우루과이 (URUGUAY)">우루과이 (URUGUAY)</option>
+                                                        <option value="우즈베크 (UZBEKISTAN)">우즈베크 (UZBEKISTAN)</option>
+                                                        <option value="우크라이나 (UKRAINE)">우크라이나 (UKRAINE)</option>
+                                                        <option value="이라크 (IRAQ)">이라크 (IRAQ)</option>
+                                                        <option value="이란 (IRAN)">이란 (IRAN)</option>
+                                                        <option value="이스라엘 (ISRAEL)">이스라엘 (ISRAEL)</option>
+                                                        <option value="이집트 (EGYPT)">이집트 (EGYPT)</option>
+                                                        <option value="이탈리아 (ITALY)">이탈리아 (ITALY)</option>
+                                                        <option value="인도 (INDIA)">인도 (INDIA)</option>
+                                                        <option value="인도네시아 (INDONESIA)">인도네시아 (INDONESIA)</option>
+                                                        <option value="일본 (JAPAN)">일본 (JAPAN)</option>
+                                                        <option value="자메이카 (JAMAICA)">자메이카 (JAMAICA)</option>
+                                                        <option value="잠바브웨 (ZIMBABWE)">잠바브웨 (ZIMBABWE)</option>
+                                                        <option value="잠비아 (ZAMBIA)">잠비아 (ZAMBIA)</option>
+                                                        <option value="적도기니 (EQUATORIAL GUINEA)">적도기니 (EQUATORIAL GUINEA)</option>
+                                                        <option value="중국 (CHINA)">중국 (CHINA)</option>
+                                                        <option value="중앙아프리카 (CENTRAL AFRICAN REP)">중앙아프리카 (CENTRAL AFRICAN REP)</option>
+                                                        <option value="지부티 (DJIBOUTI)">지부티 (DJIBOUTI)</option>
+                                                        <option value="지브롤터 (GIBRALTAR)">지브롤터 (GIBRALTAR)</option>
+                                                        <option value="차드 (CHAD)">차드 (CHAD)</option>
+                                                        <option value="체코 (CZECH)">체코 (CZECH)</option>
+                                                        <option value="칠레 (CHILE)">칠레 (CHILE)</option>
+                                                        <option value="카나리군도 (CANARY ISLANDS)">카나리군도 (CANARY ISLANDS)</option>
+                                                        <option value="카메룬 (CAMEROON)">카메룬 (CAMEROON)</option>
+                                                        <option value="카보베르데 (CAPE VERDE)">카보베르데 (CAPE VERDE)</option>
+                                                        <option value="카자흐스탄 (KAZAKHSTAN)">카자흐스탄 (KAZAKHSTAN)</option>
+                                                        <option value="카타르 (QATAR)">카타르 (QATAR)</option>
+                                                        <option value="캄보디아 (CAMBODIA)">캄보디아 (CAMBODIA)</option>
+                                                        <option value="캐나다 (CANADA)">캐나다 (CANADA)</option>
+                                                        <option value="케냐 (KENYA)">케냐 (KENYA)</option>
+                                                        <option value="케이만제도 (CAYMAN)">케이만제도 (CAYMAN)</option>
+                                                        <option value="코모르 (COMOROS)">코모르 (COMOROS)</option>
+                                                        <option value="코소보 (KOSOVO)">코소보 (KOSOVO)</option>
+                                                        <option value="코스타리카 (COSTA RICA)">코스타리카 (COSTA RICA)</option>
+                                                        <option value="코코스제도 (COCOS)">코코스제도 (COCOS)</option>
+                                                        <option value="코트디봐르 (COTE D`LVOIRE)">코트디봐르 (COTE D`LVOIRE)</option>
+                                                        <option value="콜롬비아 (COLOMBIA)">콜롬비아 (COLOMBIA)</option>
+                                                        <option value="콩고 (CONGO)">콩고 (CONGO)</option>
+                                                        <option value="콩고민주공화국 (Democratic REP of the Congo)">콩고민주공화국 (Democratic REP of the Congo)</option>
+                                                        <option value="쿠바 (CUBA)">쿠바 (CUBA)</option>
+                                                        <option value="쿠웨이트 (KUWAIT)">쿠웨이트 (KUWAIT)</option>
+                                                        <option value="쿡제도 (COOK ISLANDS)">쿡제도 (COOK ISLANDS)</option>
+                                                        <option value="크로아티아 (CROATIA)">크로아티아 (CROATIA)</option>
+                                                        <option value="크리스마스섬 (CHRISTMAS)">크리스마스섬 (CHRISTMAS)</option>
+                                                        <option value="키르키즈스탄 (KYRGYZSTAN)">키르키즈스탄 (KYRGYZSTAN)</option>
+                                                        <option value="키리바티 (KIRIBATI)">키리바티 (KIRIBATI)</option>
+                                                        <option value="타이완 (TAIWAN)">타이완 (TAIWAN)</option>
+                                                        <option value="타지키스탄 (TAJIKISTAN)">타지키스탄 (TAJIKISTAN)</option>
+                                                        <option value="탄자니아 (TANZANIA)">탄자니아 (TANZANIA)</option>
+                                                        <option value="태국 (THAILAND)">태국 (THAILAND)</option>
+                                                        <option value="터크스케이코스제도 (TURKS)">터크스케이코스제도 (TURKS)</option>
+                                                        <option value="터키 (TURKEY)">터키 (TURKEY)</option>
+                                                        <option value="토고 (TOGO)">토고 (TOGO)</option>
+                                                        <option value="토켈라우제도 (TOKELAU)">토켈라우제도 (TOKELAU)</option>
+                                                        <option value="통가 (TONGA)">통가 (TONGA)</option>
+                                                        <option value="투르크메니스탄 (TURKMENISTAN)">투르크메니스탄 (TURKMENISTAN)</option>
+                                                        <option value="투발루 (TUVALU)">투발루 (TUVALU)</option>
+                                                        <option value="튀니지 (TUNISIA)">튀니지 (TUNISIA)</option>
+                                                        <option value="트리니다드토바고 (TRINIDAD AND TOBAGO)">트리니다드토바고 (TRINIDAD AND TOBAGO)</option>
+                                                        <option value="파나마 (PANAMA)">파나마 (PANAMA)</option>
+                                                        <option value="파라과이 (PARAGUAY)">파라과이 (PARAGUAY)</option>
+                                                        <option value="파키스탄 (PAKISTAN)">파키스탄 (PAKISTAN)</option>
+                                                        <option value="파푸아뉴기니 (PAPUA NEW GUINEA)">파푸아뉴기니 (PAPUA NEW GUINEA)</option>
+                                                        <option value="팔라우섬 (PALAU ISLANDS)">팔라우섬 (PALAU ISLANDS)</option>
+                                                        <option value="페로즈제도 (FAROE ISLAND)">페로즈제도 (FAROE ISLAND)</option>
+                                                        <option value="페루 (PERU)">페루 (PERU)</option>
+                                                        <option value="포르투갈 (PORTUGAL)">포르투갈 (PORTUGAL)</option>
+                                                        <option value="포클란드제도 (FALKLAND)">포클란드제도 (FALKLAND)</option>
+                                                        <option value="폴란드 (POLAND)">폴란드 (POLAND)</option>
+                                                        <option value="폴리네시아 (FRENCH POLYNESIA)">폴리네시아 (FRENCH POLYNESIA)</option>
+                                                        <option value="푸에르토리코섬 (PUERTO RICO)">푸에르토리코섬 (PUERTO RICO)</option>
+                                                        <option value="프랑스 (FRANCE)">프랑스 (FRANCE)</option>
+                                                        <option value="프랑스(프랑스령동남및남극권) (FRANCE SOUTHERN)">프랑스(프랑스령동남및남극권) (FRANCE SOUTHERN)</option>
+                                                        <option value="피지 (FIJI)">피지 (FIJI)</option>
+                                                        <option value="피티켄제도 (PITCAIRN IS)">피티켄제도 (PITCAIRN IS)</option>
+                                                        <option value="핀란드 (FINLAND)">핀란드 (FINLAND)</option>
+                                                        <option value="필리핀 (PHILIPPINES)">필리핀 (PHILIPPINES)</option>
+                                                        <option value="헝가리 (HUNGARY)">헝가리 (HUNGARY)</option>
+                                                        <option value="홍콩 (HONG KONG)">홍콩 (HONG KONG)</option>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <!-- //international hidden row -->
+                                        <ul class="table-row">
+                                            <li class="table-cell w-[76px] md:w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all bg-[#f8f8f8] border-t border-t-[#ddd] border-r border-r-[#ddd] border-l-0 box-border">주소</li>
+                                            <li class="table-cell w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all border-t border-t-[#ddd] border-r-0 border-l-0 box-border">
+                                                <input type="text" name="" value="" class="w-[70px] bg-[#f8f8f8] cursor-default h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none box-border" readonly="" />
+                                                <button type="button" class="btn-postalcode w-[70px] min-w-[60px] h-8 py-0 px-[9px] leading-[30px] text-[#333] text-center text-[13px] bg-white border border-[#ccc] rounded-none cursor-pointer box-border">우편번호 검색</button>
+                                                <div class="pt-[5px]">
+                                                    <input type="text" class="w-full h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] bg-[#f8f8f8] border border-[#ccc] outline-none rounded-none cursor-default box-border" name="" value="" readonly="" />
+                                                    <input type="text" class="hidden w-full h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none box-border" name="" value="" readonly="" />
+                                                </div>
+                                                <div class="pt-[5px]">
+                                                    <input type="text" class="w-full h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] outline-none rounded-none box-border" name="" value="" placeholder="상세 주소" />
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="table-row">
+                                            <li class="table-cell w-[76px] md:w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all bg-[#f8f8f8] border-t border-t-[#ddd] border-r border-r-[#ddd] border-l-0 box-border">휴대폰</li>
+                                            <li class="table-cell w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all border-t border-t-[#ddd] border-r-0 border-l-0 box-border">
+                                                <input type="tel" class="w-[54px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none appearance-none box-border" name="" value="" /> -
+                                                <input type="tel" class="w-[54px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none appearance-none box-border" name="" value="" /> -
+                                                <input type="tel" class="w-[54px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none appearance-none box-border" name="" value="" />
+                                            </li>
+                                        </ul>
+                                        <ul class="table-row">
+                                            <li class="table-cell w-[76px] md:w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all bg-[#f8f8f8] border-t border-t-[#ddd] border-r border-r-[#ddd] border-l-0 box-border">연락처2</li>
+                                            <li class="table-cell w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all border-t border-t-[#ddd] border-r-0 border-l-0 box-border">
+                                                <input type="tel" class="w-[54px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none appearance-none box-border" name="" value="" /> -
+                                                <input type="tel" class="w-[54px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none appearance-none box-border" name="" value="" /> -
+                                                <input type="tel" class="w-[54px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none appearance-none box-border" name="" value="" />
+                                            </li>
+                                        </ul>
+                                        <!-- international hidden row -->
+                                        <ul class="table-row" style="display:none;">
+                                            <li class="table-cell w-[76px] md:w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all bg-[#f8f8f8] border-t border-t-[#ddd] border-r border-r-[#ddd] border-l-0 box-border">주소</li>
+                                            <li class="table-cell w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all border-t border-t-[#ddd] border-r-0 border-l-0 box-border">
+                                                <div class="my-[5px]">
+                                                    <input type="text" class="w-[180px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none box-border" name="" value="" size="55" />
+                                                    <span class="text-[#999]">주소</span>
+                                                </div>
+                                                <input type="text" class="w-[180px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none box-border" name="" value="" size="30" />
+                                                <span class="text-[#999]">시도</span>
+                                                <div class="my-[5px]">
+                                                    <input type="text" class="w-[180px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none box-border" name="" value="" size="30" />
+                                                    <span class="text-[#999]">주</span>
+                                                </div>
+                                                <input type="text" class="w-[180px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none box-border" name="" value="" size="10" />
+                                                <span class="text-[#999]">우편번호</span>
+                                                <div class="mt-[5px]">
+                                                    <input type="text" class="w-[180px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none box-border" name="" value="" size="30">
+                                                    <span class="text-[#999]">국가</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="table-row" style="display:none;">
+                                            <li class="table-cell w-[76px] md:w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all bg-[#f8f8f8] border-t border-t-[#ddd] border-r border-r-[#ddd] border-l-0 box-border">휴대폰</li>
+                                            <li class="table-cell w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all border-t border-t-[#ddd] border-r-0 border-l-0 box-border">
+                                                <input type="tel" class="w-[54px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none appearance-none box-border" name="" value="" /> -
+                                                <input type="tel" class="w-[54px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none appearance-none box-border" name="" value="" /> -
+                                                <input type="tel" class="w-[54px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none appearance-none box-border" name="" value="" />
+                                            </li>
+                                        </ul>
+                                        <ul class="table-row" style="display:none;">
+                                            <li class="table-cell w-[76px] md:w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all bg-[#f8f8f8] border-t border-t-[#ddd] border-r border-r-[#ddd] border-l-0 box-border">연락처2</li>
+                                            <li class="table-cell w-[90px] p-[5px] md:py-[5px] md:px-[10px] align-middle break-all border-t border-t-[#ddd] border-r-0 border-l-0 box-border">
+                                                <input type="tel" class="w-[54px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none appearance-none box-border" name="" value="" /> -
+                                                <input type="tel" class="w-[54px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none appearance-none box-border" name="" value="" /> -
+                                                <input type="tel" class="w-[54px] h-8 py-0 px-[10px] leading-8 text-[#333] text-[13px] border border-[#ccc] rounded-none outline-none appearance-none box-border" name="" value="" />
+                                            </li>
+                                        </ul>
+                                        <!-- //international hidden row -->
+                                    </div>
+                                </div>
+                                <div class="pt-[15px] text-center">
+                                    <button type="button" class="w-full sm:w-[120px] h-[50px] sm:h-7 leading-[48px] sm:leading-[26px] text-white text-base sm:text-[13px] bg-black border border-black">확인</button>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="javascript:void(0)" class="btn-pop_close inline-block w-4 h-4 text-[0px] bg-transparent bg-[url(../assets/icon/ico-close.png)] bg-center bg-no-repeat bg-[length:auto_100%] absolute top-[25px] right-[15px]"></a>
+                    </div>
+                    <!-- //layer - 배송지등록/수정 -->
+                    <!-- //article -->
+                </div>
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <!-- mobile floating menu -->
+        <div class="xl:hidden fixed left-0 right-0 bottom-0 z-[1001] bg-white p-0">
+			<ul class="px-[35px] flex">
+				<li class="w-[15%]" id="mobile-menu"><a href="javascript:;" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu1.svg')] bg-[center_4px] bg-no-repeat">메뉴</span></a></li>
+				<li class="w-[15%]"><a href="/goods/oneday_delivery" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu2.svg')] bg-[center_4px] bg-no-repeat">하루배송</span></a></li>
+				<li class="w-[40%]"><a href="/" class="block relative h-full"><span class="text-[0] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/logo.svg')] bg-[center_14px] bg-no-repeat bg-[length:76px_18px]">홈</span></a></li>
+				<li class="w-[15%]"><a href="/mypage/wish" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu3.svg')] bg-[center_4px] bg-no-repeat">위시리스트</span></a></li>
+				<li class="w-[15%]"><a href="/mypage" class="block relative h-full"><span class="text-[8px] box-border text-black block text-center h-12 pt-7 bg-[url('../assets/icon/ico-floating-menu4.svg')] bg-[center_4px] bg-no-repeat">마이페이지</span></a></li>
+			</ul>
+		</div>
+        <!-- //mobile floating menu -->
+        
+        <!-- footer -->
+		<footer><script>Util.include('../common/footer.html')</script></footer>
+		<!-- //footer -->
+    </div>
+
+    <script src="../js/include.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script><!--flowbite-->
+    <script>
+        // 모바일 메뉴 레이어 열기
+        $('#mobile-menu').on('click',function(){
+            $('#dmm').removeClass('hidden');
+            $('#mobile-menu-content').addClass('!top-[42px]');
+            var mobile_swiper = new Swiper('#mobile-menu-content .swiper',{
+                slidesPerView:'4.5',
+                spaceBetween: 8
+            })
+        });
+        // 모바일 메뉴 레이어 닫기
+        $('#mobile-layer-close').on('click',function(){
+            $('#dmm').addClass('hidden');
+            $('#mobile-menu-content').removeClass('!top-[42px]');
+        });
+        
+        // layer - 검색 > 열기
+        function search_layer(){
+            $('#search-layer').addClass('!block');
+        };
+        // layer - 검색 > 닫기
+        $('#search-layer-close').on('click',function(){
+            $('#search-layer').removeClass('!block');
+        });
+        /* layer - 검색 관련 */
+        function srch_layer(){
+            $('#search-layer').addClass('!block');
+        }
+        $('.search_full_layer .button_back2').on('click', function () {
+            $('.search_full_layer').removeClass('block');
+        });
+        $('.mobile-category-wrap input[type="text"]').on('click', function () {
+            $('.search_full_layer').addClass('block');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+        $('.header_top .ico_srch, .m_btm_menu .resp_top_search').on('click',function(){
+            $('.search_full_layer').addClass('block');
+        });
+        $('.search_full_layer .btn_close').on('click',function(){
+            $('.search_full_layer').removeClass('block');
+        });
+        $('.mobile-category-wrap .button-search').on('click', function () {
+            $('.search_full_layer').addClass('block');
+            if ($('.mobile-category-wrap input[type="text"]').attr('value')) {
+                $('.search_full_layer input[name="search_text"]').attr('value', $('.mobile-category-wrap input[type="text"]').attr('value'));
+            }
+        });
+        $('.header .rig_menu .btn-srch').on('click', function () {
+            $('.search_full_layer').addClass('block');
+            $('.search_full_layer input[name=search_text]').focus();
+            var len = $('.search_full_layer input[name=search_text]').val().length;
+            $('.search_full_layer input[name=search_text]')[0].setSelectionRange(len, len);
+        });
+
+        /* gnb */
+        $(window).on("load resize", function() {
+            if ($(window).width() > 768) {
+                if ($('.main').length > 0) {
+                    $('.header_cont').hover(
+                        function() {
+                            $(this).addClass('block');
+                        },
+                        function() {
+                            $(this).removeClass('block');
+                        }
+                    );
+                }
+                $('.header .gnb_wrap .dep1').hover(
+                    function() {
+                        $(this).find('.dep2').css('display', 'block');
+                        $('.header .gnb_wrap .dep1_ul.on').addClass('tmpon');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('block');
+                    },
+                    function() {
+                        $(this).find('.dep2').css('display', 'none');
+                        $('.header .gnb_wrap .dep1_ul.tmpon').addClass('block');
+                        $('.header .gnb_wrap .dep1_ul').removeClass('tmpon');
+                    }
+                );
+            }
+        });
+
+        /* footer */
+        
+
+        // 마이메뉴 > 열기
+        $('.myMenu').on('click',function(){
+            $('.subpage_lnb').toggleClass('!block');
+        });
+        // 마이메뉴 > 닫기
+        $('.myMenu').on('click',function(){
+            $('.myMenu > em').toggleClass('bg-[#212121] before:top-0 before:rotate-45 after:top-0 after:-rotate-45');
+        });
+        // 마이메뉴 > 화살표
+        $('.accordion-open-heading').on('click',function(){
+            $('.accordion-open-heading button[aria-expanded="true"] > a').addClass('after:top-3 after:rotate-[220deg]');
+            $('.accordion-open-heading button[aria-expanded="false"] > a').removeClass('after:top-3 after:rotate-[220deg]');
+        });
+
+        // layer - 배송지등록 > 열기
+        $('.btn-delivery_regmodi').on('click',function(){
+            $('.layer-delivery_regmodi, .layer-bg').addClass('!block');
+        });
+        // layer - 배송지등록 > 닫기
+        $('.btn-pop_close').on('click',function(){
+            $('.layer-delivery_regmodi, .layer-bg').removeClass('!block');
+        });
+
+        // layer - 우편번호 > 열기
+        $('.btn-postalcode').on('click',function(){
+            $('.layer-postalcode, .layer-bg').addClass('!block');
+            $('.layer-delivery_regmodi').removeClass('!block');
+        });
+        // layer - 우편번호 > 닫기
+        $('.layer-postalcode > .btn-pop_close').on('click',function(){
+            $('.layer-postalcode').removeClass('!block');
+            $('.layer-delivery_regmodi, .layer-bg').addClass('!block');
+        });
+
+        // 탭메뉴
+        $('.mypage-tab > li').on('click',function(){
+            let idx = $(this).index();
+            if(idx==0){
+                $('.delivery-list').removeClass('hidden').addClass('block');
+                $('.delivery-recent').removeClass('block').addClass('hidden');
+                $('.delivery-manage .btn-delivery_regmodi').removeClass('hidden').addClass('block');
+                $('.mypage-tab li:first-child').addClass(["border-y border-y-black"]);
+                $('.mypage-tab li:first-child > button').addClass(["text-white bg-black"]);
+                $('.mypage-tab li:last-child').removeClass(["border-y border-y-black"]);
+                $('.mypage-tab li:last-child > button').removeClass(["text-white bg-black"]);
+            }else{
+                console.log('1')
+                $('.mypage-tab li:last-child > button').addClass(["text-white bg-black"]);
+                $('.mypage-tab li:first-child > button').removeClass(["text-white bg-black"]);
+                $('.mypage-tab li:first-child').removeClass(["border-y border-y-black"]);
+                $('.mypage-tab li:last-child').addClass(["border-y border-y-black"]);
+                $('.delivery-recent').removeClass('hidden').addClass('block');
+                $('.delivery-list').removeClass('block').addClass('hidden');
+                $('.delivery-manage .btn-delivery_regmodi').removeClass('block').addClass('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>
